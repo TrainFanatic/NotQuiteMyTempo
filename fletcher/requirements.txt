@@ -1,0 +1,5 @@
+anthropic>=2.0        # Claude API, streaming (Haiku 5.5)
+websockets>=13        # hub client + ElevenLabs WebSockets
+python-dotenv>=1.0    # reads fletcher/.env
+sounddevice>=0.4      # optional: --play-local on the laptop
+pytest>=8             # tests
