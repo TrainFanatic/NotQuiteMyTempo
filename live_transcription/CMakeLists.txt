@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.16)
+project(drum_transcriber LANGUAGES C CXX)
+add_library(drum_transcriber SHARED src/audio_features.cpp src/onset_detector.cpp
+  src/classifier.cpp src/model_io.cpp src/transcriber.cpp third_party/kissfft/kiss_fft.c)
+target_compile_features(drum_transcriber PRIVATE cxx_std_17)
+target_include_directories(drum_transcriber PUBLIC include PRIVATE src third_party/kissfft)
+set_target_properties(drum_transcriber PROPERTIES CXX_VISIBILITY_PRESET hidden C_VISIBILITY_PRESET hidden)
+if(NOT MSVC)
+  target_compile_options(drum_transcriber PRIVATE -Wall -Wextra -Wpedantic)
+endif()
+
+include(CTest)
+if(BUILD_TESTING)
+  add_executable(native_safety tests/native_safety.cpp)
+  target_compile_features(native_safety PRIVATE cxx_std_17)
+  target_link_libraries(native_safety PRIVATE drum_transcriber)
+  add_test(NAME native_safety COMMAND native_safety)
+endif()

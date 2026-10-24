@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.venv*/
+build/
+data/
+out/
+samples/
+live_transcription/models/*
+!live_transcription/models/.gitkeep
+live_transcription/reports/*
+!live_transcription/reports/.gitkeep
+live_transcription/config/*.local.json

@@ -1,0 +1,12 @@
+{
+  "pieces": {
+    "kick": "kick", "snare": "snare", "hihat": "hihat",
+    "rack_tom_1": "tom", "rack_tom_2": "tom", "floor_tom": "tom",
+    "crash_1": "crash", "crash_2": "crash", "ride": "ride"
+  },
+  "splits": {
+    "train": ["session_train"],
+    "validation": ["session_validation"],
+    "test": ["session_test"]
+  }
+}

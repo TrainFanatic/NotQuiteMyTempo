@@ -24,6 +24,13 @@ The `.drums.txt` format is specified in
 follow it to work with `rushingOrDragging`. For the file layout, commands and workflows, see
 [`rushingOrDragging/STRUCTURE.md`](rushingOrDragging/STRUCTURE.md).
 
+### `live_transcription/`: microphone audio to drum events
+
+Portable C++ drum-onset and family-classification core, with desktop recording preparation,
+annotation, training, WAV replay and evaluation tools. Produces the timestamped feed consumed
+by `rushingOrDragging`. Quest/Godot capture integration is a later milestone; a trained kit
+model requires labeled recordings. See the complete [setup and workflow guide](live_transcription/README.md).
+
 ## Adding a subfolder
 
 Put new functionality in its own top-level subfolder with its own documentation, and add a
