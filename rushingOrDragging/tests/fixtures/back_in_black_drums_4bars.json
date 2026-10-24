@@ -1,0 +1,470 @@
+{
+ "name": "Phil Rudd | Sonor Phonic Series | Drums",
+ "balance": 0,
+ "volume": 1,
+ "measures": [
+  {
+   "voices": [
+    {
+     "beats": [
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        }
+       ],
+       "type": 4,
+       "duration": [
+        1,
+        4
+       ],
+       "velocity": "f"
+      },
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        }
+       ],
+       "type": 4,
+       "duration": [
+        1,
+        4
+       ]
+      },
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        }
+       ],
+       "type": 4,
+       "duration": [
+        1,
+        4
+       ]
+      },
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        }
+       ],
+       "type": 4,
+       "duration": [
+        1,
+        4
+       ]
+      }
+     ]
+    }
+   ],
+   "signature": [
+    4,
+    4
+   ],
+   "marker": {
+    "text": "Intro",
+    "width": 38
+   },
+   "keySignature": {
+    "accidentalCount": 1,
+    "mode": "minor",
+    "transposeAs": "#"
+   }
+  },
+  {
+   "voices": [
+    {
+     "beats": [
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        }
+       ],
+       "type": 4,
+       "duration": [
+        1,
+        4
+       ]
+      },
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        }
+       ],
+       "type": 4,
+       "duration": [
+        1,
+        4
+       ]
+      },
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        }
+       ],
+       "type": 4,
+       "duration": [
+        1,
+        4
+       ]
+      },
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        }
+       ],
+       "type": 4,
+       "duration": [
+        1,
+        4
+       ]
+      }
+     ]
+    }
+   ],
+   "keySignature": {
+    "accidentalCount": 1,
+    "mode": "minor",
+    "transposeAs": "#"
+   }
+  },
+  {
+   "voices": [
+    {
+     "beats": [
+      {
+       "notes": [
+        {
+         "fret": 57,
+         "string": -0.5
+        },
+        {
+         "fret": 36,
+         "string": 3.5
+        }
+       ],
+       "text": {
+        "text": "tight hi hat",
+        "width": 60
+       },
+       "type": 8,
+       "duration": [
+        1,
+        8
+       ],
+       "beamStart": true
+      },
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        }
+       ],
+       "type": 8,
+       "duration": [
+        1,
+        8
+       ]
+      },
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        },
+        {
+         "fret": 38,
+         "string": 1.5
+        }
+       ],
+       "type": 8,
+       "duration": [
+        1,
+        8
+       ]
+      },
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        }
+       ],
+       "type": 8,
+       "duration": [
+        1,
+        8
+       ],
+       "beamStop": true
+      },
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        },
+        {
+         "fret": 36,
+         "string": 3.5
+        }
+       ],
+       "type": 8,
+       "duration": [
+        1,
+        8
+       ],
+       "beamStart": true
+      },
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        }
+       ],
+       "type": 8,
+       "duration": [
+        1,
+        8
+       ]
+      },
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        },
+        {
+         "fret": 38,
+         "string": 1.5
+        }
+       ],
+       "type": 8,
+       "duration": [
+        1,
+        8
+       ]
+      },
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        }
+       ],
+       "type": 8,
+       "duration": [
+        1,
+        8
+       ],
+       "beamStop": true
+      }
+     ]
+    }
+   ],
+   "keySignature": {
+    "accidentalCount": 1,
+    "mode": "minor",
+    "transposeAs": "#"
+   }
+  },
+  {
+   "voices": [
+    {
+     "beats": [
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        },
+        {
+         "fret": 36,
+         "string": 3.5
+        }
+       ],
+       "type": 8,
+       "duration": [
+        1,
+        8
+       ],
+       "beamStart": true
+      },
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        }
+       ],
+       "type": 8,
+       "duration": [
+        1,
+        8
+       ]
+      },
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        },
+        {
+         "fret": 38,
+         "string": 1.5
+        }
+       ],
+       "type": 8,
+       "duration": [
+        1,
+        8
+       ]
+      },
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        }
+       ],
+       "type": 8,
+       "duration": [
+        1,
+        8
+       ],
+       "beamStop": true
+      },
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        },
+        {
+         "fret": 36,
+         "string": 3.5
+        }
+       ],
+       "type": 8,
+       "duration": [
+        1,
+        8
+       ],
+       "beamStart": true
+      },
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        }
+       ],
+       "type": 8,
+       "duration": [
+        1,
+        8
+       ]
+      },
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        },
+        {
+         "fret": 38,
+         "string": 1.5
+        }
+       ],
+       "type": 8,
+       "duration": [
+        1,
+        8
+       ]
+      },
+      {
+       "notes": [
+        {
+         "fret": 42,
+         "string": -0.5
+        }
+       ],
+       "type": 8,
+       "duration": [
+        1,
+        8
+       ],
+       "beamStop": true
+      }
+     ]
+    }
+   ],
+   "keySignature": {
+    "accidentalCount": 1,
+    "mode": "minor",
+    "transposeAs": "#"
+   }
+  }
+ ],
+ "frets": 24,
+ "strings": 6,
+ "tuningFlat": true,
+ "instrumentId": 1024,
+ "instrument": "Drums",
+ "newLyrics": [
+  {
+   "line": 1,
+   "offset": 1,
+   "text": ""
+  },
+  {
+   "line": 2,
+   "offset": 1,
+   "text": ""
+  },
+  {
+   "line": 3,
+   "offset": 1,
+   "text": ""
+  },
+  {
+   "line": 4,
+   "offset": 1,
+   "text": ""
+  },
+  {
+   "line": 5,
+   "offset": 1,
+   "text": ""
+  }
+ ],
+ "partId": 6,
+ "automations": {
+  "tempo": [
+   {
+    "type": 4,
+    "position": 0,
+    "measure": 0,
+    "bpm": 94
+   }
+  ]
+ },
+ "version": 8,
+ "songId": 1024,
+ "revisionId": 9880696
+}
