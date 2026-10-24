@@ -19,56 +19,65 @@ It's fully specified in [`file_format.md`](file_format.md).
 
 ## Folder tree
 
+The code lives in `rushingOrDragging/` inside the [`NotQuiteMyTempo`](https://github.com/TrainFanatic/NotQuiteMyTempo) repository. Run every command in
+this guide from `rushingOrDragging/`. The scripts find `data/`, `out/` and `samples/` relative
+to their own location, so those folders are always created inside `rushingOrDragging/`.
+
 ```
-calhacks13/
-├── cli.py                     # entry point: import a song from Songsterr → out/*.drums.txt
-├── test_file_with_audio.py    # .drums.txt → .wav using recorded acoustic drum samples
-├── test_file_with_midi.py     # .drums.txt → .mid (General MIDI drum channel)
-├── compare_performance.py     # played .drums.txt vs sheet .drums.txt → early/late report
-├── stream_notes.py            # replays a .drums.txt as a live stream (each line at its time)
-├── live_compare.py            # reads a stream, shows RUSHING! / DRAGGING! / PERFECT! live
+NotQuiteMyTempo/                   # repository root (a local clone may have another folder name)
+├── README.md                      # repo title only
+├── .gitignore                     # ignores data/, out/, samples/ and Python caches at any depth
+├── .Rhistory                      # unrelated (R session history), untracked
+├── data/, out/                    # stale copies from before the code moved into rushingOrDragging/;
+│                                  #   nothing reads or writes them any more (git-ignored)
 │
-├── songsterr/                 # library code used by cli.py
-│   ├── __init__.py
-│   ├── fetch.py               # Part 1: download + cache song metadata and track JSON
-│   ├── convert.py             # Part 2: track JSON → timestamped notes
-│   └── drum_map.py            # MIDI number → drum name table
-│
-├── tests/                     # pytest suite (run: python3 -m pytest -q)
-│   ├── fixtures/
-│   │   └── back_in_black_drums_4bars.json
-│   ├── test_convert.py
-│   ├── test_audio.py
-│   ├── test_compare.py
-│   ├── test_uniform_jitter.py # also a script: makes a ±50 ms jittered clone
-│   ├── test_drift.py          # also a script: makes a rushing/dragging clone
-│   └── test_streaming.py      # stream_notes.py + live_compare.py, alone and piped together
-│
-├── data/raw/                  # (generated, git-ignored) Songsterr download cache
-│   └── <songId>/
-│       ├── meta.json
-│       └── <revisionId>/<trackIndex>.json
-│
-├── out/                       # (generated, git-ignored) everything the scripts produce
-│   ├── <artist>-<title>.drums.txt
-│   ├── <artist>-<title>.drums.wav
-│   ├── <artist>-<title>.jitter50_seed<N>.drums.txt   + .report.txt
-│   ├── <artist>-<title>.drift<X>ms_seed<N>.drums.txt + .report.txt
-│   └── mop_60-75.wav          # example excerpt render
-│
-├── samples/                   # (downloaded, git-ignored) acoustic drum kit
-│   ├── ATTRIBUTION.md
-│   └── AVLDrumkits-BlackPearl-2023/
-│       ├── <num>-<Maker>-<size>-<Piece>-<1..5>.wav   (127 samples)
-│       ├── drumkit.xml
-│       └── blackpearl-h2.png
-│
-├── file_format.md             # specification of the .drums.txt format
-├── TODO.md                    # deferred work (tonal instruments, etc.)
-├── STRUCTURE.md               # this file
-├── requirements.txt
-├── .gitignore
-└── .Rhistory                  # unrelated (R session history)
+└── rushingOrDragging/
+    ├── cli.py                     # entry point: import a song from Songsterr → out/*.drums.txt
+    ├── test_file_with_audio.py    # .drums.txt → .wav using recorded acoustic drum samples
+    ├── test_file_with_midi.py     # .drums.txt → .mid (General MIDI drum channel)
+    ├── compare_performance.py     # played .drums.txt vs sheet .drums.txt → early/late report
+    ├── stream_notes.py            # replays a .drums.txt as a live stream (each line at its time)
+    ├── live_compare.py            # reads a stream, shows RUSHING! / DRAGGING! / PERFECT! live
+    │
+    ├── songsterr/                 # library code used by cli.py
+    │   ├── __init__.py
+    │   ├── fetch.py               # Part 1: download + cache song metadata and track JSON
+    │   ├── convert.py             # Part 2: track JSON → timestamped notes
+    │   └── drum_map.py            # MIDI number → drum name table
+    │
+    ├── tests/                     # pytest suite (run: python3 -m pytest -q)
+    │   ├── fixtures/
+    │   │   └── back_in_black_drums_4bars.json
+    │   ├── test_convert.py
+    │   ├── test_audio.py
+    │   ├── test_compare.py
+    │   ├── test_uniform_jitter.py # also a script: makes a ±50 ms jittered clone
+    │   ├── test_drift.py          # also a script: makes a rushing/dragging clone
+    │   └── test_streaming.py      # stream_notes.py + live_compare.py, alone and piped together
+    │
+    ├── data/raw/                  # (generated on first import, git-ignored) Songsterr download cache
+    │   └── <songId>/
+    │       ├── meta.json
+    │       └── <revisionId>/<trackIndex>.json
+    │
+    ├── out/                       # (generated on first run, git-ignored) everything the scripts produce
+    │   ├── <artist>-<title>.drums.txt
+    │   ├── <artist>-<title>.drums.wav
+    │   ├── <artist>-<title>.jitter50_seed<N>.drums.txt   + .report.txt
+    │   ├── <artist>-<title>.drift<X>ms_seed<N>.drums.txt + .report.txt
+    │   └── mop_60-75.wav          # example excerpt render
+    │
+    ├── samples/                   # (downloaded, git-ignored) acoustic drum kit
+    │   ├── ATTRIBUTION.md
+    │   └── AVLDrumkits-BlackPearl-2023/
+    │       ├── <num>-<Maker>-<size>-<Piece>-<1..5>.wav   (127 samples)
+    │       ├── drumkit.xml
+    │       └── blackpearl-h2.png
+    │
+    ├── file_format.md             # specification of the .drums.txt format
+    ├── TODO.md                    # deferred work (tonal instruments, etc.)
+    ├── STRUCTURE.md               # this file
+    └── requirements.txt
 ```
 
 ---
@@ -240,10 +249,12 @@ These are cached so re-runs work offline. They're keyed by revision, so editing 
 | `TODO.md` | Deferred work. The main item is tonal instruments (guitar/bass, using string + fret + tuning to get pitch). Also durations, velocities, D.S./coda handling, and verifying how alternate endings are labelled in Songsterr's data. |
 | `STRUCTURE.md` | This guide. |
 | `requirements.txt` | Lists `requests` and `pytest`. **`numpy` is also required** (audio rendering, comparison and tests) but isn't listed yet. Install with `pip install requests pytest numpy`. |
-| `.gitignore` | Excludes generated or downloaded material (`data/`, `out/`, `samples/`) and Python caches (`__pycache__/`, `.pytest_cache/`). |
+| `../.gitignore` (repo root) | Excludes generated or downloaded material (`data/`, `out/`, `samples/`) and Python caches (`__pycache__/`, `.pytest_cache/`). |
 
 ## Not part of the project
-- **`.Rhistory`:** an R session history file, unrelated to this code.
+- **`../.Rhistory`** (repo root): an R session history file, unrelated to this code.
+- **`../data/`, `../out/`** (repo root): leftovers from when the code sat at the repo root. The current code ignores them; move their contents into `rushingOrDragging/` to reuse the cached downloads and outputs, or delete them.
+- **`.DS_Store`:** macOS Finder metadata. `rushingOrDragging/.DS_Store` is committed by accident.
 - **`__pycache__/`, `.pytest_cache/`:** Python bytecode and pytest caches, created automatically and safe to delete.
 
 ---
@@ -251,6 +262,8 @@ These are cached so re-runs work offline. They're keyed by revision, so editing 
 ## Common workflows
 
 ```bash
+cd rushingOrDragging                                  # from the repo root
+
 # 1. Import a song's drum part
 python cli.py search master of puppets
 python cli.py 455118                                  # → out/metallica-master_of_puppets.drums.txt
