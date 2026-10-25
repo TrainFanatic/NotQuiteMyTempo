@@ -5,11 +5,12 @@ This module turns a mono microphone PCM stream into timestamped drum-family even
 The tools here prepare recordings, help annotate them, train a small classifier, replay WAVs
 through that same core, and measure its errors.
 
-**Status:** the desktop pipeline is implemented. There is no trained Quest drum model bundled
-with it. Collect and annotate your kit recordings before training. Synthetic tests check
-software behavior; they do not establish recognition accuracy. Quest microphone capture,
-Godot bindings, Android packaging, and device timing calibration are deliberately not part of
-this first milestone. The ADTOF checkpoint is an optional offline comparison, not the live engine.
+**Status:** the desktop pipeline and a standalone Quest microphone recorder are implemented.
+The recorder has not yet passed a Quest 2 hardware smoke test. There is no trained Quest drum
+model bundled with the repo; collect and annotate your kit recordings before training. Synthetic
+tests check software behavior, not recognition accuracy. Godot game bindings, the in-game live
+adapter, and device timing calibration remain to be implemented. The ADTOF checkpoint is an
+optional offline comparison, not the live engine.
 
 ## Layout and responsibilities
 
@@ -23,6 +24,8 @@ this first milestone. The ADTOF checkpoint is an optional offline comparison, no
 | `src/transcriber.cpp` | Stream state, gaps, resets, finish, candidate queue |
 | `tools/common.py` | Python ctypes bridge, recording/annotation validation, note IO |
 | `tools/prepare_recording.py` | Preserve original; downmix/resample a working copy |
+| `quest_recorder/` | Standalone Godot Quest microphone recorder and export guide |
+| `tools/import_quest_take.py` | Validate and import an exported Quest WAV/metadata pair |
 | `tools/propose_onsets.py` | Generate annotation suggestions for human review |
 | `tools/train_model.py` | Session splits, L2 training, validation tuning, native export/evaluation |
 | `tools/transcribe_wav.py` | Bounded-block replay; live stdout plus saved performance |
