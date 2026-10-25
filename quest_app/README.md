@@ -109,3 +109,19 @@ The playable game on top of the rehearsal, off by default like Fletcher: tick `g
 - **Real kit space.** The room's geometry still covers the area where the real kit is. A passthrough cut-out around `spot_drummer` is still to do.
 - **Close-up targeting.** Terence's aimed moves use the authored default player head. Live re-aiming (look-at IK toward the real headset) isn't implemented.
 - **Thrown props** don't collide: they stay at the pose of the landing frame.
+
+## Judge demo (no drums, no laptop, no input)
+
+`tools/build_quest.sh install-demo` builds and installs `build/nqmt_demo.apk` (preset "Quest NQMT Demo",
+package `com.notquitemytempo.demo`, feature `nqmt_demo`). It plays itself on a loop: Terence walks in,
+the menu shows Caravan, he counts off, a virtual drummer plays (heard from the kit), the drum chart and
+grades scroll, he cuts the rushing drummer off, barks, counts back in, the clean run finishes, the
+results show, and it starts again. On the desktop: `Godot --path . -- --judge-demo`.
+
+It is a real session replayed: `scripts/game/demo_hub.gd` (a FletcherHub) feeds the hub frames of one
+session the whole laptop stack ran on Caravan with a sloppy then a clean take, on their recorded schedule.
+To re-record, from the team repo root (needs `.venv`, Kevin's built native library in
+`live_transcription/build`, and an imported quest_app):
+
+    .venv/bin/python quest_app/tools/judge_demo/record_demo.py /tmp/demo_rec [--godot <Godot 4.5>]
+    python3 quest_app/tools/judge_demo/pack_demo.py /tmp/demo_rec

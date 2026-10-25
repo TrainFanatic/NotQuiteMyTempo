@@ -89,7 +89,7 @@ var showcase: Showcase
 func _ready() -> void:
 	build()
 	# --- Game: needs Fletcher's hub; the URL saved in its settings unless one is given ---
-	if GAME_ARG in OS.get_cmdline_user_args() or OS.has_feature(GAME_FEATURE):
+	if GAME_ARG in OS.get_cmdline_user_args() or OS.has_feature(GAME_FEATURE) or DemoHub.requested():
 		game_mode = true
 	if game_mode:
 		fletcher_enabled = true
@@ -105,6 +105,8 @@ func _ready() -> void:
 			fletcher_hub_url = FletcherSetup.requested_url()
 	if fletcher_enabled:
 		_start_fletcher()
+	if fletcher != null and fletcher.hub is DemoHub:
+		_place_demo_drums(fletcher.hub)
 	# --- end Fletcher
 	if game_mode and fletcher != null:   # game: the menu waits for the intro (open() below)
 		_start_session()
@@ -192,6 +194,20 @@ func _start_fletcher() -> void:
 # --- end Fletcher
 
 
+## Judge demo (scripts/game/demo_hub.gd): the recorded drummer sounds from the kit in front of
+## the throne, where a real drummer's kit would be.
+const DEMO_DRUMS_AT := {"f": 0.55, "y": 0.7}
+
+func _place_demo_drums(demo: DemoHub) -> void:
+	var d := marker_node("spot_drummer")
+	var kit := Node3D.new()
+	kit.name = "DemoKit"
+	add_child(kit)
+	kit.global_position = d.global_position - d.global_transform.basis.z.normalized() * DEMO_DRUMS_AT.f \
+		+ Vector3.UP * DEMO_DRUMS_AT.y
+	demo.drum_anchor = kit
+
+
 # --- Intro: the entrance (scripts/intro.gd), then the game ---
 func _start_intro() -> void:
 	if terence == null or room == null:
@@ -246,7 +262,7 @@ func build() -> void:
 	rig = PlayerRig.new()
 	add_child(rig)
 	rig.setup(drummer.global_transform, spot.global_position + Vector3.UP * 1.6)
-	if rig.xr_mode:
+	if rig.xr_mode and not DemoHub.requested():   # the judge demo has no real kit to see through to
 		_add_kit_window(drummer)
 	# --- Cinematics: close-ups of Terence on the moves in the shot table ---
 	if cinematics_enabled:

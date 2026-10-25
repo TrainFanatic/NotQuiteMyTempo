@@ -1,0 +1,15 @@
+{
+ "id": "caravan-head",
+ "title": "Caravan (from Whiplash)",
+ "artist": "Duke Ellington / Juan Tizol",
+ "bpm": 140.0,
+ "beats_per_bar": 4,
+ "bars": 40,
+ "duration_s": 68.571429,
+ "source": "songsterr",
+ "drum_midi_track": "Andrew Neiman - Drums",
+ "backing": false,
+ "arrangement": false,
+ "notes": 808,
+ "imported_at": "2026-10-25T12:00:00Z"
+}

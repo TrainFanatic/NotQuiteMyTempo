@@ -1,0 +1,460 @@
+{
+ "format": "tempo-map/1",
+ "source": {
+  "name": "Andrew Neiman - Drums (generated from song.json)"
+ },
+ "time_origin": "first downbeat of bar 1 = 0.0 s (same origin as the .drums.txt)",
+ "bars": [
+  {
+   "bar": 1,
+   "source_measure": 0,
+   "start_s": 0.0,
+   "pos_whole": 0.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 2,
+   "source_measure": 1,
+   "start_s": 1.7142857142857142,
+   "pos_whole": 1.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 3,
+   "source_measure": 2,
+   "start_s": 3.4285714285714284,
+   "pos_whole": 2.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 4,
+   "source_measure": 3,
+   "start_s": 5.142857142857142,
+   "pos_whole": 3.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 5,
+   "source_measure": 4,
+   "start_s": 6.857142857142857,
+   "pos_whole": 4.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 6,
+   "source_measure": 5,
+   "start_s": 8.571428571428571,
+   "pos_whole": 5.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 7,
+   "source_measure": 6,
+   "start_s": 10.285714285714285,
+   "pos_whole": 6.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 8,
+   "source_measure": 7,
+   "start_s": 12.0,
+   "pos_whole": 7.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 9,
+   "source_measure": 8,
+   "start_s": 13.714285714285714,
+   "pos_whole": 8.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 10,
+   "source_measure": 9,
+   "start_s": 15.428571428571427,
+   "pos_whole": 9.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 11,
+   "source_measure": 10,
+   "start_s": 17.142857142857142,
+   "pos_whole": 10.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 12,
+   "source_measure": 11,
+   "start_s": 18.857142857142858,
+   "pos_whole": 11.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 13,
+   "source_measure": 12,
+   "start_s": 20.57142857142857,
+   "pos_whole": 12.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 14,
+   "source_measure": 13,
+   "start_s": 22.285714285714285,
+   "pos_whole": 13.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 15,
+   "source_measure": 14,
+   "start_s": 24.0,
+   "pos_whole": 14.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 16,
+   "source_measure": 15,
+   "start_s": 25.71428571428571,
+   "pos_whole": 15.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 17,
+   "source_measure": 16,
+   "start_s": 27.428571428571427,
+   "pos_whole": 16.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 18,
+   "source_measure": 17,
+   "start_s": 29.142857142857142,
+   "pos_whole": 17.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 19,
+   "source_measure": 18,
+   "start_s": 30.857142857142854,
+   "pos_whole": 18.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 20,
+   "source_measure": 19,
+   "start_s": 32.57142857142857,
+   "pos_whole": 19.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 21,
+   "source_measure": 20,
+   "start_s": 34.285714285714285,
+   "pos_whole": 20.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 22,
+   "source_measure": 21,
+   "start_s": 36.0,
+   "pos_whole": 21.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 23,
+   "source_measure": 22,
+   "start_s": 37.714285714285715,
+   "pos_whole": 22.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 24,
+   "source_measure": 23,
+   "start_s": 39.42857142857142,
+   "pos_whole": 23.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 25,
+   "source_measure": 24,
+   "start_s": 41.14285714285714,
+   "pos_whole": 24.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 26,
+   "source_measure": 25,
+   "start_s": 42.857142857142854,
+   "pos_whole": 25.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 27,
+   "source_measure": 26,
+   "start_s": 44.57142857142857,
+   "pos_whole": 26.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 28,
+   "source_measure": 27,
+   "start_s": 46.285714285714285,
+   "pos_whole": 27.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 29,
+   "source_measure": 28,
+   "start_s": 48.0,
+   "pos_whole": 28.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 30,
+   "source_measure": 29,
+   "start_s": 49.71428571428571,
+   "pos_whole": 29.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 31,
+   "source_measure": 30,
+   "start_s": 51.42857142857142,
+   "pos_whole": 30.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 32,
+   "source_measure": 31,
+   "start_s": 53.14285714285714,
+   "pos_whole": 31.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 33,
+   "source_measure": 32,
+   "start_s": 54.857142857142854,
+   "pos_whole": 32.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 34,
+   "source_measure": 33,
+   "start_s": 56.57142857142857,
+   "pos_whole": 33.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 35,
+   "source_measure": 34,
+   "start_s": 58.285714285714285,
+   "pos_whole": 34.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 36,
+   "source_measure": 35,
+   "start_s": 60.0,
+   "pos_whole": 35.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 37,
+   "source_measure": 36,
+   "start_s": 61.71428571428571,
+   "pos_whole": 36.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 38,
+   "source_measure": 37,
+   "start_s": 63.42857142857142,
+   "pos_whole": 37.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 39,
+   "source_measure": 38,
+   "start_s": 65.14285714285714,
+   "pos_whole": 38.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  },
+  {
+   "bar": 40,
+   "source_measure": 39,
+   "start_s": 66.85714285714285,
+   "pos_whole": 39.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 140.0,
+   "beat_s": 0.42857142857142855,
+   "bar_s": 1.7142857142857142
+  }
+ ],
+ "tempo_changes": [
+  {
+   "time_s": 0.0,
+   "pos_whole": 0.0,
+   "bpm": 140.0,
+   "written_bpm": 140,
+   "written_unit": 4,
+   "linear": false
+  }
+ ],
+ "end_s": 68.57142857142857
+}

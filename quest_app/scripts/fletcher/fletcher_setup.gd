@@ -68,7 +68,7 @@ func setup(terence: Terence, director: SceneDirector, url: String, hold: bool) -
 	head.name = "FletcherHead"
 	head.bone_name = HEAD_BONE
 	terence.skeleton.add_child(head)
-	hub = FletcherHub.new()
+	hub = DemoHub.new() if DemoHub.requested() else FletcherHub.new()   # judge demo: a recorded session
 	hub.name = "FletcherHub"
 	if url != "":
 		hub.url = url
@@ -102,6 +102,8 @@ func is_held() -> bool:
 
 ## The intro is over: Fletcher may move Terence from now on.
 func release() -> void:
+	if hub is DemoHub:
+		hub.start()
 	if not is_held():
 		return
 	hub.message_received.disconnect(_on_held_message)

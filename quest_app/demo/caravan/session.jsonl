@@ -1,0 +1,1020 @@
+{"type": "session.state", "src": "session", "seq": 1, "t": 1040570.687223458, "data": {"state": "idle"}}
+{"type": "library.songs", "src": "library", "seq": 1, "t": 1040570.96647675, "data": {"songs": [{"id": "caravan-head", "title": "Caravan (from Whiplash)", "artist": "Duke Ellington / Juan Tizol", "bpm": 140.0, "beats_per_bar": 4, "bars": 40, "duration_s": 68.571429, "source": "songsterr", "drum_midi_track": "Andrew Neiman - Drums", "backing": false, "arrangement": false, "notes": 808, "imported_at": "2026-10-25T12:00:00Z"}], "base_url": "http://10.27.196.148:52916/songs/"}}
+{"type": "fletcher.state", "src": "aaron", "seq": 1, "t": 1040571.000319708, "data": {"mood": "calm", "anger": 0.0, "action": "idle", "look_at": "drummer"}}
+{"type": "session.state", "src": "session", "seq": 2, "t": 1040571.858434708, "data": {"state": "idle"}}
+{"type": "library.songs", "src": "library", "seq": 2, "t": 1040571.858574125, "data": {"songs": [{"id": "caravan-head", "title": "Caravan (from Whiplash)", "artist": "Duke Ellington / Juan Tizol", "bpm": 140.0, "beats_per_bar": 4, "bars": 40, "duration_s": 68.571429, "source": "songsterr", "drum_midi_track": "Andrew Neiman - Drums", "backing": false, "arrangement": false, "notes": 808, "imported_at": "2026-10-25T12:00:00Z"}], "base_url": "http://10.27.196.148:52916/songs/"}}
+{"type": "fletcher.state", "src": "aaron", "seq": 2, "t": 1040571.858753833, "data": {"mood": "calm", "anger": 0.0, "action": "idle", "look_at": "drummer"}}
+{"type": "session.command", "src": "console", "seq": 1, "t": 1040577.921238208, "data": {"action": "start", "song_id": "caravan-head", "from_bar": 1}}
+{"type": "session.state", "src": "session", "seq": 3, "t": 1040577.930706208, "data": {"state": "count_in", "song_id": "caravan-head", "title": "Caravan (from Whiplash)", "bars": 40, "beats_per_bar": 4, "bpm": 140.0, "bar": 1, "beat": 1, "from_bar": 1, "t0": 1040582.5648, "song_time_at_t0": 0.0, "reason": "start"}}
+{"type": "fletcher.state", "src": "aaron", "seq": 3, "t": 1040577.931409708, "data": {"mood": "watching", "anger": 0.0, "action": "conduct", "look_at": "drummer"}}
+{"type": "fletcher.state", "src": "aaron", "seq": 4, "t": 1040577.931748125, "data": {"mood": "watching", "anger": 0.0, "action": "conduct", "look_at": "drummer", "gesture": "t0_cue_section", "utterance_id": "u-0001", "priority": 1, "at_s": 0.099}}
+{"type": "fletcher.speech", "src": "aaron", "seq": 5, "t": 1040577.93183975, "data": {"utterance_id": "u-0001", "text": "From the top.", "clip_id": "top_1", "sample_rate": 24000}}
+{"type": "fletcher.state", "src": "aaron", "seq": 6, "t": 1040577.931935541, "data": {"mood": "watching", "anger": 0.0, "action": "conduct", "look_at": "drummer", "gesture": "t0_countoff_finger", "utterance_id": "u-0001", "priority": 2, "t0": 1040582.5648, "bpm": 140.0, "clips": ["co_five_sharp", "co_six_sharp", "co_seven_sharp", "co_eight_sharp"]}}
+{"type": "session.state", "src": "chris", "seq": 1, "t": 1040582.743916625, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 1, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 2, "t": 1040582.744266708, "data": {"drum": "kick", "bar": 1, "beat": 1.0, "error_ms": 2.2, "grade": "perfect", "song_time": 0.0022}}
+{"type": "judgment.note", "src": "chris", "seq": 3, "t": 1040582.744377708, "data": {"drum": "crash", "bar": 1, "beat": 1.0, "error_ms": 2.2, "grade": "perfect", "song_time": 0.0022}}
+{"type": "fletcher.state", "src": "aaron", "seq": 7, "t": 1040582.746106208, "data": {"mood": "calm", "anger": 0.0, "action": "conduct", "look_at": "drummer"}}
+{"type": "judgment.note", "src": "chris", "seq": 4, "t": 1040582.844435291, "data": {"drum": "snare", "bar": 1, "beat": 1.25, "error_ms": -13.9, "grade": "perfect", "song_time": 0.0932}}
+{"type": "judgment.note", "src": "chris", "seq": 5, "t": 1040582.953885333, "data": {"drum": "snare", "bar": 1, "beat": 1.5, "error_ms": -9.9, "grade": "perfect", "song_time": 0.2044}}
+{"type": "judgment.note", "src": "chris", "seq": 6, "t": 1040582.954198916, "data": {"drum": "hihat_pedal", "bar": 1, "beat": 1.5, "error_ms": -9.9, "grade": "perfect", "song_time": 0.2044}}
+{"type": "judgment.note", "src": "chris", "seq": 7, "t": 1040583.065070791, "data": {"drum": "kick", "bar": 1, "beat": 1.75, "error_ms": -3.3, "grade": "perfect", "song_time": 0.3181}}
+{"type": "judgment.note", "src": "chris", "seq": 8, "t": 1040583.164993, "data": {"drum": "ride_bell", "bar": 1, "beat": 2.0, "error_ms": -9.8, "grade": "perfect", "song_time": 0.4188}}
+{"type": "judgment.note", "src": "chris", "seq": 9, "t": 1040583.285103291, "data": {"drum": "snare", "bar": 1, "beat": 2.25, "error_ms": 2.4, "grade": "perfect", "song_time": 0.5381}}
+{"type": "judgment.note", "src": "chris", "seq": 10, "t": 1040583.404344208, "data": {"drum": "kick", "bar": 1, "beat": 2.5, "error_ms": 11.2, "grade": "perfect", "song_time": 0.654}}
+{"type": "judgment.note", "src": "chris", "seq": 11, "t": 1040583.404536916, "data": {"drum": "hihat_pedal", "bar": 1, "beat": 2.5, "error_ms": 11.2, "grade": "perfect", "song_time": 0.654}}
+{"type": "judgment.note", "src": "chris", "seq": 12, "t": 1040583.404617625, "data": {"drum": "ride", "bar": 1, "beat": 2.5, "error_ms": 11.2, "grade": "perfect", "song_time": 0.654}}
+{"type": "judgment.note", "src": "chris", "seq": 13, "t": 1040583.484995291, "data": {"drum": "snare", "bar": 1, "beat": 2.75, "error_ms": -6.9, "grade": "perfect", "song_time": 0.7431}}
+{"type": "judgment.note", "src": "chris", "seq": 14, "t": 1040583.59502725, "data": {"drum": "kick", "bar": 1, "beat": 3.0, "error_ms": -8.0, "grade": "perfect", "song_time": 0.8492}}
+{"type": "judgment.note", "src": "chris", "seq": 15, "t": 1040583.595370291, "data": {"drum": "ride_bell", "bar": 1, "beat": 3.0, "error_ms": -8.0, "grade": "perfect", "song_time": 0.8492}}
+{"type": "judgment.note", "src": "chris", "seq": 16, "t": 1040583.704630166, "data": {"drum": "snare", "bar": 1, "beat": 3.25, "error_ms": -1.2, "grade": "perfect", "song_time": 0.9631}}
+{"type": "judgment.note", "src": "chris", "seq": 17, "t": 1040583.805282916, "data": {"drum": "snare", "bar": 1, "beat": 3.5, "error_ms": -13.3, "grade": "perfect", "song_time": 1.0581}}
+{"type": "judgment.note", "src": "chris", "seq": 18, "t": 1040583.805537125, "data": {"drum": "hihat_pedal", "bar": 1, "beat": 3.5, "error_ms": -13.3, "grade": "perfect", "song_time": 1.0581}}
+{"type": "judgment.note", "src": "chris", "seq": 19, "t": 1040583.805643958, "data": {"drum": "ride", "bar": 1, "beat": 3.5, "error_ms": -13.3, "grade": "perfect", "song_time": 1.0581}}
+{"type": "judgment.note", "src": "chris", "seq": 20, "t": 1040583.905335125, "data": {"drum": "kick", "bar": 1, "beat": 3.75, "error_ms": -25.4, "grade": "good", "song_time": 1.1531}}
+{"type": "judgment.note", "src": "chris", "seq": 21, "t": 1040584.005251166, "data": {"drum": "snare", "bar": 1, "beat": 4.0, "error_ms": -30.0, "grade": "good", "song_time": 1.2557}}
+{"type": "judgment.note", "src": "chris", "seq": 22, "t": 1040584.22550425, "data": {"drum": "kick", "bar": 1, "beat": 4.5, "error_ms": -18.9, "grade": "good", "song_time": 1.4811}}
+{"type": "judgment.note", "src": "chris", "seq": 23, "t": 1040584.22577525, "data": {"drum": "hihat_pedal", "bar": 1, "beat": 4.5, "error_ms": -18.9, "grade": "good", "song_time": 1.4811}}
+{"type": "judgment.note", "src": "chris", "seq": 24, "t": 1040584.225887125, "data": {"drum": "ride", "bar": 1, "beat": 4.5, "error_ms": -18.9, "grade": "good", "song_time": 1.4811}}
+{"type": "judgment.note", "src": "chris", "seq": 25, "t": 1040584.416814, "data": {"drum": "snare", "bar": 1, "beat": 4.75, "error_ms": -39.1, "grade": "off", "song_time": 1.5681}}
+{"type": "fletcher.state", "src": "aaron", "seq": 8, "t": 1040584.418609958, "data": {"mood": "calm", "anger": 0.12, "action": "conduct", "look_at": "drummer"}}
+{"type": "session.state", "src": "chris", "seq": 26, "t": 1040584.475990833, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 2, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 27, "t": 1040584.476304, "data": {"drum": "kick", "bar": 2, "beat": 1.0, "error_ms": -37.9, "grade": "off", "song_time": 1.6764}}
+{"type": "judgment.note", "src": "chris", "seq": 28, "t": 1040584.476414291, "data": {"drum": "ride_bell", "bar": 2, "beat": 1.0, "error_ms": -37.9, "grade": "off", "song_time": 1.6764}}
+{"type": "fletcher.state", "src": "aaron", "seq": 9, "t": 1040584.478421916, "data": {"mood": "calm", "anger": 0.19, "action": "point", "look_at": "drummer", "gesture": "t2_point_player", "utterance_id": "u-0002", "priority": 1, "at_s": -0.074}}
+{"type": "fletcher.speech", "src": "aaron", "seq": 10, "t": 1040584.478707416, "data": {"utterance_id": "u-0002", "text": "Rushing.", "clip_id": "rushing_1", "sample_rate": 24000}}
+{"type": "judgment.note", "src": "chris", "seq": 29, "t": 1040584.607046708, "data": {"drum": "snare", "bar": 2, "beat": 1.25, "error_ms": -63.3, "grade": "off", "song_time": 1.7581}}
+{"type": "judgment.note", "src": "chris", "seq": 30, "t": 1040584.705542, "data": {"drum": "snare", "bar": 2, "beat": 1.5, "error_ms": -57.5, "grade": "off", "song_time": 1.8711}}
+{"type": "judgment.note", "src": "chris", "seq": 31, "t": 1040584.705806333, "data": {"drum": "hihat_pedal", "bar": 2, "beat": 1.5, "error_ms": -57.5, "grade": "off", "song_time": 1.8711}}
+{"type": "judgment.note", "src": "chris", "seq": 32, "t": 1040584.705917041, "data": {"drum": "ride", "bar": 2, "beat": 1.5, "error_ms": -57.5, "grade": "off", "song_time": 1.8711}}
+{"type": "judgment.note", "src": "chris", "seq": 33, "t": 1040584.744388458, "data": {"drum": "kick", "bar": 2, "beat": 1.75, "error_ms": -42.5, "grade": "off", "song_time": 1.9933}}
+{"type": "judgment.note", "src": "chris", "seq": 34, "t": 1040584.915671958, "data": {"drum": "ride_bell", "bar": 2, "beat": 2.0, "error_ms": -79.5, "grade": "off", "song_time": 2.0633}}
+{"type": "judgment.note", "src": "chris", "seq": 35, "t": 1040585.025994375, "data": {"drum": "snare", "bar": 2, "beat": 2.25, "error_ms": -76.8, "grade": "off", "song_time": 2.1732}}
+{"type": "judgment.note", "src": "chris", "seq": 36, "t": 1040585.075083458, "data": {"drum": "kick", "bar": 2, "beat": 2.5, "error_ms": -62.1, "grade": "off", "song_time": 2.295}}
+{"type": "judgment.note", "src": "chris", "seq": 37, "t": 1040585.0753485, "data": {"drum": "hihat_pedal", "bar": 2, "beat": 2.5, "error_ms": -62.1, "grade": "off", "song_time": 2.295}}
+{"type": "judgment.note", "src": "chris", "seq": 38, "t": 1040585.07545725, "data": {"drum": "ride", "bar": 2, "beat": 2.5, "error_ms": -62.1, "grade": "off", "song_time": 2.295}}
+{"type": "judgment.note", "src": "chris", "seq": 39, "t": 1040585.217273875, "data": {"drum": "snare", "bar": 2, "beat": 2.75, "error_ms": -96.2, "grade": "miss", "song_time": 2.3681}}
+{"type": "judgment.note", "src": "chris", "seq": 40, "t": 1040585.285826833, "data": {"drum": "kick", "bar": 2, "beat": 3.0, "error_ms": -86.3, "grade": "miss", "song_time": 2.4852}}
+{"type": "judgment.note", "src": "chris", "seq": 41, "t": 1040585.286097583, "data": {"drum": "ride_bell", "bar": 2, "beat": 3.0, "error_ms": -86.3, "grade": "miss", "song_time": 2.4852}}
+{"type": "judgment.note", "src": "chris", "seq": 42, "t": 1040585.426860625, "data": {"drum": "snare", "bar": 2, "beat": 3.25, "error_ms": -100.3, "grade": "miss", "song_time": 2.5782}}
+{"type": "judgment.note", "src": "chris", "seq": 43, "t": 1040585.486359791, "data": {"drum": "snare", "bar": 2, "beat": 3.5, "error_ms": -92.7, "grade": "miss", "song_time": 2.693}}
+{"type": "judgment.note", "src": "chris", "seq": 44, "t": 1040585.486654458, "data": {"drum": "hihat_pedal", "bar": 2, "beat": 3.5, "error_ms": -92.7, "grade": "miss", "song_time": 2.693}}
+{"type": "judgment.note", "src": "chris", "seq": 45, "t": 1040585.486828291, "data": {"drum": "ride", "bar": 2, "beat": 3.5, "error_ms": -92.7, "grade": "miss", "song_time": 2.693}}
+{"type": "judgment.note", "src": "chris", "seq": 46, "t": 1040585.585046541, "data": {"drum": "kick", "bar": 2, "beat": 3.75, "error_ms": -75.5, "grade": "off", "song_time": 2.8173}}
+{"type": "judgment.note", "src": "chris", "seq": 47, "t": 1040585.585308875, "data": {"drum": "ride", "bar": 2, "beat": 3.75, "error_ms": -75.5, "grade": "off", "song_time": 2.8173}}
+{"type": "judgment.note", "src": "chris", "seq": 48, "t": 1040585.7258075, "data": {"drum": "snare", "bar": 2, "beat": 4.0, "error_ms": -72.5, "grade": "off", "song_time": 2.9275}}
+{"type": "judgment.note", "src": "chris", "seq": 49, "t": 1040585.726012166, "data": {"drum": "ride_bell", "bar": 2, "beat": 4.0, "error_ms": -72.5, "grade": "off", "song_time": 2.9275}}
+{"type": "fletcher.state", "src": "aaron", "seq": 11, "t": 1040585.753773416, "data": {"mood": "furious", "anger": 0.73, "action": "lean_in", "look_at": "drummer"}}
+{"type": "judgment.note", "src": "chris", "seq": 50, "t": 1040585.915330916, "data": {"drum": "kick", "bar": 2, "beat": 4.5, "error_ms": -75.7, "grade": "off", "song_time": 3.1386}}
+{"type": "judgment.note", "src": "chris", "seq": 51, "t": 1040585.91559575, "data": {"drum": "hihat_pedal", "bar": 2, "beat": 4.5, "error_ms": -75.7, "grade": "off", "song_time": 3.1386}}
+{"type": "judgment.note", "src": "chris", "seq": 52, "t": 1040585.915706625, "data": {"drum": "ride", "bar": 2, "beat": 4.5, "error_ms": -75.7, "grade": "off", "song_time": 3.1386}}
+{"type": "judgment.note", "src": "chris", "seq": 53, "t": 1040586.056284583, "data": {"drum": "snare", "bar": 2, "beat": 4.75, "error_ms": -58.3, "grade": "off", "song_time": 3.2631}}
+{"type": "session.state", "src": "chris", "seq": 54, "t": 1040586.145107833, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 3, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 55, "t": 1040586.145444375, "data": {"drum": "kick", "bar": 3, "beat": 1.0, "error_ms": -26.2, "grade": "good", "song_time": 3.4024}}
+{"type": "judgment.note", "src": "chris", "seq": 56, "t": 1040586.145540541, "data": {"drum": "ride_bell", "bar": 3, "beat": 1.0, "error_ms": -26.2, "grade": "good", "song_time": 3.4024}}
+{"type": "fletcher.state", "src": "aaron", "seq": 12, "t": 1040586.147003375, "data": {"mood": "furious", "anger": 1.0, "action": "lean_in", "look_at": "drummer"}}
+{"type": "judgment.note", "src": "chris", "seq": 57, "t": 1040586.265027583, "data": {"drum": "tom_high", "bar": 3, "beat": 1.25, "error_ms": -22.5, "grade": "good", "song_time": 3.5133}}
+{"type": "judgment.note", "src": "chris", "seq": 58, "t": 1040586.364044333, "data": {"drum": "hihat_pedal", "bar": 3, "beat": 1.5, "error_ms": -22.3, "grade": "good", "song_time": 3.6205}}
+{"type": "judgment.note", "src": "chris", "seq": 59, "t": 1040586.364305083, "data": {"drum": "tom_high", "bar": 3, "beat": 1.5, "error_ms": -22.3, "grade": "good", "song_time": 3.6205}}
+{"type": "judgment.note", "src": "chris", "seq": 60, "t": 1040586.3644165, "data": {"drum": "ride", "bar": 3, "beat": 1.5, "error_ms": -22.3, "grade": "good", "song_time": 3.6205}}
+{"type": "judgment.note", "src": "chris", "seq": 61, "t": 1040586.485092166, "data": {"drum": "kick", "bar": 3, "beat": 1.75, "error_ms": -16.9, "grade": "good", "song_time": 3.7331}}
+{"type": "judgment.note", "src": "chris", "seq": 62, "t": 1040586.60401675, "data": {"drum": "ride_bell", "bar": 3, "beat": 2.0, "error_ms": -1.8, "grade": "perfect", "song_time": 3.8553}}
+{"type": "judgment.note", "src": "chris", "seq": 63, "t": 1040586.694400083, "data": {"drum": "snare", "bar": 3, "beat": 2.25, "error_ms": -11.2, "grade": "perfect", "song_time": 3.9531}}
+{"type": "judgment.note", "src": "chris", "seq": 64, "t": 1040586.815072916, "data": {"drum": "kick", "bar": 3, "beat": 2.5, "error_ms": -5.0, "grade": "perfect", "song_time": 4.0664}}
+{"type": "judgment.note", "src": "chris", "seq": 65, "t": 1040586.815340208, "data": {"drum": "hihat_pedal", "bar": 3, "beat": 2.5, "error_ms": -5.0, "grade": "perfect", "song_time": 4.0664}}
+{"type": "judgment.note", "src": "chris", "seq": 66, "t": 1040586.815453208, "data": {"drum": "ride", "bar": 3, "beat": 2.5, "error_ms": -5.0, "grade": "perfect", "song_time": 4.0664}}
+{"type": "judgment.note", "src": "chris", "seq": 67, "t": 1040586.915333708, "data": {"drum": "snare", "bar": 3, "beat": 2.75, "error_ms": -5.5, "grade": "perfect", "song_time": 4.1731}}
+{"type": "judgment.note", "src": "chris", "seq": 68, "t": 1040587.044834583, "data": {"drum": "kick", "bar": 3, "beat": 3.0, "error_ms": 14.1, "grade": "perfect", "song_time": 4.2998}}
+{"type": "judgment.note", "src": "chris", "seq": 69, "t": 1040587.044973291, "data": {"drum": "ride_bell", "bar": 3, "beat": 3.0, "error_ms": 14.1, "grade": "perfect", "song_time": 4.2998}}
+{"type": "judgment.note", "src": "chris", "seq": 70, "t": 1040587.135302333, "data": {"drum": "snare", "bar": 3, "beat": 3.25, "error_ms": -4.8, "grade": "perfect", "song_time": 4.3881}}
+{"type": "judgment.note", "src": "chris", "seq": 71, "t": 1040587.253899125, "data": {"drum": "snare", "bar": 3, "beat": 3.5, "error_ms": 8.1, "grade": "perfect", "song_time": 4.5081}}
+{"type": "judgment.note", "src": "chris", "seq": 72, "t": 1040587.254165458, "data": {"drum": "hihat_pedal", "bar": 3, "beat": 3.5, "error_ms": 8.1, "grade": "perfect", "song_time": 4.5081}}
+{"type": "judgment.note", "src": "chris", "seq": 73, "t": 1040587.254280333, "data": {"drum": "ride", "bar": 3, "beat": 3.5, "error_ms": 8.1, "grade": "perfect", "song_time": 4.5081}}
+{"type": "judgment.note", "src": "chris", "seq": 74, "t": 1040587.343411, "data": {"drum": "kick", "bar": 3, "beat": 3.75, "error_ms": -12.5, "grade": "perfect", "song_time": 4.5946}}
+{"type": "judgment.note", "src": "chris", "seq": 75, "t": 1040587.343704041, "data": {"drum": "ride", "bar": 3, "beat": 3.75, "error_ms": -12.5, "grade": "perfect", "song_time": 4.5946}}
+{"type": "judgment.note", "src": "chris", "seq": 76, "t": 1040587.46516375, "data": {"drum": "snare", "bar": 3, "beat": 4.0, "error_ms": 4.1, "grade": "perfect", "song_time": 4.7184}}
+{"type": "judgment.note", "src": "chris", "seq": 77, "t": 1040587.465426958, "data": {"drum": "ride_bell", "bar": 3, "beat": 4.0, "error_ms": 4.1, "grade": "perfect", "song_time": 4.7184}}
+{"type": "judgment.note", "src": "chris", "seq": 78, "t": 1040587.655291208, "data": {"drum": "kick", "bar": 3, "beat": 4.5, "error_ms": -21.3, "grade": "good", "song_time": 4.9073}}
+{"type": "judgment.note", "src": "chris", "seq": 79, "t": 1040587.655555791, "data": {"drum": "hihat_pedal", "bar": 3, "beat": 4.5, "error_ms": -21.3, "grade": "good", "song_time": 4.9073}}
+{"type": "judgment.note", "src": "chris", "seq": 80, "t": 1040587.655664, "data": {"drum": "ride", "bar": 3, "beat": 4.5, "error_ms": -21.3, "grade": "good", "song_time": 4.9073}}
+{"type": "judgment.note", "src": "chris", "seq": 81, "t": 1040587.847395916, "data": {"drum": "snare", "bar": 3, "beat": 4.75, "error_ms": -37.6, "grade": "off", "song_time": 4.9981}}
+{"type": "session.state", "src": "chris", "seq": 82, "t": 1040587.895071791, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 4, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 83, "t": 1040587.895393333, "data": {"drum": "kick", "bar": 4, "beat": 1.0, "error_ms": -34.4, "grade": "good", "song_time": 5.1085}}
+{"type": "judgment.note", "src": "chris", "seq": 84, "t": 1040587.895534541, "data": {"drum": "ride_bell", "bar": 4, "beat": 1.0, "error_ms": -34.4, "grade": "good", "song_time": 5.1085}}
+{"type": "judgment.note", "src": "chris", "seq": 85, "t": 1040588.057615375, "data": {"drum": "snare", "bar": 4, "beat": 1.25, "error_ms": -41.9, "grade": "off", "song_time": 5.2081}}
+{"type": "judgment.note", "src": "chris", "seq": 86, "t": 1040588.115445083, "data": {"drum": "hihat_pedal", "bar": 4, "beat": 1.5, "error_ms": -35.4, "grade": "off", "song_time": 5.3218}}
+{"type": "judgment.note", "src": "chris", "seq": 87, "t": 1040588.115718916, "data": {"drum": "ride", "bar": 4, "beat": 1.5, "error_ms": -35.4, "grade": "off", "song_time": 5.3218}}
+{"type": "judgment.note", "src": "chris", "seq": 88, "t": 1040588.16500725, "data": {"drum": "kick", "bar": 4, "beat": 1.75, "error_ms": -46.2, "grade": "off", "song_time": 5.4181}}
+{"type": "judgment.note", "src": "chris", "seq": 89, "t": 1040588.455043875, "data": {"drum": "ride_bell", "bar": 4, "beat": 2.0, "error_ms": null, "grade": "miss", "song_time": 5.5714}}
+{"type": "judgment.note", "src": "chris", "seq": 90, "t": 1040588.455318208, "data": {"drum": "snare", "bar": 4, "beat": 2.25, "error_ms": -75.5, "grade": "off", "song_time": 5.6031}}
+{"type": "judgment.note", "src": "chris", "seq": 91, "t": 1040588.48506575, "data": {"drum": "kick", "bar": 4, "beat": 2.5, "error_ms": -47.6, "grade": "off", "song_time": 5.7381}}
+{"type": "judgment.note", "src": "chris", "seq": 92, "t": 1040588.485323166, "data": {"drum": "hihat_pedal", "bar": 4, "beat": 2.5, "error_ms": -47.6, "grade": "off", "song_time": 5.7381}}
+{"type": "judgment.note", "src": "chris", "seq": 93, "t": 1040588.4854355, "data": {"drum": "ride", "bar": 4, "beat": 2.5, "error_ms": -47.6, "grade": "off", "song_time": 5.7381}}
+{"type": "judgment.note", "src": "chris", "seq": 94, "t": 1040588.667546125, "data": {"drum": "snare", "bar": 4, "beat": 2.75, "error_ms": -79.7, "grade": "off", "song_time": 5.8131}}
+{"type": "judgment.note", "src": "chris", "seq": 95, "t": 1040588.705252791, "data": {"drum": "kick", "bar": 4, "beat": 3.0, "error_ms": -41.8, "grade": "off", "song_time": 5.9582}}
+{"type": "judgment.note", "src": "chris", "seq": 96, "t": 1040588.705504625, "data": {"drum": "ride_bell", "bar": 4, "beat": 3.0, "error_ms": -41.8, "grade": "off", "song_time": 5.9582}}
+{"type": "judgment.note", "src": "chris", "seq": 97, "t": 1040588.886054208, "data": {"drum": "snare", "bar": 4, "beat": 3.25, "error_ms": -69.0, "grade": "off", "song_time": 6.0381}}
+{"type": "judgment.note", "src": "chris", "seq": 98, "t": 1040588.964418791, "data": {"drum": "snare", "bar": 4, "beat": 3.5, "error_ms": -41.6, "grade": "off", "song_time": 6.1727}}
+{"type": "judgment.note", "src": "chris", "seq": 99, "t": 1040588.964713166, "data": {"drum": "hihat_pedal", "bar": 4, "beat": 3.5, "error_ms": -41.6, "grade": "off", "song_time": 6.1727}}
+{"type": "judgment.note", "src": "chris", "seq": 100, "t": 1040588.964913416, "data": {"drum": "ride", "bar": 4, "beat": 3.5, "error_ms": -41.6, "grade": "off", "song_time": 6.1727}}
+{"type": "judgment.note", "src": "chris", "seq": 101, "t": 1040589.035078666, "data": {"drum": "kick", "bar": 4, "beat": 3.75, "error_ms": -53.3, "grade": "off", "song_time": 6.2681}}
+{"type": "judgment.note", "src": "chris", "seq": 102, "t": 1040589.175095666, "data": {"drum": "snare", "bar": 4, "beat": 4.0, "error_ms": -54.5, "grade": "off", "song_time": 6.3741}}
+{"type": "judgment.note", "src": "chris", "seq": 103, "t": 1040589.175297166, "data": {"drum": "ride_bell", "bar": 4, "beat": 4.0, "error_ms": -54.5, "grade": "off", "song_time": 6.3741}}
+{"type": "judgment.note", "src": "chris", "seq": 104, "t": 1040589.355437166, "data": {"drum": "kick", "bar": 4, "beat": 4.5, "error_ms": -62.7, "grade": "off", "song_time": 6.5801}}
+{"type": "judgment.note", "src": "chris", "seq": 105, "t": 1040589.355693916, "data": {"drum": "hihat_pedal", "bar": 4, "beat": 4.5, "error_ms": -62.7, "grade": "off", "song_time": 6.5801}}
+{"type": "judgment.note", "src": "chris", "seq": 106, "t": 1040589.355798458, "data": {"drum": "ride", "bar": 4, "beat": 4.5, "error_ms": -62.7, "grade": "off", "song_time": 6.5801}}
+{"type": "session.state", "src": "chris", "seq": 107, "t": 1040589.575071166, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 5, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 108, "t": 1040589.575361333, "data": {"drum": "kick", "bar": 5, "beat": 1.0, "error_ms": -56.5, "grade": "off", "song_time": 6.8007}}
+{"type": "judgment.note", "src": "chris", "seq": 109, "t": 1040589.575471125, "data": {"drum": "tom_high", "bar": 5, "beat": 1.0, "error_ms": -56.5, "grade": "off", "song_time": 6.8007}}
+{"type": "fletcher.state", "src": "aaron", "seq": 13, "t": 1040589.577187791, "data": {"mood": "furious", "anger": 1.0, "action": "fist_cutoff", "look_at": "drummer", "gesture": "t1_fist_cutoff", "utterance_id": "u-0003", "at_s": -0.179, "priority": 2}}
+{"type": "session.command", "src": "aaron", "seq": 14, "t": 1040589.577462208, "data": {"action": "stop", "from_bar": 1}}
+{"type": "fletcher.speech", "src": "aaron", "seq": 15, "t": 1040589.577561041, "data": {"utterance_id": "u-0003", "text": "Stop.", "clip_id": "stop_2", "sample_rate": 24000}}
+{"type": "session.state", "src": "chris", "seq": 110, "t": 1040589.578524875, "data": {"state": "stopped", "song_id": "caravan-head", "bpm": 140.0, "bar": 5, "beat": 1}}
+{"type": "fletcher.state", "src": "aaron", "seq": 16, "t": 1040590.787432291, "data": {"mood": "furious", "anger": 1.0, "action": "lean_in", "look_at": "drummer", "priority": 0}}
+{"type": "fletcher.speech", "src": "aaron", "seq": 17, "t": 1040590.787939125, "data": {"utterance_id": "u-0004", "text": "You're rushing.", "clip_id": "rushing_2", "sample_rate": 24000}}
+{"type": "fletcher.state", "src": "aaron", "seq": 20, "t": 1040590.798713041, "data": {"mood": "furious", "anger": 1.0, "action": "glare", "look_at": "drummer", "gesture": "t2_judging_stare", "utterance_id": "u-0004", "priority": 1, "after_s": 0.0}}
+{"type": "fletcher.state", "src": "aaron", "seq": 21, "t": 1040590.7988685, "data": {"mood": "furious", "anger": 1.0, "action": "conduct", "look_at": "drummer", "gesture": "t0_countoff_finger", "utterance_id": "u-0004", "priority": 2, "t0": 1040596.3709, "bpm": 140.0, "clips": ["co_five_sharp", "co_six_sharp", "co_seven_sharp", "co_eight_sharp"]}}
+{"type": "fletcher.speech", "src": "aaron", "seq": 17, "t": 1040592.2379391249, "data": {"utterance_id": "u-0004-1", "text": "From bar one.", "clip_id": "bar_01", "sample_rate": 24000}}
+{"type": "session.command", "src": "aaron", "seq": 22, "t": 1040594.657830708, "data": {"action": "restart", "from_bar": 1, "t0": 1040596.3709}}
+{"type": "session.state", "src": "session", "seq": 4, "t": 1040594.659444458, "data": {"state": "count_in", "song_id": "caravan-head", "title": "Caravan (from Whiplash)", "bars": 40, "beats_per_bar": 4, "bpm": 140.0, "bar": 1, "beat": 1, "from_bar": 1, "t0": 1040596.3709, "song_time_at_t0": 0.0, "reason": "restart"}}
+{"type": "session.state", "src": "chris", "seq": 111, "t": 1040596.418590583, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 1, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 112, "t": 1040596.41878525, "data": {"drum": "kick", "bar": 1, "beat": 1.0, "error_ms": 1.3, "grade": "perfect", "song_time": 0.0013}}
+{"type": "judgment.note", "src": "chris", "seq": 113, "t": 1040596.418857708, "data": {"drum": "crash", "bar": 1, "beat": 1.0, "error_ms": 1.3, "grade": "perfect", "song_time": 0.0013}}
+{"type": "fletcher.state", "src": "aaron", "seq": 23, "t": 1040596.46535675, "data": {"mood": "watching", "anger": 0.35, "action": "conduct", "look_at": "drummer"}}
+{"type": "judgment.note", "src": "chris", "seq": 114, "t": 1040596.508710166, "data": {"drum": "snare", "bar": 1, "beat": 1.25, "error_ms": -13.8, "grade": "perfect", "song_time": 0.0933}}
+{"type": "judgment.note", "src": "chris", "seq": 115, "t": 1040596.617293083, "data": {"drum": "snare", "bar": 1, "beat": 1.5, "error_ms": -10.4, "grade": "perfect", "song_time": 0.2039}}
+{"type": "judgment.note", "src": "chris", "seq": 116, "t": 1040596.617580166, "data": {"drum": "hihat_pedal", "bar": 1, "beat": 1.5, "error_ms": -10.4, "grade": "perfect", "song_time": 0.2039}}
+{"type": "judgment.note", "src": "chris", "seq": 117, "t": 1040596.727723708, "data": {"drum": "kick", "bar": 1, "beat": 1.75, "error_ms": -3.1, "grade": "perfect", "song_time": 0.3183}}
+{"type": "judgment.note", "src": "chris", "seq": 118, "t": 1040596.838904083, "data": {"drum": "ride_bell", "bar": 1, "beat": 2.0, "error_ms": -2.7, "grade": "perfect", "song_time": 0.4259}}
+{"type": "judgment.note", "src": "chris", "seq": 119, "t": 1040596.937158041, "data": {"drum": "snare", "bar": 1, "beat": 2.25, "error_ms": -12.4, "grade": "perfect", "song_time": 0.5233}}
+{"type": "judgment.note", "src": "chris", "seq": 120, "t": 1040597.047648916, "data": {"drum": "kick", "bar": 1, "beat": 2.5, "error_ms": -13.1, "grade": "perfect", "song_time": 0.6297}}
+{"type": "judgment.note", "src": "chris", "seq": 121, "t": 1040597.047846458, "data": {"drum": "hihat_pedal", "bar": 1, "beat": 2.5, "error_ms": -13.1, "grade": "perfect", "song_time": 0.6297}}
+{"type": "judgment.note", "src": "chris", "seq": 122, "t": 1040597.047917583, "data": {"drum": "ride", "bar": 1, "beat": 2.5, "error_ms": -13.1, "grade": "perfect", "song_time": 0.6297}}
+{"type": "judgment.note", "src": "chris", "seq": 123, "t": 1040597.148446791, "data": {"drum": "snare", "bar": 1, "beat": 2.75, "error_ms": -16.6, "grade": "good", "song_time": 0.7334}}
+{"type": "judgment.note", "src": "chris", "seq": 124, "t": 1040597.288855416, "data": {"drum": "kick", "bar": 1, "beat": 3.0, "error_ms": 13.6, "grade": "perfect", "song_time": 0.8708}}
+{"type": "judgment.note", "src": "chris", "seq": 125, "t": 1040597.289138041, "data": {"drum": "ride_bell", "bar": 1, "beat": 3.0, "error_ms": 13.6, "grade": "perfect", "song_time": 0.8708}}
+{"type": "judgment.note", "src": "chris", "seq": 126, "t": 1040597.368873083, "data": {"drum": "snare", "bar": 1, "beat": 3.25, "error_ms": -6.0, "grade": "perfect", "song_time": 0.9583}}
+{"type": "judgment.note", "src": "chris", "seq": 127, "t": 1040597.489233583, "data": {"drum": "snare", "bar": 1, "beat": 3.5, "error_ms": 6.9, "grade": "perfect", "song_time": 1.0783}}
+{"type": "judgment.note", "src": "chris", "seq": 128, "t": 1040597.489496416, "data": {"drum": "hihat_pedal", "bar": 1, "beat": 3.5, "error_ms": 6.9, "grade": "perfect", "song_time": 1.0783}}
+{"type": "judgment.note", "src": "chris", "seq": 129, "t": 1040597.489603666, "data": {"drum": "ride", "bar": 1, "beat": 3.5, "error_ms": 6.9, "grade": "perfect", "song_time": 1.0783}}
+{"type": "judgment.note", "src": "chris", "seq": 130, "t": 1040597.589008666, "data": {"drum": "kick", "bar": 1, "beat": 3.75, "error_ms": -5.2, "grade": "perfect", "song_time": 1.1733}}
+{"type": "judgment.note", "src": "chris", "seq": 131, "t": 1040597.698822791, "data": {"drum": "snare", "bar": 1, "beat": 4.0, "error_ms": -7.0, "grade": "perfect", "song_time": 1.2787}}
+{"type": "judgment.note", "src": "chris", "seq": 132, "t": 1040597.918949875, "data": {"drum": "kick", "bar": 1, "beat": 4.5, "error_ms": -1.7, "grade": "perfect", "song_time": 1.4983}}
+{"type": "judgment.note", "src": "chris", "seq": 133, "t": 1040597.919200083, "data": {"drum": "hihat_pedal", "bar": 1, "beat": 4.5, "error_ms": -1.7, "grade": "perfect", "song_time": 1.4983}}
+{"type": "judgment.note", "src": "chris", "seq": 134, "t": 1040597.919314708, "data": {"drum": "ride", "bar": 1, "beat": 4.5, "error_ms": -1.7, "grade": "perfect", "song_time": 1.4983}}
+{"type": "judgment.note", "src": "chris", "seq": 135, "t": 1040598.018856958, "data": {"drum": "snare", "bar": 1, "beat": 4.75, "error_ms": -8.8, "grade": "perfect", "song_time": 1.5983}}
+{"type": "session.state", "src": "chris", "seq": 136, "t": 1040598.139166958, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 2, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 137, "t": 1040598.139452416, "data": {"drum": "kick", "bar": 2, "beat": 1.0, "error_ms": 7.6, "grade": "perfect", "song_time": 1.7219}}
+{"type": "judgment.note", "src": "chris", "seq": 138, "t": 1040598.13957275, "data": {"drum": "ride_bell", "bar": 2, "beat": 1.0, "error_ms": 7.6, "grade": "perfect", "song_time": 1.7219}}
+{"type": "judgment.note", "src": "chris", "seq": 139, "t": 1040598.218445291, "data": {"drum": "snare", "bar": 2, "beat": 1.25, "error_ms": -13.1, "grade": "perfect", "song_time": 1.8083}}
+{"type": "judgment.note", "src": "chris", "seq": 140, "t": 1040598.338575833, "data": {"drum": "snare", "bar": 2, "beat": 1.5, "error_ms": -9.4, "grade": "perfect", "song_time": 1.9191}}
+{"type": "judgment.note", "src": "chris", "seq": 141, "t": 1040598.338792166, "data": {"drum": "hihat_pedal", "bar": 2, "beat": 1.5, "error_ms": -9.4, "grade": "perfect", "song_time": 1.9191}}
+{"type": "judgment.note", "src": "chris", "seq": 142, "t": 1040598.338881875, "data": {"drum": "ride", "bar": 2, "beat": 1.5, "error_ms": -9.4, "grade": "perfect", "song_time": 1.9191}}
+{"type": "fletcher.state", "src": "aaron", "seq": 24, "t": 1040598.386283791, "data": {"mood": "watching", "anger": 0.25, "action": "conduct", "look_at": "drummer"}}
+{"type": "judgment.note", "src": "chris", "seq": 143, "t": 1040598.4487775, "data": {"drum": "kick", "bar": 2, "beat": 1.75, "error_ms": -2.4, "grade": "perfect", "song_time": 2.0333}}
+{"type": "judgment.note", "src": "chris", "seq": 144, "t": 1040598.669013375, "data": {"drum": "ride_bell", "bar": 2, "beat": 2.0, "error_ms": null, "grade": "miss", "song_time": 2.1429}}
+{"type": "judgment.note", "src": "chris", "seq": 145, "t": 1040598.669216375, "data": {"drum": "snare", "bar": 2, "beat": 2.25, "error_ms": 3.4, "grade": "perfect", "song_time": 2.2534}}
+{"type": "judgment.note", "src": "chris", "seq": 146, "t": 1040598.768289583, "data": {"drum": "kick", "bar": 2, "beat": 2.5, "error_ms": -1.6, "grade": "perfect", "song_time": 2.3555}}
+{"type": "judgment.note", "src": "chris", "seq": 147, "t": 1040598.768548, "data": {"drum": "hihat_pedal", "bar": 2, "beat": 2.5, "error_ms": -1.6, "grade": "perfect", "song_time": 2.3555}}
+{"type": "judgment.note", "src": "chris", "seq": 148, "t": 1040598.768683916, "data": {"drum": "ride", "bar": 2, "beat": 2.5, "error_ms": -1.6, "grade": "perfect", "song_time": 2.3555}}
+{"type": "judgment.note", "src": "chris", "seq": 149, "t": 1040598.867323, "data": {"drum": "snare", "bar": 2, "beat": 2.75, "error_ms": -11.0, "grade": "perfect", "song_time": 2.4533}}
+{"type": "judgment.note", "src": "chris", "seq": 150, "t": 1040598.988902541, "data": {"drum": "kick", "bar": 2, "beat": 3.0, "error_ms": 3.9, "grade": "perfect", "song_time": 2.5753}}
+{"type": "judgment.note", "src": "chris", "seq": 151, "t": 1040598.989173916, "data": {"drum": "ride_bell", "bar": 2, "beat": 3.0, "error_ms": 3.9, "grade": "perfect", "song_time": 2.5753}}
+{"type": "judgment.note", "src": "chris", "seq": 152, "t": 1040599.0892775, "data": {"drum": "snare", "bar": 2, "beat": 3.25, "error_ms": -10.2, "grade": "perfect", "song_time": 2.6684}}
+{"type": "judgment.note", "src": "chris", "seq": 153, "t": 1040599.198350125, "data": {"drum": "snare", "bar": 2, "beat": 3.5, "error_ms": -2.9, "grade": "perfect", "song_time": 2.7828}}
+{"type": "judgment.note", "src": "chris", "seq": 154, "t": 1040599.198494083, "data": {"drum": "hihat_pedal", "bar": 2, "beat": 3.5, "error_ms": -2.9, "grade": "perfect", "song_time": 2.7828}}
+{"type": "judgment.note", "src": "chris", "seq": 155, "t": 1040599.198544041, "data": {"drum": "ride", "bar": 2, "beat": 3.5, "error_ms": -2.9, "grade": "perfect", "song_time": 2.7828}}
+{"type": "judgment.note", "src": "chris", "seq": 156, "t": 1040599.298894291, "data": {"drum": "kick", "bar": 2, "beat": 3.75, "error_ms": -9.0, "grade": "perfect", "song_time": 2.8838}}
+{"type": "judgment.note", "src": "chris", "seq": 157, "t": 1040599.299143375, "data": {"drum": "ride", "bar": 2, "beat": 3.75, "error_ms": -9.0, "grade": "perfect", "song_time": 2.8838}}
+{"type": "judgment.note", "src": "chris", "seq": 158, "t": 1040599.407785416, "data": {"drum": "snare", "bar": 2, "beat": 4.0, "error_ms": -10.8, "grade": "perfect", "song_time": 2.9892}}
+{"type": "judgment.note", "src": "chris", "seq": 159, "t": 1040599.40804675, "data": {"drum": "ride_bell", "bar": 2, "beat": 4.0, "error_ms": -10.8, "grade": "perfect", "song_time": 2.9892}}
+{"type": "judgment.note", "src": "chris", "seq": 160, "t": 1040599.628943416, "data": {"drum": "kick", "bar": 2, "beat": 4.5, "error_ms": -2.3, "grade": "perfect", "song_time": 3.212}}
+{"type": "judgment.note", "src": "chris", "seq": 161, "t": 1040599.629206333, "data": {"drum": "hihat_pedal", "bar": 2, "beat": 4.5, "error_ms": -2.3, "grade": "perfect", "song_time": 3.212}}
+{"type": "judgment.note", "src": "chris", "seq": 162, "t": 1040599.629318458, "data": {"drum": "ride", "bar": 2, "beat": 4.5, "error_ms": -2.3, "grade": "perfect", "song_time": 3.212}}
+{"type": "judgment.note", "src": "chris", "seq": 163, "t": 1040599.718883958, "data": {"drum": "snare", "bar": 2, "beat": 4.75, "error_ms": -18.1, "grade": "good", "song_time": 3.3033}}
+{"type": "session.state", "src": "chris", "seq": 164, "t": 1040599.848786666, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 3, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 165, "t": 1040599.849000708, "data": {"drum": "kick", "bar": 3, "beat": 1.0, "error_ms": 4.4, "grade": "perfect", "song_time": 3.433}}
+{"type": "judgment.note", "src": "chris", "seq": 166, "t": 1040599.8490765, "data": {"drum": "ride_bell", "bar": 3, "beat": 1.0, "error_ms": 4.4, "grade": "perfect", "song_time": 3.433}}
+{"type": "judgment.note", "src": "chris", "seq": 167, "t": 1040599.9373145, "data": {"drum": "tom_high", "bar": 3, "beat": 1.25, "error_ms": -7.4, "grade": "perfect", "song_time": 3.5283}}
+{"type": "judgment.note", "src": "chris", "seq": 168, "t": 1040600.058909, "data": {"drum": "hihat_pedal", "bar": 3, "beat": 1.5, "error_ms": 1.8, "grade": "perfect", "song_time": 3.6447}}
+{"type": "judgment.note", "src": "chris", "seq": 169, "t": 1040600.059126375, "data": {"drum": "tom_high", "bar": 3, "beat": 1.5, "error_ms": 1.8, "grade": "perfect", "song_time": 3.6447}}
+{"type": "judgment.note", "src": "chris", "seq": 170, "t": 1040600.059212541, "data": {"drum": "ride", "bar": 3, "beat": 1.5, "error_ms": 1.8, "grade": "perfect", "song_time": 3.6447}}
+{"type": "judgment.note", "src": "chris", "seq": 171, "t": 1040600.158743708, "data": {"drum": "kick", "bar": 3, "beat": 1.75, "error_ms": -6.6, "grade": "perfect", "song_time": 3.7434}}
+{"type": "judgment.note", "src": "chris", "seq": 172, "t": 1040600.278682708, "data": {"drum": "ride_bell", "bar": 3, "beat": 2.0, "error_ms": 5.4, "grade": "perfect", "song_time": 3.8626}}
+{"type": "judgment.note", "src": "chris", "seq": 173, "t": 1040600.378808875, "data": {"drum": "snare", "bar": 3, "beat": 2.25, "error_ms": -5.9, "grade": "perfect", "song_time": 3.9583}}
+{"type": "judgment.note", "src": "chris", "seq": 174, "t": 1040600.488398625, "data": {"drum": "kick", "bar": 3, "beat": 2.5, "error_ms": -0.7, "grade": "perfect", "song_time": 4.0707}}
+{"type": "judgment.note", "src": "chris", "seq": 175, "t": 1040600.48866525, "data": {"drum": "hihat_pedal", "bar": 3, "beat": 2.5, "error_ms": -0.7, "grade": "perfect", "song_time": 4.0707}}
+{"type": "judgment.note", "src": "chris", "seq": 176, "t": 1040600.488765791, "data": {"drum": "ride", "bar": 3, "beat": 2.5, "error_ms": -0.7, "grade": "perfect", "song_time": 4.0707}}
+{"type": "judgment.note", "src": "chris", "seq": 177, "t": 1040600.588958166, "data": {"drum": "snare", "bar": 3, "beat": 2.75, "error_ms": -10.2, "grade": "perfect", "song_time": 4.1683}}
+{"type": "judgment.note", "src": "chris", "seq": 178, "t": 1040600.709100583, "data": {"drum": "kick", "bar": 3, "beat": 3.0, "error_ms": 7.5, "grade": "perfect", "song_time": 4.2932}}
+{"type": "judgment.note", "src": "chris", "seq": 179, "t": 1040600.709335708, "data": {"drum": "ride_bell", "bar": 3, "beat": 3.0, "error_ms": 7.5, "grade": "perfect", "song_time": 4.2932}}
+{"type": "judgment.note", "src": "chris", "seq": 180, "t": 1040600.808754041, "data": {"drum": "snare", "bar": 3, "beat": 3.25, "error_ms": 0.5, "grade": "perfect", "song_time": 4.3933}}
+{"type": "judgment.note", "src": "chris", "seq": 181, "t": 1040600.919065583, "data": {"drum": "snare", "bar": 3, "beat": 3.5, "error_ms": 3.6, "grade": "perfect", "song_time": 4.5036}}
+{"type": "judgment.note", "src": "chris", "seq": 182, "t": 1040600.919336625, "data": {"drum": "hihat_pedal", "bar": 3, "beat": 3.5, "error_ms": 3.6, "grade": "perfect", "song_time": 4.5036}}
+{"type": "judgment.note", "src": "chris", "seq": 183, "t": 1040600.919451208, "data": {"drum": "ride", "bar": 3, "beat": 3.5, "error_ms": 3.6, "grade": "perfect", "song_time": 4.5036}}
+{"type": "judgment.note", "src": "chris", "seq": 184, "t": 1040601.018837708, "data": {"drum": "kick", "bar": 3, "beat": 3.75, "error_ms": -3.7, "grade": "perfect", "song_time": 4.6035}}
+{"type": "judgment.note", "src": "chris", "seq": 185, "t": 1040601.019101708, "data": {"drum": "ride", "bar": 3, "beat": 3.75, "error_ms": -3.7, "grade": "perfect", "song_time": 4.6035}}
+{"type": "judgment.note", "src": "chris", "seq": 186, "t": 1040601.127533708, "data": {"drum": "snare", "bar": 3, "beat": 4.0, "error_ms": 2.2, "grade": "perfect", "song_time": 4.7165}}
+{"type": "judgment.note", "src": "chris", "seq": 187, "t": 1040601.127726583, "data": {"drum": "ride_bell", "bar": 3, "beat": 4.0, "error_ms": 2.2, "grade": "perfect", "song_time": 4.7165}}
+{"type": "judgment.note", "src": "chris", "seq": 188, "t": 1040601.348991875, "data": {"drum": "kick", "bar": 3, "beat": 4.5, "error_ms": 1.7, "grade": "perfect", "song_time": 4.9303}}
+{"type": "judgment.note", "src": "chris", "seq": 189, "t": 1040601.34926275, "data": {"drum": "hihat_pedal", "bar": 3, "beat": 4.5, "error_ms": 1.7, "grade": "perfect", "song_time": 4.9303}}
+{"type": "judgment.note", "src": "chris", "seq": 190, "t": 1040601.349368583, "data": {"drum": "ride", "bar": 3, "beat": 4.5, "error_ms": 1.7, "grade": "perfect", "song_time": 4.9303}}
+{"type": "judgment.note", "src": "chris", "seq": 191, "t": 1040601.448552666, "data": {"drum": "snare", "bar": 3, "beat": 4.75, "error_ms": -2.3, "grade": "perfect", "song_time": 5.0334}}
+{"type": "session.state", "src": "chris", "seq": 192, "t": 1040601.557894458, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 4, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 193, "t": 1040601.55802775, "data": {"drum": "kick", "bar": 4, "beat": 1.0, "error_ms": -3.3, "grade": "perfect", "song_time": 5.1396}}
+{"type": "judgment.note", "src": "chris", "seq": 194, "t": 1040601.558162625, "data": {"drum": "ride_bell", "bar": 4, "beat": 1.0, "error_ms": -3.3, "grade": "perfect", "song_time": 5.1396}}
+{"type": "fletcher.state", "src": "aaron", "seq": 25, "t": 1040601.559524, "data": {"mood": "calm", "anger": 0.16, "action": "conduct", "look_at": "drummer"}}
+{"type": "judgment.note", "src": "chris", "seq": 195, "t": 1040601.658068083, "data": {"drum": "snare", "bar": 4, "beat": 1.25, "error_ms": -11.7, "grade": "perfect", "song_time": 5.2383}}
+{"type": "judgment.note", "src": "chris", "seq": 196, "t": 1040601.768870375, "data": {"drum": "hihat_pedal", "bar": 4, "beat": 1.5, "error_ms": -6.0, "grade": "perfect", "song_time": 5.3511}}
+{"type": "judgment.note", "src": "chris", "seq": 197, "t": 1040601.769036125, "data": {"drum": "ride", "bar": 4, "beat": 1.5, "error_ms": -6.0, "grade": "perfect", "song_time": 5.3511}}
+{"type": "judgment.note", "src": "chris", "seq": 198, "t": 1040601.868788333, "data": {"drum": "kick", "bar": 4, "beat": 1.75, "error_ms": -11.0, "grade": "perfect", "song_time": 5.4533}}
+{"type": "judgment.note", "src": "chris", "seq": 199, "t": 1040601.988995125, "data": {"drum": "ride_bell", "bar": 4, "beat": 2.0, "error_ms": 1.0, "grade": "perfect", "song_time": 5.5724}}
+{"type": "judgment.note", "src": "chris", "seq": 200, "t": 1040602.0783415, "data": {"drum": "snare", "bar": 4, "beat": 2.25, "error_ms": -10.2, "grade": "perfect", "song_time": 5.6683}}
+{"type": "judgment.note", "src": "chris", "seq": 201, "t": 1040602.198296958, "data": {"drum": "kick", "bar": 4, "beat": 2.5, "error_ms": -2.7, "grade": "perfect", "song_time": 5.783}}
+{"type": "judgment.note", "src": "chris", "seq": 202, "t": 1040602.198405208, "data": {"drum": "hihat_pedal", "bar": 4, "beat": 2.5, "error_ms": -2.7, "grade": "perfect", "song_time": 5.783}}
+{"type": "judgment.note", "src": "chris", "seq": 203, "t": 1040602.198452583, "data": {"drum": "ride", "bar": 4, "beat": 2.5, "error_ms": -2.7, "grade": "perfect", "song_time": 5.783}}
+{"type": "judgment.note", "src": "chris", "seq": 204, "t": 1040602.308572875, "data": {"drum": "snare", "bar": 4, "beat": 2.75, "error_ms": 0.5, "grade": "perfect", "song_time": 5.8934}}
+{"type": "judgment.note", "src": "chris", "seq": 205, "t": 1040602.418939833, "data": {"drum": "kick", "bar": 4, "beat": 3.0, "error_ms": -1.6, "grade": "perfect", "song_time": 5.9984}}
+{"type": "judgment.note", "src": "chris", "seq": 206, "t": 1040602.419093875, "data": {"drum": "ride_bell", "bar": 4, "beat": 3.0, "error_ms": -1.6, "grade": "perfect", "song_time": 5.9984}}
+{"type": "judgment.note", "src": "chris", "seq": 207, "t": 1040602.507348208, "data": {"drum": "snare", "bar": 4, "beat": 3.25, "error_ms": -8.8, "grade": "perfect", "song_time": 6.0983}}
+{"type": "judgment.note", "src": "chris", "seq": 208, "t": 1040602.638621291, "data": {"drum": "snare", "bar": 4, "beat": 3.5, "error_ms": 5.6, "grade": "perfect", "song_time": 6.2199}}
+{"type": "judgment.note", "src": "chris", "seq": 209, "t": 1040602.638804083, "data": {"drum": "hihat_pedal", "bar": 4, "beat": 3.5, "error_ms": 5.6, "grade": "perfect", "song_time": 6.2199}}
+{"type": "judgment.note", "src": "chris", "seq": 210, "t": 1040602.638875, "data": {"drum": "ride", "bar": 4, "beat": 3.5, "error_ms": 5.6, "grade": "perfect", "song_time": 6.2199}}
+{"type": "judgment.note", "src": "chris", "seq": 211, "t": 1040602.727901625, "data": {"drum": "kick", "bar": 4, "beat": 3.75, "error_ms": -8.1, "grade": "perfect", "song_time": 6.3133}}
+{"type": "judgment.note", "src": "chris", "seq": 212, "t": 1040602.8475545, "data": {"drum": "snare", "bar": 4, "beat": 4.0, "error_ms": 3.4, "grade": "perfect", "song_time": 6.432}}
+{"type": "judgment.note", "src": "chris", "seq": 213, "t": 1040602.847816583, "data": {"drum": "ride_bell", "bar": 4, "beat": 4.0, "error_ms": 3.4, "grade": "perfect", "song_time": 6.432}}
+{"type": "judgment.note", "src": "chris", "seq": 214, "t": 1040603.05853325, "data": {"drum": "kick", "bar": 4, "beat": 4.5, "error_ms": 0.6, "grade": "perfect", "song_time": 6.6435}}
+{"type": "judgment.note", "src": "chris", "seq": 215, "t": 1040603.058735708, "data": {"drum": "hihat_pedal", "bar": 4, "beat": 4.5, "error_ms": 0.6, "grade": "perfect", "song_time": 6.6435}}
+{"type": "judgment.note", "src": "chris", "seq": 216, "t": 1040603.058771833, "data": {"drum": "ride", "bar": 4, "beat": 4.5, "error_ms": 0.6, "grade": "perfect", "song_time": 6.6435}}
+{"type": "session.state", "src": "chris", "seq": 217, "t": 1040603.278633083, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 5, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 218, "t": 1040603.279026458, "data": {"drum": "kick", "bar": 5, "beat": 1.0, "error_ms": 6.2, "grade": "perfect", "song_time": 6.8633}}
+{"type": "judgment.note", "src": "chris", "seq": 219, "t": 1040603.279107125, "data": {"drum": "tom_high", "bar": 5, "beat": 1.0, "error_ms": 6.2, "grade": "perfect", "song_time": 6.8633}}
+{"type": "fletcher.state", "src": "aaron", "seq": 26, "t": 1040603.280564125, "data": {"mood": "approving", "anger": 0.06, "action": "nod", "look_at": "drummer", "gesture": "ap_nod", "utterance_id": "u-0005", "priority": 1, "at_s": -0.022}}
+{"type": "fletcher.speech", "src": "aaron", "seq": 27, "t": 1040603.280925833, "data": {"utterance_id": "u-0005", "text": "...Better.", "clip_id": "praise_2", "sample_rate": 24000}}
+{"type": "judgment.note", "src": "chris", "seq": 220, "t": 1040603.368443333, "data": {"drum": "tom_high", "bar": 5, "beat": 1.25, "error_ms": -11.0, "grade": "perfect", "song_time": 6.9533}}
+{"type": "judgment.note", "src": "chris", "seq": 221, "t": 1040603.487002625, "data": {"drum": "hihat_pedal", "bar": 5, "beat": 1.5, "error_ms": 1.4, "grade": "perfect", "song_time": 7.0728}}
+{"type": "judgment.note", "src": "chris", "seq": 222, "t": 1040603.487252208, "data": {"drum": "tom_high", "bar": 5, "beat": 1.5, "error_ms": 1.4, "grade": "perfect", "song_time": 7.0728}}
+{"type": "judgment.note", "src": "chris", "seq": 223, "t": 1040603.579411333, "data": {"drum": "kick", "bar": 5, "beat": 1.75, "error_ms": -10.2, "grade": "perfect", "song_time": 7.1683}}
+{"type": "judgment.note", "src": "chris", "seq": 224, "t": 1040603.579644958, "data": {"drum": "tom_high", "bar": 5, "beat": 1.75, "error_ms": -10.2, "grade": "perfect", "song_time": 7.1683}}
+{"type": "judgment.note", "src": "chris", "seq": 225, "t": 1040603.79876475, "data": {"drum": "ride_bell", "bar": 5, "beat": 2.0, "error_ms": null, "grade": "miss", "song_time": 7.2857}}
+{"type": "judgment.note", "src": "chris", "seq": 226, "t": 1040603.799034916, "data": {"drum": "snare", "bar": 5, "beat": 2.25, "error_ms": -9.5, "grade": "perfect", "song_time": 7.3833}}
+{"type": "judgment.note", "src": "chris", "seq": 227, "t": 1040603.919149166, "data": {"drum": "kick", "bar": 5, "beat": 2.5, "error_ms": 3.0, "grade": "perfect", "song_time": 7.503}}
+{"type": "judgment.note", "src": "chris", "seq": 228, "t": 1040603.919361875, "data": {"drum": "hihat_pedal", "bar": 5, "beat": 2.5, "error_ms": 3.0, "grade": "perfect", "song_time": 7.503}}
+{"type": "judgment.note", "src": "chris", "seq": 229, "t": 1040603.919473041, "data": {"drum": "ride_edge", "bar": 5, "beat": 2.5, "error_ms": 3.0, "grade": "perfect", "song_time": 7.503}}
+{"type": "judgment.note", "src": "chris", "seq": 230, "t": 1040604.017223625, "data": {"drum": "snare", "bar": 5, "beat": 2.75, "error_ms": -3.7, "grade": "perfect", "song_time": 7.6034}}
+{"type": "judgment.note", "src": "chris", "seq": 231, "t": 1040604.229447625, "data": {"drum": "hihat_pedal", "bar": 5, "beat": 3.0, "error_ms": null, "grade": "miss", "song_time": 7.7143}}
+{"type": "judgment.note", "src": "chris", "seq": 232, "t": 1040604.229794041, "data": {"drum": "ride_bell", "bar": 5, "beat": 3.0, "error_ms": null, "grade": "miss", "song_time": 7.7143}}
+{"type": "judgment.note", "src": "chris", "seq": 233, "t": 1040604.229888833, "data": {"drum": "snare", "bar": 5, "beat": 3.25, "error_ms": -8.1, "grade": "perfect", "song_time": 7.8133}}
+{"type": "fletcher.state", "src": "aaron", "seq": 28, "t": 1040604.230911291, "data": {"mood": "approving", "anger": 0.24, "action": "nod", "look_at": "drummer", "gesture": "t4_shout", "utterance_id": "u-0006", "priority": 1, "at_s": 0.177}}
+{"type": "fletcher.speech", "src": "aaron", "seq": 29, "t": 1040604.231137666, "data": {"utterance_id": "u-0006", "text": "No, no, no.", "clip_id": "no_2", "sample_rate": 24000}}
+{"type": "judgment.note", "src": "chris", "seq": 234, "t": 1040604.336868208, "data": {"drum": "snare", "bar": 5, "beat": 3.5, "error_ms": -5.9, "grade": "perfect", "song_time": 7.9226}}
+{"type": "judgment.note", "src": "chris", "seq": 235, "t": 1040604.337056833, "data": {"drum": "ride", "bar": 5, "beat": 3.5, "error_ms": -5.9, "grade": "perfect", "song_time": 7.9226}}
+{"type": "judgment.note", "src": "chris", "seq": 236, "t": 1040604.438666708, "data": {"drum": "kick", "bar": 5, "beat": 3.75, "error_ms": -7.4, "grade": "perfect", "song_time": 8.0283}}
+{"type": "judgment.note", "src": "chris", "seq": 237, "t": 1040604.558465916, "data": {"drum": "snare", "bar": 5, "beat": 4.0, "error_ms": 0.4, "grade": "perfect", "song_time": 8.1433}}
+{"type": "judgment.note", "src": "chris", "seq": 238, "t": 1040604.558651375, "data": {"drum": "ride", "bar": 5, "beat": 4.0, "error_ms": 0.4, "grade": "perfect", "song_time": 8.1433}}
+{"type": "judgment.note", "src": "chris", "seq": 239, "t": 1040604.768494625, "data": {"drum": "kick", "bar": 5, "beat": 4.5, "error_ms": -0.8, "grade": "perfect", "song_time": 8.3564}}
+{"type": "session.state", "src": "chris", "seq": 240, "t": 1040604.988186, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 6, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 241, "t": 1040604.988455375, "data": {"drum": "kick", "bar": 6, "beat": 1.0, "error_ms": 5.7, "grade": "perfect", "song_time": 8.5771}}
+{"type": "judgment.note", "src": "chris", "seq": 242, "t": 1040604.988540583, "data": {"drum": "ride", "bar": 6, "beat": 1.0, "error_ms": 5.7, "grade": "perfect", "song_time": 8.5771}}
+{"type": "judgment.note", "src": "chris", "seq": 243, "t": 1040605.058553583, "data": {"drum": "tom_high", "bar": 6, "beat": 1.167, "error_ms": 0.5, "grade": "perfect", "song_time": 8.6433}}
+{"type": "judgment.note", "src": "chris", "seq": 244, "t": 1040605.130025916, "data": {"drum": "tom_high", "bar": 6, "beat": 1.333, "error_ms": -0.9, "grade": "perfect", "song_time": 8.7134}}
+{"type": "judgment.note", "src": "chris", "seq": 245, "t": 1040605.19728025, "data": {"drum": "hihat_pedal", "bar": 6, "beat": 1.5, "error_ms": -1.6, "grade": "perfect", "song_time": 8.7841}}
+{"type": "judgment.note", "src": "chris", "seq": 246, "t": 1040605.197613958, "data": {"drum": "tom_high", "bar": 6, "beat": 1.5, "error_ms": -1.6, "grade": "perfect", "song_time": 8.7841}}
+{"type": "judgment.note", "src": "chris", "seq": 247, "t": 1040605.298088416, "data": {"drum": "kick", "bar": 6, "beat": 1.75, "error_ms": -9.5, "grade": "perfect", "song_time": 8.8833}}
+{"type": "judgment.note", "src": "chris", "seq": 248, "t": 1040605.29826875, "data": {"drum": "tom_high", "bar": 6, "beat": 1.75, "error_ms": -9.5, "grade": "perfect", "song_time": 8.8833}}
+{"type": "judgment.note", "src": "chris", "seq": 249, "t": 1040605.408208875, "data": {"drum": "tom_high", "bar": 6, "beat": 2.0, "error_ms": -11.5, "grade": "perfect", "song_time": 8.9885}}
+{"type": "judgment.note", "src": "chris", "seq": 250, "t": 1040605.629046541, "data": {"drum": "kick", "bar": 6, "beat": 2.5, "error_ms": -1.0, "grade": "perfect", "song_time": 9.2133}}
+{"type": "judgment.note", "src": "chris", "seq": 251, "t": 1040605.629916958, "data": {"drum": "hihat_pedal", "bar": 6, "beat": 2.5, "error_ms": -1.0, "grade": "perfect", "song_time": 9.2133}}
+{"type": "judgment.note", "src": "chris", "seq": 252, "t": 1040605.630109208, "data": {"drum": "ride", "bar": 6, "beat": 2.5, "error_ms": -1.0, "grade": "perfect", "song_time": 9.2133}}
+{"type": "judgment.note", "src": "chris", "seq": 253, "t": 1040605.719388375, "data": {"drum": "snare", "bar": 6, "beat": 2.75, "error_ms": -13.1, "grade": "perfect", "song_time": 9.3083}}
+{"type": "judgment.note", "src": "chris", "seq": 254, "t": 1040605.838580916, "data": {"drum": "kick", "bar": 6, "beat": 3.0, "error_ms": -5.1, "grade": "perfect", "song_time": 9.4235}}
+{"type": "judgment.note", "src": "chris", "seq": 255, "t": 1040605.93755525, "data": {"drum": "snare", "bar": 6, "beat": 3.25, "error_ms": -8.3, "grade": "perfect", "song_time": 9.5274}}
+{"type": "judgment.note", "src": "chris", "seq": 256, "t": 1040606.158836375, "data": {"drum": "hihat_pedal", "bar": 6, "beat": 3.5, "error_ms": null, "grade": "miss", "song_time": 9.6429}}
+{"type": "judgment.note", "src": "chris", "seq": 257, "t": 1040606.159224458, "data": {"drum": "ride", "bar": 6, "beat": 3.5, "error_ms": null, "grade": "miss", "song_time": 9.6429}}
+{"type": "judgment.note", "src": "chris", "seq": 258, "t": 1040606.159357541, "data": {"drum": "kick", "bar": 6, "beat": 3.75, "error_ms": -1.7, "grade": "perfect", "song_time": 9.7483}}
+{"type": "judgment.note", "src": "chris", "seq": 259, "t": 1040606.268855375, "data": {"drum": "snare", "bar": 6, "beat": 4.0, "error_ms": -2.5, "grade": "perfect", "song_time": 9.8546}}
+{"type": "judgment.note", "src": "chris", "seq": 260, "t": 1040606.269018625, "data": {"drum": "ride", "bar": 6, "beat": 4.0, "error_ms": -2.5, "grade": "perfect", "song_time": 9.8546}}
+{"type": "fletcher.state", "src": "aaron", "seq": 30, "t": 1040606.470443708, "data": {"mood": "irritated", "anger": 0.5, "action": "glare", "look_at": "drummer"}}
+{"type": "judgment.note", "src": "chris", "seq": 261, "t": 1040606.489293625, "data": {"drum": "kick", "bar": 6, "beat": 4.5, "error_ms": 1.5, "grade": "perfect", "song_time": 10.0729}}
+{"type": "judgment.note", "src": "chris", "seq": 262, "t": 1040606.489628833, "data": {"drum": "hihat_pedal", "bar": 6, "beat": 4.5, "error_ms": 1.5, "grade": "perfect", "song_time": 10.0729}}
+{"type": "judgment.note", "src": "chris", "seq": 263, "t": 1040606.4897265, "data": {"drum": "ride", "bar": 6, "beat": 4.5, "error_ms": 1.5, "grade": "perfect", "song_time": 10.0729}}
+{"type": "judgment.note", "src": "chris", "seq": 264, "t": 1040606.578933375, "data": {"drum": "snare", "bar": 6, "beat": 4.75, "error_ms": -10.2, "grade": "perfect", "song_time": 10.1683}}
+{"type": "session.state", "src": "chris", "seq": 265, "t": 1040606.698537416, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 7, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 266, "t": 1040606.698731541, "data": {"drum": "kick", "bar": 7, "beat": 1.0, "error_ms": -2.4, "grade": "perfect", "song_time": 10.2833}}
+{"type": "judgment.note", "src": "chris", "seq": 267, "t": 1040606.8080605, "data": {"drum": "tom_high", "bar": 7, "beat": 1.25, "error_ms": -1.6, "grade": "perfect", "song_time": 10.3913}}
+{"type": "judgment.note", "src": "chris", "seq": 268, "t": 1040606.908877916, "data": {"drum": "hihat_pedal", "bar": 7, "beat": 1.5, "error_ms": -1.7, "grade": "perfect", "song_time": 10.4983}}
+{"type": "judgment.note", "src": "chris", "seq": 269, "t": 1040606.909142708, "data": {"drum": "tom_high", "bar": 7, "beat": 1.5, "error_ms": -1.7, "grade": "perfect", "song_time": 10.4983}}
+{"type": "judgment.note", "src": "chris", "seq": 270, "t": 1040606.909209375, "data": {"drum": "ride", "bar": 7, "beat": 1.5, "error_ms": -1.7, "grade": "perfect", "song_time": 10.4983}}
+{"type": "judgment.note", "src": "chris", "seq": 271, "t": 1040607.018718833, "data": {"drum": "kick", "bar": 7, "beat": 1.75, "error_ms": 1.2, "grade": "perfect", "song_time": 10.6083}}
+{"type": "judgment.note", "src": "chris", "seq": 272, "t": 1040607.128336333, "data": {"drum": "ride_bell", "bar": 7, "beat": 2.0, "error_ms": 2.5, "grade": "perfect", "song_time": 10.7168}}
+{"type": "judgment.note", "src": "chris", "seq": 273, "t": 1040607.218721708, "data": {"drum": "snare", "bar": 7, "beat": 2.25, "error_ms": -18.1, "grade": "good", "song_time": 10.8033}}
+{"type": "judgment.note", "src": "chris", "seq": 274, "t": 1040607.338341541, "data": {"drum": "kick", "bar": 7, "beat": 2.5, "error_ms": -0.7, "grade": "perfect", "song_time": 10.9279}}
+{"type": "judgment.note", "src": "chris", "seq": 275, "t": 1040607.338498333, "data": {"drum": "hihat_pedal", "bar": 7, "beat": 2.5, "error_ms": -0.7, "grade": "perfect", "song_time": 10.9279}}
+{"type": "judgment.note", "src": "chris", "seq": 276, "t": 1040607.338527041, "data": {"drum": "ride", "bar": 7, "beat": 2.5, "error_ms": -0.7, "grade": "perfect", "song_time": 10.9279}}
+{"type": "judgment.note", "src": "chris", "seq": 277, "t": 1040607.436854625, "data": {"drum": "snare", "bar": 7, "beat": 2.75, "error_ms": -12.3, "grade": "perfect", "song_time": 11.0234}}
+{"type": "judgment.note", "src": "chris", "seq": 278, "t": 1040607.558169291, "data": {"drum": "kick", "bar": 7, "beat": 3.0, "error_ms": -4.5, "grade": "perfect", "song_time": 11.1383}}
+{"type": "judgment.note", "src": "chris", "seq": 279, "t": 1040607.648710375, "data": {"drum": "snare", "bar": 7, "beat": 3.25, "error_ms": -13.4, "grade": "perfect", "song_time": 11.2366}}
+{"type": "judgment.note", "src": "chris", "seq": 280, "t": 1040607.76824725, "data": {"drum": "snare", "bar": 7, "beat": 3.5, "error_ms": -7.9, "grade": "perfect", "song_time": 11.3493}}
+{"type": "judgment.note", "src": "chris", "seq": 281, "t": 1040607.768383125, "data": {"drum": "hihat_pedal", "bar": 7, "beat": 3.5, "error_ms": -7.9, "grade": "perfect", "song_time": 11.3493}}
+{"type": "judgment.note", "src": "chris", "seq": 282, "t": 1040607.768430125, "data": {"drum": "ride", "bar": 7, "beat": 3.5, "error_ms": -7.9, "grade": "perfect", "song_time": 11.3493}}
+{"type": "judgment.note", "src": "chris", "seq": 283, "t": 1040607.870502875, "data": {"drum": "kick", "bar": 7, "beat": 3.75, "error_ms": -15.1, "grade": "good", "song_time": 11.4491}}
+{"type": "judgment.note", "src": "chris", "seq": 284, "t": 1040607.870824333, "data": {"drum": "ride", "bar": 7, "beat": 3.75, "error_ms": -15.1, "grade": "good", "song_time": 11.4491}}
+{"type": "judgment.note", "src": "chris", "seq": 285, "t": 1040607.976796208, "data": {"drum": "snare", "bar": 7, "beat": 4.0, "error_ms": -8.1, "grade": "perfect", "song_time": 11.5633}}
+{"type": "judgment.note", "src": "chris", "seq": 286, "t": 1040608.198583416, "data": {"drum": "kick", "bar": 7, "beat": 4.5, "error_ms": -0.6, "grade": "perfect", "song_time": 11.7851}}
+{"type": "judgment.note", "src": "chris", "seq": 287, "t": 1040608.198708666, "data": {"drum": "hihat_pedal", "bar": 7, "beat": 4.5, "error_ms": -0.6, "grade": "perfect", "song_time": 11.7851}}
+{"type": "judgment.note", "src": "chris", "seq": 288, "t": 1040608.198750666, "data": {"drum": "ride", "bar": 7, "beat": 4.5, "error_ms": -0.6, "grade": "perfect", "song_time": 11.7851}}
+{"type": "judgment.note", "src": "chris", "seq": 289, "t": 1040608.288883458, "data": {"drum": "snare", "bar": 7, "beat": 4.75, "error_ms": -19.5, "grade": "good", "song_time": 11.8734}}
+{"type": "session.state", "src": "chris", "seq": 290, "t": 1040608.398162416, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 8, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 291, "t": 1040608.398293666, "data": {"drum": "kick", "bar": 8, "beat": 1.0, "error_ms": -16.6, "grade": "good", "song_time": 11.9834}}
+{"type": "fletcher.state", "src": "aaron", "seq": 31, "t": 1040608.399201833, "data": {"mood": "watching", "anger": 0.42, "action": "conduct", "look_at": "drummer"}}
+{"type": "judgment.note", "src": "chris", "seq": 292, "t": 1040608.488859833, "data": {"drum": "snare", "bar": 8, "beat": 1.25, "error_ms": -28.8, "grade": "good", "song_time": 12.0783}}
+{"type": "judgment.note", "src": "chris", "seq": 293, "t": 1040608.738428958, "data": {"drum": "hihat_pedal", "bar": 8, "beat": 1.5, "error_ms": null, "grade": "miss", "song_time": 12.2143}}
+{"type": "judgment.note", "src": "chris", "seq": 294, "t": 1040608.738633625, "data": {"drum": "ride", "bar": 8, "beat": 1.5, "error_ms": null, "grade": "miss", "song_time": 12.2143}}
+{"type": "judgment.note", "src": "chris", "seq": 295, "t": 1040608.738695458, "data": {"drum": "kick", "bar": 8, "beat": 1.75, "error_ms": 2.0, "grade": "perfect", "song_time": 12.3234}}
+{"type": "fletcher.state", "src": "aaron", "seq": 32, "t": 1040608.740784625, "data": {"mood": "irritated", "anger": 0.6, "action": "glare", "look_at": "drummer"}}
+{"type": "judgment.note", "src": "chris", "seq": 296, "t": 1040608.846980208, "data": {"drum": "ride", "bar": 8, "beat": 2.0, "error_ms": 1.4, "grade": "perfect", "song_time": 12.4299}}
+{"type": "judgment.note", "src": "chris", "seq": 297, "t": 1040608.948725541, "data": {"drum": "tom_high", "bar": 8, "beat": 2.25, "error_ms": -7.4, "grade": "perfect", "song_time": 12.5283}}
+{"type": "judgment.note", "src": "chris", "seq": 298, "t": 1040609.049098666, "data": {"drum": "kick", "bar": 8, "beat": 2.5, "error_ms": -10.1, "grade": "perfect", "song_time": 12.6328}}
+{"type": "judgment.note", "src": "chris", "seq": 299, "t": 1040609.049399, "data": {"drum": "hihat_pedal", "bar": 8, "beat": 2.5, "error_ms": -10.1, "grade": "perfect", "song_time": 12.6328}}
+{"type": "judgment.note", "src": "chris", "seq": 300, "t": 1040609.049496625, "data": {"drum": "tom_high", "bar": 8, "beat": 2.5, "error_ms": -10.1, "grade": "perfect", "song_time": 12.6328}}
+{"type": "judgment.note", "src": "chris", "seq": 301, "t": 1040609.158536541, "data": {"drum": "snare", "bar": 8, "beat": 2.75, "error_ms": -6.6, "grade": "perfect", "song_time": 12.7434}}
+{"type": "judgment.note", "src": "chris", "seq": 302, "t": 1040609.278719666, "data": {"drum": "kick", "bar": 8, "beat": 3.0, "error_ms": 3.4, "grade": "perfect", "song_time": 12.8605}}
+{"type": "judgment.note", "src": "chris", "seq": 303, "t": 1040609.278926333, "data": {"drum": "tom_floor_low", "bar": 8, "beat": 3.0, "error_ms": 3.4, "grade": "perfect", "song_time": 12.8605}}
+{"type": "fletcher.state", "src": "aaron", "seq": 33, "t": 1040609.279947958, "data": {"mood": "irritated", "anger": 0.6, "action": "glare", "look_at": "drummer", "gesture": "t1_flick", "utterance_id": "u-0007", "priority": 1, "at_s": -0.176}}
+{"type": "fletcher.speech", "src": "aaron", "seq": 34, "t": 1040609.280233833, "data": {"utterance_id": "u-0007", "text": "No.", "clip_id": "no_1", "sample_rate": 24000}}
+{"type": "judgment.note", "src": "chris", "seq": 304, "t": 1040609.358483833, "data": {"drum": "tom_floor_low", "bar": 8, "beat": 3.25, "error_ms": -20.9, "grade": "good", "song_time": 12.9434}}
+{"type": "judgment.note", "src": "chris", "seq": 305, "t": 1040609.469075833, "data": {"drum": "snare", "bar": 8, "beat": 3.5, "error_ms": -16.0, "grade": "good", "song_time": 13.0554}}
+{"type": "judgment.note", "src": "chris", "seq": 306, "t": 1040609.588323625, "data": {"drum": "snare", "bar": 8, "beat": 3.75, "error_ms": -3.9, "grade": "perfect", "song_time": 13.1746}}
+{"type": "judgment.note", "src": "chris", "seq": 307, "t": 1040609.687583833, "data": {"drum": "kick", "bar": 8, "beat": 4.0, "error_ms": -12.4, "grade": "perfect", "song_time": 13.2733}}
+{"type": "judgment.note", "src": "chris", "seq": 308, "t": 1040609.687747666, "data": {"drum": "snare", "bar": 8, "beat": 4.0, "error_ms": -12.4, "grade": "perfect", "song_time": 13.2733}}
+{"type": "judgment.note", "src": "chris", "seq": 309, "t": 1040609.808536583, "data": {"drum": "snare", "bar": 8, "beat": 4.25, "error_ms": 3.0, "grade": "perfect", "song_time": 13.3958}}
+{"type": "judgment.note", "src": "chris", "seq": 310, "t": 1040609.917031291, "data": {"drum": "kick", "bar": 8, "beat": 4.5, "error_ms": -1.6, "grade": "perfect", "song_time": 13.4984}}
+{"type": "judgment.note", "src": "chris", "seq": 311, "t": 1040609.917217416, "data": {"drum": "tom_floor_low", "bar": 8, "beat": 4.5, "error_ms": -1.6, "grade": "perfect", "song_time": 13.4984}}
+{"type": "judgment.note", "src": "chris", "seq": 312, "t": 1040609.917254208, "data": {"drum": "hihat_pedal", "bar": 8, "beat": 4.5, "error_ms": -1.6, "grade": "perfect", "song_time": 13.4984}}
+{"type": "judgment.note", "src": "chris", "seq": 313, "t": 1040610.008441625, "data": {"drum": "tom_floor_low", "bar": 8, "beat": 4.75, "error_ms": -13.8, "grade": "perfect", "song_time": 13.5933}}
+{"type": "session.state", "src": "chris", "seq": 314, "t": 1040610.128430291, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 9, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 315, "t": 1040610.12910875, "data": {"drum": "kick", "bar": 9, "beat": 1.0, "error_ms": -0.9, "grade": "perfect", "song_time": 13.7134}}
+{"type": "judgment.note", "src": "chris", "seq": 316, "t": 1040610.129303666, "data": {"drum": "crash", "bar": 9, "beat": 1.0, "error_ms": -0.9, "grade": "perfect", "song_time": 13.7134}}
+{"type": "judgment.note", "src": "chris", "seq": 317, "t": 1040610.338991791, "data": {"drum": "hihat_pedal", "bar": 9, "beat": 1.5, "error_ms": -5.1, "grade": "perfect", "song_time": 13.9235}}
+{"type": "judgment.note", "src": "chris", "seq": 318, "t": 1040610.33926325, "data": {"drum": "ride", "bar": 9, "beat": 1.5, "error_ms": -5.1, "grade": "perfect", "song_time": 13.9235}}
+{"type": "judgment.note", "src": "chris", "seq": 319, "t": 1040610.438569625, "data": {"drum": "kick", "bar": 9, "beat": 1.75, "error_ms": -7.4, "grade": "perfect", "song_time": 14.0283}}
+{"type": "judgment.note", "src": "chris", "seq": 320, "t": 1040610.548872416, "data": {"drum": "ride_bell", "bar": 9, "beat": 2.0, "error_ms": -8.1, "grade": "perfect", "song_time": 14.1348}}
+{"type": "judgment.note", "src": "chris", "seq": 321, "t": 1040610.768609, "data": {"drum": "kick", "bar": 9, "beat": 2.5, "error_ms": -2.0, "grade": "perfect", "song_time": 14.3551}}
+{"type": "judgment.note", "src": "chris", "seq": 322, "t": 1040610.768927041, "data": {"drum": "hihat_pedal", "bar": 9, "beat": 2.5, "error_ms": -2.0, "grade": "perfect", "song_time": 14.3551}}
+{"type": "judgment.note", "src": "chris", "seq": 323, "t": 1040610.769051791, "data": {"drum": "ride", "bar": 9, "beat": 2.5, "error_ms": -2.0, "grade": "perfect", "song_time": 14.3551}}
+{"type": "judgment.note", "src": "chris", "seq": 324, "t": 1040610.868058458, "data": {"drum": "tom_high_mid", "bar": 9, "beat": 2.75, "error_ms": -10.9, "grade": "perfect", "song_time": 14.4533}}
+{"type": "judgment.note", "src": "chris", "seq": 325, "t": 1040610.979313625, "data": {"drum": "kick", "bar": 9, "beat": 3.0, "error_ms": -8.0, "grade": "perfect", "song_time": 14.5635}}
+{"type": "judgment.note", "src": "chris", "seq": 326, "t": 1040610.979755333, "data": {"drum": "snare", "bar": 9, "beat": 3.0, "error_ms": -8.0, "grade": "perfect", "song_time": 14.5635}}
+{"type": "judgment.note", "src": "chris", "seq": 327, "t": 1040610.979853916, "data": {"drum": "snare", "bar": 9, "beat": 3.125, "error_ms": -8.0, "grade": "perfect", "song_time": 14.5635}}
+{"type": "judgment.note", "src": "chris", "seq": 328, "t": 1040611.088866333, "data": {"drum": "snare", "bar": 9, "beat": 3.25, "error_ms": -5.2, "grade": "perfect", "song_time": 14.6734}}
+{"type": "judgment.note", "src": "chris", "seq": 329, "t": 1040611.08911075, "data": {"drum": "snare", "bar": 9, "beat": 3.375, "error_ms": -5.2, "grade": "perfect", "song_time": 14.6734}}
+{"type": "judgment.note", "src": "chris", "seq": 330, "t": 1040611.089184583, "data": {"drum": "hihat_pedal", "bar": 9, "beat": 3.375, "error_ms": -5.2, "grade": "perfect", "song_time": 14.6734}}
+{"type": "judgment.note", "src": "chris", "seq": 331, "t": 1040611.187019333, "data": {"drum": "snare", "bar": 9, "beat": 3.5, "error_ms": -7.4, "grade": "perfect", "song_time": 14.7783}}
+{"type": "judgment.note", "src": "chris", "seq": 332, "t": 1040611.298804125, "data": {"drum": "kick", "bar": 9, "beat": 3.75, "error_ms": -9.5, "grade": "perfect", "song_time": 14.8833}}
+{"type": "judgment.note", "src": "chris", "seq": 333, "t": 1040611.406907708, "data": {"drum": "snare", "bar": 9, "beat": 4.0, "error_ms": -4.8, "grade": "perfect", "song_time": 14.9952}}
+{"type": "judgment.note", "src": "chris", "seq": 334, "t": 1040611.4071235, "data": {"drum": "ride_bell", "bar": 9, "beat": 4.0, "error_ms": -4.8, "grade": "perfect", "song_time": 14.9952}}
+{"type": "judgment.note", "src": "chris", "seq": 335, "t": 1040611.6186165, "data": {"drum": "kick", "bar": 9, "beat": 4.5, "error_ms": -10.1, "grade": "perfect", "song_time": 15.2042}}
+{"type": "judgment.note", "src": "chris", "seq": 336, "t": 1040611.61879725, "data": {"drum": "hihat_pedal", "bar": 9, "beat": 4.5, "error_ms": -10.1, "grade": "perfect", "song_time": 15.2042}}
+{"type": "judgment.note", "src": "chris", "seq": 337, "t": 1040611.618876083, "data": {"drum": "ride", "bar": 9, "beat": 4.5, "error_ms": -10.1, "grade": "perfect", "song_time": 15.2042}}
+{"type": "judgment.note", "src": "chris", "seq": 338, "t": 1040611.718543416, "data": {"drum": "snare", "bar": 9, "beat": 4.75, "error_ms": -13.1, "grade": "perfect", "song_time": 15.3083}}
+{"type": "session.state", "src": "chris", "seq": 339, "t": 1040611.837161125, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 10, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 340, "t": 1040611.837401416, "data": {"drum": "kick", "bar": 10, "beat": 1.0, "error_ms": -10.1, "grade": "perfect", "song_time": 15.4184}}
+{"type": "judgment.note", "src": "chris", "seq": 341, "t": 1040611.837500583, "data": {"drum": "crash", "bar": 10, "beat": 1.0, "error_ms": -10.1, "grade": "perfect", "song_time": 15.4184}}
+{"type": "judgment.note", "src": "chris", "seq": 342, "t": 1040612.048516708, "data": {"drum": "hihat_open", "bar": 10, "beat": 1.25, "error_ms": null, "grade": "miss", "song_time": 15.5357}}
+{"type": "judgment.note", "src": "chris", "seq": 343, "t": 1040612.048701541, "data": {"drum": "hihat_pedal", "bar": 10, "beat": 1.5, "error_ms": -7.2, "grade": "perfect", "song_time": 15.6357}}
+{"type": "judgment.note", "src": "chris", "seq": 344, "t": 1040612.048763708, "data": {"drum": "ride", "bar": 10, "beat": 1.5, "error_ms": -7.2, "grade": "perfect", "song_time": 15.6357}}
+{"type": "judgment.note", "src": "chris", "seq": 345, "t": 1040612.149000875, "data": {"drum": "kick", "bar": 10, "beat": 1.75, "error_ms": -11.7, "grade": "perfect", "song_time": 15.7383}}
+{"type": "judgment.note", "src": "chris", "seq": 346, "t": 1040612.478161125, "data": {"drum": "ride_bell", "bar": 10, "beat": 2.0, "error_ms": null, "grade": "miss", "song_time": 15.8571}}
+{"type": "judgment.note", "src": "chris", "seq": 347, "t": 1040612.478384791, "data": {"drum": "kick", "bar": 10, "beat": 2.5, "error_ms": -10.4, "grade": "perfect", "song_time": 16.061}}
+{"type": "judgment.note", "src": "chris", "seq": 348, "t": 1040612.478456166, "data": {"drum": "hihat_pedal", "bar": 10, "beat": 2.5, "error_ms": -10.4, "grade": "perfect", "song_time": 16.061}}
+{"type": "judgment.note", "src": "chris", "seq": 349, "t": 1040612.478493541, "data": {"drum": "ride", "bar": 10, "beat": 2.5, "error_ms": -10.4, "grade": "perfect", "song_time": 16.061}}
+{"type": "fletcher.state", "src": "aaron", "seq": 35, "t": 1040612.480020625, "data": {"mood": "furious", "anger": 0.71, "action": "lean_in", "look_at": "drummer"}}
+{"type": "judgment.note", "src": "chris", "seq": 350, "t": 1040612.568756916, "data": {"drum": "snare", "bar": 10, "beat": 2.75, "error_ms": -25.2, "grade": "good", "song_time": 16.1534}}
+{"type": "judgment.note", "src": "chris", "seq": 351, "t": 1040612.698798791, "data": {"drum": "kick", "bar": 10, "beat": 3.0, "error_ms": -7.4, "grade": "perfect", "song_time": 16.2783}}
+{"type": "judgment.note", "src": "chris", "seq": 352, "t": 1040612.699066583, "data": {"drum": "ride_bell", "bar": 10, "beat": 3.0, "error_ms": -7.4, "grade": "perfect", "song_time": 16.2783}}
+{"type": "judgment.note", "src": "chris", "seq": 353, "t": 1040612.898738875, "data": {"drum": "hihat_pedal", "bar": 10, "beat": 3.5, "error_ms": -13.3, "grade": "perfect", "song_time": 16.4867}}
+{"type": "judgment.note", "src": "chris", "seq": 354, "t": 1040612.89902125, "data": {"drum": "ride", "bar": 10, "beat": 3.5, "error_ms": -13.3, "grade": "perfect", "song_time": 16.4867}}
+{"type": "judgment.note", "src": "chris", "seq": 355, "t": 1040613.008912666, "data": {"drum": "kick", "bar": 10, "beat": 3.75, "error_ms": -13.8, "grade": "perfect", "song_time": 16.5933}}
+{"type": "judgment.note", "src": "chris", "seq": 356, "t": 1040613.118778541, "data": {"drum": "snare", "bar": 10, "beat": 4.0, "error_ms": -10.4, "grade": "perfect", "song_time": 16.7038}}
+{"type": "judgment.note", "src": "chris", "seq": 357, "t": 1040613.118917833, "data": {"drum": "ride_bell", "bar": 10, "beat": 4.0, "error_ms": -10.4, "grade": "perfect", "song_time": 16.7038}}
+{"type": "judgment.note", "src": "chris", "seq": 358, "t": 1040613.338898416, "data": {"drum": "kick", "bar": 10, "beat": 4.5, "error_ms": -8.5, "grade": "perfect", "song_time": 16.9201}}
+{"type": "judgment.note", "src": "chris", "seq": 359, "t": 1040613.339183333, "data": {"drum": "hihat_pedal", "bar": 10, "beat": 4.5, "error_ms": -8.5, "grade": "perfect", "song_time": 16.9201}}
+{"type": "judgment.note", "src": "chris", "seq": 360, "t": 1040613.339280625, "data": {"drum": "ride", "bar": 10, "beat": 4.5, "error_ms": -8.5, "grade": "perfect", "song_time": 16.9201}}
+{"type": "session.state", "src": "chris", "seq": 361, "t": 1040613.557391416, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 11, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 362, "t": 1040613.557534125, "data": {"drum": "kick", "bar": 11, "beat": 1.0, "error_ms": 0.7, "grade": "perfect", "song_time": 17.1436}}
+{"type": "judgment.note", "src": "chris", "seq": 363, "t": 1040613.557592916, "data": {"drum": "ride", "bar": 11, "beat": 1.0, "error_ms": 0.7, "grade": "perfect", "song_time": 17.1436}}
+{"type": "judgment.note", "src": "chris", "seq": 364, "t": 1040613.639187416, "data": {"drum": "kick", "bar": 11, "beat": 1.25, "error_ms": -21.7, "grade": "good", "song_time": 17.2283}}
+{"type": "judgment.note", "src": "chris", "seq": 365, "t": 1040613.877994416, "data": {"drum": "kick", "bar": 11, "beat": 1.75, "error_ms": -5.9, "grade": "perfect", "song_time": 17.4584}}
+{"type": "judgment.note", "src": "chris", "seq": 366, "t": 1040613.878211875, "data": {"drum": "ride", "bar": 11, "beat": 1.75, "error_ms": -5.9, "grade": "perfect", "song_time": 17.4584}}
+{"type": "judgment.note", "src": "chris", "seq": 367, "t": 1040613.978490833, "data": {"drum": "kick", "bar": 11, "beat": 2.0, "error_ms": -13.1, "grade": "perfect", "song_time": 17.5583}}
+{"type": "judgment.note", "src": "chris", "seq": 368, "t": 1040614.189076541, "data": {"drum": "kick", "bar": 11, "beat": 2.5, "error_ms": -12.4, "grade": "perfect", "song_time": 17.7733}}
+{"type": "judgment.note", "src": "chris", "seq": 369, "t": 1040614.189350625, "data": {"drum": "hihat_pedal", "bar": 11, "beat": 2.5, "error_ms": -12.4, "grade": "perfect", "song_time": 17.7733}}
+{"type": "judgment.note", "src": "chris", "seq": 370, "t": 1040614.189432041, "data": {"drum": "ride", "bar": 11, "beat": 2.5, "error_ms": -12.4, "grade": "perfect", "song_time": 17.7733}}
+{"type": "judgment.note", "src": "chris", "seq": 371, "t": 1040614.288407125, "data": {"drum": "kick", "bar": 11, "beat": 2.75, "error_ms": -19.5, "grade": "good", "song_time": 17.8733}}
+{"type": "judgment.note", "src": "chris", "seq": 372, "t": 1040614.518082833, "data": {"drum": "kick", "bar": 11, "beat": 3.25, "error_ms": -2.0, "grade": "perfect", "song_time": 18.1051}}
+{"type": "judgment.note", "src": "chris", "seq": 373, "t": 1040614.518229666, "data": {"drum": "ride", "bar": 11, "beat": 3.25, "error_ms": -2.0, "grade": "perfect", "song_time": 18.1051}}
+{"type": "judgment.note", "src": "chris", "seq": 374, "t": 1040614.618115666, "data": {"drum": "kick", "bar": 11, "beat": 3.5, "error_ms": -6.0, "grade": "perfect", "song_time": 18.2083}}
+{"type": "judgment.note", "src": "chris", "seq": 375, "t": 1040614.838775916, "data": {"drum": "kick", "bar": 11, "beat": 4.0, "error_ms": -1.7, "grade": "perfect", "song_time": 18.4269}}
+{"type": "judgment.note", "src": "chris", "seq": 376, "t": 1040614.839014833, "data": {"drum": "ride", "bar": 11, "beat": 4.0, "error_ms": -1.7, "grade": "perfect", "song_time": 18.4269}}
+{"type": "judgment.note", "src": "chris", "seq": 377, "t": 1040614.949081875, "data": {"drum": "kick", "bar": 11, "beat": 4.25, "error_ms": -2.3, "grade": "perfect", "song_time": 18.5334}}
+{"type": "judgment.note", "src": "chris", "seq": 378, "t": 1040615.169041125, "data": {"drum": "kick", "bar": 11, "beat": 4.75, "error_ms": 0.3, "grade": "perfect", "song_time": 18.7503}}
+{"type": "judgment.note", "src": "chris", "seq": 379, "t": 1040615.169313166, "data": {"drum": "ride", "bar": 11, "beat": 4.75, "error_ms": 0.3, "grade": "perfect", "song_time": 18.7503}}
+{"type": "session.state", "src": "chris", "seq": 380, "t": 1040615.268777666, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 12, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 381, "t": 1040615.269007041, "data": {"drum": "kick", "bar": 12, "beat": 1.0, "error_ms": -3.8, "grade": "perfect", "song_time": 18.8533}}
+{"type": "fletcher.state", "src": "aaron", "seq": 36, "t": 1040615.27030575, "data": {"mood": "irritated", "anger": 0.63, "action": "glare", "look_at": "drummer"}}
+{"type": "judgment.note", "src": "chris", "seq": 382, "t": 1040615.468562583, "data": {"drum": "kick", "bar": 12, "beat": 1.5, "error_ms": -16.1, "grade": "good", "song_time": 19.0553}}
+{"type": "judgment.note", "src": "chris", "seq": 383, "t": 1040615.468753625, "data": {"drum": "hihat_pedal", "bar": 12, "beat": 1.5, "error_ms": -16.1, "grade": "good", "song_time": 19.0553}}
+{"type": "judgment.note", "src": "chris", "seq": 384, "t": 1040615.468802291, "data": {"drum": "ride", "bar": 12, "beat": 1.5, "error_ms": -16.1, "grade": "good", "song_time": 19.0553}}
+{"type": "judgment.note", "src": "chris", "seq": 385, "t": 1040615.568728666, "data": {"drum": "kick", "bar": 12, "beat": 1.75, "error_ms": -20.2, "grade": "good", "song_time": 19.1583}}
+{"type": "judgment.note", "src": "chris", "seq": 386, "t": 1040615.78825225, "data": {"drum": "kick", "bar": 12, "beat": 2.25, "error_ms": -20.3, "grade": "good", "song_time": 19.3726}}
+{"type": "judgment.note", "src": "chris", "seq": 387, "t": 1040615.788491083, "data": {"drum": "ride", "bar": 12, "beat": 2.25, "error_ms": -20.3, "grade": "good", "song_time": 19.3726}}
+{"type": "judgment.note", "src": "chris", "seq": 388, "t": 1040615.898829, "data": {"drum": "kick", "bar": 12, "beat": 2.5, "error_ms": -11.7, "grade": "perfect", "song_time": 19.4883}}
+{"type": "judgment.note", "src": "chris", "seq": 389, "t": 1040616.129571375, "data": {"drum": "kick", "bar": 12, "beat": 3.0, "error_ms": 1.2, "grade": "perfect", "song_time": 19.7155}}
+{"type": "judgment.note", "src": "chris", "seq": 390, "t": 1040616.1298035, "data": {"drum": "ride", "bar": 12, "beat": 3.0, "error_ms": 1.2, "grade": "perfect", "song_time": 19.7155}}
+{"type": "judgment.note", "src": "chris", "seq": 391, "t": 1040616.219240333, "data": {"drum": "snare", "bar": 12, "beat": 3.25, "error_ms": -23.0, "grade": "good", "song_time": 19.7984}}
+{"type": "judgment.note", "src": "chris", "seq": 392, "t": 1040616.338326291, "data": {"drum": "snare", "bar": 12, "beat": 3.5, "error_ms": -5.2, "grade": "perfect", "song_time": 19.9233}}
+{"type": "judgment.note", "src": "chris", "seq": 393, "t": 1040616.338604541, "data": {"drum": "hihat_pedal", "bar": 12, "beat": 3.5, "error_ms": -5.2, "grade": "perfect", "song_time": 19.9233}}
+{"type": "judgment.note", "src": "chris", "seq": 394, "t": 1040616.398307875, "data": {"drum": "snare", "bar": 12, "beat": 3.667, "error_ms": -11.7, "grade": "perfect", "song_time": 19.9883}}
+{"type": "judgment.note", "src": "chris", "seq": 395, "t": 1040616.478233375, "data": {"drum": "snare", "bar": 12, "beat": 3.833, "error_ms": -3.1, "grade": "perfect", "song_time": 20.0683}}
+{"type": "judgment.note", "src": "chris", "seq": 396, "t": 1040616.537703208, "data": {"drum": "snare", "bar": 12, "beat": 4.0, "error_ms": -19.5, "grade": "good", "song_time": 20.1233}}
+{"type": "judgment.note", "src": "chris", "seq": 397, "t": 1040616.608912041, "data": {"drum": "snare", "bar": 12, "beat": 4.167, "error_ms": -16.0, "grade": "good", "song_time": 20.1983}}
+{"type": "judgment.note", "src": "chris", "seq": 398, "t": 1040616.67949225, "data": {"drum": "tom_high_mid", "bar": 12, "beat": 4.333, "error_ms": -22.4, "grade": "good", "song_time": 20.2633}}
+{"type": "judgment.note", "src": "chris", "seq": 399, "t": 1040616.758310791, "data": {"drum": "hihat_pedal", "bar": 12, "beat": 4.5, "error_ms": -9.2, "grade": "perfect", "song_time": 20.3479}}
+{"type": "judgment.note", "src": "chris", "seq": 400, "t": 1040616.758690916, "data": {"drum": "tom_high_mid", "bar": 12, "beat": 4.5, "error_ms": -9.2, "grade": "perfect", "song_time": 20.3479}}
+{"type": "judgment.note", "src": "chris", "seq": 401, "t": 1040616.83762925, "data": {"drum": "tom_low", "bar": 12, "beat": 4.667, "error_ms": -5.2, "grade": "perfect", "song_time": 20.4233}}
+{"type": "judgment.note", "src": "chris", "seq": 402, "t": 1040616.898388791, "data": {"drum": "tom_low", "bar": 12, "beat": 4.833, "error_ms": -16.7, "grade": "good", "song_time": 20.4833}}
+{"type": "session.state", "src": "chris", "seq": 403, "t": 1040616.95883125, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 13, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 404, "t": 1040616.959096625, "data": {"drum": "kick", "bar": 13, "beat": 1.0, "error_ms": -23.1, "grade": "good", "song_time": 20.5483}}
+{"type": "judgment.note", "src": "chris", "seq": 405, "t": 1040616.959159416, "data": {"drum": "crash", "bar": 13, "beat": 1.0, "error_ms": -23.1, "grade": "good", "song_time": 20.5483}}
+{"type": "judgment.note", "src": "chris", "seq": 406, "t": 1040617.179766333, "data": {"drum": "hihat_pedal", "bar": 13, "beat": 1.5, "error_ms": -18.2, "grade": "good", "song_time": 20.7676}}
+{"type": "judgment.note", "src": "chris", "seq": 407, "t": 1040617.180020291, "data": {"drum": "ride", "bar": 13, "beat": 1.5, "error_ms": -18.2, "grade": "good", "song_time": 20.7676}}
+{"type": "judgment.note", "src": "chris", "seq": 408, "t": 1040617.288331708, "data": {"drum": "kick", "bar": 13, "beat": 1.75, "error_ms": -19.5, "grade": "good", "song_time": 20.8733}}
+{"type": "fletcher.state", "src": "aaron", "seq": 37, "t": 1040617.289762916, "data": {"mood": "irritated", "anger": 0.53, "action": "glare", "look_at": "drummer"}}
+{"type": "judgment.note", "src": "chris", "seq": 409, "t": 1040617.618488666, "data": {"drum": "ride_bell", "bar": 13, "beat": 2.0, "error_ms": null, "grade": "miss", "song_time": 21.0}}
+{"type": "judgment.note", "src": "chris", "seq": 410, "t": 1040617.618813083, "data": {"drum": "kick", "bar": 13, "beat": 2.5, "error_ms": -11.0, "grade": "perfect", "song_time": 21.2032}}
+{"type": "judgment.note", "src": "chris", "seq": 411, "t": 1040617.618953458, "data": {"drum": "snare", "bar": 13, "beat": 2.5, "error_ms": -11.0, "grade": "perfect", "song_time": 21.2032}}
+{"type": "judgment.note", "src": "chris", "seq": 412, "t": 1040617.619018416, "data": {"drum": "hihat_pedal", "bar": 13, "beat": 2.5, "error_ms": -11.0, "grade": "perfect", "song_time": 21.2032}}
+{"type": "judgment.note", "src": "chris", "seq": 413, "t": 1040617.619119708, "data": {"drum": "ride", "bar": 13, "beat": 2.5, "error_ms": -11.0, "grade": "perfect", "song_time": 21.2032}}
+{"type": "judgment.note", "src": "chris", "seq": 414, "t": 1040617.729345791, "data": {"drum": "snare", "bar": 13, "beat": 2.75, "error_ms": -13.1, "grade": "perfect", "song_time": 21.3083}}
+{"type": "judgment.note", "src": "chris", "seq": 415, "t": 1040617.838403875, "data": {"drum": "kick", "bar": 13, "beat": 3.0, "error_ms": -8.4, "grade": "perfect", "song_time": 21.4202}}
+{"type": "judgment.note", "src": "chris", "seq": 416, "t": 1040617.838656166, "data": {"drum": "ride_bell", "bar": 13, "beat": 3.0, "error_ms": -8.4, "grade": "perfect", "song_time": 21.4202}}
+{"type": "judgment.note", "src": "chris", "seq": 417, "t": 1040618.047697875, "data": {"drum": "hihat_pedal", "bar": 13, "beat": 3.5, "error_ms": -6.7, "grade": "perfect", "song_time": 21.6361}}
+{"type": "judgment.note", "src": "chris", "seq": 418, "t": 1040618.047976208, "data": {"drum": "ride", "bar": 13, "beat": 3.5, "error_ms": -6.7, "grade": "perfect", "song_time": 21.6361}}
+{"type": "judgment.note", "src": "chris", "seq": 419, "t": 1040618.158186333, "data": {"drum": "kick", "bar": 13, "beat": 3.75, "error_ms": -6.7, "grade": "perfect", "song_time": 21.7433}}
+{"type": "judgment.note", "src": "chris", "seq": 420, "t": 1040618.277969791, "data": {"drum": "ride_bell", "bar": 13, "beat": 4.0, "error_ms": 1.2, "grade": "perfect", "song_time": 21.8583}}
+{"type": "judgment.note", "src": "chris", "seq": 421, "t": 1040618.468822333, "data": {"drum": "kick", "bar": 13, "beat": 4.5, "error_ms": -13.8, "grade": "perfect", "song_time": 22.0577}}
+{"type": "judgment.note", "src": "chris", "seq": 422, "t": 1040618.469102958, "data": {"drum": "hihat_pedal", "bar": 13, "beat": 4.5, "error_ms": -13.8, "grade": "perfect", "song_time": 22.0577}}
+{"type": "judgment.note", "src": "chris", "seq": 423, "t": 1040618.469211333, "data": {"drum": "ride", "bar": 13, "beat": 4.5, "error_ms": -13.8, "grade": "perfect", "song_time": 22.0577}}
+{"type": "judgment.note", "src": "chris", "seq": 424, "t": 1040618.578668875, "data": {"drum": "snare", "bar": 13, "beat": 4.75, "error_ms": -15.2, "grade": "good", "song_time": 22.1634}}
+{"type": "session.state", "src": "chris", "seq": 425, "t": 1040618.699272208, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 14, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 426, "t": 1040618.699539583, "data": {"drum": "kick", "bar": 14, "beat": 1.0, "error_ms": 2.3, "grade": "perfect", "song_time": 22.288}}
+{"type": "judgment.note", "src": "chris", "seq": 427, "t": 1040618.69960875, "data": {"drum": "ride_bell", "bar": 14, "beat": 1.0, "error_ms": 2.3, "grade": "perfect", "song_time": 22.288}}
+{"type": "judgment.note", "src": "chris", "seq": 428, "t": 1040618.919147083, "data": {"drum": "hihat_pedal", "bar": 14, "beat": 1.5, "error_ms": 2.6, "grade": "perfect", "song_time": 22.5026}}
+{"type": "judgment.note", "src": "chris", "seq": 429, "t": 1040618.919450791, "data": {"drum": "ride", "bar": 14, "beat": 1.5, "error_ms": 2.6, "grade": "perfect", "song_time": 22.5026}}
+{"type": "judgment.note", "src": "chris", "seq": 430, "t": 1040619.019282208, "data": {"drum": "kick", "bar": 14, "beat": 1.75, "error_ms": -3.8, "grade": "perfect", "song_time": 22.6033}}
+{"type": "judgment.note", "src": "chris", "seq": 431, "t": 1040619.130120083, "data": {"drum": "ride_bell", "bar": 14, "beat": 2.0, "error_ms": -1.3, "grade": "perfect", "song_time": 22.713}}
+{"type": "judgment.note", "src": "chris", "seq": 432, "t": 1040619.33841, "data": {"drum": "kick", "bar": 14, "beat": 2.5, "error_ms": -5.2, "grade": "perfect", "song_time": 22.9234}}
+{"type": "judgment.note", "src": "chris", "seq": 433, "t": 1040619.338644708, "data": {"drum": "snare", "bar": 14, "beat": 2.5, "error_ms": -5.2, "grade": "perfect", "song_time": 22.9234}}
+{"type": "judgment.note", "src": "chris", "seq": 434, "t": 1040619.338706916, "data": {"drum": "hihat_pedal", "bar": 14, "beat": 2.5, "error_ms": -5.2, "grade": "perfect", "song_time": 22.9234}}
+{"type": "judgment.note", "src": "chris", "seq": 435, "t": 1040619.338752291, "data": {"drum": "ride", "bar": 14, "beat": 2.5, "error_ms": -5.2, "grade": "perfect", "song_time": 22.9234}}
+{"type": "judgment.note", "src": "chris", "seq": 436, "t": 1040619.428951333, "data": {"drum": "snare", "bar": 14, "beat": 2.75, "error_ms": -22.4, "grade": "good", "song_time": 23.0133}}
+{"type": "judgment.note", "src": "chris", "seq": 437, "t": 1040619.558075916, "data": {"drum": "kick", "bar": 14, "beat": 3.0, "error_ms": 4.2, "grade": "perfect", "song_time": 23.147}}
+{"type": "judgment.note", "src": "chris", "seq": 438, "t": 1040619.558376125, "data": {"drum": "ride_bell", "bar": 14, "beat": 3.0, "error_ms": 4.2, "grade": "perfect", "song_time": 23.147}}
+{"type": "judgment.note", "src": "chris", "seq": 439, "t": 1040619.769156208, "data": {"drum": "hihat_pedal", "bar": 14, "beat": 3.5, "error_ms": -6.1, "grade": "perfect", "song_time": 23.3511}}
+{"type": "judgment.note", "src": "chris", "seq": 440, "t": 1040619.769444916, "data": {"drum": "ride", "bar": 14, "beat": 3.5, "error_ms": -6.1, "grade": "perfect", "song_time": 23.3511}}
+{"type": "judgment.note", "src": "chris", "seq": 441, "t": 1040619.87886375, "data": {"drum": "kick", "bar": 14, "beat": 3.75, "error_ms": -0.9, "grade": "perfect", "song_time": 23.4634}}
+{"type": "judgment.note", "src": "chris", "seq": 442, "t": 1040619.978404208, "data": {"drum": "ride_bell", "bar": 14, "beat": 4.0, "error_ms": -4.2, "grade": "perfect", "song_time": 23.5672}}
+{"type": "judgment.note", "src": "chris", "seq": 443, "t": 1040620.197102833, "data": {"drum": "kick", "bar": 14, "beat": 4.5, "error_ms": -4.2, "grade": "perfect", "song_time": 23.7816}}
+{"type": "judgment.note", "src": "chris", "seq": 444, "t": 1040620.197271333, "data": {"drum": "hihat_pedal", "bar": 14, "beat": 4.5, "error_ms": -4.2, "grade": "perfect", "song_time": 23.7816}}
+{"type": "judgment.note", "src": "chris", "seq": 445, "t": 1040620.197307625, "data": {"drum": "ride", "bar": 14, "beat": 4.5, "error_ms": -4.2, "grade": "perfect", "song_time": 23.7816}}
+{"type": "judgment.note", "src": "chris", "seq": 446, "t": 1040620.298571291, "data": {"drum": "snare", "bar": 14, "beat": 4.75, "error_ms": -9.5, "grade": "perfect", "song_time": 23.8833}}
+{"type": "session.state", "src": "chris", "seq": 447, "t": 1040620.398559375, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 15, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 448, "t": 1040620.398735208, "data": {"drum": "kick", "bar": 15, "beat": 1.0, "error_ms": -14.0, "grade": "perfect", "song_time": 23.986}}
+{"type": "judgment.note", "src": "chris", "seq": 449, "t": 1040620.398792041, "data": {"drum": "ride_bell", "bar": 15, "beat": 1.0, "error_ms": -14.0, "grade": "perfect", "song_time": 23.986}}
+{"type": "fletcher.state", "src": "aaron", "seq": 38, "t": 1040620.399959125, "data": {"mood": "watching", "anger": 0.44, "action": "conduct", "look_at": "drummer"}}
+{"type": "judgment.note", "src": "chris", "seq": 450, "t": 1040620.618763583, "data": {"drum": "hihat_pedal", "bar": 15, "beat": 1.5, "error_ms": -8.5, "grade": "perfect", "song_time": 24.2058}}
+{"type": "judgment.note", "src": "chris", "seq": 451, "t": 1040620.619043333, "data": {"drum": "ride", "bar": 15, "beat": 1.5, "error_ms": -8.5, "grade": "perfect", "song_time": 24.2058}}
+{"type": "judgment.note", "src": "chris", "seq": 452, "t": 1040620.718193791, "data": {"drum": "kick", "bar": 15, "beat": 1.75, "error_ms": -18.1, "grade": "good", "song_time": 24.3034}}
+{"type": "judgment.note", "src": "chris", "seq": 453, "t": 1040620.920855916, "data": {"drum": "ride_bell", "bar": 15, "beat": 2.0, "error_ms": -30.2, "grade": "good", "song_time": 24.3984}}
+{"type": "judgment.note", "src": "chris", "seq": 454, "t": 1040621.068967083, "data": {"drum": "kick", "bar": 15, "beat": 2.5, "error_ms": 6.4, "grade": "perfect", "song_time": 24.6492}}
+{"type": "judgment.note", "src": "chris", "seq": 455, "t": 1040621.06927025, "data": {"drum": "snare", "bar": 15, "beat": 2.5, "error_ms": 6.4, "grade": "perfect", "song_time": 24.6492}}
+{"type": "judgment.note", "src": "chris", "seq": 456, "t": 1040621.069397166, "data": {"drum": "hihat_pedal", "bar": 15, "beat": 2.5, "error_ms": 6.4, "grade": "perfect", "song_time": 24.6492}}
+{"type": "judgment.note", "src": "chris", "seq": 457, "t": 1040621.069462083, "data": {"drum": "ride", "bar": 15, "beat": 2.5, "error_ms": 6.4, "grade": "perfect", "song_time": 24.6492}}
+{"type": "judgment.note", "src": "chris", "seq": 458, "t": 1040621.15679475, "data": {"drum": "snare", "bar": 15, "beat": 2.75, "error_ms": -6.7, "grade": "perfect", "song_time": 24.7433}}
+{"type": "judgment.note", "src": "chris", "seq": 459, "t": 1040621.268845833, "data": {"drum": "kick", "bar": 15, "beat": 3.0, "error_ms": -8.6, "grade": "perfect", "song_time": 24.8485}}
+{"type": "judgment.note", "src": "chris", "seq": 460, "t": 1040621.269131333, "data": {"drum": "ride_bell", "bar": 15, "beat": 3.0, "error_ms": -8.6, "grade": "perfect", "song_time": 24.8485}}
+{"type": "judgment.note", "src": "chris", "seq": 461, "t": 1040621.479624291, "data": {"drum": "hihat_pedal", "bar": 15, "beat": 3.5, "error_ms": -8.4, "grade": "perfect", "song_time": 25.063}}
+{"type": "judgment.note", "src": "chris", "seq": 462, "t": 1040621.479856791, "data": {"drum": "ride", "bar": 15, "beat": 3.5, "error_ms": -8.4, "grade": "perfect", "song_time": 25.063}}
+{"type": "judgment.note", "src": "chris", "seq": 463, "t": 1040621.568813791, "data": {"drum": "kick", "bar": 15, "beat": 3.75, "error_ms": -20.2, "grade": "good", "song_time": 25.1583}}
+{"type": "judgment.note", "src": "chris", "seq": 464, "t": 1040621.668758333, "data": {"drum": "ride_bell", "bar": 15, "beat": 4.0, "error_ms": -27.4, "grade": "good", "song_time": 25.2583}}
+{"type": "judgment.note", "src": "chris", "seq": 465, "t": 1040621.917176833, "data": {"drum": "kick", "bar": 15, "beat": 4.5, "error_ms": -1.5, "grade": "perfect", "song_time": 25.4985}}
+{"type": "judgment.note", "src": "chris", "seq": 466, "t": 1040621.917447583, "data": {"drum": "hihat_pedal", "bar": 15, "beat": 4.5, "error_ms": -1.5, "grade": "perfect", "song_time": 25.4985}}
+{"type": "judgment.note", "src": "chris", "seq": 467, "t": 1040621.917520041, "data": {"drum": "ride", "bar": 15, "beat": 4.5, "error_ms": -1.5, "grade": "perfect", "song_time": 25.4985}}
+{"type": "judgment.note", "src": "chris", "seq": 468, "t": 1040622.009101875, "data": {"drum": "snare", "bar": 15, "beat": 4.75, "error_ms": -13.8, "grade": "perfect", "song_time": 25.5933}}
+{"type": "session.state", "src": "chris", "seq": 469, "t": 1040622.118950875, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 16, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 470, "t": 1040622.119532, "data": {"drum": "kick", "bar": 16, "beat": 1.0, "error_ms": -13.2, "grade": "perfect", "song_time": 25.7011}}
+{"type": "judgment.note", "src": "chris", "seq": 471, "t": 1040622.119741333, "data": {"drum": "ride_bell", "bar": 16, "beat": 1.0, "error_ms": -13.2, "grade": "perfect", "song_time": 25.7011}}
+{"type": "judgment.note", "src": "chris", "seq": 472, "t": 1040622.337936416, "data": {"drum": "hihat_pedal", "bar": 16, "beat": 1.5, "error_ms": -9.5, "grade": "perfect", "song_time": 25.9191}}
+{"type": "judgment.note", "src": "chris", "seq": 473, "t": 1040622.338143041, "data": {"drum": "ride", "bar": 16, "beat": 1.5, "error_ms": -9.5, "grade": "perfect", "song_time": 25.9191}}
+{"type": "fletcher.state", "src": "aaron", "seq": 39, "t": 1040622.346346041, "data": {"mood": "watching", "anger": 0.34, "action": "conduct", "look_at": "drummer"}}
+{"type": "judgment.note", "src": "chris", "seq": 474, "t": 1040622.438568208, "data": {"drum": "kick", "bar": 16, "beat": 1.75, "error_ms": -12.4, "grade": "perfect", "song_time": 26.0233}}
+{"type": "judgment.note", "src": "chris", "seq": 475, "t": 1040622.528637708, "data": {"drum": "ride_bell", "bar": 16, "beat": 2.0, "error_ms": -24.5, "grade": "good", "song_time": 26.1183}}
+{"type": "judgment.note", "src": "chris", "seq": 476, "t": 1040622.756929625, "data": {"drum": "kick", "bar": 16, "beat": 2.5, "error_ms": -18.4, "grade": "good", "song_time": 26.3387}}
+{"type": "judgment.note", "src": "chris", "seq": 477, "t": 1040622.7571985, "data": {"drum": "snare", "bar": 16, "beat": 2.5, "error_ms": -18.4, "grade": "good", "song_time": 26.3387}}
+{"type": "judgment.note", "src": "chris", "seq": 478, "t": 1040622.757265208, "data": {"drum": "hihat_pedal", "bar": 16, "beat": 2.5, "error_ms": -18.4, "grade": "good", "song_time": 26.3387}}
+{"type": "judgment.note", "src": "chris", "seq": 479, "t": 1040622.757313791, "data": {"drum": "ride", "bar": 16, "beat": 2.5, "error_ms": -18.4, "grade": "good", "song_time": 26.3387}}
+{"type": "judgment.note", "src": "chris", "seq": 480, "t": 1040622.878432416, "data": {"drum": "snare", "bar": 16, "beat": 2.75, "error_ms": -0.9, "grade": "perfect", "song_time": 26.4634}}
+{"type": "judgment.note", "src": "chris", "seq": 481, "t": 1040622.988900291, "data": {"drum": "kick", "bar": 16, "beat": 3.0, "error_ms": 2.0, "grade": "perfect", "song_time": 26.5735}}
+{"type": "judgment.note", "src": "chris", "seq": 482, "t": 1040622.989141708, "data": {"drum": "crash", "bar": 16, "beat": 3.0, "error_ms": 2.0, "grade": "perfect", "song_time": 26.5735}}
+{"type": "judgment.note", "src": "chris", "seq": 483, "t": 1040623.188589416, "data": {"drum": "hihat_pedal", "bar": 16, "beat": 3.5, "error_ms": -11.9, "grade": "perfect", "song_time": 26.7738}}
+{"type": "judgment.note", "src": "chris", "seq": 484, "t": 1040623.188847208, "data": {"drum": "ride", "bar": 16, "beat": 3.5, "error_ms": -11.9, "grade": "perfect", "song_time": 26.7738}}
+{"type": "judgment.note", "src": "chris", "seq": 485, "t": 1040623.299171458, "data": {"drum": "kick", "bar": 16, "beat": 3.75, "error_ms": -4.5, "grade": "perfect", "song_time": 26.8883}}
+{"type": "judgment.note", "src": "chris", "seq": 486, "t": 1040623.408313375, "data": {"drum": "ride_bell", "bar": 16, "beat": 4.0, "error_ms": -9.1, "grade": "perfect", "song_time": 26.9909}}
+{"type": "judgment.note", "src": "chris", "seq": 487, "t": 1040623.618658916, "data": {"drum": "kick", "bar": 16, "beat": 4.5, "error_ms": -11.5, "grade": "perfect", "song_time": 27.2028}}
+{"type": "judgment.note", "src": "chris", "seq": 488, "t": 1040623.618905, "data": {"drum": "hihat_pedal", "bar": 16, "beat": 4.5, "error_ms": -11.5, "grade": "perfect", "song_time": 27.2028}}
+{"type": "judgment.note", "src": "chris", "seq": 489, "t": 1040623.618969791, "data": {"drum": "ride", "bar": 16, "beat": 4.5, "error_ms": -11.5, "grade": "perfect", "song_time": 27.2028}}
+{"type": "judgment.note", "src": "chris", "seq": 490, "t": 1040623.708771125, "data": {"drum": "snare", "bar": 16, "beat": 4.75, "error_ms": -28.1, "grade": "good", "song_time": 27.2934}}
+{"type": "session.state", "src": "chris", "seq": 491, "t": 1040623.84804625, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 17, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 492, "t": 1040623.848250041, "data": {"drum": "kick", "bar": 17, "beat": 1.0, "error_ms": 2.1, "grade": "perfect", "song_time": 27.4307}}
+{"type": "judgment.note", "src": "chris", "seq": 493, "t": 1040623.848322, "data": {"drum": "ride_bell", "bar": 17, "beat": 1.0, "error_ms": 2.1, "grade": "perfect", "song_time": 27.4307}}
+{"type": "judgment.note", "src": "chris", "seq": 494, "t": 1040624.048983458, "data": {"drum": "hihat_pedal", "bar": 17, "beat": 1.5, "error_ms": -8.9, "grade": "perfect", "song_time": 27.6339}}
+{"type": "judgment.note", "src": "chris", "seq": 495, "t": 1040624.049289, "data": {"drum": "ride", "bar": 17, "beat": 1.5, "error_ms": -8.9, "grade": "perfect", "song_time": 27.6339}}
+{"type": "judgment.note", "src": "chris", "seq": 496, "t": 1040624.168787958, "data": {"drum": "kick", "bar": 17, "beat": 1.75, "error_ms": -1.6, "grade": "perfect", "song_time": 27.7484}}
+{"type": "judgment.note", "src": "chris", "seq": 497, "t": 1040624.268765583, "data": {"drum": "ride_bell", "bar": 17, "beat": 2.0, "error_ms": -8.8, "grade": "perfect", "song_time": 27.8483}}
+{"type": "fletcher.state", "src": "aaron", "seq": 40, "t": 1040624.370342875, "data": {"mood": "watching", "anger": 0.24, "action": "conduct", "look_at": "drummer"}}
+{"type": "judgment.note", "src": "chris", "seq": 498, "t": 1040624.479108583, "data": {"drum": "kick", "bar": 17, "beat": 2.5, "error_ms": -10.9, "grade": "perfect", "song_time": 28.0605}}
+{"type": "judgment.note", "src": "chris", "seq": 499, "t": 1040624.479587208, "data": {"drum": "snare", "bar": 17, "beat": 2.5, "error_ms": -10.9, "grade": "perfect", "song_time": 28.0605}}
+{"type": "judgment.note", "src": "chris", "seq": 500, "t": 1040624.479666416, "data": {"drum": "hihat_pedal", "bar": 17, "beat": 2.5, "error_ms": -10.9, "grade": "perfect", "song_time": 28.0605}}
+{"type": "judgment.note", "src": "chris", "seq": 501, "t": 1040624.479707541, "data": {"drum": "ride", "bar": 17, "beat": 2.5, "error_ms": -10.9, "grade": "perfect", "song_time": 28.0605}}
+{"type": "judgment.note", "src": "chris", "seq": 502, "t": 1040624.599110041, "data": {"drum": "snare", "bar": 17, "beat": 2.75, "error_ms": 9.8, "grade": "perfect", "song_time": 28.1883}}
+{"type": "judgment.note", "src": "chris", "seq": 503, "t": 1040624.708830875, "data": {"drum": "kick", "bar": 17, "beat": 3.0, "error_ms": 2.6, "grade": "perfect", "song_time": 28.2883}}
+{"type": "judgment.note", "src": "chris", "seq": 504, "t": 1040624.709101416, "data": {"drum": "ride_bell", "bar": 17, "beat": 3.0, "error_ms": 2.6, "grade": "perfect", "song_time": 28.2883}}
+{"type": "judgment.note", "src": "chris", "seq": 505, "t": 1040624.908776166, "data": {"drum": "hihat_pedal", "bar": 17, "beat": 3.5, "error_ms": -3.7, "grade": "perfect", "song_time": 28.4963}}
+{"type": "judgment.note", "src": "chris", "seq": 506, "t": 1040624.909114291, "data": {"drum": "ride", "bar": 17, "beat": 3.5, "error_ms": -3.7, "grade": "perfect", "song_time": 28.4963}}
+{"type": "judgment.note", "src": "chris", "seq": 507, "t": 1040625.009276833, "data": {"drum": "kick", "bar": 17, "beat": 3.75, "error_ms": -18.8, "grade": "good", "song_time": 28.5884}}
+{"type": "judgment.note", "src": "chris", "seq": 508, "t": 1040625.2011355, "data": {"drum": "ride_bell", "bar": 17, "beat": 4.0, "error_ms": -30.8, "grade": "good", "song_time": 28.6835}}
+{"type": "judgment.note", "src": "chris", "seq": 509, "t": 1040625.3376595, "data": {"drum": "kick", "bar": 17, "beat": 4.5, "error_ms": -7.7, "grade": "perfect", "song_time": 28.9209}}
+{"type": "judgment.note", "src": "chris", "seq": 510, "t": 1040625.337832625, "data": {"drum": "hihat_pedal", "bar": 17, "beat": 4.5, "error_ms": -7.7, "grade": "perfect", "song_time": 28.9209}}
+{"type": "judgment.note", "src": "chris", "seq": 511, "t": 1040625.337889541, "data": {"drum": "ride", "bar": 17, "beat": 4.5, "error_ms": -7.7, "grade": "perfect", "song_time": 28.9209}}
+{"type": "judgment.note", "src": "chris", "seq": 512, "t": 1040625.438700333, "data": {"drum": "snare", "bar": 17, "beat": 4.75, "error_ms": -7.4, "grade": "perfect", "song_time": 29.0283}}
+{"type": "session.state", "src": "chris", "seq": 513, "t": 1040625.538713333, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 18, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 514, "t": 1040625.538869666, "data": {"drum": "kick", "bar": 18, "beat": 1.0, "error_ms": -14.5, "grade": "perfect", "song_time": 29.1283}}
+{"type": "judgment.note", "src": "chris", "seq": 515, "t": 1040625.538927166, "data": {"drum": "ride_bell", "bar": 18, "beat": 1.0, "error_ms": -14.5, "grade": "perfect", "song_time": 29.1283}}
+{"type": "fletcher.state", "src": "aaron", "seq": 41, "t": 1040625.540684416, "data": {"mood": "calm", "anger": 0.15, "action": "conduct", "look_at": "drummer"}}
+{"type": "judgment.note", "src": "chris", "seq": 516, "t": 1040625.778866791, "data": {"drum": "hihat_pedal", "bar": 18, "beat": 1.5, "error_ms": 5.1, "grade": "perfect", "song_time": 29.3623}}
+{"type": "judgment.note", "src": "chris", "seq": 517, "t": 1040625.779142, "data": {"drum": "ride", "bar": 18, "beat": 1.5, "error_ms": 5.1, "grade": "perfect", "song_time": 29.3623}}
+{"type": "judgment.note", "src": "chris", "seq": 518, "t": 1040625.859183333, "data": {"drum": "kick", "bar": 18, "beat": 1.75, "error_ms": -21.0, "grade": "good", "song_time": 29.4433}}
+{"type": "judgment.note", "src": "chris", "seq": 519, "t": 1040625.979182375, "data": {"drum": "ride_bell", "bar": 18, "beat": 2.0, "error_ms": -7.8, "grade": "perfect", "song_time": 29.5636}}
+{"type": "judgment.note", "src": "chris", "seq": 520, "t": 1040626.187468083, "data": {"drum": "kick", "bar": 18, "beat": 2.5, "error_ms": -10.3, "grade": "perfect", "song_time": 29.7754}}
+{"type": "judgment.note", "src": "chris", "seq": 521, "t": 1040626.187603333, "data": {"drum": "snare", "bar": 18, "beat": 2.5, "error_ms": -10.3, "grade": "perfect", "song_time": 29.7754}}
+{"type": "judgment.note", "src": "chris", "seq": 522, "t": 1040626.18764725, "data": {"drum": "hihat_pedal", "bar": 18, "beat": 2.5, "error_ms": -10.3, "grade": "perfect", "song_time": 29.7754}}
+{"type": "judgment.note", "src": "chris", "seq": 523, "t": 1040626.187680791, "data": {"drum": "ride", "bar": 18, "beat": 2.5, "error_ms": -10.3, "grade": "perfect", "song_time": 29.7754}}
+{"type": "judgment.note", "src": "chris", "seq": 524, "t": 1040626.298757625, "data": {"drum": "snare", "bar": 18, "beat": 2.75, "error_ms": -9.5, "grade": "perfect", "song_time": 29.8833}}
+{"type": "judgment.note", "src": "chris", "seq": 525, "t": 1040626.419022083, "data": {"drum": "kick", "bar": 18, "beat": 3.0, "error_ms": 2.9, "grade": "perfect", "song_time": 30.0029}}
+{"type": "judgment.note", "src": "chris", "seq": 526, "t": 1040626.419281791, "data": {"drum": "ride_bell", "bar": 18, "beat": 3.0, "error_ms": 2.9, "grade": "perfect", "song_time": 30.0029}}
+{"type": "judgment.note", "src": "chris", "seq": 527, "t": 1040626.628617416, "data": {"drum": "hihat_pedal", "bar": 18, "beat": 3.5, "error_ms": -1.6, "grade": "perfect", "song_time": 30.2127}}
+{"type": "judgment.note", "src": "chris", "seq": 528, "t": 1040626.629080208, "data": {"drum": "ride", "bar": 18, "beat": 3.5, "error_ms": -1.6, "grade": "perfect", "song_time": 30.2127}}
+{"type": "judgment.note", "src": "chris", "seq": 529, "t": 1040626.718460166, "data": {"drum": "kick", "bar": 18, "beat": 3.75, "error_ms": -18.1, "grade": "good", "song_time": 30.3033}}
+{"type": "judgment.note", "src": "chris", "seq": 530, "t": 1040626.827974041, "data": {"drum": "snare", "bar": 18, "beat": 4.0, "error_ms": -11.2, "grade": "perfect", "song_time": 30.4174}}
+{"type": "judgment.note", "src": "chris", "seq": 531, "t": 1040626.948830625, "data": {"drum": "snare", "bar": 18, "beat": 4.25, "error_ms": -2.1, "grade": "perfect", "song_time": 30.5336}}
+{"type": "judgment.note", "src": "chris", "seq": 532, "t": 1040627.046868333, "data": {"drum": "hihat_pedal", "bar": 18, "beat": 4.5, "error_ms": -4.5, "grade": "perfect", "song_time": 30.6383}}
+{"type": "judgment.note", "src": "chris", "seq": 533, "t": 1040627.0470625, "data": {"drum": "tom_low_mid", "bar": 18, "beat": 4.5, "error_ms": -4.5, "grade": "perfect", "song_time": 30.6383}}
+{"type": "judgment.note", "src": "chris", "seq": 534, "t": 1040627.157386, "data": {"drum": "tom_low_mid", "bar": 18, "beat": 4.75, "error_ms": -1.7, "grade": "perfect", "song_time": 30.7483}}
+{"type": "session.state", "src": "chris", "seq": 535, "t": 1040627.256597625, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 19, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 536, "t": 1040627.256755166, "data": {"drum": "kick", "bar": 19, "beat": 1.0, "error_ms": -13.8, "grade": "perfect", "song_time": 30.8433}}
+{"type": "judgment.note", "src": "chris", "seq": 537, "t": 1040627.256817041, "data": {"drum": "tom_low_mid", "bar": 19, "beat": 1.0, "error_ms": -13.8, "grade": "perfect", "song_time": 30.8433}}
+{"type": "judgment.note", "src": "chris", "seq": 538, "t": 1040627.377940166, "data": {"drum": "tom_low_mid", "bar": 19, "beat": 1.25, "error_ms": -0.3, "grade": "perfect", "song_time": 30.964}}
+{"type": "judgment.note", "src": "chris", "seq": 539, "t": 1040627.488495958, "data": {"drum": "tom_floor_low", "bar": 19, "beat": 1.5, "error_ms": 1.9, "grade": "perfect", "song_time": 31.0733}}
+{"type": "judgment.note", "src": "chris", "seq": 540, "t": 1040627.488629416, "data": {"drum": "hihat_pedal", "bar": 19, "beat": 1.5, "error_ms": 1.9, "grade": "perfect", "song_time": 31.0733}}
+{"type": "fletcher.state", "src": "aaron", "seq": 42, "t": 1040627.50542075, "data": {"mood": "calm", "anger": 0.05, "action": "conduct", "look_at": "drummer"}}
+{"type": "judgment.note", "src": "chris", "seq": 541, "t": 1040627.608787708, "data": {"drum": "kick", "bar": 19, "beat": 1.75, "error_ms": 10.4, "grade": "perfect", "song_time": 31.189}}
+{"type": "judgment.note", "src": "chris", "seq": 542, "t": 1040627.60900125, "data": {"drum": "ride_bell", "bar": 19, "beat": 1.75, "error_ms": 10.4, "grade": "perfect", "song_time": 31.189}}
+{"type": "judgment.note", "src": "chris", "seq": 543, "t": 1040627.698658291, "data": {"drum": "ride_bell", "bar": 19, "beat": 2.0, "error_ms": -0.5, "grade": "perfect", "song_time": 31.2853}}
+{"type": "judgment.note", "src": "chris", "seq": 544, "t": 1040627.918731958, "data": {"drum": "kick", "bar": 19, "beat": 2.5, "error_ms": -1.7, "grade": "perfect", "song_time": 31.4983}}
+{"type": "judgment.note", "src": "chris", "seq": 545, "t": 1040627.918949708, "data": {"drum": "snare", "bar": 19, "beat": 2.5, "error_ms": -1.7, "grade": "perfect", "song_time": 31.4983}}
+{"type": "judgment.note", "src": "chris", "seq": 546, "t": 1040627.919063125, "data": {"drum": "hihat_pedal", "bar": 19, "beat": 2.5, "error_ms": -1.7, "grade": "perfect", "song_time": 31.4983}}
+{"type": "judgment.note", "src": "chris", "seq": 547, "t": 1040627.91914375, "data": {"drum": "ride", "bar": 19, "beat": 2.5, "error_ms": -1.7, "grade": "perfect", "song_time": 31.4983}}
+{"type": "judgment.note", "src": "chris", "seq": 548, "t": 1040628.02855675, "data": {"drum": "snare", "bar": 19, "beat": 2.75, "error_ms": 6.2, "grade": "perfect", "song_time": 31.6133}}
+{"type": "judgment.note", "src": "chris", "seq": 549, "t": 1040628.118579916, "data": {"drum": "kick", "bar": 19, "beat": 3.0, "error_ms": -6.0, "grade": "perfect", "song_time": 31.7083}}
+{"type": "judgment.note", "src": "chris", "seq": 550, "t": 1040628.118708916, "data": {"drum": "ride_bell", "bar": 19, "beat": 3.0, "error_ms": -6.0, "grade": "perfect", "song_time": 31.7083}}
+{"type": "judgment.note", "src": "chris", "seq": 551, "t": 1040628.338060833, "data": {"drum": "hihat_pedal", "bar": 19, "beat": 3.5, "error_ms": -2.7, "grade": "perfect", "song_time": 31.9259}}
+{"type": "judgment.note", "src": "chris", "seq": 552, "t": 1040628.338196958, "data": {"drum": "ride", "bar": 19, "beat": 3.5, "error_ms": -2.7, "grade": "perfect", "song_time": 31.9259}}
+{"type": "judgment.note", "src": "chris", "seq": 553, "t": 1040628.448472375, "data": {"drum": "kick", "bar": 19, "beat": 3.75, "error_ms": -7.4, "grade": "perfect", "song_time": 32.0283}}
+{"type": "judgment.note", "src": "chris", "seq": 554, "t": 1040628.556785708, "data": {"drum": "snare", "bar": 19, "beat": 4.0, "error_ms": 0.2, "grade": "perfect", "song_time": 32.1431}}
+{"type": "judgment.note", "src": "chris", "seq": 555, "t": 1040628.556936791, "data": {"drum": "ride_bell", "bar": 19, "beat": 4.0, "error_ms": 0.2, "grade": "perfect", "song_time": 32.1431}}
+{"type": "judgment.note", "src": "chris", "seq": 556, "t": 1040628.781039541, "data": {"drum": "kick", "bar": 19, "beat": 4.5, "error_ms": 3.4, "grade": "perfect", "song_time": 32.3605}}
+{"type": "judgment.note", "src": "chris", "seq": 557, "t": 1040628.781372083, "data": {"drum": "hihat_pedal", "bar": 19, "beat": 4.5, "error_ms": 3.4, "grade": "perfect", "song_time": 32.3605}}
+{"type": "judgment.note", "src": "chris", "seq": 558, "t": 1040628.781478458, "data": {"drum": "ride", "bar": 19, "beat": 4.5, "error_ms": 3.4, "grade": "perfect", "song_time": 32.3605}}
+{"type": "judgment.note", "src": "chris", "seq": 559, "t": 1040628.883803541, "data": {"drum": "snare", "bar": 19, "beat": 4.75, "error_ms": -1.0, "grade": "perfect", "song_time": 32.4633}}
+{"type": "session.state", "src": "chris", "seq": 560, "t": 1040628.968550958, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 20, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 561, "t": 1040628.968689625, "data": {"drum": "kick", "bar": 20, "beat": 1.0, "error_ms": -18.1, "grade": "good", "song_time": 32.5533}}
+{"type": "judgment.note", "src": "chris", "seq": 562, "t": 1040628.968732875, "data": {"drum": "ride_bell", "bar": 20, "beat": 1.0, "error_ms": -18.1, "grade": "good", "song_time": 32.5533}}
+{"type": "judgment.note", "src": "chris", "seq": 563, "t": 1040629.087849041, "data": {"drum": "tom_high_mid", "bar": 20, "beat": 1.25, "error_ms": -5.2, "grade": "perfect", "song_time": 32.6733}}
+{"type": "judgment.note", "src": "chris", "seq": 564, "t": 1040629.208046875, "data": {"drum": "hihat_pedal", "bar": 20, "beat": 1.5, "error_ms": 7.6, "grade": "perfect", "song_time": 32.7933}}
+{"type": "judgment.note", "src": "chris", "seq": 565, "t": 1040629.208430416, "data": {"drum": "tom_high_mid", "bar": 20, "beat": 1.5, "error_ms": 7.6, "grade": "perfect", "song_time": 32.7933}}
+{"type": "judgment.note", "src": "chris", "seq": 566, "t": 1040629.287869625, "data": {"drum": "kick", "bar": 20, "beat": 1.75, "error_ms": -14.5, "grade": "perfect", "song_time": 32.8783}}
+{"type": "judgment.note", "src": "chris", "seq": 567, "t": 1040629.288129708, "data": {"drum": "tom_high_mid", "bar": 20, "beat": 1.75, "error_ms": -14.5, "grade": "perfect", "song_time": 32.8783}}
+{"type": "judgment.note", "src": "chris", "seq": 568, "t": 1040629.629497666, "data": {"drum": "ride_bell", "bar": 20, "beat": 2.0, "error_ms": null, "grade": "miss", "song_time": 33.0}}
+{"type": "judgment.note", "src": "chris", "seq": 569, "t": 1040629.629694666, "data": {"drum": "kick", "bar": 20, "beat": 2.5, "error_ms": 2.6, "grade": "perfect", "song_time": 33.2169}}
+{"type": "judgment.note", "src": "chris", "seq": 570, "t": 1040629.629775583, "data": {"drum": "hihat_pedal", "bar": 20, "beat": 2.5, "error_ms": 2.6, "grade": "perfect", "song_time": 33.2169}}
+{"type": "judgment.note", "src": "chris", "seq": 571, "t": 1040629.629828875, "data": {"drum": "ride", "bar": 20, "beat": 2.5, "error_ms": 2.6, "grade": "perfect", "song_time": 33.2169}}
+{"type": "judgment.note", "src": "chris", "seq": 572, "t": 1040629.717498166, "data": {"drum": "snare", "bar": 20, "beat": 2.75, "error_ms": -13.1, "grade": "perfect", "song_time": 33.3083}}
+{"type": "judgment.note", "src": "chris", "seq": 573, "t": 1040629.858991041, "data": {"drum": "kick", "bar": 20, "beat": 3.0, "error_ms": 11.8, "grade": "perfect", "song_time": 33.4403}}
+{"type": "judgment.note", "src": "chris", "seq": 574, "t": 1040629.859274458, "data": {"drum": "ride_bell", "bar": 20, "beat": 3.0, "error_ms": 11.8, "grade": "perfect", "song_time": 33.4403}}
+{"type": "judgment.note", "src": "chris", "seq": 575, "t": 1040630.048788083, "data": {"drum": "snare", "bar": 20, "beat": 3.5, "error_ms": -11.3, "grade": "perfect", "song_time": 33.6316}}
+{"type": "judgment.note", "src": "chris", "seq": 576, "t": 1040630.127769625, "data": {"drum": "snare", "bar": 20, "beat": 3.667, "error_ms": -0.9, "grade": "perfect", "song_time": 33.7134}}
+{"type": "judgment.note", "src": "chris", "seq": 577, "t": 1040630.128080791, "data": {"drum": "hihat_pedal", "bar": 20, "beat": 3.667, "error_ms": -0.9, "grade": "perfect", "song_time": 33.7134}}
+{"type": "judgment.note", "src": "chris", "seq": 578, "t": 1040630.187400208, "data": {"drum": "snare", "bar": 20, "beat": 3.833, "error_ms": -7.4, "grade": "perfect", "song_time": 33.7783}}
+{"type": "judgment.note", "src": "chris", "seq": 579, "t": 1040630.258507083, "data": {"drum": "kick", "bar": 20, "beat": 4.0, "error_ms": -18.7, "grade": "good", "song_time": 33.8384}}
+{"type": "judgment.note", "src": "chris", "seq": 580, "t": 1040630.258678458, "data": {"drum": "snare", "bar": 20, "beat": 4.0, "error_ms": -18.7, "grade": "good", "song_time": 33.8384}}
+{"type": "judgment.note", "src": "chris", "seq": 581, "t": 1040630.258739, "data": {"drum": "ride_bell", "bar": 20, "beat": 4.0, "error_ms": -18.7, "grade": "good", "song_time": 33.8384}}
+{"type": "judgment.note", "src": "chris", "seq": 582, "t": 1040630.358936291, "data": {"drum": "snare", "bar": 20, "beat": 4.25, "error_ms": -20.9, "grade": "good", "song_time": 33.9433}}
+{"type": "judgment.note", "src": "chris", "seq": 583, "t": 1040630.487472291, "data": {"drum": "kick", "bar": 20, "beat": 4.5, "error_ms": -3.0, "grade": "perfect", "song_time": 34.0684}}
+{"type": "judgment.note", "src": "chris", "seq": 584, "t": 1040630.487654208, "data": {"drum": "hihat_pedal", "bar": 20, "beat": 4.5, "error_ms": -3.0, "grade": "perfect", "song_time": 34.0684}}
+{"type": "judgment.note", "src": "chris", "seq": 585, "t": 1040630.487778083, "data": {"drum": "ride_bell", "bar": 20, "beat": 4.5, "error_ms": -3.0, "grade": "perfect", "song_time": 34.0684}}
+{"type": "judgment.note", "src": "chris", "seq": 586, "t": 1040630.598893458, "data": {"drum": "snare", "bar": 20, "beat": 4.75, "error_ms": 4.9, "grade": "perfect", "song_time": 34.1835}}
+{"type": "session.state", "src": "chris", "seq": 587, "t": 1040630.688567666, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 21, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 588, "t": 1040630.68883325, "data": {"drum": "kick", "bar": 21, "beat": 1.0, "error_ms": -12.4, "grade": "perfect", "song_time": 34.2733}}
+{"type": "judgment.note", "src": "chris", "seq": 589, "t": 1040630.688911708, "data": {"drum": "crash", "bar": 21, "beat": 1.0, "error_ms": -12.4, "grade": "perfect", "song_time": 34.2733}}
+{"type": "judgment.note", "src": "chris", "seq": 590, "t": 1040630.898445666, "data": {"drum": "hihat_pedal", "bar": 21, "beat": 1.5, "error_ms": -16.7, "grade": "good", "song_time": 34.4833}}
+{"type": "judgment.note", "src": "chris", "seq": 591, "t": 1040630.898618166, "data": {"drum": "ride", "bar": 21, "beat": 1.5, "error_ms": -16.7, "grade": "good", "song_time": 34.4833}}
+{"type": "judgment.note", "src": "chris", "seq": 592, "t": 1040631.008563916, "data": {"drum": "kick", "bar": 21, "beat": 1.75, "error_ms": -13.8, "grade": "perfect", "song_time": 34.5933}}
+{"type": "judgment.note", "src": "chris", "seq": 593, "t": 1040631.327570541, "data": {"drum": "ride_bell", "bar": 21, "beat": 2.0, "error_ms": null, "grade": "miss", "song_time": 34.7143}}
+{"type": "judgment.note", "src": "chris", "seq": 594, "t": 1040631.32775075, "data": {"drum": "kick", "bar": 21, "beat": 2.5, "error_ms": -14.5, "grade": "perfect", "song_time": 34.9141}}
+{"type": "judgment.note", "src": "chris", "seq": 595, "t": 1040631.327800916, "data": {"drum": "snare", "bar": 21, "beat": 2.5, "error_ms": -14.5, "grade": "perfect", "song_time": 34.9141}}
+{"type": "judgment.note", "src": "chris", "seq": 596, "t": 1040631.327824875, "data": {"drum": "hihat_pedal", "bar": 21, "beat": 2.5, "error_ms": -14.5, "grade": "perfect", "song_time": 34.9141}}
+{"type": "judgment.note", "src": "chris", "seq": 597, "t": 1040631.327843791, "data": {"drum": "ride", "bar": 21, "beat": 2.5, "error_ms": -14.5, "grade": "perfect", "song_time": 34.9141}}
+{"type": "judgment.note", "src": "chris", "seq": 598, "t": 1040631.448347416, "data": {"drum": "snare", "bar": 21, "beat": 2.75, "error_ms": -2.3, "grade": "perfect", "song_time": 35.0334}}
+{"type": "judgment.note", "src": "chris", "seq": 599, "t": 1040631.558918041, "data": {"drum": "kick", "bar": 21, "beat": 3.0, "error_ms": 5.1, "grade": "perfect", "song_time": 35.1479}}
+{"type": "judgment.note", "src": "chris", "seq": 600, "t": 1040631.55908525, "data": {"drum": "ride_bell", "bar": 21, "beat": 3.0, "error_ms": 5.1, "grade": "perfect", "song_time": 35.1479}}
+{"type": "judgment.note", "src": "chris", "seq": 601, "t": 1040631.768626458, "data": {"drum": "hihat_pedal", "bar": 21, "beat": 3.5, "error_ms": -3.0, "grade": "perfect", "song_time": 35.3541}}
+{"type": "judgment.note", "src": "chris", "seq": 602, "t": 1040631.768797, "data": {"drum": "ride", "bar": 21, "beat": 3.5, "error_ms": -3.0, "grade": "perfect", "song_time": 35.3541}}
+{"type": "judgment.note", "src": "chris", "seq": 603, "t": 1040631.858728416, "data": {"drum": "kick", "bar": 21, "beat": 3.75, "error_ms": -16.0, "grade": "good", "song_time": 35.4483}}
+{"type": "judgment.note", "src": "chris", "seq": 604, "t": 1040631.967070041, "data": {"drum": "snare", "bar": 21, "beat": 4.0, "error_ms": -13.5, "grade": "perfect", "song_time": 35.5579}}
+{"type": "judgment.note", "src": "chris", "seq": 605, "t": 1040631.967350291, "data": {"drum": "ride_bell", "bar": 21, "beat": 4.0, "error_ms": -13.5, "grade": "perfect", "song_time": 35.5579}}
+{"type": "judgment.note", "src": "chris", "seq": 606, "t": 1040632.207223166, "data": {"drum": "kick", "bar": 21, "beat": 4.5, "error_ms": 5.2, "grade": "perfect", "song_time": 35.7909}}
+{"type": "judgment.note", "src": "chris", "seq": 607, "t": 1040632.207377083, "data": {"drum": "hihat_pedal", "bar": 21, "beat": 4.5, "error_ms": 5.2, "grade": "perfect", "song_time": 35.7909}}
+{"type": "judgment.note", "src": "chris", "seq": 608, "t": 1040632.207590666, "data": {"drum": "ride", "bar": 21, "beat": 4.5, "error_ms": 5.2, "grade": "perfect", "song_time": 35.7909}}
+{"type": "judgment.note", "src": "chris", "seq": 609, "t": 1040632.288995708, "data": {"drum": "snare", "bar": 21, "beat": 4.75, "error_ms": -14.5, "grade": "perfect", "song_time": 35.8783}}
+{"type": "session.state", "src": "chris", "seq": 610, "t": 1040632.408874708, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 22, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 611, "t": 1040632.409176333, "data": {"drum": "kick", "bar": 22, "beat": 1.0, "error_ms": -6.6, "grade": "perfect", "song_time": 35.9934}}
+{"type": "judgment.note", "src": "chris", "seq": 612, "t": 1040632.4092505, "data": {"drum": "ride_bell", "bar": 22, "beat": 1.0, "error_ms": -6.6, "grade": "perfect", "song_time": 35.9934}}
+{"type": "judgment.note", "src": "chris", "seq": 613, "t": 1040632.629370375, "data": {"drum": "hihat_pedal", "bar": 22, "beat": 1.5, "error_ms": -2.3, "grade": "perfect", "song_time": 36.212}}
+{"type": "judgment.note", "src": "chris", "seq": 614, "t": 1040632.629767541, "data": {"drum": "ride", "bar": 22, "beat": 1.5, "error_ms": -2.3, "grade": "perfect", "song_time": 36.212}}
+{"type": "judgment.note", "src": "chris", "seq": 615, "t": 1040632.719051333, "data": {"drum": "kick", "bar": 22, "beat": 1.75, "error_ms": -18.1, "grade": "good", "song_time": 36.3033}}
+{"type": "judgment.note", "src": "chris", "seq": 616, "t": 1040632.858714583, "data": {"drum": "ride_bell", "bar": 22, "beat": 2.0, "error_ms": 15.1, "grade": "good", "song_time": 36.4437}}
+{"type": "judgment.note", "src": "chris", "seq": 617, "t": 1040633.057607541, "data": {"drum": "kick", "bar": 22, "beat": 2.5, "error_ms": 2.3, "grade": "perfect", "song_time": 36.6452}}
+{"type": "judgment.note", "src": "chris", "seq": 618, "t": 1040633.057716166, "data": {"drum": "snare", "bar": 22, "beat": 2.5, "error_ms": 2.3, "grade": "perfect", "song_time": 36.6452}}
+{"type": "judgment.note", "src": "chris", "seq": 619, "t": 1040633.057744375, "data": {"drum": "hihat_pedal", "bar": 22, "beat": 2.5, "error_ms": 2.3, "grade": "perfect", "song_time": 36.6452}}
+{"type": "judgment.note", "src": "chris", "seq": 620, "t": 1040633.057769416, "data": {"drum": "ride", "bar": 22, "beat": 2.5, "error_ms": 2.3, "grade": "perfect", "song_time": 36.6452}}
+{"type": "judgment.note", "src": "chris", "seq": 621, "t": 1040633.158250166, "data": {"drum": "snare", "bar": 22, "beat": 2.75, "error_ms": -11.7, "grade": "perfect", "song_time": 36.7383}}
+{"type": "judgment.note", "src": "chris", "seq": 622, "t": 1040633.2867305, "data": {"drum": "kick", "bar": 22, "beat": 3.0, "error_ms": 12.3, "grade": "perfect", "song_time": 36.8694}}
+{"type": "judgment.note", "src": "chris", "seq": 623, "t": 1040633.286900458, "data": {"drum": "ride_bell", "bar": 22, "beat": 3.0, "error_ms": 12.3, "grade": "perfect", "song_time": 36.8694}}
+{"type": "judgment.note", "src": "chris", "seq": 624, "t": 1040633.478155916, "data": {"drum": "hihat_pedal", "bar": 22, "beat": 3.5, "error_ms": -9.7, "grade": "perfect", "song_time": 37.0618}}
+{"type": "judgment.note", "src": "chris", "seq": 625, "t": 1040633.478566791, "data": {"drum": "ride", "bar": 22, "beat": 3.5, "error_ms": -9.7, "grade": "perfect", "song_time": 37.0618}}
+{"type": "judgment.note", "src": "chris", "seq": 626, "t": 1040633.587293, "data": {"drum": "kick", "bar": 22, "beat": 3.75, "error_ms": -5.2, "grade": "perfect", "song_time": 37.1733}}
+{"type": "judgment.note", "src": "chris", "seq": 627, "t": 1040633.688777875, "data": {"drum": "ride_bell", "bar": 22, "beat": 4.0, "error_ms": -11.9, "grade": "perfect", "song_time": 37.2738}}
+{"type": "judgment.note", "src": "chris", "seq": 628, "t": 1040633.908106541, "data": {"drum": "kick", "bar": 22, "beat": 4.5, "error_ms": -4.3, "grade": "perfect", "song_time": 37.4957}}
+{"type": "judgment.note", "src": "chris", "seq": 629, "t": 1040633.908273166, "data": {"drum": "hihat_pedal", "bar": 22, "beat": 4.5, "error_ms": -4.3, "grade": "perfect", "song_time": 37.4957}}
+{"type": "judgment.note", "src": "chris", "seq": 630, "t": 1040633.9083695, "data": {"drum": "tom_high_mid", "bar": 22, "beat": 4.5, "error_ms": -4.3, "grade": "perfect", "song_time": 37.4957}}
+{"type": "judgment.note", "src": "chris", "seq": 631, "t": 1040634.018543541, "data": {"drum": "tom_high_mid", "bar": 22, "beat": 4.75, "error_ms": -3.8, "grade": "perfect", "song_time": 37.6033}}
+{"type": "session.state", "src": "chris", "seq": 632, "t": 1040634.139276791, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 23, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 633, "t": 1040634.139578, "data": {"drum": "kick", "bar": 23, "beat": 1.0, "error_ms": 4.1, "grade": "perfect", "song_time": 37.7184}}
+{"type": "judgment.note", "src": "chris", "seq": 634, "t": 1040634.139699666, "data": {"drum": "ride_bell", "bar": 23, "beat": 1.0, "error_ms": 4.1, "grade": "perfect", "song_time": 37.7184}}
+{"type": "judgment.note", "src": "chris", "seq": 635, "t": 1040634.329086708, "data": {"drum": "hihat_pedal", "bar": 23, "beat": 1.5, "error_ms": -13.7, "grade": "perfect", "song_time": 37.9148}}
+{"type": "judgment.note", "src": "chris", "seq": 636, "t": 1040634.329298916, "data": {"drum": "ride", "bar": 23, "beat": 1.5, "error_ms": -13.7, "grade": "perfect", "song_time": 37.9148}}
+{"type": "judgment.note", "src": "chris", "seq": 637, "t": 1040634.448676666, "data": {"drum": "kick", "bar": 23, "beat": 1.75, "error_ms": -2.4, "grade": "perfect", "song_time": 38.0333}}
+{"type": "judgment.note", "src": "chris", "seq": 638, "t": 1040634.559173125, "data": {"drum": "ride_bell", "bar": 23, "beat": 2.0, "error_ms": -4.3, "grade": "perfect", "song_time": 38.1386}}
+{"type": "judgment.note", "src": "chris", "seq": 639, "t": 1040634.77868325, "data": {"drum": "kick", "bar": 23, "beat": 2.5, "error_ms": 9.3, "grade": "perfect", "song_time": 38.3665}}
+{"type": "judgment.note", "src": "chris", "seq": 640, "t": 1040634.779040291, "data": {"drum": "hihat_pedal", "bar": 23, "beat": 2.5, "error_ms": 9.3, "grade": "perfect", "song_time": 38.3665}}
+{"type": "judgment.note", "src": "chris", "seq": 641, "t": 1040634.779119166, "data": {"drum": "ride", "bar": 23, "beat": 2.5, "error_ms": 9.3, "grade": "perfect", "song_time": 38.3665}}
+{"type": "judgment.note", "src": "chris", "seq": 642, "t": 1040634.880343916, "data": {"drum": "snare", "bar": 23, "beat": 2.75, "error_ms": -5.9, "grade": "perfect", "song_time": 38.4584}}
+{"type": "judgment.note", "src": "chris", "seq": 643, "t": 1040634.99879075, "data": {"drum": "kick", "bar": 23, "beat": 3.0, "error_ms": 12.4, "grade": "perfect", "song_time": 38.5838}}
+{"type": "judgment.note", "src": "chris", "seq": 644, "t": 1040634.999054333, "data": {"drum": "ride_bell", "bar": 23, "beat": 3.0, "error_ms": 12.4, "grade": "perfect", "song_time": 38.5838}}
+{"type": "judgment.note", "src": "chris", "seq": 645, "t": 1040635.186962666, "data": {"drum": "hihat_pedal", "bar": 23, "beat": 3.5, "error_ms": -13.7, "grade": "perfect", "song_time": 38.772}}
+{"type": "judgment.note", "src": "chris", "seq": 646, "t": 1040635.187231208, "data": {"drum": "ride", "bar": 23, "beat": 3.5, "error_ms": -13.7, "grade": "perfect", "song_time": 38.772}}
+{"type": "judgment.note", "src": "chris", "seq": 647, "t": 1040635.307226208, "data": {"drum": "kick", "bar": 23, "beat": 3.75, "error_ms": -4.5, "grade": "perfect", "song_time": 38.8883}}
+{"type": "judgment.note", "src": "chris", "seq": 648, "t": 1040635.418812291, "data": {"drum": "snare", "bar": 23, "beat": 4.0, "error_ms": 0.9, "grade": "perfect", "song_time": 39.0009}}
+{"type": "judgment.note", "src": "chris", "seq": 649, "t": 1040635.419059166, "data": {"drum": "ride_bell", "bar": 23, "beat": 4.0, "error_ms": 0.9, "grade": "perfect", "song_time": 39.0009}}
+{"type": "judgment.note", "src": "chris", "seq": 650, "t": 1040635.629020083, "data": {"drum": "kick", "bar": 23, "beat": 4.5, "error_ms": 2.5, "grade": "perfect", "song_time": 39.2168}}
+{"type": "judgment.note", "src": "chris", "seq": 651, "t": 1040635.629425458, "data": {"drum": "hihat_pedal", "bar": 23, "beat": 4.5, "error_ms": 2.5, "grade": "perfect", "song_time": 39.2168}}
+{"type": "judgment.note", "src": "chris", "seq": 652, "t": 1040635.629497208, "data": {"drum": "ride", "bar": 23, "beat": 4.5, "error_ms": 2.5, "grade": "perfect", "song_time": 39.2168}}
+{"type": "session.state", "src": "chris", "seq": 653, "t": 1040635.828641208, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 24, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 654, "t": 1040635.829022625, "data": {"drum": "kick", "bar": 24, "beat": 1.0, "error_ms": -14.4, "grade": "perfect", "song_time": 39.4141}}
+{"type": "judgment.note", "src": "chris", "seq": 655, "t": 1040635.829192541, "data": {"drum": "tom_low_mid", "bar": 24, "beat": 1.0, "error_ms": -14.4, "grade": "perfect", "song_time": 39.4141}}
+{"type": "judgment.note", "src": "chris", "seq": 656, "t": 1040636.148766458, "data": {"drum": "kick", "bar": 24, "beat": 1.75, "error_ms": -11.8, "grade": "perfect", "song_time": 39.7382}}
+{"type": "judgment.note", "src": "chris", "seq": 657, "t": 1040636.149020583, "data": {"drum": "hihat_pedal", "bar": 24, "beat": 1.75, "error_ms": -11.8, "grade": "perfect", "song_time": 39.7382}}
+{"type": "judgment.note", "src": "chris", "seq": 658, "t": 1040636.149123958, "data": {"drum": "tom_low", "bar": 24, "beat": 1.75, "error_ms": -11.8, "grade": "perfect", "song_time": 39.7382}}
+{"type": "judgment.note", "src": "chris", "seq": 659, "t": 1040636.488622875, "data": {"drum": "hihat_pedal", "bar": 24, "beat": 2.0, "error_ms": null, "grade": "miss", "song_time": 39.8571}}
+{"type": "judgment.note", "src": "chris", "seq": 660, "t": 1040636.488923, "data": {"drum": "kick", "bar": 24, "beat": 2.5, "error_ms": 2.7, "grade": "perfect", "song_time": 40.0742}}
+{"type": "judgment.note", "src": "chris", "seq": 661, "t": 1040636.598653125, "data": {"drum": "snare", "bar": 24, "beat": 2.75, "error_ms": 1.4, "grade": "perfect", "song_time": 40.18}}
+{"type": "judgment.note", "src": "chris", "seq": 662, "t": 1040636.699122208, "data": {"drum": "kick", "bar": 24, "beat": 3.0, "error_ms": -7.3, "grade": "perfect", "song_time": 40.2784}}
+{"type": "judgment.note", "src": "chris", "seq": 663, "t": 1040636.699367083, "data": {"drum": "ride", "bar": 24, "beat": 3.0, "error_ms": -7.3, "grade": "perfect", "song_time": 40.2784}}
+{"type": "judgment.note", "src": "chris", "seq": 664, "t": 1040636.919056708, "data": {"drum": "hihat_pedal", "bar": 24, "beat": 3.5, "error_ms": 1.7, "grade": "perfect", "song_time": 40.5017}}
+{"type": "judgment.note", "src": "chris", "seq": 665, "t": 1040636.998786583, "data": {"drum": "kick", "bar": 24, "beat": 3.75, "error_ms": -18.8, "grade": "good", "song_time": 40.5883}}
+{"type": "judgment.note", "src": "chris", "seq": 666, "t": 1040637.107013375, "data": {"drum": "snare", "bar": 24, "beat": 4.0, "error_ms": -18.2, "grade": "good", "song_time": 40.6961}}
+{"type": "judgment.note", "src": "chris", "seq": 667, "t": 1040637.248552875, "data": {"drum": "snare", "bar": 24, "beat": 4.25, "error_ms": 9.9, "grade": "perfect", "song_time": 40.8313}}
+{"type": "judgment.note", "src": "chris", "seq": 668, "t": 1040637.338662916, "data": {"drum": "kick", "bar": 24, "beat": 4.5, "error_ms": -0.2, "grade": "perfect", "song_time": 40.9283}}
+{"type": "judgment.note", "src": "chris", "seq": 669, "t": 1040637.338867333, "data": {"drum": "hihat_pedal", "bar": 24, "beat": 4.5, "error_ms": -0.2, "grade": "perfect", "song_time": 40.9283}}
+{"type": "judgment.note", "src": "chris", "seq": 670, "t": 1040637.338931333, "data": {"drum": "tom_low", "bar": 24, "beat": 4.5, "error_ms": -0.2, "grade": "perfect", "song_time": 40.9283}}
+{"type": "judgment.note", "src": "chris", "seq": 671, "t": 1040637.427915333, "data": {"drum": "tom_low", "bar": 24, "beat": 4.75, "error_ms": -22.4, "grade": "good", "song_time": 41.0133}}
+{"type": "session.state", "src": "chris", "seq": 672, "t": 1040637.55703425, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 25, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 673, "t": 1040637.557164833, "data": {"drum": "kick", "bar": 25, "beat": 1.0, "error_ms": 0.8, "grade": "perfect", "song_time": 41.1437}}
+{"type": "judgment.note", "src": "chris", "seq": 674, "t": 1040637.557204125, "data": {"drum": "crash", "bar": 25, "beat": 1.0, "error_ms": 0.8, "grade": "perfect", "song_time": 41.1437}}
+{"type": "judgment.note", "src": "chris", "seq": 675, "t": 1040637.768797375, "data": {"drum": "hihat_pedal", "bar": 25, "beat": 1.5, "error_ms": -1.6, "grade": "perfect", "song_time": 41.3555}}
+{"type": "judgment.note", "src": "chris", "seq": 676, "t": 1040637.76907525, "data": {"drum": "ride", "bar": 25, "beat": 1.5, "error_ms": -1.6, "grade": "perfect", "song_time": 41.3555}}
+{"type": "judgment.note", "src": "chris", "seq": 677, "t": 1040637.879778916, "data": {"drum": "kick", "bar": 25, "beat": 1.75, "error_ms": -1.0, "grade": "perfect", "song_time": 41.4633}}
+{"type": "judgment.note", "src": "chris", "seq": 678, "t": 1040637.979385166, "data": {"drum": "ride_bell", "bar": 25, "beat": 2.0, "error_ms": -10.8, "grade": "perfect", "song_time": 41.5607}}
+{"type": "judgment.note", "src": "chris", "seq": 679, "t": 1040638.199135791, "data": {"drum": "kick", "bar": 25, "beat": 2.5, "error_ms": -2.3, "grade": "perfect", "song_time": 41.7834}}
+{"type": "judgment.note", "src": "chris", "seq": 680, "t": 1040638.199414375, "data": {"drum": "snare", "bar": 25, "beat": 2.5, "error_ms": -2.3, "grade": "perfect", "song_time": 41.7834}}
+{"type": "judgment.note", "src": "chris", "seq": 681, "t": 1040638.19947525, "data": {"drum": "hihat_pedal", "bar": 25, "beat": 2.5, "error_ms": -2.3, "grade": "perfect", "song_time": 41.7834}}
+{"type": "judgment.note", "src": "chris", "seq": 682, "t": 1040638.199518958, "data": {"drum": "ride", "bar": 25, "beat": 2.5, "error_ms": -2.3, "grade": "perfect", "song_time": 41.7834}}
+{"type": "judgment.note", "src": "chris", "seq": 683, "t": 1040638.307929041, "data": {"drum": "snare", "bar": 25, "beat": 2.75, "error_ms": 0.5, "grade": "perfect", "song_time": 41.8933}}
+{"type": "judgment.note", "src": "chris", "seq": 684, "t": 1040638.408715291, "data": {"drum": "kick", "bar": 25, "beat": 3.0, "error_ms": -5.9, "grade": "perfect", "song_time": 41.9941}}
+{"type": "judgment.note", "src": "chris", "seq": 685, "t": 1040638.408942041, "data": {"drum": "ride_bell", "bar": 25, "beat": 3.0, "error_ms": -5.9, "grade": "perfect", "song_time": 41.9941}}
+{"type": "judgment.note", "src": "chris", "seq": 686, "t": 1040638.629517666, "data": {"drum": "hihat_pedal", "bar": 25, "beat": 3.5, "error_ms": -2.7, "grade": "perfect", "song_time": 42.2116}}
+{"type": "judgment.note", "src": "chris", "seq": 687, "t": 1040638.629711625, "data": {"drum": "ride", "bar": 25, "beat": 3.5, "error_ms": -2.7, "grade": "perfect", "song_time": 42.2116}}
+{"type": "judgment.note", "src": "chris", "seq": 688, "t": 1040638.738665125, "data": {"drum": "kick", "bar": 25, "beat": 3.75, "error_ms": 1.9, "grade": "perfect", "song_time": 42.3233}}
+{"type": "judgment.note", "src": "chris", "seq": 689, "t": 1040638.838730833, "data": {"drum": "snare", "bar": 25, "beat": 4.0, "error_ms": -5.0, "grade": "perfect", "song_time": 42.4236}}
+{"type": "judgment.note", "src": "chris", "seq": 690, "t": 1040638.838986583, "data": {"drum": "ride_bell", "bar": 25, "beat": 4.0, "error_ms": -5.0, "grade": "perfect", "song_time": 42.4236}}
+{"type": "judgment.note", "src": "chris", "seq": 691, "t": 1040639.048117291, "data": {"drum": "kick", "bar": 25, "beat": 4.5, "error_ms": -4.5, "grade": "perfect", "song_time": 42.6383}}
+{"type": "judgment.note", "src": "chris", "seq": 692, "t": 1040639.048356416, "data": {"drum": "hihat_pedal", "bar": 25, "beat": 4.5, "error_ms": -4.5, "grade": "perfect", "song_time": 42.6383}}
+{"type": "judgment.note", "src": "chris", "seq": 693, "t": 1040639.048435333, "data": {"drum": "ride", "bar": 25, "beat": 4.5, "error_ms": -4.5, "grade": "perfect", "song_time": 42.6383}}
+{"type": "judgment.note", "src": "chris", "seq": 694, "t": 1040639.157884291, "data": {"drum": "snare", "bar": 25, "beat": 4.75, "error_ms": -11.7, "grade": "perfect", "song_time": 42.7383}}
+{"type": "session.state", "src": "chris", "seq": 695, "t": 1040639.268722875, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 26, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 696, "t": 1040639.268982541, "data": {"drum": "kick", "bar": 26, "beat": 1.0, "error_ms": -1.4, "grade": "perfect", "song_time": 42.8557}}
+{"type": "judgment.note", "src": "chris", "seq": 697, "t": 1040639.269078791, "data": {"drum": "ride_bell", "bar": 26, "beat": 1.0, "error_ms": -1.4, "grade": "perfect", "song_time": 42.8557}}
+{"type": "judgment.note", "src": "chris", "seq": 698, "t": 1040639.488788833, "data": {"drum": "hihat_pedal", "bar": 26, "beat": 1.5, "error_ms": -1.8, "grade": "perfect", "song_time": 43.0696}}
+{"type": "judgment.note", "src": "chris", "seq": 699, "t": 1040639.488987541, "data": {"drum": "ride", "bar": 26, "beat": 1.5, "error_ms": -1.8, "grade": "perfect", "song_time": 43.0696}}
+{"type": "judgment.note", "src": "chris", "seq": 700, "t": 1040639.578311416, "data": {"drum": "kick", "bar": 26, "beat": 1.75, "error_ms": -10.2, "grade": "perfect", "song_time": 43.1683}}
+{"type": "judgment.note", "src": "chris", "seq": 701, "t": 1040639.688920458, "data": {"drum": "ride_bell", "bar": 26, "beat": 2.0, "error_ms": -8.9, "grade": "perfect", "song_time": 43.2768}}
+{"type": "judgment.note", "src": "chris", "seq": 702, "t": 1040639.908764, "data": {"drum": "kick", "bar": 26, "beat": 2.5, "error_ms": -6.6, "grade": "perfect", "song_time": 43.4934}}
+{"type": "judgment.note", "src": "chris", "seq": 703, "t": 1040639.909032708, "data": {"drum": "snare", "bar": 26, "beat": 2.5, "error_ms": -6.6, "grade": "perfect", "song_time": 43.4934}}
+{"type": "judgment.note", "src": "chris", "seq": 704, "t": 1040639.909119541, "data": {"drum": "hihat_pedal", "bar": 26, "beat": 2.5, "error_ms": -6.6, "grade": "perfect", "song_time": 43.4934}}
+{"type": "judgment.note", "src": "chris", "seq": 705, "t": 1040639.909166458, "data": {"drum": "ride", "bar": 26, "beat": 2.5, "error_ms": -6.6, "grade": "perfect", "song_time": 43.4934}}
+{"type": "judgment.note", "src": "chris", "seq": 706, "t": 1040640.00883225, "data": {"drum": "snare", "bar": 26, "beat": 2.75, "error_ms": -13.7, "grade": "perfect", "song_time": 43.5934}}
+{"type": "judgment.note", "src": "chris", "seq": 707, "t": 1040640.128699291, "data": {"drum": "kick", "bar": 26, "beat": 3.0, "error_ms": -4.3, "grade": "perfect", "song_time": 43.71}}
+{"type": "judgment.note", "src": "chris", "seq": 708, "t": 1040640.128932708, "data": {"drum": "ride_bell", "bar": 26, "beat": 3.0, "error_ms": -4.3, "grade": "perfect", "song_time": 43.71}}
+{"type": "judgment.note", "src": "chris", "seq": 709, "t": 1040640.337667, "data": {"drum": "hihat_pedal", "bar": 26, "beat": 3.5, "error_ms": -3.7, "grade": "perfect", "song_time": 43.9248}}
+{"type": "judgment.note", "src": "chris", "seq": 710, "t": 1040640.337911833, "data": {"drum": "ride", "bar": 26, "beat": 3.5, "error_ms": -3.7, "grade": "perfect", "song_time": 43.9248}}
+{"type": "judgment.note", "src": "chris", "seq": 711, "t": 1040640.447281291, "data": {"drum": "kick", "bar": 26, "beat": 3.75, "error_ms": -7.4, "grade": "perfect", "song_time": 44.0283}}
+{"type": "judgment.note", "src": "chris", "seq": 712, "t": 1040640.557866, "data": {"drum": "snare", "bar": 26, "beat": 4.0, "error_ms": -1.3, "grade": "perfect", "song_time": 44.1416}}
+{"type": "judgment.note", "src": "chris", "seq": 713, "t": 1040640.558150583, "data": {"drum": "ride_bell", "bar": 26, "beat": 4.0, "error_ms": -1.3, "grade": "perfect", "song_time": 44.1416}}
+{"type": "judgment.note", "src": "chris", "seq": 714, "t": 1040640.779367875, "data": {"drum": "kick", "bar": 26, "beat": 4.5, "error_ms": 7.2, "grade": "perfect", "song_time": 44.3643}}
+{"type": "judgment.note", "src": "chris", "seq": 715, "t": 1040640.779666958, "data": {"drum": "hihat_closed", "bar": 26, "beat": 4.5, "error_ms": 7.2, "grade": "perfect", "song_time": 44.3643}}
+{"type": "judgment.note", "src": "chris", "seq": 716, "t": 1040640.779770041, "data": {"drum": "hihat_pedal", "bar": 26, "beat": 4.5, "error_ms": 7.2, "grade": "perfect", "song_time": 44.3643}}
+{"type": "judgment.note", "src": "chris", "seq": 717, "t": 1040640.918785625, "data": {"drum": "tom_high_mid", "bar": 26, "beat": 4.667, "error_ms": null, "grade": "miss", "song_time": 44.4286}}
+{"type": "judgment.note", "src": "chris", "seq": 718, "t": 1040640.919047583, "data": {"drum": "snare", "bar": 26, "beat": 4.833, "error_ms": -1.5, "grade": "perfect", "song_time": 44.4985}}
+{"type": "session.state", "src": "chris", "seq": 719, "t": 1040640.968832666, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 27, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 720, "t": 1040640.969119666, "data": {"drum": "kick", "bar": 27, "beat": 1.0, "error_ms": -18.0, "grade": "good", "song_time": 44.5534}}
+{"type": "judgment.note", "src": "chris", "seq": 721, "t": 1040640.969227791, "data": {"drum": "tom_low_mid", "bar": 27, "beat": 1.0, "error_ms": -18.0, "grade": "good", "song_time": 44.5534}}
+{"type": "judgment.note", "src": "chris", "seq": 722, "t": 1040641.308858166, "data": {"drum": "hihat_pedal", "bar": 27, "beat": 1.5, "error_ms": null, "grade": "miss", "song_time": 44.7857}}
+{"type": "judgment.note", "src": "chris", "seq": 723, "t": 1040641.309097916, "data": {"drum": "ride", "bar": 27, "beat": 1.5, "error_ms": null, "grade": "miss", "song_time": 44.7857}}
+{"type": "judgment.note", "src": "chris", "seq": 724, "t": 1040641.309162083, "data": {"drum": "kick", "bar": 27, "beat": 1.75, "error_ms": -4.4, "grade": "perfect", "song_time": 44.8884}}
+{"type": "fletcher.state", "src": "aaron", "seq": 43, "t": 1040641.3120965, "data": {"mood": "watching", "anger": 0.21, "action": "conduct", "look_at": "drummer", "gesture": "t4_shout", "utterance_id": "u-0008", "priority": 1, "at_s": 0.177}}
+{"type": "fletcher.speech", "src": "aaron", "seq": 44, "t": 1040641.312474625, "data": {"utterance_id": "u-0008", "text": "No, no, no.", "clip_id": "no_2", "sample_rate": 24000}}
+{"type": "judgment.note", "src": "chris", "seq": 725, "t": 1040641.418519916, "data": {"drum": "ride_bell", "bar": 27, "beat": 2.0, "error_ms": 1.3, "grade": "perfect", "song_time": 45.0013}}
+{"type": "judgment.note", "src": "chris", "seq": 726, "t": 1040641.618825166, "data": {"drum": "kick", "bar": 27, "beat": 2.5, "error_ms": -8.1, "grade": "perfect", "song_time": 45.2062}}
+{"type": "judgment.note", "src": "chris", "seq": 727, "t": 1040641.619069875, "data": {"drum": "hihat_pedal", "bar": 27, "beat": 2.5, "error_ms": -8.1, "grade": "perfect", "song_time": 45.2062}}
+{"type": "judgment.note", "src": "chris", "seq": 728, "t": 1040641.61914325, "data": {"drum": "ride", "bar": 27, "beat": 2.5, "error_ms": -8.1, "grade": "perfect", "song_time": 45.2062}}
+{"type": "judgment.note", "src": "chris", "seq": 729, "t": 1040641.729693875, "data": {"drum": "snare", "bar": 27, "beat": 2.75, "error_ms": -8.1, "grade": "perfect", "song_time": 45.3133}}
+{"type": "judgment.note", "src": "chris", "seq": 730, "t": 1040641.83880225, "data": {"drum": "kick", "bar": 27, "beat": 3.0, "error_ms": -1.8, "grade": "perfect", "song_time": 45.4268}}
+{"type": "judgment.note", "src": "chris", "seq": 731, "t": 1040641.839056291, "data": {"drum": "ride_bell", "bar": 27, "beat": 3.0, "error_ms": -1.8, "grade": "perfect", "song_time": 45.4268}}
+{"type": "judgment.note", "src": "chris", "seq": 732, "t": 1040642.047805333, "data": {"drum": "hihat_pedal", "bar": 27, "beat": 3.5, "error_ms": -5.7, "grade": "perfect", "song_time": 45.6372}}
+{"type": "judgment.note", "src": "chris", "seq": 733, "t": 1040642.048085916, "data": {"drum": "ride", "bar": 27, "beat": 3.5, "error_ms": -5.7, "grade": "perfect", "song_time": 45.6372}}
+{"type": "judgment.note", "src": "chris", "seq": 734, "t": 1040642.149073125, "data": {"drum": "kick", "bar": 27, "beat": 3.75, "error_ms": -16.7, "grade": "good", "song_time": 45.7333}}
+{"type": "judgment.note", "src": "chris", "seq": 735, "t": 1040642.259024333, "data": {"drum": "ride_bell", "bar": 27, "beat": 4.0, "error_ms": -9.9, "grade": "perfect", "song_time": 45.8473}}
+{"type": "judgment.note", "src": "chris", "seq": 736, "t": 1040642.47763125, "data": {"drum": "kick", "bar": 27, "beat": 4.5, "error_ms": -3.4, "grade": "perfect", "song_time": 46.068}}
+{"type": "judgment.note", "src": "chris", "seq": 737, "t": 1040642.477885666, "data": {"drum": "hihat_pedal", "bar": 27, "beat": 4.5, "error_ms": -3.4, "grade": "perfect", "song_time": 46.068}}
+{"type": "judgment.note", "src": "chris", "seq": 738, "t": 1040642.47794025, "data": {"drum": "ride", "bar": 27, "beat": 4.5, "error_ms": -3.4, "grade": "perfect", "song_time": 46.068}}
+{"type": "session.state", "src": "chris", "seq": 739, "t": 1040642.688956416, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 28, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 740, "t": 1040642.689231625, "data": {"drum": "kick", "bar": 28, "beat": 1.0, "error_ms": -10.5, "grade": "perfect", "song_time": 46.2752}}
+{"type": "judgment.note", "src": "chris", "seq": 741, "t": 1040642.689322333, "data": {"drum": "ride_bell", "bar": 28, "beat": 1.0, "error_ms": -10.5, "grade": "perfect", "song_time": 46.2752}}
+{"type": "judgment.note", "src": "chris", "seq": 742, "t": 1040642.908778333, "data": {"drum": "hihat_pedal", "bar": 28, "beat": 1.5, "error_ms": -11.4, "grade": "perfect", "song_time": 46.4886}}
+{"type": "judgment.note", "src": "chris", "seq": 743, "t": 1040642.908989958, "data": {"drum": "ride", "bar": 28, "beat": 1.5, "error_ms": -11.4, "grade": "perfect", "song_time": 46.4886}}
+{"type": "judgment.note", "src": "chris", "seq": 744, "t": 1040642.9984995, "data": {"drum": "kick", "bar": 28, "beat": 1.75, "error_ms": -23.8, "grade": "good", "song_time": 46.5833}}
+{"type": "judgment.note", "src": "chris", "seq": 745, "t": 1040643.200499791, "data": {"drum": "ride_bell", "bar": 28, "beat": 2.0, "error_ms": -31.0, "grade": "good", "song_time": 46.6833}}
+{"type": "judgment.note", "src": "chris", "seq": 746, "t": 1040643.329020875, "data": {"drum": "kick", "bar": 28, "beat": 2.5, "error_ms": -19.1, "grade": "good", "song_time": 46.9094}}
+{"type": "judgment.note", "src": "chris", "seq": 747, "t": 1040643.329546916, "data": {"drum": "snare", "bar": 28, "beat": 2.5, "error_ms": -19.1, "grade": "good", "song_time": 46.9094}}
+{"type": "judgment.note", "src": "chris", "seq": 748, "t": 1040643.329642583, "data": {"drum": "hihat_pedal", "bar": 28, "beat": 2.5, "error_ms": -19.1, "grade": "good", "song_time": 46.9094}}
+{"type": "judgment.note", "src": "chris", "seq": 749, "t": 1040643.329684125, "data": {"drum": "ride", "bar": 28, "beat": 2.5, "error_ms": -19.1, "grade": "good", "song_time": 46.9094}}
+{"type": "judgment.note", "src": "chris", "seq": 750, "t": 1040643.47018475, "data": {"drum": "snare", "bar": 28, "beat": 2.75, "error_ms": -32.4, "grade": "good", "song_time": 47.0033}}
+{"type": "judgment.note", "src": "chris", "seq": 751, "t": 1040643.537640666, "data": {"drum": "kick", "bar": 28, "beat": 3.0, "error_ms": -21.7, "grade": "good", "song_time": 47.1211}}
+{"type": "judgment.note", "src": "chris", "seq": 752, "t": 1040643.53792325, "data": {"drum": "snare", "bar": 28, "beat": 3.0, "error_ms": -21.7, "grade": "good", "song_time": 47.1211}}
+{"type": "judgment.note", "src": "chris", "seq": 753, "t": 1040643.538023875, "data": {"drum": "ride_bell", "bar": 28, "beat": 3.0, "error_ms": -21.7, "grade": "good", "song_time": 47.1211}}
+{"type": "fletcher.state", "src": "aaron", "seq": 45, "t": 1040643.582847375, "data": {"mood": "watching", "anger": 0.33, "action": "conduct", "look_at": "drummer"}}
+{"type": "judgment.note", "src": "chris", "seq": 754, "t": 1040643.758910666, "data": {"drum": "hihat_pedal", "bar": 28, "beat": 3.5, "error_ms": -9.0, "grade": "perfect", "song_time": 47.3481}}
+{"type": "judgment.note", "src": "chris", "seq": 755, "t": 1040643.759227583, "data": {"drum": "tom_high_mid", "bar": 28, "beat": 3.5, "error_ms": -9.0, "grade": "perfect", "song_time": 47.3481}}
+{"type": "judgment.note", "src": "chris", "seq": 756, "t": 1040643.759321708, "data": {"drum": "ride", "bar": 28, "beat": 3.5, "error_ms": -9.0, "grade": "perfect", "song_time": 47.3481}}
+{"type": "judgment.note", "src": "chris", "seq": 757, "t": 1040643.8494055, "data": {"drum": "kick", "bar": 28, "beat": 3.75, "error_ms": -26.0, "grade": "good", "song_time": 47.4383}}
+{"type": "judgment.note", "src": "chris", "seq": 758, "t": 1040643.978194208, "data": {"drum": "tom_high_mid", "bar": 28, "beat": 4.0, "error_ms": -8.8, "grade": "perfect", "song_time": 47.5626}}
+{"type": "judgment.note", "src": "chris", "seq": 759, "t": 1040643.978611125, "data": {"drum": "ride_bell", "bar": 28, "beat": 4.0, "error_ms": -8.8, "grade": "perfect", "song_time": 47.5626}}
+{"type": "judgment.note", "src": "chris", "seq": 760, "t": 1040644.208227791, "data": {"drum": "hihat_pedal", "bar": 28, "beat": 4.5, "error_ms": 5.1, "grade": "perfect", "song_time": 47.7908}}
+{"type": "session.state", "src": "chris", "seq": 761, "t": 1040644.408219458, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 29, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 762, "t": 1040644.408545625, "data": {"drum": "kick", "bar": 29, "beat": 1.0, "error_ms": -8.0, "grade": "perfect", "song_time": 47.992}}
+{"type": "judgment.note", "src": "chris", "seq": 763, "t": 1040644.40867575, "data": {"drum": "crash", "bar": 29, "beat": 1.0, "error_ms": -8.0, "grade": "perfect", "song_time": 47.992}}
+{"type": "judgment.note", "src": "chris", "seq": 764, "t": 1040644.408729458, "data": {"drum": "ride", "bar": 29, "beat": 1.0, "error_ms": -8.0, "grade": "perfect", "song_time": 47.992}}
+{"type": "judgment.note", "src": "chris", "seq": 765, "t": 1040644.689324416, "data": {"drum": "crash", "bar": 29, "beat": 1.667, "error_ms": -12.4, "grade": "perfect", "song_time": 48.2733}}
+{"type": "judgment.note", "src": "chris", "seq": 766, "t": 1040644.989316708, "data": {"drum": "unknown", "bar": 29, "beat": 2.128, "error_ms": null, "grade": "extra", "song_time": 48.4834}}
+{"type": "judgment.note", "src": "chris", "seq": 767, "t": 1040644.989602416, "data": {"drum": "crash", "bar": 29, "beat": 2.333, "error_ms": 1.9, "grade": "perfect", "song_time": 48.5733}}
+{"type": "judgment.note", "src": "chris", "seq": 768, "t": 1040645.268977541, "data": {"drum": "kick", "bar": 29, "beat": 3.0, "error_ms": -3.8, "grade": "perfect", "song_time": 48.8533}}
+{"type": "judgment.note", "src": "chris", "seq": 769, "t": 1040645.269267083, "data": {"drum": "crash", "bar": 29, "beat": 3.0, "error_ms": -3.8, "grade": "perfect", "song_time": 48.8533}}
+{"type": "judgment.note", "src": "chris", "seq": 770, "t": 1040645.269365208, "data": {"drum": "ride", "bar": 29, "beat": 3.0, "error_ms": -3.8, "grade": "perfect", "song_time": 48.8533}}
+{"type": "judgment.note", "src": "chris", "seq": 771, "t": 1040645.548636833, "data": {"drum": "crash", "bar": 29, "beat": 3.667, "error_ms": -9.5, "grade": "perfect", "song_time": 49.1333}}
+{"type": "judgment.note", "src": "chris", "seq": 772, "t": 1040645.837933833, "data": {"drum": "crash", "bar": 29, "beat": 4.333, "error_ms": -10.2, "grade": "perfect", "song_time": 49.4184}}
+{"type": "session.state", "src": "chris", "seq": 773, "t": 1040646.119211833, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 30, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 774, "t": 1040646.119527583, "data": {"drum": "kick", "bar": 30, "beat": 1.0, "error_ms": -15.6, "grade": "good", "song_time": 49.6987}}
+{"type": "judgment.note", "src": "chris", "seq": 775, "t": 1040646.119645791, "data": {"drum": "crash", "bar": 30, "beat": 1.0, "error_ms": -15.6, "grade": "good", "song_time": 49.6987}}
+{"type": "judgment.note", "src": "chris", "seq": 776, "t": 1040646.119717125, "data": {"drum": "ride", "bar": 30, "beat": 1.0, "error_ms": -15.6, "grade": "good", "song_time": 49.6987}}
+{"type": "fletcher.state", "src": "aaron", "seq": 46, "t": 1040646.12124875, "data": {"mood": "calm", "anger": 0.17, "action": "conduct", "look_at": "drummer"}}
+{"type": "judgment.note", "src": "chris", "seq": 777, "t": 1040646.409227583, "data": {"drum": "crash", "bar": 30, "beat": 1.667, "error_ms": -11.7, "grade": "perfect", "song_time": 49.9883}}
+{"type": "judgment.note", "src": "chris", "seq": 778, "t": 1040646.688185583, "data": {"drum": "crash", "bar": 30, "beat": 2.333, "error_ms": -12.4, "grade": "perfect", "song_time": 50.2733}}
+{"type": "judgment.note", "src": "chris", "seq": 779, "t": 1040646.978149375, "data": {"drum": "kick", "bar": 30, "beat": 3.0, "error_ms": -38.1, "grade": "off", "song_time": 50.5333}}
+{"type": "judgment.note", "src": "chris", "seq": 780, "t": 1040646.978583625, "data": {"drum": "crash", "bar": 30, "beat": 3.0, "error_ms": -38.1, "grade": "off", "song_time": 50.5333}}
+{"type": "judgment.note", "src": "chris", "seq": 781, "t": 1040646.978917458, "data": {"drum": "ride", "bar": 30, "beat": 3.0, "error_ms": -38.1, "grade": "off", "song_time": 50.5333}}
+{"type": "fletcher.state", "src": "aaron", "seq": 47, "t": 1040646.980826208, "data": {"mood": "watching", "anger": 0.27, "action": "conduct", "look_at": "drummer"}}
+{"type": "judgment.note", "src": "chris", "seq": 782, "t": 1040647.268823916, "data": {"drum": "kick", "bar": 30, "beat": 3.667, "error_ms": -3.8, "grade": "perfect", "song_time": 50.8534}}
+{"type": "judgment.note", "src": "chris", "seq": 783, "t": 1040647.269086875, "data": {"drum": "crash", "bar": 30, "beat": 3.667, "error_ms": -3.8, "grade": "perfect", "song_time": 50.8534}}
+{"type": "judgment.note", "src": "chris", "seq": 784, "t": 1040647.55878875, "data": {"drum": "kick", "bar": 30, "beat": 4.333, "error_ms": -4.4, "grade": "perfect", "song_time": 51.1384}}
+{"type": "judgment.note", "src": "chris", "seq": 785, "t": 1040647.559053833, "data": {"drum": "crash", "bar": 30, "beat": 4.333, "error_ms": -4.4, "grade": "perfect", "song_time": 51.1384}}
+{"type": "session.state", "src": "chris", "seq": 786, "t": 1040647.828444083, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 31, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 787, "t": 1040647.829134708, "data": {"drum": "kick", "bar": 31, "beat": 1.0, "error_ms": -10.2, "grade": "perfect", "song_time": 51.4183}}
+{"type": "judgment.note", "src": "chris", "seq": 788, "t": 1040647.829403958, "data": {"drum": "crash", "bar": 31, "beat": 1.0, "error_ms": -10.2, "grade": "perfect", "song_time": 51.4183}}
+{"type": "judgment.note", "src": "chris", "seq": 789, "t": 1040648.159036458, "data": {"drum": "snare", "bar": 31, "beat": 1.75, "error_ms": -6.5, "grade": "perfect", "song_time": 51.7435}}
+{"type": "judgment.note", "src": "chris", "seq": 790, "t": 1040648.268960375, "data": {"drum": "snare", "bar": 31, "beat": 2.0, "error_ms": -3.6, "grade": "perfect", "song_time": 51.8535}}
+{"type": "judgment.note", "src": "chris", "seq": 791, "t": 1040648.478583416, "data": {"drum": "kick", "bar": 31, "beat": 2.5, "error_ms": -8.1, "grade": "perfect", "song_time": 52.0633}}
+{"type": "judgment.note", "src": "chris", "seq": 792, "t": 1040648.479131791, "data": {"drum": "crash", "bar": 31, "beat": 2.5, "error_ms": -8.1, "grade": "perfect", "song_time": 52.0633}}
+{"type": "judgment.note", "src": "chris", "seq": 793, "t": 1040648.798912208, "data": {"drum": "snare", "bar": 31, "beat": 3.25, "error_ms": -14.4, "grade": "perfect", "song_time": 52.3784}}
+{"type": "judgment.note", "src": "chris", "seq": 794, "t": 1040648.898561791, "data": {"drum": "snare", "bar": 31, "beat": 3.5, "error_ms": -16.7, "grade": "good", "song_time": 52.4833}}
+{"type": "judgment.note", "src": "chris", "seq": 795, "t": 1040649.118791458, "data": {"drum": "kick", "bar": 31, "beat": 4.0, "error_ms": -11.0, "grade": "perfect", "song_time": 52.7033}}
+{"type": "judgment.note", "src": "chris", "seq": 796, "t": 1040649.119027625, "data": {"drum": "crash", "bar": 31, "beat": 4.0, "error_ms": -11.0, "grade": "perfect", "song_time": 52.7033}}
+{"type": "judgment.note", "src": "chris", "seq": 797, "t": 1040649.521787333, "data": {"drum": "snare", "bar": 31, "beat": 4.75, "error_ms": -32.4, "grade": "good", "song_time": 53.0033}}
+{"type": "session.state", "src": "chris", "seq": 798, "t": 1040649.548571375, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 32, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 799, "t": 1040649.548843, "data": {"drum": "snare", "bar": 32, "beat": 1.0, "error_ms": -4.5, "grade": "perfect", "song_time": 53.1383}}
+{"type": "judgment.note", "src": "chris", "seq": 800, "t": 1040649.769065416, "data": {"drum": "kick", "bar": 32, "beat": 1.5, "error_ms": -8.7, "grade": "perfect", "song_time": 53.3484}}
+{"type": "judgment.note", "src": "chris", "seq": 801, "t": 1040649.769357541, "data": {"drum": "crash", "bar": 32, "beat": 1.5, "error_ms": -8.7, "grade": "perfect", "song_time": 53.3484}}
+{"type": "judgment.note", "src": "chris", "seq": 802, "t": 1040649.769462916, "data": {"drum": "crash_2", "bar": 32, "beat": 1.5, "error_ms": -8.7, "grade": "perfect", "song_time": 53.3484}}
+{"type": "judgment.note", "src": "chris", "seq": 803, "t": 1040650.068778083, "data": {"drum": "snare", "bar": 32, "beat": 2.25, "error_ms": -25.2, "grade": "good", "song_time": 53.6533}}
+{"type": "judgment.note", "src": "chris", "seq": 804, "t": 1040650.187817208, "data": {"drum": "snare", "bar": 32, "beat": 2.5, "error_ms": -12.3, "grade": "perfect", "song_time": 53.7735}}
+{"type": "judgment.note", "src": "chris", "seq": 805, "t": 1040650.407227291, "data": {"drum": "kick", "bar": 32, "beat": 3.0, "error_ms": -6.7, "grade": "perfect", "song_time": 53.9933}}
+{"type": "judgment.note", "src": "chris", "seq": 806, "t": 1040650.407631875, "data": {"drum": "crash", "bar": 32, "beat": 3.0, "error_ms": -6.7, "grade": "perfect", "song_time": 53.9933}}
+{"type": "judgment.note", "src": "chris", "seq": 807, "t": 1040650.407854333, "data": {"drum": "crash_2", "bar": 32, "beat": 3.0, "error_ms": -6.7, "grade": "perfect", "song_time": 53.9933}}
+{"type": "judgment.note", "src": "chris", "seq": 808, "t": 1040650.82825225, "data": {"drum": "snare", "bar": 32, "beat": 4.0, "error_ms": -15.2, "grade": "good", "song_time": 54.4133}}
+{"type": "judgment.note", "src": "chris", "seq": 809, "t": 1040650.93775725, "data": {"drum": "snare", "bar": 32, "beat": 4.25, "error_ms": -12.3, "grade": "perfect", "song_time": 54.5234}}
+{"type": "judgment.note", "src": "chris", "seq": 810, "t": 1040651.0488885, "data": {"drum": "snare", "bar": 32, "beat": 4.5, "error_ms": -11.8, "grade": "perfect", "song_time": 54.631}}
+{"type": "judgment.note", "src": "chris", "seq": 811, "t": 1040651.049151791, "data": {"drum": "hihat_pedal", "bar": 32, "beat": 4.5, "error_ms": -11.8, "grade": "perfect", "song_time": 54.631}}
+{"type": "judgment.note", "src": "chris", "seq": 812, "t": 1040651.148808458, "data": {"drum": "snare", "bar": 32, "beat": 4.75, "error_ms": -16.7, "grade": "good", "song_time": 54.7333}}
+{"type": "fletcher.state", "src": "aaron", "seq": 48, "t": 1040651.168488791, "data": {"mood": "calm", "anger": 0.2, "action": "conduct", "look_at": "drummer"}}
+{"type": "session.state", "src": "chris", "seq": 813, "t": 1040651.268406375, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 33, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 814, "t": 1040651.2686615, "data": {"drum": "snare", "bar": 33, "beat": 1.0, "error_ms": -8.8, "grade": "perfect", "song_time": 54.8484}}
+{"type": "judgment.note", "src": "chris", "seq": 815, "t": 1040651.479625916, "data": {"drum": "tom_low", "bar": 33, "beat": 1.5, "error_ms": -8.1, "grade": "perfect", "song_time": 55.0633}}
+{"type": "judgment.note", "src": "chris", "seq": 816, "t": 1040651.587738958, "data": {"drum": "tom_low", "bar": 33, "beat": 1.75, "error_ms": -10.2, "grade": "perfect", "song_time": 55.1683}}
+{"type": "judgment.note", "src": "chris", "seq": 817, "t": 1040651.697799625, "data": {"drum": "snare", "bar": 33, "beat": 2.0, "error_ms": -1.1, "grade": "perfect", "song_time": 55.2846}}
+{"type": "judgment.note", "src": "chris", "seq": 818, "t": 1040651.698059041, "data": {"drum": "hihat_half", "bar": 33, "beat": 2.0, "error_ms": -1.1, "grade": "perfect", "song_time": 55.2846}}
+{"type": "judgment.note", "src": "chris", "seq": 819, "t": 1040651.909239083, "data": {"drum": "snare", "bar": 33, "beat": 2.5, "error_ms": -2.8, "grade": "perfect", "song_time": 55.4972}}
+{"type": "judgment.note", "src": "chris", "seq": 820, "t": 1040651.909589083, "data": {"drum": "hihat_pedal", "bar": 33, "beat": 2.5, "error_ms": -2.8, "grade": "perfect", "song_time": 55.4972}}
+{"type": "judgment.note", "src": "chris", "seq": 821, "t": 1040652.118720041, "data": {"drum": "tom_low", "bar": 33, "beat": 3.0, "error_ms": -8.2, "grade": "perfect", "song_time": 55.7061}}
+{"type": "judgment.note", "src": "chris", "seq": 822, "t": 1040652.118977958, "data": {"drum": "hihat_half", "bar": 33, "beat": 3.0, "error_ms": -8.2, "grade": "perfect", "song_time": 55.7061}}
+{"type": "judgment.note", "src": "chris", "seq": 823, "t": 1040652.228006333, "data": {"drum": "snare", "bar": 33, "beat": 3.25, "error_ms": -7.6, "grade": "perfect", "song_time": 55.8139}}
+{"type": "judgment.note", "src": "chris", "seq": 824, "t": 1040652.337463375, "data": {"drum": "snare", "bar": 33, "beat": 3.5, "error_ms": -8.3, "grade": "perfect", "song_time": 55.9202}}
+{"type": "judgment.note", "src": "chris", "seq": 825, "t": 1040652.337719166, "data": {"drum": "hihat_pedal", "bar": 33, "beat": 3.5, "error_ms": -8.3, "grade": "perfect", "song_time": 55.9202}}
+{"type": "judgment.note", "src": "chris", "seq": 826, "t": 1040652.558982375, "data": {"drum": "tom_low", "bar": 33, "beat": 4.0, "error_ms": -2.2, "grade": "perfect", "song_time": 56.1407}}
+{"type": "judgment.note", "src": "chris", "seq": 827, "t": 1040652.559288333, "data": {"drum": "hihat_half", "bar": 33, "beat": 4.0, "error_ms": -2.2, "grade": "perfect", "song_time": 56.1407}}
+{"type": "judgment.note", "src": "chris", "seq": 828, "t": 1040652.769306833, "data": {"drum": "hihat_pedal", "bar": 33, "beat": 4.5, "error_ms": -7.4, "grade": "perfect", "song_time": 56.3498}}
+{"type": "judgment.note", "src": "chris", "seq": 829, "t": 1040652.769642125, "data": {"drum": "tom_low", "bar": 33, "beat": 4.5, "error_ms": -7.4, "grade": "perfect", "song_time": 56.3498}}
+{"type": "judgment.note", "src": "chris", "seq": 830, "t": 1040652.869147083, "data": {"drum": "tom_low", "bar": 33, "beat": 4.75, "error_ms": -10.9, "grade": "perfect", "song_time": 56.4533}}
+{"type": "session.state", "src": "chris", "seq": 831, "t": 1040652.979613125, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 34, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 832, "t": 1040652.979923916, "data": {"drum": "tom_low", "bar": 34, "beat": 1.0, "error_ms": -4.1, "grade": "perfect", "song_time": 56.5673}}
+{"type": "judgment.note", "src": "chris", "seq": 833, "t": 1040652.980046208, "data": {"drum": "hihat_half", "bar": 34, "beat": 1.0, "error_ms": -4.1, "grade": "perfect", "song_time": 56.5673}}
+{"type": "fletcher.state", "src": "aaron", "seq": 49, "t": 1040652.981683416, "data": {"mood": "calm", "anger": 0.02, "action": "conduct", "look_at": "drummer"}}
+{"type": "judgment.note", "src": "chris", "seq": 834, "t": 1040653.198994916, "data": {"drum": "hihat_pedal", "bar": 34, "beat": 1.5, "error_ms": -6.4, "grade": "perfect", "song_time": 56.7793}}
+{"type": "judgment.note", "src": "chris", "seq": 835, "t": 1040653.19930175, "data": {"drum": "tom_low", "bar": 34, "beat": 1.5, "error_ms": -6.4, "grade": "perfect", "song_time": 56.7793}}
+{"type": "judgment.note", "src": "chris", "seq": 836, "t": 1040653.407636166, "data": {"drum": "snare", "bar": 34, "beat": 2.0, "error_ms": -4.6, "grade": "perfect", "song_time": 56.9954}}
+{"type": "judgment.note", "src": "chris", "seq": 837, "t": 1040653.407911333, "data": {"drum": "hihat_pedal", "bar": 34, "beat": 2.0, "error_ms": -4.6, "grade": "perfect", "song_time": 56.9954}}
+{"type": "judgment.note", "src": "chris", "seq": 838, "t": 1040653.408011958, "data": {"drum": "snare", "bar": 34, "beat": 2.125, "error_ms": -4.6, "grade": "perfect", "song_time": 56.9954}}
+{"type": "judgment.note", "src": "chris", "seq": 839, "t": 1040653.508782333, "data": {"drum": "snare", "bar": 34, "beat": 2.25, "error_ms": -13.7, "grade": "perfect", "song_time": 57.0934}}
+{"type": "judgment.note", "src": "chris", "seq": 840, "t": 1040653.509052, "data": {"drum": "snare", "bar": 34, "beat": 2.375, "error_ms": -13.7, "grade": "perfect", "song_time": 57.0934}}
+{"type": "judgment.note", "src": "chris", "seq": 841, "t": 1040653.627906708, "data": {"drum": "snare", "bar": 34, "beat": 2.5, "error_ms": -5.2, "grade": "perfect", "song_time": 57.2091}}
+{"type": "judgment.note", "src": "chris", "seq": 842, "t": 1040653.628272041, "data": {"drum": "hihat_pedal", "bar": 34, "beat": 2.5, "error_ms": -5.2, "grade": "perfect", "song_time": 57.2091}}
+{"type": "judgment.note", "src": "chris", "seq": 843, "t": 1040653.6285685, "data": {"drum": "snare", "bar": 34, "beat": 2.625, "error_ms": -5.2, "grade": "perfect", "song_time": 57.2091}}
+{"type": "judgment.note", "src": "chris", "seq": 844, "t": 1040653.719051, "data": {"drum": "snare", "bar": 34, "beat": 2.75, "error_ms": -13.1, "grade": "perfect", "song_time": 57.3083}}
+{"type": "judgment.note", "src": "chris", "seq": 845, "t": 1040653.71930875, "data": {"drum": "snare", "bar": 34, "beat": 2.875, "error_ms": -13.1, "grade": "perfect", "song_time": 57.3083}}
+{"type": "judgment.note", "src": "chris", "seq": 846, "t": 1040653.829900916, "data": {"drum": "snare", "bar": 34, "beat": 3.0, "error_ms": -10.2, "grade": "perfect", "song_time": 57.4183}}
+{"type": "session.state", "src": "chris", "seq": 847, "t": 1040654.698835958, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 35, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 848, "t": 1040654.699098791, "data": {"drum": "kick", "bar": 35, "beat": 1.0, "error_ms": -6.4, "grade": "perfect", "song_time": 58.2793}}
+{"type": "judgment.note", "src": "chris", "seq": 849, "t": 1040654.699162958, "data": {"drum": "crash", "bar": 35, "beat": 1.0, "error_ms": -6.4, "grade": "perfect", "song_time": 58.2793}}
+{"type": "judgment.note", "src": "chris", "seq": 850, "t": 1040654.908889, "data": {"drum": "hihat_pedal", "bar": 35, "beat": 1.5, "error_ms": -8.2, "grade": "perfect", "song_time": 58.4918}}
+{"type": "judgment.note", "src": "chris", "seq": 851, "t": 1040654.909184291, "data": {"drum": "ride", "bar": 35, "beat": 1.5, "error_ms": -8.2, "grade": "perfect", "song_time": 58.4918}}
+{"type": "judgment.note", "src": "chris", "seq": 852, "t": 1040654.997612041, "data": {"drum": "kick", "bar": 35, "beat": 1.75, "error_ms": -18.8, "grade": "good", "song_time": 58.5883}}
+{"type": "judgment.note", "src": "chris", "seq": 853, "t": 1040655.098779416, "data": {"drum": "ride_bell", "bar": 35, "beat": 2.0, "error_ms": -26.0, "grade": "good", "song_time": 58.6883}}
+{"type": "judgment.note", "src": "chris", "seq": 854, "t": 1040655.328121166, "data": {"drum": "kick", "bar": 35, "beat": 2.5, "error_ms": -12.1, "grade": "perfect", "song_time": 58.9165}}
+{"type": "judgment.note", "src": "chris", "seq": 855, "t": 1040655.328523, "data": {"drum": "hihat_pedal", "bar": 35, "beat": 2.5, "error_ms": -12.1, "grade": "perfect", "song_time": 58.9165}}
+{"type": "judgment.note", "src": "chris", "seq": 856, "t": 1040655.328844083, "data": {"drum": "ride", "bar": 35, "beat": 2.5, "error_ms": -12.1, "grade": "perfect", "song_time": 58.9165}}
+{"type": "judgment.note", "src": "chris", "seq": 857, "t": 1040655.55817975, "data": {"drum": "kick", "bar": 35, "beat": 3.0, "error_ms": -2.0, "grade": "perfect", "song_time": 59.1409}}
+{"type": "judgment.note", "src": "chris", "seq": 858, "t": 1040655.558448416, "data": {"drum": "ride_bell", "bar": 35, "beat": 3.0, "error_ms": -2.0, "grade": "perfect", "song_time": 59.1409}}
+{"type": "judgment.note", "src": "chris", "seq": 859, "t": 1040655.767269916, "data": {"drum": "hihat_pedal", "bar": 35, "beat": 3.5, "error_ms": -6.5, "grade": "perfect", "song_time": 59.3507}}
+{"type": "judgment.note", "src": "chris", "seq": 860, "t": 1040655.767551916, "data": {"drum": "ride", "bar": 35, "beat": 3.5, "error_ms": -6.5, "grade": "perfect", "song_time": 59.3507}}
+{"type": "judgment.note", "src": "chris", "seq": 861, "t": 1040655.86881875, "data": {"drum": "kick", "bar": 35, "beat": 3.75, "error_ms": -10.9, "grade": "perfect", "song_time": 59.4533}}
+{"type": "judgment.note", "src": "chris", "seq": 862, "t": 1040655.978129125, "data": {"drum": "ride_bell", "bar": 35, "beat": 4.0, "error_ms": -6.4, "grade": "perfect", "song_time": 59.5651}}
+{"type": "judgment.note", "src": "chris", "seq": 863, "t": 1040656.198962, "data": {"drum": "kick", "bar": 35, "beat": 4.5, "error_ms": -5.0, "grade": "perfect", "song_time": 59.7808}}
+{"type": "judgment.note", "src": "chris", "seq": 864, "t": 1040656.199263625, "data": {"drum": "hihat_pedal", "bar": 35, "beat": 4.5, "error_ms": -5.0, "grade": "perfect", "song_time": 59.7808}}
+{"type": "judgment.note", "src": "chris", "seq": 865, "t": 1040656.199349666, "data": {"drum": "ride", "bar": 35, "beat": 4.5, "error_ms": -5.0, "grade": "perfect", "song_time": 59.7808}}
+{"type": "judgment.note", "src": "chris", "seq": 866, "t": 1040656.298839708, "data": {"drum": "snare", "bar": 35, "beat": 4.75, "error_ms": -14.5, "grade": "perfect", "song_time": 59.8783}}
+{"type": "session.state", "src": "chris", "seq": 867, "t": 1040656.418775333, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 36, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 868, "t": 1040656.419051166, "data": {"drum": "kick", "bar": 36, "beat": 1.0, "error_ms": -1.7, "grade": "perfect", "song_time": 59.9983}}
+{"type": "judgment.note", "src": "chris", "seq": 869, "t": 1040656.419153833, "data": {"drum": "ride_bell", "bar": 36, "beat": 1.0, "error_ms": -1.7, "grade": "perfect", "song_time": 59.9983}}
+{"type": "judgment.note", "src": "chris", "seq": 870, "t": 1040656.629393458, "data": {"drum": "hihat_pedal", "bar": 36, "beat": 1.5, "error_ms": 3.0, "grade": "perfect", "song_time": 60.2173}}
+{"type": "judgment.note", "src": "chris", "seq": 871, "t": 1040656.629631958, "data": {"drum": "ride", "bar": 36, "beat": 1.5, "error_ms": 3.0, "grade": "perfect", "song_time": 60.2173}}
+{"type": "judgment.note", "src": "chris", "seq": 872, "t": 1040656.728720333, "data": {"drum": "kick", "bar": 36, "beat": 1.75, "error_ms": -3.1, "grade": "perfect", "song_time": 60.3183}}
+{"type": "judgment.note", "src": "chris", "seq": 873, "t": 1040657.048773541, "data": {"drum": "ride_bell", "bar": 36, "beat": 2.0, "error_ms": null, "grade": "miss", "song_time": 60.4286}}
+{"type": "judgment.note", "src": "chris", "seq": 874, "t": 1040657.049037291, "data": {"drum": "kick", "bar": 36, "beat": 2.5, "error_ms": -9.9, "grade": "perfect", "song_time": 60.6329}}
+{"type": "judgment.note", "src": "chris", "seq": 875, "t": 1040657.049119208, "data": {"drum": "hihat_pedal", "bar": 36, "beat": 2.5, "error_ms": -9.9, "grade": "perfect", "song_time": 60.6329}}
+{"type": "judgment.note", "src": "chris", "seq": 876, "t": 1040657.049167291, "data": {"drum": "ride", "bar": 36, "beat": 2.5, "error_ms": -9.9, "grade": "perfect", "song_time": 60.6329}}
+{"type": "judgment.note", "src": "chris", "seq": 877, "t": 1040657.139033666, "data": {"drum": "snare", "bar": 36, "beat": 2.75, "error_ms": -21.7, "grade": "good", "song_time": 60.7283}}
+{"type": "judgment.note", "src": "chris", "seq": 878, "t": 1040657.258765875, "data": {"drum": "kick", "bar": 36, "beat": 3.0, "error_ms": -13.6, "grade": "perfect", "song_time": 60.8435}}
+{"type": "judgment.note", "src": "chris", "seq": 879, "t": 1040657.259034791, "data": {"drum": "ride_bell", "bar": 36, "beat": 3.0, "error_ms": -13.6, "grade": "perfect", "song_time": 60.8435}}
+{"type": "judgment.note", "src": "chris", "seq": 880, "t": 1040657.478789125, "data": {"drum": "hihat_pedal", "bar": 36, "beat": 3.5, "error_ms": -7.1, "grade": "perfect", "song_time": 61.0643}}
+{"type": "judgment.note", "src": "chris", "seq": 881, "t": 1040657.479262208, "data": {"drum": "ride", "bar": 36, "beat": 3.5, "error_ms": -7.1, "grade": "perfect", "song_time": 61.0643}}
+{"type": "judgment.note", "src": "chris", "seq": 882, "t": 1040657.588163125, "data": {"drum": "kick", "bar": 36, "beat": 3.75, "error_ms": -5.2, "grade": "perfect", "song_time": 61.1733}}
+{"type": "judgment.note", "src": "chris", "seq": 883, "t": 1040657.688126791, "data": {"drum": "ride_bell", "bar": 36, "beat": 4.0, "error_ms": -8.0, "grade": "perfect", "song_time": 61.2777}}
+{"type": "judgment.note", "src": "chris", "seq": 884, "t": 1040657.919303291, "data": {"drum": "kick", "bar": 36, "beat": 4.5, "error_ms": -1.5, "grade": "perfect", "song_time": 61.4985}}
+{"type": "judgment.note", "src": "chris", "seq": 885, "t": 1040657.919581875, "data": {"drum": "hihat_pedal", "bar": 36, "beat": 4.5, "error_ms": -1.5, "grade": "perfect", "song_time": 61.4985}}
+{"type": "judgment.note", "src": "chris", "seq": 886, "t": 1040657.919677833, "data": {"drum": "ride", "bar": 36, "beat": 4.5, "error_ms": -1.5, "grade": "perfect", "song_time": 61.4985}}
+{"type": "judgment.note", "src": "chris", "seq": 887, "t": 1040658.009184208, "data": {"drum": "snare", "bar": 36, "beat": 4.75, "error_ms": -13.8, "grade": "perfect", "song_time": 61.5934}}
+{"type": "session.state", "src": "chris", "seq": 888, "t": 1040658.128593791, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 37, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 889, "t": 1040658.128971083, "data": {"drum": "kick", "bar": 37, "beat": 1.0, "error_ms": -1.2, "grade": "perfect", "song_time": 61.7131}}
+{"type": "judgment.note", "src": "chris", "seq": 890, "t": 1040658.129177666, "data": {"drum": "ride_bell", "bar": 37, "beat": 1.0, "error_ms": -1.2, "grade": "perfect", "song_time": 61.7131}}
+{"type": "judgment.note", "src": "chris", "seq": 891, "t": 1040658.32882425, "data": {"drum": "hihat_pedal", "bar": 37, "beat": 1.5, "error_ms": -13.1, "grade": "perfect", "song_time": 61.9155}}
+{"type": "judgment.note", "src": "chris", "seq": 892, "t": 1040658.329061916, "data": {"drum": "ride", "bar": 37, "beat": 1.5, "error_ms": -13.1, "grade": "perfect", "song_time": 61.9155}}
+{"type": "judgment.note", "src": "chris", "seq": 893, "t": 1040658.438965625, "data": {"drum": "kick", "bar": 37, "beat": 1.75, "error_ms": -7.4, "grade": "perfect", "song_time": 62.0283}}
+{"type": "judgment.note", "src": "chris", "seq": 894, "t": 1040658.779306458, "data": {"drum": "ride_bell", "bar": 37, "beat": 2.0, "error_ms": null, "grade": "miss", "song_time": 62.1429}}
+{"type": "judgment.note", "src": "chris", "seq": 895, "t": 1040658.779604083, "data": {"drum": "kick", "bar": 37, "beat": 2.5, "error_ms": 6.2, "grade": "perfect", "song_time": 62.3634}}
+{"type": "judgment.note", "src": "chris", "seq": 896, "t": 1040658.779694416, "data": {"drum": "hihat_pedal", "bar": 37, "beat": 2.5, "error_ms": 6.2, "grade": "perfect", "song_time": 62.3634}}
+{"type": "judgment.note", "src": "chris", "seq": 897, "t": 1040658.779757583, "data": {"drum": "ride", "bar": 37, "beat": 2.5, "error_ms": 6.2, "grade": "perfect", "song_time": 62.3634}}
+{"type": "judgment.note", "src": "chris", "seq": 898, "t": 1040658.869276458, "data": {"drum": "snare", "bar": 37, "beat": 2.75, "error_ms": -11.0, "grade": "perfect", "song_time": 62.4533}}
+{"type": "judgment.note", "src": "chris", "seq": 899, "t": 1040658.999226708, "data": {"drum": "kick", "bar": 37, "beat": 3.0, "error_ms": 15.5, "grade": "good", "song_time": 62.587}}
+{"type": "judgment.note", "src": "chris", "seq": 900, "t": 1040658.999493291, "data": {"drum": "ride_bell", "bar": 37, "beat": 3.0, "error_ms": 15.5, "grade": "good", "song_time": 62.587}}
+{"type": "judgment.note", "src": "chris", "seq": 901, "t": 1040659.198580708, "data": {"drum": "hihat_pedal", "bar": 37, "beat": 3.5, "error_ms": -0.9, "grade": "perfect", "song_time": 62.7848}}
+{"type": "judgment.note", "src": "chris", "seq": 902, "t": 1040659.198726125, "data": {"drum": "ride", "bar": 37, "beat": 3.5, "error_ms": -0.9, "grade": "perfect", "song_time": 62.7848}}
+{"type": "judgment.note", "src": "chris", "seq": 903, "t": 1040659.298985958, "data": {"drum": "kick", "bar": 37, "beat": 3.75, "error_ms": -4.5, "grade": "perfect", "song_time": 62.8883}}
+{"type": "judgment.note", "src": "chris", "seq": 904, "t": 1040659.428154666, "data": {"drum": "ride_bell", "bar": 37, "beat": 4.0, "error_ms": 9.5, "grade": "perfect", "song_time": 63.0095}}
+{"type": "judgment.note", "src": "chris", "seq": 905, "t": 1040659.637518291, "data": {"drum": "kick", "bar": 37, "beat": 4.5, "error_ms": 8.4, "grade": "perfect", "song_time": 63.2227}}
+{"type": "judgment.note", "src": "chris", "seq": 906, "t": 1040659.63780325, "data": {"drum": "hihat_pedal", "bar": 37, "beat": 4.5, "error_ms": 8.4, "grade": "perfect", "song_time": 63.2227}}
+{"type": "judgment.note", "src": "chris", "seq": 907, "t": 1040659.637885583, "data": {"drum": "ride", "bar": 37, "beat": 4.5, "error_ms": 8.4, "grade": "perfect", "song_time": 63.2227}}
+{"type": "judgment.note", "src": "chris", "seq": 908, "t": 1040659.727535083, "data": {"drum": "snare", "bar": 37, "beat": 4.75, "error_ms": -8.1, "grade": "perfect", "song_time": 63.3133}}
+{"type": "session.state", "src": "chris", "seq": 909, "t": 1040659.848904458, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 38, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 910, "t": 1040659.849176916, "data": {"drum": "kick", "bar": 38, "beat": 1.0, "error_ms": 8.1, "grade": "perfect", "song_time": 63.4366}}
+{"type": "judgment.note", "src": "chris", "seq": 911, "t": 1040659.84927925, "data": {"drum": "ride_bell", "bar": 38, "beat": 1.0, "error_ms": 8.1, "grade": "perfect", "song_time": 63.4366}}
+{"type": "judgment.note", "src": "chris", "seq": 912, "t": 1040660.05810725, "data": {"drum": "hihat_pedal", "bar": 38, "beat": 1.5, "error_ms": -2.3, "grade": "perfect", "song_time": 63.6406}}
+{"type": "judgment.note", "src": "chris", "seq": 913, "t": 1040660.058383041, "data": {"drum": "ride", "bar": 38, "beat": 1.5, "error_ms": -2.3, "grade": "perfect", "song_time": 63.6406}}
+{"type": "judgment.note", "src": "chris", "seq": 914, "t": 1040660.14912225, "data": {"drum": "kick", "bar": 38, "beat": 1.75, "error_ms": -16.7, "grade": "good", "song_time": 63.7333}}
+{"type": "judgment.note", "src": "chris", "seq": 915, "t": 1040660.249277083, "data": {"drum": "ride_bell", "bar": 38, "beat": 2.0, "error_ms": -23.8, "grade": "good", "song_time": 63.8333}}
+{"type": "judgment.note", "src": "chris", "seq": 916, "t": 1040660.478537166, "data": {"drum": "kick", "bar": 38, "beat": 2.5, "error_ms": -6.2, "grade": "perfect", "song_time": 64.0652}}
+{"type": "judgment.note", "src": "chris", "seq": 917, "t": 1040660.47919075, "data": {"drum": "hihat_pedal", "bar": 38, "beat": 2.5, "error_ms": -6.2, "grade": "perfect", "song_time": 64.0652}}
+{"type": "judgment.note", "src": "chris", "seq": 918, "t": 1040660.479352166, "data": {"drum": "ride", "bar": 38, "beat": 2.5, "error_ms": -6.2, "grade": "perfect", "song_time": 64.0652}}
+{"type": "judgment.note", "src": "chris", "seq": 919, "t": 1040660.577625708, "data": {"drum": "snare", "bar": 38, "beat": 2.75, "error_ms": -20.2, "grade": "good", "song_time": 64.1584}}
+{"type": "judgment.note", "src": "chris", "seq": 920, "t": 1040660.698314291, "data": {"drum": "kick", "bar": 38, "beat": 3.0, "error_ms": -2.2, "grade": "perfect", "song_time": 64.2835}}
+{"type": "judgment.note", "src": "chris", "seq": 921, "t": 1040660.698456875, "data": {"drum": "ride_bell", "bar": 38, "beat": 3.0, "error_ms": -2.2, "grade": "perfect", "song_time": 64.2835}}
+{"type": "judgment.note", "src": "chris", "seq": 922, "t": 1040660.918539833, "data": {"drum": "hihat_pedal", "bar": 38, "beat": 3.5, "error_ms": 0.9, "grade": "perfect", "song_time": 64.5009}}
+{"type": "judgment.note", "src": "chris", "seq": 923, "t": 1040660.918784208, "data": {"drum": "ride", "bar": 38, "beat": 3.5, "error_ms": 0.9, "grade": "perfect", "song_time": 64.5009}}
+{"type": "judgment.note", "src": "chris", "seq": 924, "t": 1040661.018871208, "data": {"drum": "kick", "bar": 38, "beat": 3.75, "error_ms": -3.8, "grade": "perfect", "song_time": 64.6033}}
+{"type": "judgment.note", "src": "chris", "seq": 925, "t": 1040661.118791666, "data": {"drum": "snare", "bar": 38, "beat": 4.0, "error_ms": -8.8, "grade": "perfect", "song_time": 64.7055}}
+{"type": "judgment.note", "src": "chris", "seq": 926, "t": 1040661.119052541, "data": {"drum": "ride_bell", "bar": 38, "beat": 4.0, "error_ms": -8.8, "grade": "perfect", "song_time": 64.7055}}
+{"type": "judgment.note", "src": "chris", "seq": 927, "t": 1040661.349155583, "data": {"drum": "kick", "bar": 38, "beat": 4.5, "error_ms": 4.8, "grade": "perfect", "song_time": 64.9334}}
+{"type": "judgment.note", "src": "chris", "seq": 928, "t": 1040661.349417833, "data": {"drum": "hihat_pedal", "bar": 38, "beat": 4.5, "error_ms": 4.8, "grade": "perfect", "song_time": 64.9334}}
+{"type": "judgment.note", "src": "chris", "seq": 929, "t": 1040661.34947975, "data": {"drum": "ride", "bar": 38, "beat": 4.5, "error_ms": 4.8, "grade": "perfect", "song_time": 64.9334}}
+{"type": "judgment.note", "src": "chris", "seq": 930, "t": 1040661.428679333, "data": {"drum": "snare", "bar": 38, "beat": 4.75, "error_ms": -17.4, "grade": "good", "song_time": 65.0183}}
+{"type": "session.state", "src": "chris", "seq": 931, "t": 1040661.548638583, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 39, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 932, "t": 1040661.54890675, "data": {"drum": "kick", "bar": 39, "beat": 1.0, "error_ms": -9.4, "grade": "perfect", "song_time": 65.1335}}
+{"type": "judgment.note", "src": "chris", "seq": 933, "t": 1040661.548993916, "data": {"drum": "ride_bell", "bar": 39, "beat": 1.0, "error_ms": -9.4, "grade": "perfect", "song_time": 65.1335}}
+{"type": "judgment.note", "src": "chris", "seq": 934, "t": 1040661.769254791, "data": {"drum": "hihat_pedal", "bar": 39, "beat": 1.5, "error_ms": -5.5, "grade": "perfect", "song_time": 65.3517}}
+{"type": "judgment.note", "src": "chris", "seq": 935, "t": 1040661.76959975, "data": {"drum": "ride", "bar": 39, "beat": 1.5, "error_ms": -5.5, "grade": "perfect", "song_time": 65.3517}}
+{"type": "judgment.note", "src": "chris", "seq": 936, "t": 1040661.868412083, "data": {"drum": "kick", "bar": 39, "beat": 1.75, "error_ms": -11.0, "grade": "perfect", "song_time": 65.4533}}
+{"type": "judgment.note", "src": "chris", "seq": 937, "t": 1040661.988192041, "data": {"drum": "ride_bell", "bar": 39, "beat": 2.0, "error_ms": 2.5, "grade": "perfect", "song_time": 65.5739}}
+{"type": "judgment.note", "src": "chris", "seq": 938, "t": 1040662.198841583, "data": {"drum": "kick", "bar": 39, "beat": 2.5, "error_ms": -0.4, "grade": "perfect", "song_time": 65.7853}}
+{"type": "judgment.note", "src": "chris", "seq": 939, "t": 1040662.19909525, "data": {"drum": "hihat_pedal", "bar": 39, "beat": 2.5, "error_ms": -0.4, "grade": "perfect", "song_time": 65.7853}}
+{"type": "judgment.note", "src": "chris", "seq": 940, "t": 1040662.199157041, "data": {"drum": "ride", "bar": 39, "beat": 2.5, "error_ms": -0.4, "grade": "perfect", "song_time": 65.7853}}
+{"type": "judgment.note", "src": "chris", "seq": 941, "t": 1040662.2889965, "data": {"drum": "snare", "bar": 39, "beat": 2.75, "error_ms": -19.5, "grade": "good", "song_time": 65.8733}}
+{"type": "judgment.note", "src": "chris", "seq": 942, "t": 1040662.419123416, "data": {"drum": "kick", "bar": 39, "beat": 3.0, "error_ms": 2.7, "grade": "perfect", "song_time": 66.0027}}
+{"type": "judgment.note", "src": "chris", "seq": 943, "t": 1040662.419464041, "data": {"drum": "ride_bell", "bar": 39, "beat": 3.0, "error_ms": 2.7, "grade": "perfect", "song_time": 66.0027}}
+{"type": "judgment.note", "src": "chris", "seq": 944, "t": 1040662.619195916, "data": {"drum": "hihat_pedal", "bar": 39, "beat": 3.5, "error_ms": -6.8, "grade": "perfect", "song_time": 66.2075}}
+{"type": "judgment.note", "src": "chris", "seq": 945, "t": 1040662.619478416, "data": {"drum": "ride", "bar": 39, "beat": 3.5, "error_ms": -6.8, "grade": "perfect", "song_time": 66.2075}}
+{"type": "judgment.note", "src": "chris", "seq": 946, "t": 1040662.718814375, "data": {"drum": "kick", "bar": 39, "beat": 3.75, "error_ms": -13.1, "grade": "perfect", "song_time": 66.3083}}
+{"type": "judgment.note", "src": "chris", "seq": 947, "t": 1040662.819233541, "data": {"drum": "ride_bell", "bar": 39, "beat": 4.0, "error_ms": -25.2, "grade": "good", "song_time": 66.4033}}
+{"type": "judgment.note", "src": "chris", "seq": 948, "t": 1040663.058978625, "data": {"drum": "kick", "bar": 39, "beat": 4.5, "error_ms": -3.3, "grade": "perfect", "song_time": 66.6395}}
+{"type": "judgment.note", "src": "chris", "seq": 949, "t": 1040663.059292208, "data": {"drum": "hihat_pedal", "bar": 39, "beat": 4.5, "error_ms": -3.3, "grade": "perfect", "song_time": 66.6395}}
+{"type": "judgment.note", "src": "chris", "seq": 950, "t": 1040663.05939375, "data": {"drum": "ride", "bar": 39, "beat": 4.5, "error_ms": -3.3, "grade": "perfect", "song_time": 66.6395}}
+{"type": "judgment.note", "src": "chris", "seq": 951, "t": 1040663.158974291, "data": {"drum": "snare", "bar": 39, "beat": 4.75, "error_ms": -6.7, "grade": "perfect", "song_time": 66.7433}}
+{"type": "session.state", "src": "chris", "seq": 952, "t": 1040663.259049833, "data": {"state": "playing", "song_id": "caravan-head", "bpm": 140.0, "bar": 40, "beat": 1}}
+{"type": "judgment.note", "src": "chris", "seq": 953, "t": 1040663.259335958, "data": {"drum": "kick", "bar": 40, "beat": 1.0, "error_ms": -18.7, "grade": "good", "song_time": 66.8385}}
+{"type": "judgment.note", "src": "chris", "seq": 954, "t": 1040663.259442916, "data": {"drum": "snare", "bar": 40, "beat": 1.0, "error_ms": -18.7, "grade": "good", "song_time": 66.8385}}
+{"type": "judgment.note", "src": "chris", "seq": 955, "t": 1040664.137859083, "data": {"drum": "tom_high_mid", "bar": 40, "beat": 3.0, "error_ms": 8.7, "grade": "perfect", "song_time": 67.723}}
+{"type": "judgment.note", "src": "chris", "seq": 956, "t": 1040664.229462125, "data": {"drum": "tom_high_mid", "bar": 40, "beat": 3.25, "error_ms": -8.1, "grade": "perfect", "song_time": 67.8133}}
+{"type": "judgment.note", "src": "chris", "seq": 957, "t": 1040664.458944916, "data": {"drum": "tom_high_mid", "bar": 40, "beat": 3.75, "error_ms": 10.9, "grade": "perfect", "song_time": 68.0466}}
+{"type": "judgment.note", "src": "chris", "seq": 958, "t": 1040664.539150166, "data": {"drum": "tom_high_mid", "bar": 40, "beat": 4.0, "error_ms": -19.1, "grade": "good", "song_time": 68.1238}}
+{"type": "judgment.note", "src": "chris", "seq": 959, "t": 1040664.76890825, "data": {"drum": "tom_high_mid", "bar": 40, "beat": 4.5, "error_ms": -2.5, "grade": "perfect", "song_time": 68.3546}}
+{"type": "session.state", "src": "session", "seq": 5, "t": 1040666.443393708, "data": {"state": "finished", "song_id": "caravan-head", "title": "Caravan (from Whiplash)", "bars": 40, "beats_per_bar": 4, "bar": 40, "beat": 1}}
+{"type": "fletcher.state", "src": "aaron", "seq": 50, "t": 1040666.44588675, "data": {"mood": "watching", "anger": 0.0, "action": "idle", "look_at": "drummer"}}
+{"type": "session.result", "src": "session", "seq": 6, "t": 1040667.056300916, "data": {"song_id": "caravan-head", "title": "Caravan (from Whiplash)", "completed": true, "bars_played": 45, "cutoffs": 1, "notes": 912, "perfect": 725, "good": 112, "off": 48, "miss": 27, "extra": 1, "accuracy": 0.918, "mean_error_ms": -8.9, "mean_abs_error_ms": 10.8, "rushing_bars": [2, 4, 5], "dragging_bars": []}}
+{"type": "session.command", "src": "console", "seq": 2, "t": 1040677.113103, "data": {"action": "quit"}}
+{"type": "session.state", "src": "session", "seq": 7, "t": 1040677.114610708, "data": {"state": "idle"}}
+{"type": "fletcher.state", "src": "aaron", "seq": 51, "t": 1040677.115574375, "data": {"mood": "calm", "anger": 0.0, "action": "idle", "look_at": "drummer"}}
