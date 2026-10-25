@@ -102,64 +102,157 @@ within one family become one family event. The native model format allows up to 
 classes, but the current trainer and text tools intentionally support these six; extending
 articulations requires new data, mappings, training, and evaluation.
 
-## What you need to record
+## Collecting training data on Quest 2
 
-Start with a **30–60 second smoke recording** from the Quest microphone. Listen for clipping,
-silence, suppressed low frequencies and changing gain before recording everything. Document the
-recording app, microphone options, kit, room and headset position. Use the intended game capture
-path when it exists; a different app may process microphone audio differently.
+### Quest app prerequisite
 
-Keep original recordings. Do not denoise, trim away initial silence, or enhance the audio unless
-the live path will do exactly that. Natural room sound and the actual headset microphone matter
-more than a studio-clean recording. The preparation tool only averages channels and resamples;
-it records peak, near-clipping fraction, RMS, sample rate, duration and source hashes. Those
-numbers do not replace listening or a device frequency-response check.
+The recording and export feature is **not implemented in this repository yet**. The C++ detector
+and desktop data tools exist, but there is no Godot Quest app here to capture microphone audio.
+Before collecting the training set, the game needs a small recording mode that:
 
-As an initial collection, record:
+1. Requests and checks Android microphone permission (`RECORD_AUDIO`) and shows whether recording
+   is active. Godot audio input must be enabled.
+2. Captures the **Quest microphone only**, through the same Godot microphone path intended for
+   gameplay. Route it to a dedicated capture bus so the backing track is not written into the
+   training recording. Do not monitor the mic through the headset speakers.
+3. Saves the complete take as a WAV file, retaining the original sample rate and channel count,
+   without trimming, denoising, normalization or other audio effects. Also save a small metadata
+   file with session name, date, app/build version, sample rate, channels, kit/player ID, room,
+   and microphone settings. Use an anonymous player ID if multiple people participate.
+4. Provides a visible **Export recordings** action. Godot's `user://` directory is app-private on
+   Android; do not assume the file will appear in the Quest's ordinary shared folders. Export with
+   Android's file picker/share flow, or use an agreed developer transfer workflow. Confirm that
+   both the WAV and metadata reach the computer and open correctly before recording a full dataset.
 
-- Every physical kit piece, including every tom and cymbal: roughly 30–50 isolated hits each,
-  covering soft, normal and hard playing.
-- Common simultaneous combinations: kick + hi-hat, snare + hi-hat, kick + crash, and others you use.
-- Several 30–60 second grooves, including fast passages and realistic head movement.
-- Silence, cymbal decay, speech and incidental noises, with no drum annotations for non-drum sounds.
-- At least three genuinely separate sessions for training, validation and testing. Every family
-  must occur in each split. More recordings may be necessary after seeing the errors.
+The Quest's system screen recorder is designed to save video, and may combine microphone and app
+sound into its video. That is not the recommended training source: we need the isolated mic input,
+not the backing music, and the game's capture path should match the sound used during play. If you
+use a system recording for a quick smoke check, confirm the mic is included and treat the extracted
+audio as a temporary check rather than the training master.
 
-A session folder identifies a recording taken under one capture setup, for example
-`quest_room_a_2026_10_24_take1`. Each folder currently contains one WAV and its annotations;
-concatenate related takes before annotation or use separate session folders. Do not split a
-single take's adjacent windows between training and testing, and do not duplicate audio under
-new names. The trainer rejects duplicate prepared PCM and overlapping session names.
+Godot documents mic capture using [`AudioStreamMicrophone`](https://docs.godotengine.org/en/stable/classes/class_audiostreammicrophone.html)
+and [`AudioEffectCapture`](https://docs.godotengine.org/en/stable/classes/class_audioeffectcapture.html).
+The capture effect returns PCM frames that the app can process or save. The training tools do not
+need MP3: they prepare an uncompressed WAV working copy at 48 kHz mono. Keep the exported Quest
+WAV as the untouched original.
+
+### One-time Quest smoke check
+
+Before the full collection:
+
+1. Install the development build with its recording mode and connect the headset to the computer
+   using a data-capable USB cable. Put the headset on and accept the microphone permission prompt.
+2. Start a new session, record 30–60 seconds: room silence, a few soft/normal/loud hits on kick,
+   snare, hi-hat, a tom, crash and ride, then a few seconds of speech. Stop and export the take.
+3. On the computer, open the WAV and listen with headphones. Confirm that it contains the kit and
+   background sounds, not the in-game backing track; check that hits are not clipped, the signal
+   is not mostly silent, and the beginning and end are intact. The capture metadata should match
+   the recording. If the file is silent or distorted, fix capture/permission/gain before continuing.
+
+### Full collection recipe
+
+Use the same headset, app capture path, mic settings and physical kit for all three data splits.
+A session is one fresh recording take, not a folder label for a split of one long file. Make at
+least three separately started sessions and assign one or more whole sessions to each of `train`,
+`validation` and `test`. Do not cut one WAV into three splits or copy a take under another name.
+Each split needs examples from **all six families**. If the app is intended for different drummers,
+kits or rooms, collect additional sessions from those conditions too; three takes of one setup only
+test that setup.
+
+For each of the three sessions, use this checklist:
+
+1. **Isolated hits:** for every physical kit piece, record 10 soft, 10 normal and 10 hard hits
+   (30 hits per piece per session). Leave enough space to hear each attack and decay; wait for a
+   cymbal to stop ringing before the next isolated cymbal hit. Include every tom and cymbal, even
+   when several map to one broad family.
+2. **Common combinations:** record 10 clean simultaneous examples per session of each combination
+   the drummer uses, at minimum kick + hi-hat, snare + hi-hat and kick + crash. Include other
+   familiar pairs and some close, fast sequences. These examples teach the classifier that two
+   different families can sound together. The v1 output still merges two simultaneous hits from
+   the same family into one event.
+3. **Grooves and fills:** record three different 30–60 second passages per session: a steady
+   ordinary groove, a groove with soft/loud variation and quieter notes, and a fast passage with
+   fills near the intended upper tempo (about 200 BPM). Play naturally, including the head motion
+   expected in the app. Label every drum hit in these passages, not only the obvious accents.
+4. **Non-drum sound:** record at least one minute of room silence and one minute of ordinary
+   background sound per session. Include the drummer speaking/counting, breathing or moving as
+   naturally happens while playing. Do not add labels for speech or other non-drum sounds; those
+   unlabeled onset suggestions become negative examples during training.
+5. **Vary the take:** stop and start a new recording for each session. Use fresh performances of
+   the exercises. Keep notes about anything that changed (player, room, kit, mic position, app
+   build or settings); do not change the capture setup just to make one split easier.
+
+These counts are a practical **starting collection**, not a claim that the model will be accurate
+or that this amount is sufficient. Inspect held-out results and add examples for the families,
+playing styles and noises it confuses. This recipe creates substantial annotation work: every hit
+in the grooves and combinations must be labeled too.
+
+### Files to export and prepare
+
+For each Quest session, export an untouched WAV and the capture metadata. On the computer, keep the
+original and make the prepared training WAV alongside it:
 
 ```text
 data/recordings/
-  session_train/
-    audio.wav
-    audio.capture.json
-    labels.csv
-  session_validation/
-    audio.wav
-    audio.capture.json
-    labels.csv
-  session_test/
-    audio.wav
-    audio.capture.json
-    labels.csv
+  quest_train_01/
+    source.wav                 # original Quest capture, unchanged
+    source.capture.json        # exported capture/session metadata
+    audio.wav                  # prepared 48 kHz mono float WAV
+    audio.capture.json         # generated by prepare_recording.py
+    suggestions.csv            # onset proposals; review, never treat as truth
+    labels.csv                # completed human-reviewed labels
+  quest_validation_01/
+    ...
+  quest_test_01/
+    ...
 ```
 
-Prepare each working WAV (48 kHz mono float WAV):
+Copy `source.wav` and its metadata into a new session folder. From this module's directory, prepare
+the working WAV and produce onset suggestions (use a new suggestions filename for each take):
 
 ```sh
-uv run python tools/prepare_recording.py /path/to/original.wav \
-  data/recordings/session_train/audio.wav \
-  --capture-notes 'Quest microphone; recording app/settings; kit; room; headset position'
-uv run python tools/propose_onsets.py data/recordings/session_train/audio.wav \
-  data/recordings/session_train/suggestions.csv
+uv run python tools/prepare_recording.py data/recordings/quest_train_01/source.wav \
+  data/recordings/quest_train_01/audio.wav \
+  --capture-notes 'Quest 2; app build; mic settings; kit; room; headset position'
+uv run python tools/propose_onsets.py data/recordings/quest_train_01/audio.wav \
+  data/recordings/quest_train_01/suggestions.csv
 ```
 
-`audio.wav` contains sound. `labels.csv` is your human answer key, identifying what happened in
-that sound. Review the suggestions in an audio editor: assign piece IDs, add missed hits, remove
-false candidates, and correct timestamps. Save the reviewed file as `labels.csv`:
+Preparation averages channels and resamples a copy; it does not trim or denoise. Keep `source.wav`
+unchanged. `audio.capture.json` records the source hash and preparation measurements. Repeat for
+every session. The eventual Quest app's `source.capture.json` is session/device provenance; these
+two metadata files serve different purposes.
+
+### Review and write `labels.csv`
+
+The suggestion tool proposes attack times and writes `REVIEW_REQUIRED` in the piece column. They
+are only hints: the detector can miss quiet hits and can suggest speech or cymbal decay. Review the
+**entire take**, including sections where it proposed nothing.
+
+1. Open the prepared `audio.wav` in an audio waveform editor and listen while following the
+   suggestions in a spreadsheet or text editor. Zoom in around each hit. Use the start of the sharp
+   attack—the first clear rapid waveform rise—as the onset, not necessarily the tallest point of
+   the waveform.
+2. Replace each `REVIEW_REQUIRED` with the physical `piece_id` from your kit configuration. If a
+   suggestion is false (for example, speech or cymbal ringing), delete its row. If a real hit is
+   missing, add a row at its onset. Check quiet notes and fast fills carefully.
+3. Save as a plain CSV named `labels.csv`, with exactly the header `time_s,piece_id`. Times are
+   decimal seconds from the **first sample of `audio.wav`**; retain initial silence and do not
+   reset time at the first hit or at a musical bar. Use enough decimal places to locate the attack
+   within about 10 ms (six decimal places is convenient).
+4. For simultaneous hits, put one row per physical piece at the same time. Use the piece IDs from
+   `kit.local.json`, such as `kick`, `hihat`, `rack_tom_1`, `crash_2` or `ride`. Do not create rows
+   for silence, speech or other sounds with no drum hit.
+5. Listen to the WAV once more while checking the finished labels. Confirm every real drum attack
+   has a row, every row points to a real hit, IDs are spelled exactly as in the kit file, and all
+   times fall inside the recording.
+
+A video editor whose playhead snaps to frames is a poor tool for this job: at 30 frames/second,
+frames are about 33 ms apart, coarser than the project's 10 ms timing goal. Use an audio editor
+that lets you zoom/read the waveform time at millisecond or finer resolution and turn off coarse
+grid snapping. The sound waveform is the reference; a video frame or the score grid is not.
+
+Example `labels.csv`:
 
 ```csv
 time_s,piece_id
@@ -169,15 +262,51 @@ time_s,piece_id
 1.000000,rack_tom_1
 ```
 
-Times are seconds from **WAV start**, including initial silence. Simultaneous pieces get
-separate rows. Use your actual piece IDs from the kit config. Annotation must be accurate enough
-to assess the requested timing tolerance; imprecise labels cannot demonstrate ±10 ms accuracy.
-Suggestions and ADTOF outputs are never automatically treated as ground truth.
+Times are relative to WAV start, including any leading silence. The current trainer maps piece IDs
+to six families and deduplicates same-family notes at the same timestamp. Keep the physical piece
+IDs in the labels for clarity and future model improvements, but understand that v1 cannot learn to
+count two same-family pieces struck simultaneously.
 
-Copy `config/kit.example.json` to `config/kit.local.json`, edit the physical pieces and assign
-session directory names to `train`, `validation`, and `test`. All three split lists are required.
-The physical piece IDs retain information for a future finer-grained model even though v1
-maps them to broad families.
+### Configure the three splits
+
+After preparing and labeling every session, copy `config/kit.example.json` to
+`config/kit.local.json`. Keep your kit's physical piece names and map each one to `kick`, `snare`,
+`hihat`, `tom`, `crash` or `ride`. Replace the example split names with your complete session
+folder names. Put all takes from a split in that split's list; each of train, validation and test
+must include the six families. For example:
+
+```json
+"splits": {
+  "train": ["quest_train_01"],
+  "validation": ["quest_validation_01"],
+  "test": ["quest_test_01"]
+}
+```
+
+Then follow [Training and results](#training-and-results) below. The trainer checks session
+separation, audio format, label IDs, family coverage and the presence of positive and negative
+onset candidates. It stops with an error if a required family is missing.
+
+## Assumptions recorded for this workflow
+
+- The intended training signal is the Quest 2 mic captured by the Godot game, isolated from the
+  backing-track bus. Capturing and exporting audio from the Quest app is a prerequisite still to be
+  implemented; these instructions do not mean that feature is already in the repo.
+- The Quest app saves an untrimmed WAV and capture metadata, requests microphone permission, and
+  provides an export route from its app-private storage. The exact Godot UI and export code depend
+  on the game project, which is not present in this repository.
+- Original Quest files are preserved. Desktop preparation creates a 48 kHz mono float WAV for
+  training, with no trimming or denoising. Timestamps in labels are relative to that prepared WAV;
+  resampling preserves its start time.
+- Three independent sessions are the minimum starting split. Entire sessions—not adjacent clips
+  from the same take—are assigned to training, validation and test. All six families occur in each.
+- Human-reviewed labels are ground truth; onset proposals are fallible aids. Every real hit in
+  every recording section, including grooves, is labeled. Non-drum sounds remain unlabeled.
+- Initial collection counts (30 isolated hits per piece per session, combination examples, three
+  grooves and background recordings) are starting targets only. Held-out measurements determine
+  whether more examples are needed.
+- V1 predicts six broad families and one event per family at a time. It does not identify exact
+  physical drums/articulations or count two simultaneous pieces within one family.
 
 ## Training and results
 
