@@ -12,3 +12,6 @@ live_transcription/models/*
 live_transcription/reports/*
 !live_transcription/reports/.gitkeep
 live_transcription/config/*.local.json
+# hub/nqmt session recordings and service logs (may hold mic audio)
+/recordings/
+/calibration.json

@@ -1,0 +1,12 @@
+# Generated / downloaded; see library/README.md
+_soundfonts/
+inbox/
+.tmp-*/
+.old-*/
+# Imported for testing on 2026-10-24; not redistributable as far as we know (Songsterr data is
+# personal-use only per rushingOrDragging/STRUCTURE.md; the demo MIDIs' licenses are unclear).
+# Re-create with: python -m library import-songsterr 427075 / 1191321
+hank_levy-whiplash/
+various_artists-caravan_from_whiplash/
+jump_demo/
+bond_demo/

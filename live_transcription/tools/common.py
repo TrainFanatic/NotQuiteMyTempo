@@ -159,15 +159,20 @@ def read_audio(path):
     return a
 
 
-def extract(audio, model=None, chunk=480, origin=0):
+def extract(audio, model=None, chunk=480, origin=0, mute=None):
+    """Replay audio through the core. `mute`, a fresh QuestMuteFilter, drops the Quest's
+    phantom re-attacks exactly as transcribe_wav.py does live (feed each block, then keep())."""
     if not 1 <= chunk <= 4800:
         raise ValueError("chunk must be 1..4800")
     with Native(model, origin) as core:
         result = []
         for start in range(0, len(audio), chunk):
-            candidates, _ = core.process(audio[start : start + chunk], start)
-            result.extend(candidates)
-        result.extend(core.finish())
+            block = audio[start : start + chunk]
+            if mute:
+                mute.feed(block, start)
+            candidates, _ = core.process(block, start)
+            result.extend(c for c in candidates if mute is None or mute.keep(c))
+        result.extend(c for c in core.finish() if mute is None or mute.keep(c))
         return result
 
 
@@ -185,6 +190,82 @@ def note_line(t, midi):
     if not math.isfinite(t) or t < 0 or midi not in NAMES:
         raise ValueError(f"Invalid representative note: {t}, {midi}")
     return f"{t:.6f}  {midi}  {NAMES[midi]}\n"
+
+
+ONSET_MIDI, ONSET_NAME = 0, "onset"  # drum unknown; see file_format.md section 10
+
+
+def onset_line(t):
+    if not math.isfinite(t) or t < 0:
+        raise ValueError(f"Invalid onset time: {t}")
+    return f"{t:.6f}  {ONSET_MIDI}  {ONSET_NAME}\n"
+
+
+QUEST_MUTE = {"window_s": 0.24, "mute_db": -75.0, "drop_db": 35.0}  # QuestMuteFilter defaults
+
+
+class QuestMuteFilter:
+    """Drops phantom re-attacks caused by the Quest's mic processing (onsets-only path).
+
+    On Quest 2 the OS mutes the mic to the noise floor (about -90 dB) roughly 0.1 s after a loud
+    attack and un-mutes it ~0.05 s later; the still-ringing drum then looks like a new attack
+    ~0.17-0.19 s after the real one. A candidate is dropped when the last kept onset is less than
+    `window_s` before it AND the level fell below the dip threshold somewhere in between: the
+    higher of `mute_db` and (that onset's peak - `drop_db`), so a loud hit counts a deep relative
+    dip as a mute while a real double stroke (dips only ~16 dB) is kept; `drop_db=None` uses
+    `mute_db` alone. Same rule as datacollection/label.py's level_onsets. Causal: it only looks
+    at audio already delivered (candidates arrive after their own samples), so it adds no
+    latency. Levels are mean-square dBFS over `frame` samples (2 ms)."""
+
+    def __init__(self, window_s=0.24, mute_db=-75.0, drop_db=35.0, frame=96):
+        self.window = int(window_s * RATE)
+        self.mute_db, self.drop_db, self.frame = mute_db, drop_db, frame
+        self.levels = []  # (first sample of frame, dBFS), oldest first, about 1 s of history
+        self.pending = np.zeros(0, dtype=np.float32)
+        self.pending_start = 0
+        self.last_kept = None  # sample index of the last onset let through
+        self.dropped = 0
+
+    def feed(self, block, first_sample):
+        """Record the level of each complete frame of a delivered block."""
+        if not len(self.pending):
+            self.pending_start = first_sample
+        a = np.concatenate([self.pending, np.asarray(block, dtype=np.float32)])
+        n = len(a) // self.frame
+        ms = np.mean(a[: n * self.frame].reshape(n, self.frame) ** 2, axis=1)
+        for k, v in enumerate(ms):
+            self.levels.append(
+                (self.pending_start + k * self.frame, 10 * math.log10(v + 1e-12))
+            )
+        self.pending = a[n * self.frame :]
+        self.pending_start += n * self.frame
+        keep_from = self.pending_start - RATE
+        while self.levels and self.levels[0][0] < keep_from:
+            self.levels.pop(0)
+
+    def keep(self, c):
+        """True if candidate c is a real onset; False if it is a Quest un-mute phantom."""
+        last = self.last_kept
+        if last is not None and 0 <= c.sample - last < self.window:
+            between = [
+                db
+                for start, db in self.levels
+                if start >= last and start + self.frame <= c.sample
+            ]
+            threshold = self.mute_db
+            if self.drop_db is not None:
+                peak = [
+                    db
+                    for start, db in self.levels
+                    if last <= start < last + RATE * 3 // 100  # the hit's first 30 ms
+                ]
+                if peak:
+                    threshold = max(threshold, max(peak) - self.drop_db)
+            if between and min(between) < threshold:
+                self.dropped += 1
+                return False
+        self.last_kept = c.sample
+        return True
 
 
 def write_notes(path, notes, description="live transcription"):

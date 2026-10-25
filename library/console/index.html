@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NQMT Console</title>
+<link rel="stylesheet" href="/console/console.css">
+</head>
+<body>
+<header>
+  <h1>Not Quite My Tempo <span>console</span></h1>
+  <div class="pills">
+    <span class="pill" id="pill-lib">library</span>
+    <span class="pill" id="pill-hub">hub</span>
+    <span class="pill" id="pill-fletcher">Fletcher</span>
+  </div>
+</header>
+
+<main>
+  <section class="card" id="songs-card">
+    <div class="card-head">
+      <h2>Songs</h2>
+      <span class="muted" id="song-count"></span>
+    </div>
+    <table id="songs">
+      <thead><tr><th>Title</th><th>BPM</th><th>Bars</th><th>Length</th><th>Source</th><th></th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <p class="muted empty" id="no-songs" hidden>No songs yet. Drop a MIDI file below.</p>
+
+    <div class="transport">
+      <div class="selected">Selected: <b id="sel-title">none</b></div>
+      <label>from bar <input type="number" id="from-bar" min="1" value="1"></label>
+      <button id="btn-start" class="primary" disabled>Start</button>
+      <button id="btn-stop">Stop</button>
+      <button id="btn-quit">Quit to menu</button>
+    </div>
+    <p class="muted small" id="cmd-status"></p>
+
+    <div id="drop" tabindex="0">
+      <b>Drop a .mid file here</b> or click to choose
+      <input type="file" id="file" accept=".mid,.midi" hidden>
+      <div class="drop-fields">
+        <input id="up-title" placeholder="title (optional)">
+        <input id="up-artist" placeholder="artist (optional)">
+      </div>
+    </div>
+    <form id="songsterr-form" class="row">
+      <input id="songsterr" placeholder="Songsterr URL or song id (drums only, no backing)">
+      <button type="submit">Import</button>
+    </form>
+    <p class="muted small" id="import-status"></p>
+  </section>
+
+  <section class="card" id="live-card">
+    <h2>Session</h2>
+    <div class="state-row">
+      <div class="big" id="st-state">idle</div>
+      <dl>
+        <dt>song</dt><dd id="st-song">-</dd>
+        <dt>bar</dt><dd id="st-bar">-</dd>
+        <dt>bpm</dt><dd id="st-bpm">-</dd>
+        <dt>from bar</dt><dd id="st-from">-</dd>
+      </dl>
+    </div>
+
+    <h3>Fletcher</h3>
+    <div class="mood-row">
+      <span class="mood" id="fl-mood">-</span>
+      <span class="muted" id="fl-action"></span>
+    </div>
+    <div class="meter" title="anger"><div id="fl-anger"></div></div>
+    <ol id="lines"></ol>
+
+    <h3>Result</h3>
+    <div id="result" class="muted">No result yet.</div>
+
+    <details>
+      <summary>Hub traffic</summary>
+      <ol id="traffic" class="mono"></ol>
+    </details>
+  </section>
+</main>
+<script src="/console/console.js"></script>
+</body>
+</html>

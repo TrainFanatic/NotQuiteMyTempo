@@ -1,0 +1,242 @@
+{
+  "co_one_quiet": {
+    "text": "One.",
+    "tagged_text": "[quietly] One.",
+    "word": "one",
+    "delivery": "quiet",
+    "onset_s": 0.1189,
+    "duration_s": 0.9366,
+    "peak": 0.1871,
+    "placeholder": false
+  },
+  "co_one_sharp": {
+    "text": "One.",
+    "tagged_text": "[sharp] One.",
+    "word": "one",
+    "delivery": "sharp",
+    "onset_s": 0.07069,
+    "duration_s": 0.5134,
+    "peak": 0.7427,
+    "placeholder": false
+  },
+  "co_one_shout": {
+    "text": "One!",
+    "tagged_text": "[shouting] One!",
+    "word": "one",
+    "delivery": "shout",
+    "onset_s": 0.13928,
+    "duration_s": 0.71,
+    "peak": 0.6425,
+    "placeholder": false
+  },
+  "co_two_quiet": {
+    "text": "Two.",
+    "tagged_text": "[quietly] Two.",
+    "word": "two",
+    "delivery": "quiet",
+    "onset_s": 0.02456,
+    "duration_s": 0.6754,
+    "peak": 0.2803,
+    "placeholder": false
+  },
+  "co_two_sharp": {
+    "text": "Two.",
+    "tagged_text": "[sharp] Two.",
+    "word": "two",
+    "delivery": "sharp",
+    "onset_s": 0.09069,
+    "duration_s": 0.4592,
+    "peak": 0.8429,
+    "placeholder": false
+  },
+  "co_two_shout": {
+    "text": "Two!",
+    "tagged_text": "[shouting] Two!",
+    "word": "two",
+    "delivery": "shout",
+    "onset_s": 0.07938,
+    "duration_s": 0.6605,
+    "peak": 0.6991,
+    "placeholder": false
+  },
+  "co_three_quiet": {
+    "text": "Three.",
+    "tagged_text": "[quietly] Three.",
+    "word": "three",
+    "delivery": "quiet",
+    "onset_s": 0.22823,
+    "duration_s": 0.9048,
+    "peak": 0.1384,
+    "placeholder": false
+  },
+  "co_three_sharp": {
+    "text": "Three.",
+    "tagged_text": "[sharp] Three.",
+    "word": "three",
+    "delivery": "sharp",
+    "onset_s": 0.07462,
+    "duration_s": 0.547,
+    "peak": 0.6912,
+    "placeholder": false
+  },
+  "co_three_shout": {
+    "text": "Three!",
+    "tagged_text": "[shouting] Three!",
+    "word": "three",
+    "delivery": "shout",
+    "onset_s": 0.1217,
+    "duration_s": 0.6987,
+    "peak": 0.8197,
+    "placeholder": false
+  },
+  "co_four_quiet": {
+    "text": "Four.",
+    "tagged_text": "[quietly] Four.",
+    "word": "four",
+    "delivery": "quiet",
+    "onset_s": 0.21213,
+    "duration_s": 0.9201,
+    "peak": 0.1291,
+    "placeholder": false
+  },
+  "co_four_sharp": {
+    "text": "Four.",
+    "tagged_text": "[sharp] Four.",
+    "word": "four",
+    "delivery": "sharp",
+    "onset_s": 0.09482,
+    "duration_s": 0.5498,
+    "peak": 0.7187,
+    "placeholder": false
+  },
+  "co_four_shout": {
+    "text": "Four!",
+    "tagged_text": "[shouting] Four!",
+    "word": "four",
+    "delivery": "shout",
+    "onset_s": 0.10619,
+    "duration_s": 0.6607,
+    "peak": 0.8862,
+    "placeholder": false
+  },
+  "co_five_quiet": {
+    "text": "Five.",
+    "tagged_text": "[quietly] Five.",
+    "word": "five",
+    "delivery": "quiet",
+    "onset_s": 0.28584,
+    "duration_s": 1.0188,
+    "peak": 0.187,
+    "placeholder": false
+  },
+  "co_five_sharp": {
+    "text": "Five.",
+    "tagged_text": "[sharp] Five.",
+    "word": "five",
+    "delivery": "sharp",
+    "onset_s": 0.0908,
+    "duration_s": 0.5793,
+    "peak": 0.6367,
+    "placeholder": false
+  },
+  "co_five_shout": {
+    "text": "Five!",
+    "tagged_text": "[shouting] Five!",
+    "word": "five",
+    "delivery": "shout",
+    "onset_s": 0.11717,
+    "duration_s": 0.7318,
+    "peak": 0.8133,
+    "placeholder": false
+  },
+  "co_six_quiet": {
+    "text": "Six.",
+    "tagged_text": "[quietly] Six.",
+    "word": "six",
+    "delivery": "quiet",
+    "onset_s": 0.24002,
+    "duration_s": 0.9437,
+    "peak": 0.1098,
+    "placeholder": false
+  },
+  "co_six_sharp": {
+    "text": "Six.",
+    "tagged_text": "[sharp] Six.",
+    "word": "six",
+    "delivery": "sharp",
+    "onset_s": 0.1691,
+    "duration_s": 0.646,
+    "peak": 0.6508,
+    "placeholder": false
+  },
+  "co_six_shout": {
+    "text": "Six!",
+    "tagged_text": "[shouting] Six!",
+    "word": "six",
+    "delivery": "shout",
+    "onset_s": 0.21146,
+    "duration_s": 0.7439,
+    "peak": 0.9241,
+    "placeholder": false
+  },
+  "co_seven_quiet": {
+    "text": "Seven.",
+    "tagged_text": "[quietly] Seven.",
+    "word": "seven",
+    "delivery": "quiet",
+    "onset_s": 0.26207,
+    "duration_s": 0.9861,
+    "peak": 0.1864,
+    "placeholder": false
+  },
+  "co_seven_sharp": {
+    "text": "Seven.",
+    "tagged_text": "[sharp] Seven.",
+    "word": "seven",
+    "delivery": "sharp",
+    "onset_s": 0.15915,
+    "duration_s": 0.5997,
+    "peak": 0.7074,
+    "placeholder": false
+  },
+  "co_seven_shout": {
+    "text": "Seven!",
+    "tagged_text": "[shouting] Seven!",
+    "word": "seven",
+    "delivery": "shout",
+    "onset_s": 0.21471,
+    "duration_s": 0.8014,
+    "peak": 0.6955,
+    "placeholder": false
+  },
+  "co_eight_quiet": {
+    "text": "Eight.",
+    "tagged_text": "[quietly] Eight.",
+    "word": "eight",
+    "delivery": "quiet",
+    "onset_s": 0.08766,
+    "duration_s": 0.7656,
+    "peak": 0.2209,
+    "placeholder": false
+  },
+  "co_eight_sharp": {
+    "text": "Eight.",
+    "tagged_text": "[sharp] Eight.",
+    "word": "eight",
+    "delivery": "sharp",
+    "onset_s": 0.02404,
+    "duration_s": 0.4518,
+    "peak": 0.6684,
+    "placeholder": false
+  },
+  "co_eight_shout": {
+    "text": "Eight!",
+    "tagged_text": "[shouting] Eight!",
+    "word": "eight",
+    "delivery": "shout",
+    "onset_s": 0.04566,
+    "duration_s": 0.5507,
+    "peak": 0.5751,
+    "placeholder": false
+  }
+}

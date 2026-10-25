@@ -13,6 +13,7 @@ SESSION_STATE = "session.state"
 JUDGMENT_NOTE = "judgment.note"
 JUDGMENT_BAR = "judgment.bar"
 JUDGMENT_ALERT = "judgment.alert"
+SESSION_RESULT = "session.result"  # session controller (hub/session.py), end of a song or quit
 
 # Types we write
 SESSION_COMMAND = "session.command"

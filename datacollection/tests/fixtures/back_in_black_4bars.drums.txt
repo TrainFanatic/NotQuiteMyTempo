@@ -1,0 +1,34 @@
+# source: tests/fixtures/back_in_black_drums_4bars.json  track=Phil Rudd | Sonor Phonic Series | Drums
+# time_s  midi  name
+0.000000  42  hihat_closed
+0.638298  42  hihat_closed
+1.276596  42  hihat_closed
+1.914894  42  hihat_closed
+2.553191  42  hihat_closed
+3.191489  42  hihat_closed
+3.829787  42  hihat_closed
+4.468085  42  hihat_closed
+5.106383  36  kick
+5.106383  57  crash_2
+5.425532  42  hihat_closed
+5.744681  38  snare
+5.744681  42  hihat_closed
+6.063830  42  hihat_closed
+6.382979  36  kick
+6.382979  42  hihat_closed
+6.702128  42  hihat_closed
+7.021277  38  snare
+7.021277  42  hihat_closed
+7.340426  42  hihat_closed
+7.659574  36  kick
+7.659574  42  hihat_closed
+7.978723  42  hihat_closed
+8.297872  38  snare
+8.297872  42  hihat_closed
+8.617021  42  hihat_closed
+8.936170  36  kick
+8.936170  42  hihat_closed
+9.255319  42  hihat_closed
+9.574468  38  snare
+9.574468  42  hihat_closed
+9.893617  42  hihat_closed

@@ -1,0 +1,14 @@
+{
+ "id": "back-in-black-16",
+ "title": "Back in Black (fixture, 16 bars)",
+ "artist": "AC/DC",
+ "bpm": 94.0,
+ "beats_per_bar": 4,
+ "bars": 16,
+ "duration_s": 40.851064,
+ "source": "songsterr",
+ "drum_midi_track": "Phil Rudd | Sonor Phonic Series | Drums",
+ "backing": false,
+ "arrangement": false,
+ "imported_at": "2026-10-24T00:00:00Z"
+}

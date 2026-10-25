@@ -41,10 +41,12 @@ repo root is the source of truth.
 | `tirade.py` | system prompt, Claude streaming, `Draft`, canned fallback lines |
 | `voice.py` | ElevenLabs engines + dry-run tone |
 | `barks.py`, `generate_barks.py` | bark catalog; generates `barks/*.wav` + `manifest.json` |
+| `cues.py` | body choreography: bark cues (`barks/cues.json`, else per-category defaults, no close-ups while playing; negative `at_s` = the headset holds the clip ≤ `bark_lead_max_s`), tirade gestures → stationary move ids unless `closeups`, post-line stare → count-off cue with `t0` (restart sent at t0 − `count_in_beats`) |
 | `config.py` | every tunable; env vars override (`fletcher/.env`) |
 | `hub_client.py` | reconnects every 1 s forever |
 | `dev/` | `mini_hub`, `mock_referee`, `watch`, `replay`, `e2e`, `sample_lines` (voice a few lines to `lines/`; `--text-only` costs no voice credits) |
-| `unity/FletcherVoice.cs` | Unity side of the voice; Adam wires it into the scene |
+| `godot/` | Godot side (Adam's app is Godot 4.5): hub client, voice + timed gesture cues, link to his SceneDirector. Tests: `Godot --headless --path fletcher/godot --script tests/run_tests.gd` |
+| `unity/FletcherVoice.cs` | superseded by `godot/`; kept as a spec |
 
 ## Commands (run from the repo root)
 - Tests: `python -m pytest fletcher/tests -q`

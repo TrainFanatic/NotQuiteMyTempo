@@ -1,0 +1,198 @@
+{
+ "format": "tempo-map/1",
+ "source": {
+  "songId": 1024,
+  "revisionId": 9880696,
+  "name": "Phil Rudd | Sonor Phonic Series | Drums"
+ },
+ "time_origin": "first downbeat of bar 1 = 0.0 s (same origin as the .drums.txt)",
+ "bars": [
+  {
+   "bar": 1,
+   "source_measure": 0,
+   "start_s": 0.0,
+   "pos_whole": 0.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 94.0,
+   "beat_s": 0.6382978723404256,
+   "bar_s": 2.5531914893617023
+  },
+  {
+   "bar": 2,
+   "source_measure": 1,
+   "start_s": 2.5531914893617023,
+   "pos_whole": 1.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 94.0,
+   "beat_s": 0.6382978723404256,
+   "bar_s": 2.5531914893617023
+  },
+  {
+   "bar": 3,
+   "source_measure": 2,
+   "start_s": 5.1063829787234045,
+   "pos_whole": 2.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 94.0,
+   "beat_s": 0.6382978723404256,
+   "bar_s": 2.5531914893617023
+  },
+  {
+   "bar": 4,
+   "source_measure": 3,
+   "start_s": 7.659574468085107,
+   "pos_whole": 3.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 94.0,
+   "beat_s": 0.6382978723404256,
+   "bar_s": 2.5531914893617023
+  },
+  {
+   "bar": 5,
+   "source_measure": 4,
+   "start_s": 10.212765957446809,
+   "pos_whole": 4.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 94.0,
+   "beat_s": 0.6382978723404256,
+   "bar_s": 2.5531914893617023
+  },
+  {
+   "bar": 6,
+   "source_measure": 5,
+   "start_s": 12.76595744680851,
+   "pos_whole": 5.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 94.0,
+   "beat_s": 0.6382978723404256,
+   "bar_s": 2.5531914893617023
+  },
+  {
+   "bar": 7,
+   "source_measure": 6,
+   "start_s": 15.319148936170214,
+   "pos_whole": 6.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 94.0,
+   "beat_s": 0.6382978723404256,
+   "bar_s": 2.5531914893617023
+  },
+  {
+   "bar": 8,
+   "source_measure": 7,
+   "start_s": 17.872340425531913,
+   "pos_whole": 7.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 94.0,
+   "beat_s": 0.6382978723404256,
+   "bar_s": 2.5531914893617023
+  },
+  {
+   "bar": 9,
+   "source_measure": 8,
+   "start_s": 20.425531914893618,
+   "pos_whole": 8.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 94.0,
+   "beat_s": 0.6382978723404256,
+   "bar_s": 2.5531914893617023
+  },
+  {
+   "bar": 10,
+   "source_measure": 9,
+   "start_s": 22.97872340425532,
+   "pos_whole": 9.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 94.0,
+   "beat_s": 0.6382978723404256,
+   "bar_s": 2.5531914893617023
+  },
+  {
+   "bar": 11,
+   "source_measure": 10,
+   "start_s": 25.53191489361702,
+   "pos_whole": 10.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 94.0,
+   "beat_s": 0.6382978723404256,
+   "bar_s": 2.5531914893617023
+  },
+  {
+   "bar": 12,
+   "source_measure": 11,
+   "start_s": 28.085106382978722,
+   "pos_whole": 11.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 94.0,
+   "beat_s": 0.6382978723404256,
+   "bar_s": 2.5531914893617023
+  },
+  {
+   "bar": 13,
+   "source_measure": 12,
+   "start_s": 30.638297872340427,
+   "pos_whole": 12.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 94.0,
+   "beat_s": 0.6382978723404256,
+   "bar_s": 2.5531914893617023
+  },
+  {
+   "bar": 14,
+   "source_measure": 13,
+   "start_s": 33.191489361702125,
+   "pos_whole": 13.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 94.0,
+   "beat_s": 0.6382978723404256,
+   "bar_s": 2.5531914893617023
+  },
+  {
+   "bar": 15,
+   "source_measure": 14,
+   "start_s": 35.744680851063826,
+   "pos_whole": 14.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 94.0,
+   "beat_s": 0.6382978723404256,
+   "bar_s": 2.5531914893617023
+  },
+  {
+   "bar": 16,
+   "source_measure": 15,
+   "start_s": 38.297872340425535,
+   "pos_whole": 15.0,
+   "numerator": 4,
+   "denominator": 4,
+   "bpm": 94.0,
+   "beat_s": 0.6382978723404256,
+   "bar_s": 2.5531914893617023
+  }
+ ],
+ "tempo_changes": [
+  {
+   "time_s": 0.0,
+   "pos_whole": 0.0,
+   "bpm": 94.0,
+   "written_bpm": 94,
+   "written_unit": 4,
+   "linear": false
+  }
+ ],
+ "end_s": 40.851063829787236
+}

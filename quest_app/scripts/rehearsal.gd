@@ -27,6 +27,14 @@ const SfxVoicePool := preload("res://scripts/sfx/sfx_voice_pool.gd")
 const SfxCuePlayer := preload("res://scripts/sfx/sfx_cue_player.gd")
 const CinematicDirector := preload("res://scripts/cinematic/cinematic_director.gd")   # cinematics
 const Intro := preload("res://scripts/intro.gd")   # intro
+const FletcherSetup := preload("res://scripts/fletcher/fletcher_setup.gd")   # fletcher
+const NO_INTRO_ARG := "--no-intro"   # intro: `-- --no-intro` turns intro_enabled off
+const GameSession := preload("res://scripts/game/game_session.gd")   # game
+const GAME_ARG := "--game"   # game: `-- --game` turns game_mode on
+## game: the Quest export's custom feature (export_presets.cfg): game mode on, and with no saved
+## hub URL the laptop over USB (`adb reverse tcp:8765 tcp:8765`). Desktop runs keep the defaults.
+const GAME_FEATURE := "nqmt_game"
+const GAME_FEATURE_HUB_URL := "ws://127.0.0.1:8765"
 
 ## Plays scenes/demo_timeline.json on start (count-off, band in, a cutoff, a stare...).
 @export var run_demo := true
@@ -43,8 +51,20 @@ const Intro := preload("res://scripts/intro.gd")   # intro
 @export var cinematics_enabled := false
 ## Terence's entrance before the showcase or demo (scripts/intro.gd): he walks in through
 ## door_main to spot_terence, the band reacts, the door shuts behind him. The showcase and
-## demo start on intro_finished. Tests that need Terence on his spot from the start turn it off.
+## demo start on intro_finished. Tests that need Terence on his spot from the start turn it off,
+## and so does `-- --no-intro` on the command line.
 @export var intro_enabled := true
+## Fletcher, live from the team hub (scripts/fletcher): his voice from Terence's head and his
+## cues as Terence's moves. Takes over from run_showcase and run_demo, and leaves Terence to
+## the intro until it is over. `-- --fletcher [ws://host:8765]` on the command line turns it on.
+@export var fletcher_enabled := false
+## The hub's WebSocket URL (the laptop's LAN IP, port 8765); "" keeps FletcherHub's default.
+@export var fletcher_hub_url := ""
+## The game (scripts/game): after the intro, a menu on a music stand in front of the throne
+## (songs from the laptop's library, demo scenes, settings), the song flow driven by the
+## laptop's session controller, and the results. Turns Fletcher on (it needs his hub). The
+## showcase and demo timeline are then on the menu's DEMO SCENES. `-- --game` turns it on.
+@export var game_mode := false
 
 ## The entrance is over and the showcase or demo has been started (only with intro_enabled).
 signal intro_finished
@@ -59,6 +79,8 @@ var sfx_library: SfxLibrary
 var sfx_pool: SfxVoicePool
 var cinematic: CinematicDirector   # cinematics
 var intro: Intro   # intro
+var fletcher: FletcherSetup   # fletcher
+var game: GameSession   # game
 
 
 var showcase: Showcase
@@ -66,7 +88,29 @@ var showcase: Showcase
 
 func _ready() -> void:
 	build()
+	# --- Game: needs Fletcher's hub; the URL saved in its settings unless one is given ---
+	if GAME_ARG in OS.get_cmdline_user_args() or OS.has_feature(GAME_FEATURE):
+		game_mode = true
+	if game_mode:
+		fletcher_enabled = true
+		if fletcher_hub_url == "":
+			fletcher_hub_url = GameSession.saved_hub_url()
+		if fletcher_hub_url == "" and OS.has_feature(GAME_FEATURE):
+			fletcher_hub_url = GAME_FEATURE_HUB_URL
+	# --- end Game
+	# --- Fletcher: hub, voice and link (scripts/fletcher), held while the intro runs ---
+	if FletcherSetup.requested():
+		fletcher_enabled = true
+		if FletcherSetup.requested_url() != "":
+			fletcher_hub_url = FletcherSetup.requested_url()
+	if fletcher_enabled:
+		_start_fletcher()
+	# --- end Fletcher
+	if game_mode and fletcher != null:   # game: the menu waits for the intro (open() below)
+		_start_session()
 	# --- Intro: Terence walks in before the game starts; the showcase or demo waits for it ---
+	if NO_INTRO_ARG in OS.get_cmdline_user_args():
+		intro_enabled = false   # `-- --no-intro`: start on the spot (hub/full_e2e.py)
 	if intro_enabled:
 		_start_intro()
 		return
@@ -74,9 +118,11 @@ func _ready() -> void:
 	_start_game()
 
 
-## The showcase, or else the demo timeline.
+## Fletcher (released from the intro hold), else the showcase, else the demo timeline.
 func _start_game() -> void:
-	if run_showcase:
+	if fletcher != null:
+		fletcher.release()   # Fletcher drives Terence: no showcase or demo
+	elif run_showcase:
 		showcase = Showcase.new()
 		showcase.name = "Showcase"
 		add_child(showcase)
@@ -88,6 +134,62 @@ func _start_game() -> void:
 		add_child(injector)
 		if not injector.load_json(director, DEMO):
 			push_error("Rehearsal: demo timeline failed to load")
+	if game != null:   # game: the menu comes up
+		game.open()
+
+
+# --- Game: the session (scripts/game/game_session.gd) and its DEMO SCENES ---
+func _start_session() -> void:
+	game = GameSession.new()
+	add_child(game)
+	if not game.setup(self):
+		push_error("Rehearsal: the game failed to set up")
+		game.queue_free()
+		game = null
+
+
+## The menu's DEMO SCENES: the showcase or the demo timeline, as _start_game starts them.
+func start_demo_scene(use_showcase: bool) -> void:
+	stop_demo_scene()
+	if use_showcase:
+		showcase = Showcase.new()
+		showcase.name = "Showcase"
+		add_child(showcase)
+		showcase.setup(director)
+		showcase.start()
+	else:
+		injector = FakeInjector.new()
+		injector.name = "FakeInjector"
+		add_child(injector)
+		if not injector.load_json(director, DEMO):
+			push_error("Rehearsal: demo timeline failed to load")
+
+
+## Back to the menu: the demo goes, Terence and the band return to rest.
+func stop_demo_scene() -> void:
+	if showcase != null:
+		showcase.running = false
+		if is_instance_valid(showcase.label):
+			showcase.label.queue_free()
+		showcase.queue_free()
+		showcase = null
+	if injector != null:
+		injector.queue_free()
+		injector = null
+	director.stop_move()
+	director.set_band_state("all", &"lowering")
+# --- end Game
+
+
+# --- Fletcher ---
+func _start_fletcher() -> void:
+	fletcher = FletcherSetup.new()
+	add_child(fletcher)
+	if not fletcher.setup(terence, director, fletcher_hub_url, intro_enabled):
+		push_error("Rehearsal: Fletcher failed to set up")
+		fletcher.queue_free()
+		fletcher = null
+# --- end Fletcher
 
 
 # --- Intro: the entrance (scripts/intro.gd), then the game ---

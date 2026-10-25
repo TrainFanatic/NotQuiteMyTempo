@@ -71,8 +71,23 @@ class Config:
     # --- timing of the cutoff sequence ---------------------------------------
     stare_s: float = 0.5  # silent glare after the fist, before he speaks
     cutoff_bark: bool = True  # "Stop!" clip on the fist; the tirade starts once it ends
-    restart_gap_s: float = 0.8  # pause after his last word before the restart
     quest_latency_s: float = 0.15  # headset audio buffering we wait out
+    post_stare_s: float = 0.4  # after the line: stare this long, then the count-off finger starts
+    restart_move: str = "t2_point_player"  # played after the stare only if it ends before the count-off
+    start_bark: bool = True  # "From the top." when a song starts from bar 1, before the count-off finger
+    result_praise_accuracy: float = 0.85  # song finished with no cutoff and this accuracy: "Good."
+    result_again_accuracy: float = 0.6  # below this: "Again."
+    count_in_beats: int = 4  # the restart bar starts this many beats after session.command restart (bridge)
+    countoff_style: str = "sharp"  # countoff.schedule style: sharp / build / shouting / menacing
+    bark_lead_max_s: float = 0.3  # a bark whose move must start before its sound waits at most this long
+    # The cutoff "Stop!" only: its fist (t1_fist_cutoff, priority 2) may hold the clip longer, so the fist
+    # lands on the word down to ~85 bpm (v004 fist frame 14). Same value as FletcherVoice.cutoff_lead_max_s.
+    cutoff_lead_max_s: float = 0.5
+    # Close-ups (t3_*, t5_rhythm_slaps, t5_cowbell) make Terence walk to the drummer (~4 s each way
+    # at 94 bpm). Off: every gesture resolves to a move he plays where he stands. On: he walks in
+    # at the Stop bark, and the count-off waits closeup_return_s (at 120 bpm, scaled) for him to get home.
+    closeups: bool = False
+    closeup_return_s: float = 4.0
 
     # --- modes --------------------------------------------------------------
     dry_run: bool = False  # no API calls: canned lines + tone audio

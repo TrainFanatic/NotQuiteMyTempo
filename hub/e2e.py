@@ -18,6 +18,7 @@ import tempfile
 from pathlib import Path
 
 from fletcher.config import Config
+from fletcher.dev.mini_hub import free_port
 from fletcher.dev.watch import Watcher
 from fletcher.main import Fletcher, setup_logging
 
@@ -116,10 +117,10 @@ def main() -> None:
     p.add_argument("--drift-sd", type=float, default=0.07)
     p.add_argument("--speed", type=float, default=1.0)
     p.add_argument("--live", action="store_true")
-    p.add_argument("--port", type=int, default=8798)
+    p.add_argument("--port", type=int, default=0, help="hub port (default: a free one)")
     a = p.parse_args()
     setup_logging("INFO")
-    sys.exit(asyncio.run(e2e(a.seed, a.drift_sd, a.speed, a.live, a.port)))
+    sys.exit(asyncio.run(e2e(a.seed, a.drift_sd, a.speed, a.live, a.port or free_port())))
 
 
 if __name__ == "__main__":

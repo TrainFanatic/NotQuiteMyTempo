@@ -324,6 +324,27 @@ Outputs:
 - `reports/quest2_v1/<split>/<session>.{truth,played}.drums.txt`: human reference and native
   predictions for inspection or the existing comparer.
 
+**Training options (added for the Quest 2 takes).** Defaults were picked on the validation round
+(event macro-F1 at ±25 ms), never on test; old behaviour is `--mute-window-ms 0 --c-grid 0.1,1,10`.
+
+- `--mute-window-ms/--mute-db/--mute-drop-db` (240/-75/35, on): `QuestMuteFilter` runs on the
+  candidate stream before labels are assigned, in training **and** in the native-replay reports.
+  The values go into the model's `.json` (`training_options`), and `transcribe_wav.py --model`
+  reads them from there, so live drops the same candidates (verified: identical notes on all 24
+  takes). Models without that key (older ones) get no filter live, as before.
+- `--c-grid` (default 0.001,0.003,0.01,0.03,0.1,0.3,1,10).
+- `--ring-ms` (0, off): unlabelled candidates this soon after a labelled hit are left out of that
+  hit's family's loss (still negatives for the others). 50-250 ms was never better on validation:
+  the model then fires on the rings, which are false notes live.
+- `--pool-windows 1|2|4|8` (8, off): average the 8 time offsets per band (32 or 64 features). The
+  pooled model is folded back into the 256-feature v1 format (each offset gets the pooled mean,
+  scale and 1/size of the weight), so no runtime change. Worse on validation; the cross-round
+  weight agreement improves a little.
+- `--class-weight balanced` (off): worse on validation.
+
+Tests: `tests/test_training_options.py`. `models/quest2_v2.bin` / `reports/quest2_v2.json` are the
+default run on the `single_*` takes; held-out macro-F1 at ±10 ms 0.39 (v1) -> 0.52.
+
 Choose new `--model` and `--report` paths for another run; previous results are not silently
 replaced. Synthetic fixtures exercise training/export but are never saved as your production
 model. A usable kit model requires the team's recordings and satisfactory held-out results.
@@ -392,6 +413,70 @@ The saved file is for replay and inspection. No confidence or extra columns are 
 1.250000  36  kick
 1.250000  42  hihat_closed
 ```
+
+**Onsets only (no model), added for the team demo.** `--onsets-only` replaces `--model`: the
+same native core, pacing and `--song-origin`, but with no classifier every onset is printed as
+`time_s  0  onset` (drum unknown, [file_format.md §10](../rushingOrDragging/file_format.md)).
+`hub/bridge.py` names each onset from the sheet (its `ScoreGate`); `live_compare.py` would count
+these lines as extras, so pipe them to the bridge instead:
+
+```sh
+uv run python tools/transcribe_wav.py take.wav --onsets-only --song-origin -2 --realtime \
+  | ../.venv/bin/python -m hub.bridge ../rushingOrDragging/out/song.drums.txt --bpm 94
+```
+
+**Quest mute filter (onsets only; with `--model` when the model was trained with it, see Training options).** On real Quest 2 takes the OS mic processing mutes the input to
+the noise floor (about -90 dB) roughly 0.1 s after a loud attack and un-mutes it ~0.05 s later, so a
+still-ringing drum looks like a new attack 0.15-0.2 s after the real one. `QuestMuteFilter`
+(`tools/common.py`) drops an onset when the last kept onset was under `--mute-window-ms` (240)
+before it **and** the 2 ms level dipped in between below the higher of `--mute-db` (-75 dBFS) and
+that onset's peak minus `--mute-drop-db` (35 dB); a real double stroke dips only ~16 dB and is
+kept. This is the rule `datacollection/label.py` uses to label these takes. It only reads audio
+already delivered, so it adds no latency; `--mute-window-ms 0` turns it off.
+
+Measured on the eight `single_*_01` takes (272 labelled strokes, match within 30 ms): extra onsets
+356 -> 229, matched strokes 247 -> 247, timing vs labels unchanged (median +0.2 ms, p95 6.6 ms).
+The window is 240 ms, not 300, because a closed hi-hat is really played 0.28 s apart: at 300 ms
+the hi-hat take lost 3 strokes. Crash/ride re-attacks beyond 240 ms therefore get through. What
+remains is mostly the core re-triggering 20-120 ms into a ring with no mute in between (floor tom
+and kick); the bridge's score gate drops those.
+
+**Live input (added for the team demo).** `--input` replaces the WAV path; the same native core,
+mute filter and `--model`/`--onsets-only` choice, until Ctrl-C/SIGTERM (summary on stderr, input
+stats every 10 s). Code: `tools/live_input.py`; tests: `tests/test_live_input.py`.
+
+```sh
+# laptop microphone (sounddevice, 48 kHz mono float32, 10 ms blocks); mic:<name|index> picks one
+../.venv/bin/python tools/transcribe_wav.py --input mic --onsets-only --clock monotonic
+# the Quest's mic, streamed as mic.pcm hub frames by quest_app/scripts/game/mic_streamer.gd
+../.venv/bin/python tools/transcribe_wav.py --input hub:ws://localhost:8765 --onsets-only --clock monotonic
+```
+
+`sounddevice` and `websockets` are imported only for these modes; they are in the repo's
+`.venv`, not in this project's lock (`uv run --with sounddevice --with websockets ...` also works).
+`--clock monotonic` prints `time_s` on the laptop clock (`time.monotonic()`, the hub's clock,
+`fletcher.contract.now()`) so the bridge can convert with the session's `t0`; the default `song`
+clock is `--song-origin + sample/48000` as before. A WAV with `--realtime` can use it too (sample 0
+= replay start).
+
+- **Laptop mic dating:** PortAudio's `inputBufferAdcTime` (or arrival minus the block) minus the
+  stream's reported input latency (`--mic-latency-ms` overrides). On macOS the ADC time leaves the
+  device latency out (41.5 ms on a MacBook Pro mic). Speaker->mic loopback against PortAudio's DAC
+  time: 8/8 clicks found, dated +2.4 to +2.9 ms late; **hit -> line on stdout 212 ms** (41.5 input
+  latency + the core's ~170 ms context wait).
+- **Quest stream:** 16-bit mono frames of ~50 ms at the headset's mix rate (44.1 kHz on Quest 2),
+  resampled to 48 kHz by a streaming windowed sinc (matches `prepare_recording.py`'s polyphase
+  resample to -52 dB). Frames are put back in `first_sample` order; a missing `seq` waits
+  `--reorder-ms` (60) and is then a gap, a `first_sample` jump with the next `seq` (the headset's
+  capture discarded frames) is a gap at once; the core restarts its acoustic state across a gap
+  (`DT_GAP`). Device `local_t` -> laptop clock with running-minimum offsets, symmetric (NTP style)
+  when the frame carries the headset's `clock_offset`. Test: the real 44.1 kHz `single_snare_01`
+  take streamed through `hub/server.py` with jitter, a reordered pair, a lost frame and a capture
+  gap lands on the labels as well as the WAV replay does (13 labels, systematic +0.4 ms, the one
+  label the replay gets 16 ms wrong the stream gets right); **hit -> line 214 ms p50**, 289 max.
+  The real Godot `MicStreamer` through `FletcherHub` and the hub on this Mac: 7/7 synthetic
+  clicks within +0.3 ms, 209 ms. Not yet included: the Quest mic's own input latency (hardware
+  -> Godot mix), which nobody has measured; set `MicStreamer.input_latency_s` once it is.
 
 For direct scoring of exported notes:
 

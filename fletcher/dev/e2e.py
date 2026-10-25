@@ -17,7 +17,7 @@ import sys
 from ..config import Config
 from ..main import Fletcher, setup_logging
 from ..text import mentions_bar
-from .mini_hub import run_hub
+from .mini_hub import free_port, run_hub
 from .mock_referee import MockReferee
 from .watch import Watcher
 
@@ -84,10 +84,10 @@ def main() -> None:
     p.add_argument("--notes-only", action="store_true")
     p.add_argument("--speed", type=float, default=2.0)
     p.add_argument("--live", action="store_true")
-    p.add_argument("--port", type=int, default=8799)
+    p.add_argument("--port", type=int, default=0, help="hub port (default: a free one)")
     a = p.parse_args()
     setup_logging("INFO")
-    sys.exit(asyncio.run(e2e(a.notes_only, a.speed, a.live, a.port)))
+    sys.exit(asyncio.run(e2e(a.notes_only, a.speed, a.live, a.port or free_port())))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,552 @@
+{
+ "rushing_1": {
+  "cues": [
+   {
+    "gesture": "t2_point_player",
+    "at_s": -0.121,
+    "priority": 1,
+    "key_frame": 8,
+    "emphasis_s": 0.212
+   }
+  ]
+ },
+ "rushing_2": {
+  "cues": [
+   {
+    "gesture": "t2_point_player",
+    "at_s": 0.093,
+    "priority": 1,
+    "key_frame": 8,
+    "emphasis_s": 0.426
+   }
+  ]
+ },
+ "rushing_3": {
+  "cues": [
+   {
+    "gesture": "t2_point_player",
+    "at_s": 0.925,
+    "priority": 1,
+    "key_frame": 8,
+    "emphasis_s": 1.258
+   }
+  ]
+ },
+ "dragging_1": {
+  "cues": [
+   {
+    "gesture": "t2_point_player",
+    "at_s": -0.121,
+    "priority": 1,
+    "key_frame": 8,
+    "emphasis_s": 0.212
+   }
+  ]
+ },
+ "dragging_2": {
+  "cues": [
+   {
+    "gesture": "t2_impatient_watch",
+    "at_s": -0.12,
+    "priority": 1,
+    "key_frame": 14,
+    "emphasis_s": 0.463
+   }
+  ]
+ },
+ "dragging_3": {
+  "cues": [
+   {
+    "gesture": "t1_fist_slam",
+    "at_s": 0.406,
+    "priority": 1,
+    "key_frame": 14,
+    "emphasis_s": 0.989
+   }
+  ]
+ },
+ "no_1": {
+  "cues": [
+   {
+    "gesture": "t1_flick",
+    "at_s": -0.241,
+    "priority": 1,
+    "key_frame": 11,
+    "emphasis_s": 0.217
+   }
+  ]
+ },
+ "no_2": {
+  "cues": [
+   {
+    "gesture": "t4_shout",
+    "at_s": -0.037,
+    "priority": 1,
+    "key_frame": 36,
+    "emphasis_s": 1.463
+   }
+  ]
+ },
+ "watch_1": {
+  "cues": [
+   {
+    "gesture": "t0_cue_section",
+    "at_s": 0.123,
+    "priority": 1,
+    "key_frame": 10,
+    "emphasis_s": 0.54
+   }
+  ]
+ },
+ "watch_2": {
+  "cues": [
+   {
+    "gesture": "t2_point_player",
+    "at_s": 0.061,
+    "priority": 1,
+    "key_frame": 8,
+    "emphasis_s": 0.394
+   }
+  ]
+ },
+ "stop_1": {
+  "cues": [
+   {
+    "gesture": "t1_fist_cutoff",
+    "at_s": -0.255,
+    "priority": 2,
+    "key_frame": 14,
+    "emphasis_s": 0.328
+   }
+  ]
+ },
+ "stop_2": {
+  "cues": [
+   {
+    "gesture": "t1_fist_cutoff",
+    "at_s": -0.262,
+    "priority": 2,
+    "key_frame": 14,
+    "emphasis_s": 0.321
+   }
+  ]
+ },
+ "again_1": {
+  "cues": [
+   {
+    "gesture": "t2_point_player",
+    "at_s": 0.0,
+    "priority": 1,
+    "key_frame": 8,
+    "emphasis_s": 0.333
+   }
+  ]
+ },
+ "again_2": {
+  "cues": [
+   {
+    "gesture": "t0_cue_section",
+    "at_s": 0.308,
+    "priority": 1,
+    "key_frame": 10,
+    "emphasis_s": 0.725
+   }
+  ]
+ },
+ "top_1": {
+  "cues": [
+   {
+    "gesture": "t0_cue_section",
+    "at_s": 0.039,
+    "priority": 1,
+    "key_frame": 10,
+    "emphasis_s": 0.456
+   }
+  ]
+ },
+ "praise_1": {
+  "cues": [
+   {
+    "gesture": "ap_nod",
+    "at_s": 0.276,
+    "priority": 1,
+    "key_frame": 6,
+    "emphasis_s": 0.526
+   }
+  ]
+ },
+ "praise_2": {
+  "cues": [
+   {
+    "gesture": "ap_nod",
+    "at_s": -0.058,
+    "priority": 1,
+    "key_frame": 6,
+    "emphasis_s": 0.192
+   }
+  ]
+ },
+ "count_1": {
+  "cues": [
+   {
+    "gesture": "t0_countoff_verbal",
+    "at_s": 0.103,
+    "priority": 2,
+    "key_frame": 2,
+    "emphasis_s": 0.186
+   }
+  ]
+ },
+ "bar_01": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.07,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.737
+   }
+  ]
+ },
+ "bar_02": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.075,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.742
+   }
+  ]
+ },
+ "bar_03": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.104,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.771
+   }
+  ]
+ },
+ "bar_04": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.068,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.735
+   }
+  ]
+ },
+ "bar_05": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.009,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.676
+   }
+  ]
+ },
+ "bar_06": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.051,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.718
+   }
+  ]
+ },
+ "bar_07": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.052,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.719
+   }
+  ]
+ },
+ "bar_08": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": -0.16,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.507
+   }
+  ]
+ },
+ "bar_09": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": -0.052,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.615
+   }
+  ]
+ },
+ "bar_10": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.02,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.687
+   }
+  ]
+ },
+ "bar_11": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": -0.083,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.584
+   }
+  ]
+ },
+ "bar_12": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.058,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.725
+   }
+  ]
+ },
+ "bar_13": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": -0.02,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.647
+   }
+  ]
+ },
+ "bar_14": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": -0.013,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.654
+   }
+  ]
+ },
+ "bar_15": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.227,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.894
+   }
+  ]
+ },
+ "bar_16": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.032,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.699
+   }
+  ]
+ },
+ "bar_17": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": -0.018,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.649
+   }
+  ]
+ },
+ "bar_18": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.205,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.872
+   }
+  ]
+ },
+ "bar_19": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": -0.116,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.551
+   }
+  ]
+ },
+ "bar_20": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.073,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.74
+   }
+  ]
+ },
+ "bar_21": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.095,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.762
+   }
+  ]
+ },
+ "bar_22": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.012,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.679
+   }
+  ]
+ },
+ "bar_23": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.005,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.672
+   }
+  ]
+ },
+ "bar_24": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.008,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.675
+   }
+  ]
+ },
+ "bar_25": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.01,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.677
+   }
+  ]
+ },
+ "bar_26": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.018,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.685
+   }
+  ]
+ },
+ "bar_27": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.012,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.679
+   }
+  ]
+ },
+ "bar_28": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.095,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.762
+   }
+  ]
+ },
+ "bar_29": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.092,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.759
+   }
+  ]
+ },
+ "bar_30": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.124,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.791
+   }
+  ]
+ },
+ "bar_31": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.035,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.702
+   }
+  ]
+ },
+ "bar_32": {
+  "cues": [
+   {
+    "gesture": "t2_score_point",
+    "at_s": 0.036,
+    "priority": 1,
+    "key_frame": 16,
+    "emphasis_s": 0.703
+   }
+  ]
+ }
+}

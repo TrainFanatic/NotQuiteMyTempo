@@ -53,6 +53,14 @@ def import_take(wav_path, metadata_path, session, recordings=None):
     if target.exists():
         raise FileExistsError(f"Session already exists: {target}")
     target.mkdir(parents=True)
+    try:
+        return _fill_session(target, wav_path, metadata_path, meta)
+    except BaseException:
+        shutil.rmtree(target)  # a failed import must not block the retry
+        raise
+
+
+def _fill_session(target, wav_path, metadata_path, meta):
     shutil.copy2(wav_path, target / "source.wav")
     shutil.copy2(metadata_path, target / "source.capture.json")
     notes = "; ".join(

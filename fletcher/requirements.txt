@@ -3,3 +3,4 @@ websockets>=13        # hub client + ElevenLabs WebSockets
 python-dotenv>=1.0    # reads fletcher/.env
 sounddevice>=0.4      # optional: --play-local on the laptop
 pytest>=8             # tests
+aiohttp>=3.9          # library/ console + song server (:8766)

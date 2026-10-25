@@ -1,0 +1,14 @@
+{
+ "_doc": "Body cue for the count-off. Not per clip: one move spans the four count words, so it is anchored to the take's t0 (downbeat after the last word) in beats, which makes it exact at any tempo (Terence's moves scale 12 frames per beat). start_s = t0 - beats_before_t0 * 60 / bpm. Primary = finger; verbal is the alternative.",
+ "count_in": {
+  "cues": [
+   {"gesture": "t0_countoff_finger", "beats_before_t0": 5.0, "priority": 2, "key_frames": [12, 24, 36, 48],
+    "why": "finger k goes up on frame 12k = beat k after the start, i.e. on the onsets of five/six/seven/eight; same lead as cues.COUNTOFF_LEAD_BEATS / FletcherLink.countoff_lead_beats() (4 + first finger_up frame in beats); checked unchanged in terence_v004"}
+  ],
+  "alternatives": [
+   {"gesture": "t0_countoff_verbal", "beats_before_t0": 4.1667, "priority": 2, "key_frames": [2, 14, 26, 38],
+    "why": "beat accents on frame 12k+2, so start 4 beats + 2 frames before t0; mouths the count with the voice but gives the drummer no finger count"}
+  ],
+  "two_bar_count": "For bars=2 (8 words) play t0_conduct (downbeat frame 0) at t0 - 8 beats, then t0_countoff_finger at t0 - 5 beats (priority 2 preempts the loop)."
+ }
+}

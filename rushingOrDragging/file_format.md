@@ -200,3 +200,24 @@ def write_notes(path, notes, header_lines=()):
 4. Times are in seconds, non-negative, and measured from the song start.
 5. No blank lines, no trailing spaces, and a single final newline.
 6. Do not add extra columns. Durations, velocities, and similar fields are not part of this format.
+
+## 10. Addition: unknown-drum onsets (live transcriber without a model)
+
+Added 2026-10-24 for the model-free live demo; nothing above changes. Kevin's
+`live_transcription/tools/transcribe_wav.py --onsets-only` knows *when* a hit happened but not
+*which* drum. It writes such a hit as an ordinary data line with `midi` **0** and `name`
+**`onset`**:
+
+```
+# live transcription: onsets only, drum unknown (midi 0)
+# time_s  midi  name
+0.000979  0  onset
+0.666229  0  onset
+```
+
+The line still matches the §4 regex and every reader in this folder parses it (0 is outside
+§6's 27-98 range, so it never collides with a real drum). It is the one exception to "`name` is
+the §6 lookup of `midi`" (that lookup would say `unknown`). Only a stream may contain these
+lines, never a sheet. A consumer that doesn't know them treats them as hits on an unknown drum:
+`live_compare.py` counts them as extras. `hub/bridge.py` instead gives each one the drum(s) the
+sheet expects at that moment (its `ScoreGate`) and drops cymbal-tail re-triggers.

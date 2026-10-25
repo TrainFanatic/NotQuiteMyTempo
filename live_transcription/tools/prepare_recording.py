@@ -23,10 +23,9 @@ def prepare(source, output, capture_notes=""):
     if rate != RATE:
         gcd = math.gcd(rate, RATE)
         mono = resample_poly(mono, RATE // gcd, rate // gcd)
-    if np.max(np.abs(mono)) > 1:
-        raise ValueError(
-            "Resampling overshot full scale; provide a recording with more headroom"
-        )
+    # Resampling a near-full-scale hit can ring slightly past 1.0. The float WAV keeps
+    # those samples exactly, so record the overshoot instead of rejecting the take.
+    resampled_peak = float(np.max(np.abs(mono)))
     # Float WAV preserves the samples without another integer quantization step.
     output.parent.mkdir(parents=True, exist_ok=True)
     sf.write(output, mono, RATE, subtype="FLOAT")
@@ -40,6 +39,7 @@ def prepare(source, output, capture_notes=""):
         "sample_rate": RATE,
         "duration_s": len(mono) / RATE,
         "peak": float(np.max(np.abs(a))),
+        "resampled_peak": resampled_peak,
         "near_clip_fraction": float(np.mean(np.abs(a) >= 0.999)),
         "rms": float(np.sqrt(np.mean(a * a))),
         "capture_notes": capture_notes,

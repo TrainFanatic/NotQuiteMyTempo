@@ -62,3 +62,10 @@ Headless Blender scripts that build the room, the band, Terence, instruments and
 PS2-style low-poly glTF, plus the sound effects (real CC0/CC-BY recordings, credited in
 `sfx/CREDITS.md`) and their animation cue tables.
 See `quest_assets/ANIMATIONS.md` and `quest_assets/DECISIONS.md`.
+
+### `datacollection/`: recording plan and free labels for the Quest mic
+
+How to record training/evaluation takes on the Quest together with a laptop reference mic and
+guide track (Fletcher's count-off + click), then align them and write `labels.csv` for
+`live_transcription/` without hand-labeling. Also scores the Quest mic against the reference to
+decide which mic the demo uses. See [`datacollection/README.md`](datacollection/README.md).

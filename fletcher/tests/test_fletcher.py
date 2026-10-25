@@ -130,8 +130,8 @@ def test_gesture_cues_are_stripped_and_timed_to_sentences():
         assert await f.speak(d, now(), now(), facts, 2)
         assert all("{" not in s for s in f.voices[0].heard)  # the voice never sees cues
         cues = [(m["gesture"], m["at_index"], m["action"]) for t, m in sent if t == "fletcher.state" and "gesture" in m]
-        assert cues == [("slam_stand", 0, "lean_in"), ("turn_away", 2, "glare"),
-                        ("spin_back", 4, "point"), ("point", 4, "point")]
+        assert cues == [("t1_fist_slam", 0, "lean_in"), ("t1_wave_off", 2, "glare"),
+                        ("t2_point_player", 4, "point")]  # spin_back + point: one point, not two
         speech = [m for t, m in sent if t == "fletcher.speech"][0]
         assert "{" not in speech["text"] and "[" not in speech["text"]
     asyncio.run(go())

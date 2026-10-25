@@ -1,0 +1,8 @@
+; Minimal project so the Fletcher scripts can be tested headless:
+;   Godot --headless --path fletcher/godot --script tests/run_tests.gd
+; In the game, copy only the three .gd files (see README.md).
+config_version=5
+
+[application]
+config/name="fletcher_godot_tests"
+config/features=PackedStringArray("4.5")

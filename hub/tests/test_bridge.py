@@ -144,3 +144,39 @@ def test_tempo_map_gives_the_same_bars_as_fixed_bpm(tmp_path):
         (b1, beat1), (b2, beat2) = mapped.bar_at(n.time), fixed.bar_at(n.time)
         assert b1 == b2 and beat1 == pytest.approx(beat2, abs=1e-4)
     assert [mapped.bar_start(b) for b in (1, 2, 3)] == pytest.approx([fixed.bar_start(b) for b in (1, 2, 3)])
+
+
+@pytest.mark.parametrize("arrives", [-0.4, 0.0, 0.35, 1.2])  # s vs. the nominal t0 - 4 beats
+def test_restart_with_t0_is_exact_however_late_the_command(sheet_path, arrives):
+    """Fletcher's restart carries t0 (hub clock, the count-off downbeat): bar 5 starts at t0,
+    not at arrival + count-in, so a late or early command doesn't shift the sheet."""
+    ref = referee(sheet_path)
+    latency, clock_gap = 0.17, 5000.0
+    sheet = cp.read_notes(sheet_path)
+    for n in sheet[:30]:
+        ref.feed_line(f"{n.time:.6f}  {n.midi}  x", rx=n.time + clock_gap + latency)
+    ref.on_command({"action": "stop"}, rx=sheet[30].time + clock_gap)
+    t0 = sheet[31].time + clock_gap + 6.0
+    rx = t0 - 4 * 60 / BPM + arrives
+    out = ref.on_command({"action": "restart", "from_bar": 5, "t0": t0}, rx)
+    assert out == [("session.state", {"state": "count_in", "song_id": "sheet.drums", "bpm": 94,
+                                      "bar": 5, "beat": 1, "t0": round(t0, 4)})]
+    start_s = t0 - clock_gap  # the drummer starts bar 5 on the downbeat
+    msgs = []
+    for n in [n for n in sheet if 4 * BAR_S - 1e-6 <= n.time < 6 * BAR_S - 1e-6]:
+        s = start_s + (n.time - 4 * BAR_S)
+        msgs += ref.feed_line(f"{s:.6f}  {n.midi}  x", rx=s + clock_gap + latency)
+    played = notes_of(msgs)
+    assert {n["bar"] for n in played} == {5, 6} and all(n["grade"] == "perfect" for n in played)
+    assert max(abs(n["error_ms"]) for n in played) < 1.0
+
+
+def test_restart_without_t0_keeps_the_count_in_path(sheet_path):
+    """Old senders: bar starts one count-in after arrival; count_in reports that time as t0."""
+    ref = referee(sheet_path)
+    sheet = cp.read_notes(sheet_path)
+    for n in sheet[:10]:
+        ref.feed_line(f"{n.time:.6f}  {n.midi}  x", rx=n.time + 100.0)
+    late = ref.on_command({"action": "restart", "from_bar": 2}, rx=200.0)
+    assert late[0][1]["t0"] == pytest.approx(200.0 + 4 * 60 / BPM, abs=1e-4)
+    assert ref.resume_at_s == pytest.approx(200.0 + 4 * 60 / BPM - (100.0 - 0.17))  # minus the clock offset

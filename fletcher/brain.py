@@ -39,9 +39,11 @@ class Facts:
     bpm: float | None = None
     cutoff_number: int = 1
     per_drum: dict[str, dict[str, float]] = field(default_factory=dict)
+    song: str = ""  # the song's title, when the session controller sent one
 
     def sheet(self) -> str:
-        lines = [
+        lines = [f"song: {self.song}"] if self.song else []
+        lines += [
             f"problem: {self.kind.replace('_', ' ')} (severity {self.severity:.2f})",
             f"started in bar {self.since_bar}; cut off during bar {self.current_bar}",
         ]
@@ -131,6 +133,7 @@ class Brain:
         self.external_bars = False
         self.last_tick: float | None = None
         self.note_bar = 0
+        self.song = ""
 
     def cut_threshold(self) -> float:
         return max(self.cfg.cutoff_floor, self.cfg.cutoff_anger - self.cfg.patience_step * self.cutoffs)
@@ -140,7 +143,9 @@ class Brain:
         st = d.get("state")
         if d.get("bpm"):
             self.bpm = float(d["bpm"])
-        if d.get("bar") is not None:
+        if d.get("title"):
+            self.song = str(d["title"])
+        if d.get("bar") is not None and st != "finished":
             self._advance_bar(int(d["bar"]))
         if st == "playing":
             if self.phase not in ("playing", "cutoff"):
@@ -155,7 +160,21 @@ class Brain:
         elif st == "stopped":
             if self.phase == "playing":
                 self.phase = "stopped"
+        elif st == "finished":  # the song is over: no more judging, no cutoff
+            self.phase = "stopped"
         return self._state_effects()
+
+    def on_result(self, d: dict, t: float) -> list:
+        """session.result at the end of a song: one bark on how it went (nothing on a quit)."""
+        if not d.get("completed") or not d.get("notes"):
+            return []
+        acc = d.get("accuracy")
+        acc = float(acc) if acc is not None else 0.0
+        if acc >= self.cfg.result_praise_accuracy and not d.get("cutoffs"):
+            return [Bark("praise")]
+        if acc < self.cfg.result_again_accuracy:
+            return [Bark("again")]
+        return []
 
     def on_note(self, d: dict, t: float) -> list:
         eff: list = []
@@ -243,6 +262,8 @@ class Brain:
     # -- internals ---------------------------------------------------------------
     def _clear_run_state(self) -> None:
         self.alerts.clear()
+        self.notes.clear()  # a restart replays bars: the last run's misses there are not this run's
+        self.note_bar = 0
         self.bar_added.clear()
         self.good_streak = 0
         self.approved = False
@@ -422,7 +443,7 @@ class Brain:
             tempo_ratio=last.get("tempo_ratio"), mean_error_ms=mean, misses=misses,
             accuracy=last.get("accuracy"), bpm=self.bpm,
             cutoff_number=cutoff_number if cutoff_number is not None else self.cutoffs,
-            per_drum=per_drum,
+            per_drum=per_drum, song=self.song,
         )
 
     def _state_effects(self) -> list:
