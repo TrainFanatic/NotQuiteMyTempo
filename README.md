@@ -31,6 +31,17 @@ annotation, training, WAV replay and evaluation tools. Produces the timestamped 
 by `rushingOrDragging`. Quest/Godot capture integration is a later milestone; a trained kit
 model requires labeled recordings. See the complete [setup and workflow guide](live_transcription/README.md).
 
+### `hub/`: the team hub and the referee bridge
+
+The WebSocket hub every part talks through, and the bridge that turns `live_transcription`'s hits
+into per-hit judgments (using `rushingOrDragging`'s live matcher) for Fletcher. See
+[`hub/README.md`](hub/README.md).
+
+### `fletcher/`: the conductor's mind and voice
+
+Mood machine, Claude-written tirades, ElevenLabs voice, barks and gesture cues. See
+[`fletcher/CLAUDE.md`](fletcher/CLAUDE.md).
+
 ## Adding a subfolder
 
 Put new functionality in its own top-level subfolder with its own documentation, and add a
