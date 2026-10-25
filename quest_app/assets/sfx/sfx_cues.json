@@ -1,0 +1,1867 @@
+{
+ "fps": 24,
+ "version": 1,
+ "terence": {
+  "t0_countoff_finger": [],
+  "t0_countoff_verbal": [],
+  "t0_clap_off": [
+   {
+    "frame": 12,
+    "sfx": "clap_1",
+    "anchor": "RightHand",
+    "gain_db": 0.0,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 24,
+    "sfx": "clap_2",
+    "anchor": "RightHand",
+    "gain_db": 0.0,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 36,
+    "sfx": "clap_3",
+    "anchor": "RightHand",
+    "gain_db": 0.0,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 48,
+    "sfx": "clap_1",
+    "anchor": "RightHand",
+    "gain_db": 0.0,
+    "pitch_jitter": 0.04
+   }
+  ],
+  "t0_conduct": [],
+  "t0_pace": [
+   {
+    "frame": 0,
+    "sfx": "foot_step_1",
+    "anchor": "LeftFoot",
+    "gain_db": -3.0,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 1,
+    "sfx": "cloth_rustle_1",
+    "anchor": "UpperChest",
+    "gain_db": -12.0,
+    "pitch_jitter": 0.08
+   },
+   {
+    "frame": 5,
+    "sfx": "foot_scuff",
+    "anchor": "LeftFoot",
+    "gain_db": -12.0,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 16,
+    "sfx": "foot_step_2",
+    "anchor": "RightFoot",
+    "gain_db": -5.5,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 32,
+    "sfx": "foot_step_3",
+    "anchor": "LeftFoot",
+    "gain_db": -5.5,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 48,
+    "sfx": "foot_step_4",
+    "anchor": "RightFoot",
+    "gain_db": -3.9,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 49,
+    "sfx": "cloth_rustle_2",
+    "anchor": "UpperChest",
+    "gain_db": -12.0,
+    "pitch_jitter": 0.08
+   },
+   {
+    "frame": 53,
+    "sfx": "foot_scuff",
+    "anchor": "RightFoot",
+    "gain_db": -12.0,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 64,
+    "sfx": "foot_step_1",
+    "anchor": "LeftFoot",
+    "gain_db": -5.5,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 80,
+    "sfx": "foot_step_2",
+    "anchor": "RightFoot",
+    "gain_db": -5.5,
+    "pitch_jitter": 0.06
+   }
+  ],
+  "t0_lean_listen": [],
+  "t0_cue_section": [],
+  "t0_watch_other": [],
+  "t0_stare_drummer": [],
+  "t0_check_watch": [],
+  "t0_chair_rest": [],
+  "t1_flick": [
+   {
+    "frame": 9,
+    "sfx": "whoosh_small",
+    "anchor": "RightHand",
+    "gain_db": -8.0,
+    "pitch_jitter": 0.06
+   }
+  ],
+  "t1_wave_off": [
+   {
+    "frame": 15,
+    "sfx": "whoosh_small",
+    "anchor": "RightHand",
+    "gain_db": -8.0,
+    "pitch_jitter": 0.06
+   }
+  ],
+  "t1_fist_cutoff": [],
+  "t1_clap_stop": [
+   {
+    "frame": 9,
+    "sfx": "clap_big",
+    "anchor": "RightHand",
+    "gain_db": 2.0,
+    "pitch_jitter": 0.04
+   }
+  ],
+  "t1_fist_slam": [
+   {
+    "frame": 11,
+    "sfx": "whoosh_big",
+    "anchor": "RightHand",
+    "gain_db": -4.0,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 12,
+    "sfx": "fist_slam_stand",
+    "anchor": "RightHand",
+    "gain_db": 1.0,
+    "pitch_jitter": 0.03
+   },
+   {
+    "frame": 12,
+    "sfx": "foot_stomp",
+    "anchor": "LeftFoot",
+    "gain_db": -4.0,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 13,
+    "sfx": "stand_rattle",
+    "anchor": "RightHand",
+    "gain_db": -8.0,
+    "pitch_jitter": 0.05
+   }
+  ],
+  "t2_judging_stare": [],
+  "t2_score_point": [
+   {
+    "frame": 16,
+    "sfx": "watch_tap",
+    "anchor": "RightHand",
+    "gain_db": -8.0,
+    "pitch_jitter": 0.05
+   },
+   {
+    "frame": 24,
+    "sfx": "watch_tap",
+    "anchor": "RightHand",
+    "gain_db": -8.0,
+    "pitch_jitter": 0.05
+   }
+  ],
+  "t2_point_player": [],
+  "t2_hunt_sections": [],
+  "t2_forced_calm": [],
+  "t2_switch_drummer": [
+   {
+    "frame": 25,
+    "sfx": "whoosh_small",
+    "anchor": "LeftHand",
+    "gain_db": -8.0,
+    "pitch_jitter": 0.06
+   }
+  ],
+  "t2_impatient_watch": [
+   {
+    "frame": 14,
+    "sfx": "watch_tap",
+    "anchor": "RightHand",
+    "gain_db": -3.0,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 26,
+    "sfx": "watch_tap",
+    "anchor": "RightHand",
+    "gain_db": -3.0,
+    "pitch_jitter": 0.04
+   }
+  ],
+  "t3_loom": [],
+  "t3_whisper": [
+   {
+    "frame": 16,
+    "sfx": "foot_step_1",
+    "anchor": "RightFoot",
+    "gain_db": -8.5,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 64,
+    "sfx": "foot_step_2",
+    "anchor": "RightFoot",
+    "gain_db": -10.6,
+    "pitch_jitter": 0.06
+   }
+  ],
+  "t3_crouch": [],
+  "t3_circle_kit": [
+   {
+    "frame": 0,
+    "sfx": "foot_step_1",
+    "anchor": "LeftFoot",
+    "gain_db": -4.5,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 9,
+    "sfx": "foot_step_2",
+    "anchor": "RightFoot",
+    "gain_db": -5.2,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 18,
+    "sfx": "foot_step_3",
+    "anchor": "LeftFoot",
+    "gain_db": -5.2,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 27,
+    "sfx": "foot_step_4",
+    "anchor": "RightFoot",
+    "gain_db": -4.5,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 36,
+    "sfx": "foot_step_1",
+    "anchor": "LeftFoot",
+    "gain_db": -5.2,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 45,
+    "sfx": "foot_step_2",
+    "anchor": "RightFoot",
+    "gain_db": -4.5,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 54,
+    "sfx": "foot_step_3",
+    "anchor": "LeftFoot",
+    "gain_db": -5.2,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 63,
+    "sfx": "foot_step_4",
+    "anchor": "RightFoot",
+    "gain_db": -4.5,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 72,
+    "sfx": "foot_step_1",
+    "anchor": "LeftFoot",
+    "gain_db": -5.2,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 81,
+    "sfx": "foot_step_2",
+    "anchor": "RightFoot",
+    "gain_db": -4.5,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 90,
+    "sfx": "foot_step_3",
+    "anchor": "LeftFoot",
+    "gain_db": -4.5,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 99,
+    "sfx": "foot_step_4",
+    "anchor": "RightFoot",
+    "gain_db": -5.2,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 108,
+    "sfx": "foot_step_1",
+    "anchor": "LeftFoot",
+    "gain_db": -4.5,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 117,
+    "sfx": "foot_step_2",
+    "anchor": "RightFoot",
+    "gain_db": -5.2,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 126,
+    "sfx": "foot_step_3",
+    "anchor": "LeftFoot",
+    "gain_db": -4.5,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 135,
+    "sfx": "foot_step_4",
+    "anchor": "RightFoot",
+    "gain_db": -5.2,
+    "pitch_jitter": 0.06
+   }
+  ],
+  "t3_clap_in_face": [
+   {
+    "frame": 12,
+    "sfx": "clap_1",
+    "anchor": "RightHand",
+    "gain_db": 0.0,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 24,
+    "sfx": "clap_2",
+    "anchor": "RightHand",
+    "gain_db": 0.0,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 36,
+    "sfx": "clap_3",
+    "anchor": "RightHand",
+    "gain_db": 0.0,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 48,
+    "sfx": "clap_1",
+    "anchor": "RightHand",
+    "gain_db": 0.0,
+    "pitch_jitter": 0.04
+   }
+  ],
+  "t3_fake_warmth": [
+   {
+    "frame": 10,
+    "sfx": "foot_step_1",
+    "anchor": "RightFoot",
+    "gain_db": -8.3,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 16,
+    "sfx": "foot_step_2",
+    "anchor": "RightFoot",
+    "gain_db": -7.8,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 64,
+    "sfx": "foot_step_3",
+    "anchor": "RightFoot",
+    "gain_db": -10.9,
+    "pitch_jitter": 0.06
+   }
+  ],
+  "t4_shout": [
+   {
+    "frame": 10,
+    "sfx": "foot_stomp",
+    "anchor": "LeftFoot",
+    "gain_db": -2.0,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 12,
+    "sfx": "cloth_rustle_1",
+    "anchor": "UpperChest",
+    "gain_db": -12.0,
+    "pitch_jitter": 0.08
+   },
+   {
+    "frame": 43,
+    "sfx": "foot_step_1",
+    "anchor": "LeftFoot",
+    "gain_db": -11.3,
+    "pitch_jitter": 0.06
+   }
+  ],
+  "t4_charge": [
+   {
+    "frame": 13,
+    "sfx": "foot_stomp",
+    "anchor": "RightFoot",
+    "gain_db": -1.0,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 26,
+    "sfx": "foot_stomp",
+    "anchor": "LeftFoot",
+    "gain_db": -1.2,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 28,
+    "sfx": "cloth_rustle_1",
+    "anchor": "UpperChest",
+    "gain_db": -12.0,
+    "pitch_jitter": 0.08
+   }
+  ],
+  "t4_sweep_stand": [
+   {
+    "frame": 5,
+    "sfx": "foot_scuff",
+    "anchor": "RightFoot",
+    "gain_db": -14.0,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 11,
+    "sfx": "whoosh_big",
+    "anchor": "RightHand",
+    "gain_db": -4.0,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 12,
+    "sfx": "foot_stomp",
+    "anchor": "LeftFoot",
+    "gain_db": -0.3,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 12,
+    "sfx": "stand_rattle",
+    "anchor": "PropR",
+    "gain_db": 0.0,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 21,
+    "sfx": "stand_crash",
+    "anchor": "PropR",
+    "gain_db": 2.0,
+    "pitch_jitter": 0.03
+   },
+   {
+    "frame": 24,
+    "sfx": "foot_step_1",
+    "anchor": "LeftFoot",
+    "gain_db": -11.0,
+    "pitch_jitter": 0.06
+   }
+  ],
+  "t4_throw_music": [
+   {
+    "frame": 8,
+    "sfx": "paper_grab",
+    "anchor": "PropR",
+    "gain_db": -6.0,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 18,
+    "sfx": "foot_stomp",
+    "anchor": "LeftFoot",
+    "gain_db": -1.0,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 18,
+    "sfx": "paper_flutter",
+    "anchor": "PropR",
+    "gain_db": -4.0,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 18,
+    "sfx": "whoosh_small",
+    "anchor": "PropR",
+    "gain_db": -6.0,
+    "pitch_jitter": 0.05
+   },
+   {
+    "frame": 31,
+    "sfx": "paper_land",
+    "anchor": "PropR",
+    "gain_db": -6.0,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 34,
+    "sfx": "foot_step_1",
+    "anchor": "LeftFoot",
+    "gain_db": -10.0,
+    "pitch_jitter": 0.06
+   }
+  ],
+  "t4_door_point": [
+   {
+    "frame": 11,
+    "sfx": "whoosh_small",
+    "anchor": "RightHand",
+    "gain_db": -8.0,
+    "pitch_jitter": 0.06
+   }
+  ],
+  "t4_storm_out": [
+   {
+    "frame": 36,
+    "sfx": "foot_step_1",
+    "anchor": "RightFoot",
+    "gain_db": -3.5,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 72,
+    "sfx": "door_slam",
+    "anchor": "world:-1.2,1.5,0",
+    "gain_db": 0.0,
+    "pitch_jitter": 0.03
+   },
+   {
+    "frame": 72,
+    "sfx": "foot_step_2",
+    "anchor": "LeftFoot",
+    "gain_db": -5.8,
+    "pitch_jitter": 0.06
+   }
+  ],
+  "t5_chair_throw": [
+   {
+    "frame": 10,
+    "sfx": "chair_grab",
+    "anchor": "PropR",
+    "gain_db": -4.0,
+    "pitch_jitter": 0.05
+   },
+   {
+    "frame": 26,
+    "sfx": "foot_stomp",
+    "anchor": "LeftFoot",
+    "gain_db": -2.0,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 28,
+    "sfx": "whoosh_spin",
+    "anchor": "PropR",
+    "gain_db": -2.0,
+    "pitch_jitter": 0.05
+   },
+   {
+    "frame": 44,
+    "sfx": "chair_impact",
+    "anchor": "PropR",
+    "gain_db": 0.0,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 56,
+    "sfx": "chair_impact",
+    "anchor": "PropR",
+    "gain_db": -5.0,
+    "pitch_jitter": 0.08
+   },
+   {
+    "frame": 56,
+    "sfx": "foot_step_1",
+    "anchor": "LeftFoot",
+    "gain_db": -10.5,
+    "pitch_jitter": 0.06
+   }
+  ],
+  "t5_rhythm_slaps": [
+   {
+    "frame": 11,
+    "sfx": "foot_step_1",
+    "anchor": "LeftFoot",
+    "gain_db": -9.3,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 17,
+    "sfx": "whoosh_small",
+    "anchor": "RightHand",
+    "gain_db": -8.0,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 18,
+    "sfx": "slap_1",
+    "anchor": "RightHand",
+    "gain_db": 1.0,
+    "pitch_jitter": 0.03
+   },
+   {
+    "frame": 41,
+    "sfx": "whoosh_small",
+    "anchor": "RightHand",
+    "gain_db": -8.0,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 42,
+    "sfx": "slap_2",
+    "anchor": "RightHand",
+    "gain_db": 1.0,
+    "pitch_jitter": 0.03
+   },
+   {
+    "frame": 65,
+    "sfx": "whoosh_small",
+    "anchor": "RightHand",
+    "gain_db": -8.0,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 66,
+    "sfx": "slap_3",
+    "anchor": "RightHand",
+    "gain_db": 1.0,
+    "pitch_jitter": 0.03
+   },
+   {
+    "frame": 83,
+    "sfx": "whoosh_small",
+    "anchor": "RightHand",
+    "gain_db": -8.0,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 84,
+    "sfx": "slap_1",
+    "anchor": "RightHand",
+    "gain_db": 1.0,
+    "pitch_jitter": 0.03
+   },
+   {
+    "frame": 96,
+    "sfx": "foot_step_2",
+    "anchor": "LeftFoot",
+    "gain_db": -10.0,
+    "pitch_jitter": 0.06
+   }
+  ],
+  "t5_cowbell": [
+   {
+    "frame": 12,
+    "sfx": "cowbell_hit_1",
+    "anchor": "PropL",
+    "gain_db": -2.0,
+    "pitch_jitter": 0.0
+   },
+   {
+    "frame": 24,
+    "sfx": "cowbell_hit_2",
+    "anchor": "PropL",
+    "gain_db": -2.0,
+    "pitch_jitter": 0.0
+   },
+   {
+    "frame": 36,
+    "sfx": "cowbell_hit_1",
+    "anchor": "PropL",
+    "gain_db": -2.0,
+    "pitch_jitter": 0.0
+   },
+   {
+    "frame": 48,
+    "sfx": "cowbell_hit_2",
+    "anchor": "PropL",
+    "gain_db": -2.0,
+    "pitch_jitter": 0.0
+   },
+   {
+    "frame": 60,
+    "sfx": "cowbell_hit_1",
+    "anchor": "PropL",
+    "gain_db": -2.0,
+    "pitch_jitter": 0.0
+   }
+  ],
+  "t5_drum_throw": [
+   {
+    "frame": 8,
+    "sfx": "foot_scuff",
+    "anchor": "LeftFoot",
+    "gain_db": -14.0,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 10,
+    "sfx": "body_thud",
+    "anchor": "Hips",
+    "gain_db": -4.0,
+    "pitch_jitter": 0.05
+   },
+   {
+    "frame": 10,
+    "sfx": "drum_grab",
+    "anchor": "PropR",
+    "gain_db": -4.0,
+    "pitch_jitter": 0.05
+   },
+   {
+    "frame": 20,
+    "sfx": "foot_step_1",
+    "anchor": "RightFoot",
+    "gain_db": -12.3,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 34,
+    "sfx": "foot_stomp",
+    "anchor": "LeftFoot",
+    "gain_db": 0.0,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 34,
+    "sfx": "whoosh_big",
+    "anchor": "PropR",
+    "gain_db": -2.0,
+    "pitch_jitter": 0.05
+   },
+   {
+    "frame": 48,
+    "sfx": "drum_impact",
+    "anchor": "PropR",
+    "gain_db": 1.0,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 56,
+    "sfx": "foot_step_2",
+    "anchor": "LeftFoot",
+    "gain_db": -10.5,
+    "pitch_jitter": 0.06
+   }
+  ],
+  "t5_cymbal_throw": [
+   {
+    "frame": 8,
+    "sfx": "cymbal_grab",
+    "anchor": "PropR",
+    "gain_db": -4.0,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 21,
+    "sfx": "foot_stomp",
+    "anchor": "RightFoot",
+    "gain_db": -2.0,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 21,
+    "sfx": "whoosh_spin",
+    "anchor": "PropR",
+    "gain_db": -2.0,
+    "pitch_jitter": 0.05
+   },
+   {
+    "frame": 33,
+    "sfx": "cymbal_impact",
+    "anchor": "PropR",
+    "gain_db": 0.0,
+    "pitch_jitter": 0.03
+   },
+   {
+    "frame": 44,
+    "sfx": "foot_step_1",
+    "anchor": "RightFoot",
+    "gain_db": -10.0,
+    "pitch_jitter": 0.06
+   }
+  ],
+  "ap_nod": [],
+  "ap_grin": [],
+  "ap_quiet_wave": [],
+  "ap_beckon": [],
+  "ap_awe": [],
+  "walk": [
+   {
+    "frame": 0,
+    "sfx": "foot_step_1",
+    "anchor": "LeftFoot",
+    "gain_db": -5.8,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 12,
+    "sfx": "foot_step_2",
+    "anchor": "RightFoot",
+    "gain_db": -5.8,
+    "pitch_jitter": 0.06
+   }
+  ]
+ },
+ "band": {
+  "default": {
+   "rest": [],
+   "raise": [
+    {
+     "frame": 0,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "play_loop": [],
+   "lower": [
+    {
+     "frame": 12,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 15,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.07
+    }
+   ],
+   "freeze": [],
+   "startle": [
+    {
+     "frame": 1,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -8.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "look_down": [
+    {
+     "frame": 8,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.07
+    }
+   ],
+   "look_at_drummer": [],
+   "flip_page": [
+    {
+     "frame": 10,
+     "sfx": "page_flip",
+     "anchor": "RightHand",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.08
+    }
+   ],
+   "arms_rest": []
+  },
+  "alto_sax": {
+   "rest": [],
+   "raise": [
+    {
+     "frame": 0,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 13,
+     "sfx": "sax_keys",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "play_loop": [],
+   "lower": [
+    {
+     "frame": 1,
+     "sfx": "sax_keys",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 12,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 15,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.07
+    }
+   ],
+   "freeze": [],
+   "startle": [
+    {
+     "frame": 1,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -8.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "look_down": [
+    {
+     "frame": 8,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.07
+    }
+   ],
+   "look_at_drummer": [],
+   "flip_page": [
+    {
+     "frame": 10,
+     "sfx": "page_flip",
+     "anchor": "RightHand",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.08
+    }
+   ],
+   "arms_rest": []
+  },
+  "tenor_sax": {
+   "rest": [],
+   "raise": [
+    {
+     "frame": 0,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 13,
+     "sfx": "sax_keys",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "play_loop": [],
+   "lower": [
+    {
+     "frame": 1,
+     "sfx": "sax_keys",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 12,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 15,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.07
+    }
+   ],
+   "freeze": [],
+   "startle": [
+    {
+     "frame": 1,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -8.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "look_down": [
+    {
+     "frame": 8,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.07
+    }
+   ],
+   "look_at_drummer": [],
+   "flip_page": [
+    {
+     "frame": 10,
+     "sfx": "page_flip",
+     "anchor": "RightHand",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.08
+    }
+   ],
+   "arms_rest": []
+  },
+  "baritone_sax": {
+   "rest": [
+    {
+     "frame": 93,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -16.0,
+     "pitch_jitter": 0.08
+    }
+   ],
+   "raise": [
+    {
+     "frame": 0,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 13,
+     "sfx": "sax_keys",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "play_loop": [],
+   "lower": [
+    {
+     "frame": 1,
+     "sfx": "sax_keys",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 12,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 15,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.07
+    }
+   ],
+   "freeze": [],
+   "startle": [
+    {
+     "frame": 1,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -8.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "look_down": [
+    {
+     "frame": 8,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.07
+    }
+   ],
+   "look_at_drummer": [],
+   "flip_page": [
+    {
+     "frame": 10,
+     "sfx": "page_flip",
+     "anchor": "RightHand",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.08
+    }
+   ],
+   "arms_rest": []
+  },
+  "trumpet": {
+   "rest": [],
+   "raise": [
+    {
+     "frame": 2,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 12,
+     "sfx": "trumpet_valves",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "play_loop": [],
+   "lower": [
+    {
+     "frame": 2,
+     "sfx": "trumpet_valves",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 12,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 15,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.07
+    }
+   ],
+   "freeze": [],
+   "startle": [
+    {
+     "frame": 1,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -8.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "look_down": [
+    {
+     "frame": 8,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.07
+    }
+   ],
+   "look_at_drummer": [],
+   "flip_page": [
+    {
+     "frame": 10,
+     "sfx": "page_flip",
+     "anchor": "LeftHand",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.08
+    }
+   ],
+   "arms_rest": []
+  },
+  "band_trumpet_2": {
+   "raise": [
+    {
+     "frame": 2,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 13,
+     "sfx": "trumpet_valves",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "lower": [
+    {
+     "frame": 1,
+     "sfx": "trumpet_valves",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 12,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 15,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.07
+    }
+   ]
+  },
+  "band_trumpet_4": {
+   "raise": [
+    {
+     "frame": 2,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 13,
+     "sfx": "trumpet_valves",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "lower": [
+    {
+     "frame": 1,
+     "sfx": "trumpet_valves",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 12,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 15,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.07
+    }
+   ]
+  },
+  "trombone": {
+   "rest": [
+    {
+     "frame": 39,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -16.0,
+     "pitch_jitter": 0.08
+    }
+   ],
+   "raise": [
+    {
+     "frame": 2,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 3,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -8.1,
+     "pitch_jitter": 0.05
+    },
+    {
+     "frame": 13,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "play_loop": [
+    {
+     "frame": 10,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -8.0,
+     "pitch_jitter": 0.05
+    },
+    {
+     "frame": 22,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -10.2,
+     "pitch_jitter": 0.05
+    },
+    {
+     "frame": 34,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -11.6,
+     "pitch_jitter": 0.05
+    },
+    {
+     "frame": 46,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -9.4,
+     "pitch_jitter": 0.05
+    }
+   ],
+   "lower": [
+    {
+     "frame": 1,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 2,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -8.1,
+     "pitch_jitter": 0.05
+    },
+    {
+     "frame": 12,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 15,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.07
+    }
+   ],
+   "freeze": [],
+   "startle": [
+    {
+     "frame": 1,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -8.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "look_down": [
+    {
+     "frame": 8,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.07
+    }
+   ],
+   "look_at_drummer": [],
+   "flip_page": [
+    {
+     "frame": 10,
+     "sfx": "page_flip",
+     "anchor": "RightHand",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.08
+    }
+   ],
+   "arms_rest": [],
+   "spit_valve": [
+    {
+     "frame": 0,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 16,
+     "sfx": "spit_valve",
+     "anchor": "Instrument",
+     "gain_db": -6.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 22,
+     "sfx": "spit_valve",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 28,
+     "sfx": "spit_valve",
+     "anchor": "Instrument",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 42,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    }
+   ]
+  },
+  "band_trombone_2": {
+   "rest": [],
+   "raise": [
+    {
+     "frame": 2,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 5,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -13.0,
+     "pitch_jitter": 0.05
+    },
+    {
+     "frame": 13,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "play_loop": [
+    {
+     "frame": 10,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -9.4,
+     "pitch_jitter": 0.05
+    },
+    {
+     "frame": 22,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -8.0,
+     "pitch_jitter": 0.05
+    },
+    {
+     "frame": 34,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -10.2,
+     "pitch_jitter": 0.05
+    },
+    {
+     "frame": 46,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -11.6,
+     "pitch_jitter": 0.05
+    }
+   ],
+   "lower": [
+    {
+     "frame": 1,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 4,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -13.0,
+     "pitch_jitter": 0.05
+    },
+    {
+     "frame": 12,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 15,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.07
+    }
+   ]
+  },
+  "band_trombone_3": {
+   "rest": [
+    {
+     "frame": 11,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -16.0,
+     "pitch_jitter": 0.08
+    }
+   ],
+   "raise": [
+    {
+     "frame": 2,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 4,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -10.6,
+     "pitch_jitter": 0.05
+    },
+    {
+     "frame": 13,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "play_loop": [
+    {
+     "frame": 10,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -11.6,
+     "pitch_jitter": 0.05
+    },
+    {
+     "frame": 22,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -9.4,
+     "pitch_jitter": 0.05
+    },
+    {
+     "frame": 34,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -8.0,
+     "pitch_jitter": 0.05
+    },
+    {
+     "frame": 46,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -10.2,
+     "pitch_jitter": 0.05
+    }
+   ],
+   "lower": [
+    {
+     "frame": 1,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 3,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -10.6,
+     "pitch_jitter": 0.05
+    },
+    {
+     "frame": 12,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 15,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.07
+    }
+   ]
+  },
+  "band_trombone_4": {
+   "rest": [
+    {
+     "frame": 93,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -16.0,
+     "pitch_jitter": 0.08
+    }
+   ],
+   "raise": [
+    {
+     "frame": 2,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 13,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "play_loop": [
+    {
+     "frame": 10,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -10.2,
+     "pitch_jitter": 0.05
+    },
+    {
+     "frame": 22,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -11.6,
+     "pitch_jitter": 0.05
+    },
+    {
+     "frame": 34,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -9.4,
+     "pitch_jitter": 0.05
+    },
+    {
+     "frame": 46,
+     "sfx": "trombone_slide",
+     "anchor": "InstrumentSlide",
+     "gain_db": -8.0,
+     "pitch_jitter": 0.05
+    }
+   ],
+   "lower": [
+    {
+     "frame": 1,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 12,
+     "sfx": "instrument_handle",
+     "anchor": "Instrument",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 15,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.07
+    }
+   ]
+  },
+  "piano": {
+   "rest": [],
+   "raise": [
+    {
+     "frame": 2,
+     "sfx": "piano_bench_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "play_loop": [],
+   "lower": [
+    {
+     "frame": 15,
+     "sfx": "piano_bench_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "freeze": [],
+   "startle": [
+    {
+     "frame": 1,
+     "sfx": "piano_bench_creak",
+     "anchor": "Hips",
+     "gain_db": -8.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "look_down": [
+    {
+     "frame": 8,
+     "sfx": "piano_bench_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.07
+    }
+   ],
+   "look_at_drummer": [],
+   "flip_page": [
+    {
+     "frame": 10,
+     "sfx": "page_flip",
+     "anchor": "RightHand",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.08
+    }
+   ],
+   "arms_rest": []
+  },
+  "guitar": {
+   "rest": [
+    {
+     "frame": 39,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -16.0,
+     "pitch_jitter": 0.08
+    }
+   ],
+   "raise": [
+    {
+     "frame": 12,
+     "sfx": "guitar_handle",
+     "anchor": "RightHand",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "play_loop": [],
+   "lower": [
+    {
+     "frame": 3,
+     "sfx": "guitar_handle",
+     "anchor": "RightHand",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    },
+    {
+     "frame": 15,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.07
+    }
+   ],
+   "freeze": [],
+   "startle": [
+    {
+     "frame": 1,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -8.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "look_down": [
+    {
+     "frame": 8,
+     "sfx": "chair_creak",
+     "anchor": "Hips",
+     "gain_db": -14.0,
+     "pitch_jitter": 0.07
+    }
+   ],
+   "look_at_drummer": [],
+   "flip_page": [
+    {
+     "frame": 10,
+     "sfx": "page_flip",
+     "anchor": "RightHand",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.08
+    }
+   ],
+   "arms_rest": []
+  },
+  "bass": {
+   "rest": [],
+   "raise": [
+    {
+     "frame": 11,
+     "sfx": "bass_handle",
+     "anchor": "RightHand",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "play_loop": [],
+   "lower": [
+    {
+     "frame": 4,
+     "sfx": "bass_handle",
+     "anchor": "RightHand",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "freeze": [],
+   "startle": [
+    {
+     "frame": 1,
+     "sfx": "bass_handle",
+     "anchor": "Instrument",
+     "gain_db": -12.0,
+     "pitch_jitter": 0.06
+    }
+   ],
+   "look_down": [],
+   "look_at_drummer": [],
+   "flip_page": [
+    {
+     "frame": 10,
+     "sfx": "page_flip",
+     "anchor": "RightHand",
+     "gain_db": -10.0,
+     "pitch_jitter": 0.08
+    }
+   ],
+   "arms_rest": []
+  }
+ }
+}

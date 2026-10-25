@@ -1,0 +1,401 @@
+{
+  "fps": 24,
+  "bpm": 120,
+  "height_m": 1.93,
+  "targets": {
+    "DRUMMER_HEAD": [
+      3.2,
+      -3.75,
+      1.15
+    ],
+    "NEAR_HEAD": [
+      0.0,
+      -0.7,
+      1.15
+    ],
+    "STOOL": [
+      1.0,
+      0.35,
+      0.0
+    ],
+    "DOOR": [
+      -1.2,
+      1.5,
+      0.0
+    ],
+    "SAXES": [
+      0.0,
+      -2.2,
+      1.1
+    ],
+    "TROMBONES": [
+      0.025,
+      -3.5,
+      1.5
+    ],
+    "TRUMPETS": [
+      0.375,
+      -4.8,
+      1.9
+    ],
+    "STAND": [
+      0.0,
+      -0.5,
+      0.0
+    ]
+  },
+  "triangles": 1980,
+  "moves": {
+    "t0_countoff_finger": {
+      "frames": 60,
+      "seconds": 2.5,
+      "loop": false,
+      "downbeats": [
+        18,
+        30,
+        42
+      ],
+      "finger_up": [
+        12,
+        24,
+        36,
+        48
+      ]
+    },
+    "t0_countoff_verbal": {
+      "frames": 48,
+      "seconds": 2.0,
+      "loop": false,
+      "beats": [
+        2,
+        14,
+        26,
+        38
+      ]
+    },
+    "t0_clap_off": {
+      "frames": 60,
+      "seconds": 2.5,
+      "loop": false,
+      "claps": [
+        12,
+        24,
+        36,
+        48
+      ]
+    },
+    "t0_conduct": {
+      "frames": 48,
+      "seconds": 2.0,
+      "loop": true,
+      "downbeats": [
+        0,
+        48
+      ],
+      "beat_frames": 12
+    },
+    "t0_pace": {
+      "frames": 96,
+      "seconds": 4.0,
+      "loop": true
+    },
+    "t0_lean_listen": {
+      "frames": 72,
+      "seconds": 3.0,
+      "loop": true
+    },
+    "t0_cue_section": {
+      "frames": 36,
+      "seconds": 1.5,
+      "loop": false,
+      "cue": 10
+    },
+    "t0_watch_other": {
+      "frames": 72,
+      "seconds": 3.0,
+      "loop": true
+    },
+    "t0_stare_drummer": {
+      "frames": 72,
+      "seconds": 3.0,
+      "loop": true
+    },
+    "t0_check_watch": {
+      "frames": 48,
+      "seconds": 2.0,
+      "loop": false,
+      "look_at_watch": [
+        10,
+        34
+      ]
+    },
+    "t0_chair_rest": {
+      "frames": 72,
+      "seconds": 3.0,
+      "loop": true,
+      "note": "hips sit on stool_terence"
+    },
+    "t1_flick": {
+      "frames": 18,
+      "seconds": 0.75,
+      "loop": false,
+      "flick": 10
+    },
+    "t1_wave_off": {
+      "frames": 30,
+      "seconds": 1.25,
+      "loop": false,
+      "wave": 16
+    },
+    "t1_fist_cutoff": {
+      "frames": 30,
+      "seconds": 1.25,
+      "loop": false,
+      "cutoff": 10
+    },
+    "t1_clap_stop": {
+      "frames": 24,
+      "seconds": 1.0,
+      "loop": false,
+      "clap": 9
+    },
+    "t1_fist_slam": {
+      "frames": 30,
+      "seconds": 1.25,
+      "loop": false,
+      "slam": 12
+    },
+    "t2_judging_stare": {
+      "frames": 72,
+      "seconds": 3.0,
+      "loop": true
+    },
+    "t2_score_point": {
+      "frames": 36,
+      "seconds": 1.5,
+      "loop": false,
+      "taps": [
+        16,
+        24
+      ]
+    },
+    "t2_point_player": {
+      "frames": 36,
+      "seconds": 1.5,
+      "loop": false,
+      "point": 8
+    },
+    "t2_hunt_sections": {
+      "frames": 96,
+      "seconds": 4.0,
+      "loop": true
+    },
+    "t2_forced_calm": {
+      "frames": 48,
+      "seconds": 2.0,
+      "loop": false
+    },
+    "t2_switch_drummer": {
+      "frames": 40,
+      "seconds": 1.667,
+      "loop": false,
+      "point": 8,
+      "sweep": 26
+    },
+    "t2_impatient_watch": {
+      "frames": 48,
+      "seconds": 2.0,
+      "loop": false,
+      "taps": [
+        14,
+        26
+      ]
+    },
+    "t3_loom": {
+      "frames": 72,
+      "seconds": 3.0,
+      "loop": true
+    },
+    "t3_whisper": {
+      "frames": 72,
+      "seconds": 3.0,
+      "loop": false,
+      "close": 16
+    },
+    "t3_crouch": {
+      "frames": 72,
+      "seconds": 3.0,
+      "loop": true
+    },
+    "t3_circle_kit": {
+      "frames": 144,
+      "seconds": 6.0,
+      "loop": true,
+      "note": "player head assumed 1.3 m in front of the start"
+    },
+    "t3_clap_in_face": {
+      "frames": 60,
+      "seconds": 2.5,
+      "loop": false,
+      "claps": [
+        12,
+        24,
+        36,
+        48
+      ]
+    },
+    "t3_fake_warmth": {
+      "frames": 72,
+      "seconds": 3.0,
+      "loop": false,
+      "hand_on_shoulder": [
+        16,
+        56
+      ]
+    },
+    "t4_shout": {
+      "frames": 48,
+      "seconds": 2.0,
+      "loop": false,
+      "accents": [
+        12,
+        36
+      ]
+    },
+    "t4_charge": {
+      "frames": 30,
+      "seconds": 1.25,
+      "loop": false,
+      "stop": 30,
+      "distance_m": 1.6,
+      "stomps": [
+        13,
+        26
+      ]
+    },
+    "t4_sweep_stand": {
+      "frames": 30,
+      "seconds": 1.25,
+      "loop": false,
+      "hit": 12,
+      "lands": 21
+    },
+    "t4_throw_music": {
+      "frames": 34,
+      "seconds": 1.417,
+      "loop": false,
+      "grab": 8,
+      "release": 18,
+      "lands": 34
+    },
+    "t4_door_point": {
+      "frames": 48,
+      "seconds": 2.0,
+      "loop": false,
+      "point": 12,
+      "jabs": [
+        24,
+        36
+      ]
+    },
+    "t4_storm_out": {
+      "frames": 72,
+      "seconds": 3.0,
+      "loop": false,
+      "arrives": 72
+    },
+    "t5_chair_throw": {
+      "frames": 60,
+      "seconds": 2.5,
+      "loop": false,
+      "pickup": 10,
+      "release": 28,
+      "arrives": 44,
+      "lands": 56,
+      "spins": 2.0,
+      "note": "props/chair_folded.glb on PropR, slung flat like a discus, spinning about its short axis"
+    },
+    "t5_rhythm_slaps": {
+      "frames": 96,
+      "seconds": 4.0,
+      "loop": false,
+      "impacts": [
+        18,
+        42,
+        66,
+        84
+      ]
+    },
+    "t5_cowbell": {
+      "frames": 72,
+      "seconds": 3.0,
+      "loop": false,
+      "hits": [
+        12,
+        24,
+        36,
+        48,
+        60
+      ],
+      "note": "cowbell on PropL, its stick (reparented) on PropR"
+    },
+    "t5_drum_throw": {
+      "frames": 60,
+      "seconds": 2.5,
+      "loop": false,
+      "pickup": 10,
+      "release": 34,
+      "arrives": 48
+    },
+    "t5_cymbal_throw": {
+      "frames": 48,
+      "seconds": 2.0,
+      "loop": false,
+      "pickup": 8,
+      "release": 21,
+      "arrives": 33
+    },
+    "ap_nod": {
+      "frames": 24,
+      "seconds": 1.0,
+      "loop": false,
+      "nods": [
+        6,
+        18
+      ]
+    },
+    "ap_grin": {
+      "frames": 36,
+      "seconds": 1.5,
+      "loop": false
+    },
+    "ap_quiet_wave": {
+      "frames": 36,
+      "seconds": 1.5,
+      "loop": false
+    },
+    "ap_beckon": {
+      "frames": 36,
+      "seconds": 1.5,
+      "loop": false,
+      "curls": [
+        14,
+        26
+      ]
+    },
+    "ap_awe": {
+      "frames": 72,
+      "seconds": 3.0,
+      "loop": false,
+      "nod": 56
+    },
+    "walk": {
+      "frames": 24,
+      "seconds": 1.0,
+      "loop": true,
+      "utility": true,
+      "speed_mps": 1.44,
+      "note": "walk in place, root at the origin; move the node forward (-Y local) at speed_mps"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+[
+  {"at": 0.5, "type": "play_move", "id": "t0_countoff_finger"},
+  {"at": 2.6, "type": "set_band_state", "target": "all", "state": "playing"},
+  {"at": 3.0, "type": "play_move", "id": "t0_conduct"},
+  {"at": 9.0, "type": "play_move", "id": "t1_fist_cutoff"},
+  {"at": 9.3, "type": "set_band_state", "target": "all", "state": "lowering"},
+  {"at": 10.6, "type": "react", "target": "all", "reaction": "look_at_drummer"},
+  {"at": 10.8, "type": "play_move", "id": "t2_point_player"},
+  {"at": 12.8, "type": "play_move", "id": "t4_shout"},
+  {"at": 15.0, "type": "play_move", "id": "t0_countoff_finger"},
+  {"at": 17.1, "type": "set_band_state", "target": "all", "state": "playing"},
+  {"at": 17.5, "type": "play_move", "id": "t0_conduct"}
+]
