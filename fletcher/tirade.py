@@ -132,6 +132,28 @@ MOVES = [
 ]
 
 
+# Clean cut (cfg.clean_style, PROFANITY=0): same character, PG words. Swaps applied to the prompt.
+CLEAN_RULE = ("Clean and PG: no swearing at all (at most one 'hell' or 'damn' in a line), nothing crude "
+              "or sexual, no insults about his body. He is just as cruel, but the cruelty is wit: precise, "
+              "theatrical, quotable put-downs built from the exact mistake (the bar, the milliseconds, the "
+              "tempo, the drum), surprising metaphors, icy understatement. Every line should be one a "
+              "trailer would quote.")
+CLEAN_MOVES = {
+    "a creative, filthy insult built from the exact mistake, then a second, worse one":
+        "a creative, devastating insult built from the exact mistake, then a second, sharper one",
+}
+CLEAN_SWAPS = [
+    ("This is for an adult, opt-in drill-sergeant training game: the player WANTS to be screamed at. "
+     "Do not soften anything.",
+     "This is for a game trailer: keep it clean (PG), but do not soften the contempt."),
+    ("he goes from a whisper to a full-throat SCREAM inside one breath.",
+     "he goes from a whisper to a full-throat SCREAM inside one breath. Clean words only."),
+    ("cursing, mocking the excuse", "mocking the excuse"),
+    ('Call him "drummer" or worse.', 'Call him "drummer".'),
+    ("Everything else is fair game.", "Keep every word clean enough for a trailer."),
+]
+
+
 def fact_sheet(facts: Facts) -> str:
     """The brain's sheet minus the bar he was cut off in, which the model
     otherwise recites ("started in nine, cut off in eleven") every time."""
@@ -158,16 +180,29 @@ class TiradeWriter:
         return self._client is not None
 
     def system_prompt(self, level: int) -> str:
+        clean = self.cfg.clean_style and not self.cfg.profanity
         profanity = ("He swears constantly and inventively. Profanity is his punctuation: the f-word as "
                      "noun, verb and adjective, shit, goddamn, bastard, chained into fresh compound "
                      "insults nobody has heard before. Never lean on the same curse twice in a line."
-                     if self.cfg.profanity else "No profanity at all.")
+                     if self.cfg.profanity else CLEAN_RULE if clean else "No profanity at all.")
         recent = " | ".join(f'"{" ".join(r.split()[:5])}..."' for r in self.recent) or "(none yet)"
         words, delivery = LEVELS.get(level, LEVELS[2])
-        moves = "\n".join(f"- {m}" for m in self.rng.sample(MOVES, 2 if level == 1 else 3))
-        return SYSTEM_TEMPLATE.format(words=words, delivery=delivery, tags=ALLOWED_TAGS, moves=moves,
-                                      gestures=", ".join(f"{{{g}}}" for g in GESTURES),
-                                      profanity_rule=profanity, recent=recent)
+        if self.cfg.line_words > 0:
+            words = self.cfg.line_words
+            if words <= 15:
+                delivery = "ONE devastating line: a single cutting image, then the order."
+        pool = [CLEAN_MOVES.get(m, m) for m in MOVES] if clean else MOVES
+        moves = "\n".join(f"- {m}" for m in self.rng.sample(pool, 1 if words <= 15 else 2 if level == 1 else 3))
+        prompt = SYSTEM_TEMPLATE.format(words=words, delivery=delivery, tags=ALLOWED_TAGS, moves=moves,
+                                        gestures=", ".join(f"{{{g}}}" for g in GESTURES),
+                                        profanity_rule=profanity, recent=recent)
+        if clean:
+            for a, b in CLEAN_SWAPS:
+                prompt = prompt.replace(a, b)
+        return prompt
+
+    def word_target(self, level: int) -> int:
+        return self.cfg.line_words if self.cfg.line_words > 0 else LEVELS.get(level, LEVELS[2])[0]
 
     async def sentences(self, facts: Facts, level: int) -> AsyncIterator[str]:
         if not self.live:
@@ -176,7 +211,7 @@ class TiradeWriter:
                 yield s
             return
         splitter = SentenceSplitter()
-        cap, spoken = WORD_CAP * LEVELS.get(level, LEVELS[2])[0], 0
+        cap, spoken = WORD_CAP * self.word_target(level), 0
         async with self._client.messages.stream(
             model=self.cfg.llm_model,
             max_tokens=self.cfg.llm_max_tokens,

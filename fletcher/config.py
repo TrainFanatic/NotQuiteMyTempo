@@ -44,6 +44,10 @@ class Config:
 
     # --- content ----------------------------------------------------------
     profanity: bool = True  # PROFANITY=0 for a clean version
+    # CLEAN_STYLE=1 (with PROFANITY=0): a PG cut for demos and trailers. No swearing beyond a rare
+    # "hell"/"damn"; the cruelty comes from wit (precise, inventive, quotable). Off by default.
+    clean_style: bool = False
+    line_words: int = 0  # LINE_WORDS: target length of a line in words (0 = the level's, 25/40/55)
 
     # --- mood machine -----------------------------------------------------
     cutoff_anger: float = 0.8  # first cutoff threshold
