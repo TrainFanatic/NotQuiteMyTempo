@@ -355,6 +355,39 @@ Neither target is a guarantee on Quest. Reports must distinguish missed onsets, 
 wrong onset times, and late event delivery. If the baseline is insufficient, retain the failed
 examples and report the limitation before choosing a larger model.
 
+### Perturbed training set
+
+`tools/perturb_recordings.py` creates `perturbed_data/` from the local kit and recordings.
+It copies the eight original train takes, adds seven variants per train take (gain −3/−6/−12 dB;
+200 Hz bass shelf and 4 kHz treble shelf at ±3 dB), and copies validation/test WAVs and labels
+byte for byte. Boosted EQ variants receive a documented 6 dB input reduction to avoid clipping;
+the script refuses any remaining out-of-range audio. A manifest records every parent take,
+variant, peak and file hash. Labels retain their sample times because duration is unchanged.
+Only train sessions have derivatives in `perturbed_data/kit.json`, so no variant of a validation
+or test take contributes to fitting. The output folder is ignored by Git and a second run must
+choose a new `--output` path to preserve existing results.
+
+```sh
+uv run python tools/perturb_recordings.py
+uv run python tools/train_model.py \
+  --recordings perturbed_data/recordings --kit perturbed_data/kit.json \
+  --model perturbed_data/models/quest2_augmented_v1.bin \
+  --report perturbed_data/reports/quest2_augmented_v1.json
+```
+
+This experiment uses the same trainer and the same original validation/test recordings as the
+baseline. The source labels still require an audio audit. EQ and gain variants are correlated
+copies of eight takes; they do not add independent strokes or model Quest processing of real
+simultaneous hits.
+
+The completed run produced 64 training sessions (eight originals plus 56 variants). At the
+10 ms onset tolerance, held-out test micro F1 was **0.526**, versus **0.541** for the original
+model; validation micro F1 was **0.606**, versus **0.646**. Test false positives increased from
+125 to 142 while true positives increased from 105 to 107. Keep the original model as the
+current accuracy baseline. Detailed class results at 10 and 50 ms are in
+`perturbed_data/comparison.json`; the generated dataset, model, and reports are local and ignored
+by Git. `perturbed_data/ISSUES.md` records the clipping fix and remaining data limitations.
+
 ## Score normalization, live feed and saved output
 
 Normalize a *copy* of the exact score before comparing:

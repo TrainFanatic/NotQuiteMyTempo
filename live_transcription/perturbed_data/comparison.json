@@ -1,0 +1,483 @@
+{
+  "fair_comparison": true,
+  "train_sessions_baseline": 8,
+  "train_sessions_augmented": 64,
+  "metrics": {
+    "validation": {
+      "10ms": {
+        "baseline": {
+          "kick": {
+            "tp": 17,
+            "fp": 4,
+            "fn": 4,
+            "precision": 0.8095,
+            "recall": 0.8095,
+            "f1": 0.8095
+          },
+          "snare": {
+            "tp": 16,
+            "fp": 46,
+            "fn": 9,
+            "precision": 0.2581,
+            "recall": 0.64,
+            "f1": 0.3678
+          },
+          "hihat_closed": {
+            "tp": 12,
+            "fp": 10,
+            "fn": 12,
+            "precision": 0.5455,
+            "recall": 0.5,
+            "f1": 0.5217
+          },
+          "tom_low_mid": {
+            "tp": 58,
+            "fp": 12,
+            "fn": 16,
+            "precision": 0.8286,
+            "recall": 0.7838,
+            "f1": 0.8056
+          },
+          "crash": {
+            "tp": 7,
+            "fp": 16,
+            "fn": 5,
+            "precision": 0.3043,
+            "recall": 0.5833,
+            "f1": 0.4
+          },
+          "ride": {
+            "tp": 16,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.8421,
+            "recall": 0.9412,
+            "f1": 0.8889
+          },
+          "micro": {
+            "tp": 126,
+            "fp": 91,
+            "fn": 47,
+            "precision": 0.5806,
+            "recall": 0.7283,
+            "f1": 0.6462
+          }
+        },
+        "augmented": {
+          "kick": {
+            "tp": 20,
+            "fp": 9,
+            "fn": 1,
+            "precision": 0.6897,
+            "recall": 0.9524,
+            "f1": 0.8
+          },
+          "snare": {
+            "tp": 17,
+            "fp": 62,
+            "fn": 8,
+            "precision": 0.2152,
+            "recall": 0.68,
+            "f1": 0.3269
+          },
+          "hihat_closed": {
+            "tp": 13,
+            "fp": 16,
+            "fn": 11,
+            "precision": 0.4483,
+            "recall": 0.5417,
+            "f1": 0.4906
+          },
+          "tom_low_mid": {
+            "tp": 59,
+            "fp": 11,
+            "fn": 15,
+            "precision": 0.8429,
+            "recall": 0.7973,
+            "f1": 0.8194
+          },
+          "crash": {
+            "tp": 8,
+            "fp": 24,
+            "fn": 4,
+            "precision": 0.25,
+            "recall": 0.6667,
+            "f1": 0.3636
+          },
+          "ride": {
+            "tp": 16,
+            "fp": 11,
+            "fn": 1,
+            "precision": 0.5926,
+            "recall": 0.9412,
+            "f1": 0.7273
+          },
+          "micro": {
+            "tp": 133,
+            "fp": 133,
+            "fn": 40,
+            "precision": 0.5,
+            "recall": 0.7688,
+            "f1": 0.6059
+          }
+        }
+      },
+      "50ms": {
+        "baseline": {
+          "kick": {
+            "tp": 17,
+            "fp": 4,
+            "fn": 4,
+            "precision": 0.8095,
+            "recall": 0.8095,
+            "f1": 0.8095
+          },
+          "snare": {
+            "tp": 17,
+            "fp": 45,
+            "fn": 8,
+            "precision": 0.2742,
+            "recall": 0.68,
+            "f1": 0.3908
+          },
+          "hihat_closed": {
+            "tp": 15,
+            "fp": 7,
+            "fn": 9,
+            "precision": 0.6818,
+            "recall": 0.625,
+            "f1": 0.6522
+          },
+          "tom_low_mid": {
+            "tp": 63,
+            "fp": 7,
+            "fn": 11,
+            "precision": 0.9,
+            "recall": 0.8514,
+            "f1": 0.875
+          },
+          "crash": {
+            "tp": 7,
+            "fp": 16,
+            "fn": 5,
+            "precision": 0.3043,
+            "recall": 0.5833,
+            "f1": 0.4
+          },
+          "ride": {
+            "tp": 16,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.8421,
+            "recall": 0.9412,
+            "f1": 0.8889
+          },
+          "micro": {
+            "tp": 135,
+            "fp": 82,
+            "fn": 38,
+            "precision": 0.6221,
+            "recall": 0.7803,
+            "f1": 0.6923
+          }
+        },
+        "augmented": {
+          "kick": {
+            "tp": 20,
+            "fp": 9,
+            "fn": 1,
+            "precision": 0.6897,
+            "recall": 0.9524,
+            "f1": 0.8
+          },
+          "snare": {
+            "tp": 18,
+            "fp": 61,
+            "fn": 7,
+            "precision": 0.2278,
+            "recall": 0.72,
+            "f1": 0.3462
+          },
+          "hihat_closed": {
+            "tp": 16,
+            "fp": 13,
+            "fn": 8,
+            "precision": 0.5517,
+            "recall": 0.6667,
+            "f1": 0.6038
+          },
+          "tom_low_mid": {
+            "tp": 64,
+            "fp": 6,
+            "fn": 10,
+            "precision": 0.9143,
+            "recall": 0.8649,
+            "f1": 0.8889
+          },
+          "crash": {
+            "tp": 9,
+            "fp": 23,
+            "fn": 3,
+            "precision": 0.2812,
+            "recall": 0.75,
+            "f1": 0.4091
+          },
+          "ride": {
+            "tp": 16,
+            "fp": 11,
+            "fn": 1,
+            "precision": 0.5926,
+            "recall": 0.9412,
+            "f1": 0.7273
+          },
+          "micro": {
+            "tp": 143,
+            "fp": 123,
+            "fn": 30,
+            "precision": 0.5376,
+            "recall": 0.8266,
+            "f1": 0.6515
+          }
+        }
+      }
+    },
+    "test": {
+      "10ms": {
+        "baseline": {
+          "kick": {
+            "tp": 4,
+            "fp": 13,
+            "fn": 18,
+            "precision": 0.2353,
+            "recall": 0.1818,
+            "f1": 0.2051
+          },
+          "snare": {
+            "tp": 22,
+            "fp": 50,
+            "fn": 8,
+            "precision": 0.3056,
+            "recall": 0.7333,
+            "f1": 0.4314
+          },
+          "hihat_closed": {
+            "tp": 20,
+            "fp": 6,
+            "fn": 7,
+            "precision": 0.7692,
+            "recall": 0.7407,
+            "f1": 0.7547
+          },
+          "tom_low_mid": {
+            "tp": 40,
+            "fp": 28,
+            "fn": 13,
+            "precision": 0.5882,
+            "recall": 0.7547,
+            "f1": 0.6612
+          },
+          "crash": {
+            "tp": 5,
+            "fp": 23,
+            "fn": 4,
+            "precision": 0.1786,
+            "recall": 0.5556,
+            "f1": 0.2703
+          },
+          "ride": {
+            "tp": 14,
+            "fp": 5,
+            "fn": 3,
+            "precision": 0.7368,
+            "recall": 0.8235,
+            "f1": 0.7778
+          },
+          "micro": {
+            "tp": 105,
+            "fp": 125,
+            "fn": 53,
+            "precision": 0.4565,
+            "recall": 0.6646,
+            "f1": 0.5412
+          }
+        },
+        "augmented": {
+          "kick": {
+            "tp": 6,
+            "fp": 24,
+            "fn": 16,
+            "precision": 0.2,
+            "recall": 0.2727,
+            "f1": 0.2308
+          },
+          "snare": {
+            "tp": 19,
+            "fp": 61,
+            "fn": 11,
+            "precision": 0.2375,
+            "recall": 0.6333,
+            "f1": 0.3455
+          },
+          "hihat_closed": {
+            "tp": 22,
+            "fp": 10,
+            "fn": 5,
+            "precision": 0.6875,
+            "recall": 0.8148,
+            "f1": 0.7458
+          },
+          "tom_low_mid": {
+            "tp": 37,
+            "fp": 18,
+            "fn": 16,
+            "precision": 0.6727,
+            "recall": 0.6981,
+            "f1": 0.6852
+          },
+          "crash": {
+            "tp": 7,
+            "fp": 19,
+            "fn": 2,
+            "precision": 0.2692,
+            "recall": 0.7778,
+            "f1": 0.4
+          },
+          "ride": {
+            "tp": 16,
+            "fp": 10,
+            "fn": 1,
+            "precision": 0.6154,
+            "recall": 0.9412,
+            "f1": 0.7442
+          },
+          "micro": {
+            "tp": 107,
+            "fp": 142,
+            "fn": 51,
+            "precision": 0.4297,
+            "recall": 0.6772,
+            "f1": 0.5258
+          }
+        }
+      },
+      "50ms": {
+        "baseline": {
+          "kick": {
+            "tp": 9,
+            "fp": 8,
+            "fn": 13,
+            "precision": 0.5294,
+            "recall": 0.4091,
+            "f1": 0.4615
+          },
+          "snare": {
+            "tp": 25,
+            "fp": 47,
+            "fn": 5,
+            "precision": 0.3472,
+            "recall": 0.8333,
+            "f1": 0.4902
+          },
+          "hihat_closed": {
+            "tp": 22,
+            "fp": 4,
+            "fn": 5,
+            "precision": 0.8462,
+            "recall": 0.8148,
+            "f1": 0.8302
+          },
+          "tom_low_mid": {
+            "tp": 42,
+            "fp": 26,
+            "fn": 11,
+            "precision": 0.6176,
+            "recall": 0.7925,
+            "f1": 0.6942
+          },
+          "crash": {
+            "tp": 5,
+            "fp": 23,
+            "fn": 4,
+            "precision": 0.1786,
+            "recall": 0.5556,
+            "f1": 0.2703
+          },
+          "ride": {
+            "tp": 14,
+            "fp": 5,
+            "fn": 3,
+            "precision": 0.7368,
+            "recall": 0.8235,
+            "f1": 0.7778
+          },
+          "micro": {
+            "tp": 117,
+            "fp": 113,
+            "fn": 41,
+            "precision": 0.5087,
+            "recall": 0.7405,
+            "f1": 0.6031
+          }
+        },
+        "augmented": {
+          "kick": {
+            "tp": 11,
+            "fp": 19,
+            "fn": 11,
+            "precision": 0.3667,
+            "recall": 0.5,
+            "f1": 0.4231
+          },
+          "snare": {
+            "tp": 23,
+            "fp": 57,
+            "fn": 7,
+            "precision": 0.2875,
+            "recall": 0.7667,
+            "f1": 0.4182
+          },
+          "hihat_closed": {
+            "tp": 24,
+            "fp": 8,
+            "fn": 3,
+            "precision": 0.75,
+            "recall": 0.8889,
+            "f1": 0.8136
+          },
+          "tom_low_mid": {
+            "tp": 38,
+            "fp": 17,
+            "fn": 15,
+            "precision": 0.6909,
+            "recall": 0.717,
+            "f1": 0.7037
+          },
+          "crash": {
+            "tp": 7,
+            "fp": 19,
+            "fn": 2,
+            "precision": 0.2692,
+            "recall": 0.7778,
+            "f1": 0.4
+          },
+          "ride": {
+            "tp": 16,
+            "fp": 10,
+            "fn": 1,
+            "precision": 0.6154,
+            "recall": 0.9412,
+            "f1": 0.7442
+          },
+          "micro": {
+            "tp": 119,
+            "fp": 130,
+            "fn": 39,
+            "precision": 0.4779,
+            "recall": 0.7532,
+            "f1": 0.5848
+          }
+        }
+      }
+    }
+  }
+}

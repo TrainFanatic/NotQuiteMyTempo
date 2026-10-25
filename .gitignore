@@ -15,3 +15,4 @@ live_transcription/config/*.local.json
 # hub/nqmt session recordings and service logs (may hold mic audio)
 /recordings/
 /calibration.json
+/live_transcription/perturbed_data/
