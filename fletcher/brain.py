@@ -19,6 +19,7 @@ from .config import Config
 from .text import num_words
 
 TEMPO_KINDS = ("rushing", "dragging")
+HIT_GRADES = ("perfect", "good", "off")
 
 
 # ---------------------------------------------------------------- facts ---
@@ -40,6 +41,7 @@ class Facts:
     cutoff_number: int = 1
     per_drum: dict[str, dict[str, float]] = field(default_factory=dict)
     song: str = ""  # the song's title, when the session controller sent one
+    final: bool = False  # the last cutoff of this song: no restart, the session ends
 
     def sheet(self) -> str:
         lines = [f"song: {self.song}"] if self.song else []
@@ -62,7 +64,10 @@ class Facts:
             lines.append(f"missed notes recently: {self.misses}")
         if self.accuracy is not None:
             lines.append(f"last bar accuracy: {self.accuracy:.0%}")
-        lines.append(f"restart bar (say it): bar {self.from_bar} ({num_words(self.from_bar)})")
+        if self.final:
+            lines.append("NO restart: he is done for today. Do not name a bar; end by throwing him out")
+        else:
+            lines.append(f"restart bar (say it): bar {self.from_bar} ({num_words(self.from_bar)})")
         lines.append(f"this is cutoff number {self.cutoff_number} in this run")
         return "\n".join(lines)
 
@@ -97,6 +102,14 @@ class CancelSpeculation:
 class Cutoff:
     facts: Facts
     level: int  # 1 cold one-liner, 2 sharp, 3 full explosion
+    final: bool = False  # no restart after the line: the song ends (max cutoffs, no improvement)
+
+
+@dataclass
+class EndSong:
+    """Stop the song and go back to the menu without a tirade (the drummer isn't playing)."""
+    reason: str  # "no_playing"
+    bar: int
 
 
 # ---------------------------------------------------------------- brain ---
@@ -105,6 +118,9 @@ class Brain:
     def __init__(self, cfg: Config, rng: random.Random | None = None):
         self.cfg = cfg
         self.rng = rng or random.Random()
+        # He ended the song (on_ended): the referee's notes and playing states still in flight
+        # must not start a new run on the menu. Survives reset(); the next count_in clears it.
+        self.closed = False
         self.reset()
 
     # -- lifecycle -----------------------------------------------------------
@@ -134,13 +150,28 @@ class Brain:
         self.last_tick: float | None = None
         self.note_bar = 0
         self.song = ""
+        self.best_score: float | None = None  # best run's hit rate this song (cutoff guard)
+        self.stuck = 0  # cutoffs in a row whose run was no better than the best one
+        self._clear_play_counts()
 
+    def _clear_play_counts(self) -> None:
+        """Per run (a start or a restart): what the drummer actually played."""
+        self.run_hits = 0
+        self.run_misses = 0
+        self.run_notes = 0
+        self.first_play_bar: int | None = None  # bar of his first hit: grace counts from there
+        self.silent_bars = 0  # bars in a row with < silent_bar_hits onsets
+        self.waited = False  # the "play!" bark went out this run
     def cut_threshold(self) -> float:
         return max(self.cfg.cutoff_floor, self.cfg.cutoff_anger - self.cfg.patience_step * self.cutoffs)
 
     # -- inputs ----------------------------------------------------------------
     def on_session_state(self, d: dict, t: float) -> list:
         st = d.get("state")
+        if st == "count_in":
+            self.closed = False
+        elif self.closed and st in ("playing", "stopped"):
+            return []
         if d.get("bpm"):
             self.bpm = float(d["bpm"])
         if d.get("title"):
@@ -148,7 +179,7 @@ class Brain:
         if d.get("bar") is not None and st != "finished":
             self._advance_bar(int(d["bar"]))
         if st == "playing":
-            if self.phase not in ("playing", "cutoff"):
+            if self.phase not in ("playing", "cutoff", "ended"):  # ended: until the quit lands
                 self.phase = "playing"
                 self.play_start_bar = max(1, int(d.get("bar") or self.bar or 1))
                 self._clear_run_state()
@@ -177,6 +208,8 @@ class Brain:
         return []
 
     def on_note(self, d: dict, t: float) -> list:
+        if self.closed:
+            return []
         eff: list = []
         bar = d.get("bar")
         if bar is not None:
@@ -192,10 +225,18 @@ class Brain:
         })
         if self.phase != "playing":
             return eff
-        if d.get("grade") == "miss":
-            self.anger = min(1.0, self.anger + self.cfg.miss_gain)
+        grade = d.get("grade")
+        self.run_notes += 1
+        if grade in HIT_GRADES:
+            self.run_hits += 1
+            if self.first_play_bar is None:
+                self.first_play_bar = int(bar) if bar is not None else self.bar
+        elif grade == "miss":
+            self.run_misses += 1
+            if self._played_in(self.notes[-1]["bar"]):  # silence is not a mistake to rage at
+                self.anger = min(1.0, self.anger + self.cfg.miss_gain)
         if not self.external_bars and t - self.external_alert_t > 4.0:
-            eff += self._derive_from_notes(t)
+            eff += self._derive_from_notes(t, fresh_hit=grade in HIT_GRADES)
         eff += self._evaluate(t)
         return eff
 
@@ -259,6 +300,12 @@ class Brain:
         self._clear_run_state()
         return self._state_effects()
 
+    def on_ended(self) -> list:
+        """The orchestrator ended the song (EndSong, or a final cutoff): nothing more to judge."""
+        self.phase = "stopped"
+        self.closed = True
+        return self._state_effects()
+
     # -- internals ---------------------------------------------------------------
     def _clear_run_state(self) -> None:
         self.alerts.clear()
@@ -269,6 +316,14 @@ class Brain:
         self.approved = False
         self.approve_until_bar = -1
         self.spec_kind = None
+        self._clear_play_counts()
+
+    def _played_in(self, bar) -> bool:
+        """He played in this bar (so far): at least silent_bar_hits onsets, one of them a hit.
+        A lone onset is a stick click, a bark through the mic or the kit settling."""
+        notes = [n for n in self.notes if n["bar"] == bar]
+        hits = sum(1 for n in notes if n["grade"] in HIT_GRADES)
+        return hits >= 1 and hits + sum(1 for n in notes if n["grade"] == "extra") >= self.cfg.silent_bar_hits
 
     def _advance_bar(self, bar: int) -> None:
         if bar > self.bar or self.phase in ("idle", "ready"):
@@ -305,12 +360,29 @@ class Brain:
         notes = [n for n in self.notes if n["bar"] == bar]
         if not notes:
             return []
+        if not self._played_in(bar):
+            return self._silent_bar(bar)
+        self.silent_bars = 0
         errs = [n["err"] for n in notes if n["err"] is not None and n["grade"] not in ("miss", "extra")]
         misses = sum(1 for n in notes if n["grade"] == "miss")
         acc = sum(1 for e in errs if abs(e) <= 35) / len(notes)
         mean = sum(errs) / len(errs) if errs else 0.0
         good = misses == 0 and acc >= 0.85 and abs(mean) < self.cfg.derive_threshold_ms
         return self._bar_verdict(good)
+
+    def _silent_bar(self, bar: int) -> list:
+        """A bar he didn't play. Not rushing, not dragging, not a tirade: first an impatient bark,
+        then the song stops and the session goes back to the menu."""
+        self.silent_bars += 1
+        self.good_streak = 0
+        if self.silent_bars >= self.cfg.silent_stop_bars:
+            self.phase = "ended"
+            self.spec_kind = None
+            return [CancelSpeculation(), EndSong("no_playing", bar)]
+        if self.silent_bars >= self.cfg.wait_bars and not self.waited:
+            self.waited = True
+            return [Bark("waiting")]
+        return []
 
     @staticmethod
     def _bar_severity(d: dict) -> float:
@@ -325,11 +397,13 @@ class Brain:
             sev = max(sev, _clamp(0.3 + (abs(float(mean)) - 20) / 40))
         return sev
 
-    def _derive_from_notes(self, t: float) -> list:
-        """Fallback referee: if only raw early/late notes arrive, find drift ourselves."""
+    def _derive_from_notes(self, t: float, fresh_hit: bool = True) -> list:
+        """Fallback referee: if only raw early/late notes arrive, find drift ourselves. Timing is
+        re-judged only on a new hit: the misses of bars he sits out must not keep re-raising an
+        old rushing/dragging verdict (silence is neither)."""
         hits = [n for n in self.notes if n["err"] is not None and n["grade"] not in ("miss", "extra")]
         eff: list = []
-        if len(hits) >= 6:
+        if fresh_hit and len(hits) >= 6:
             recent = hits[-8:]
             mean = sum(n["err"] for n in recent) / len(recent)
             if abs(mean) >= self.cfg.derive_threshold_ms:
@@ -344,7 +418,7 @@ class Brain:
                 eff += self._apply_alert(kind, sev, int(since or self.bar or 1),
                                          f"last {len(recent)} hits average {abs(mean):.0f} ms {side}", t)
         misses = sum(1 for n in self.notes if n["grade"] == "miss" and n["bar"] == self.bar)
-        if misses >= 2:
+        if misses >= 2 and self._played_in(self.bar):  # misses in a bar he sat out are silence
             eff += self._apply_alert("missed_notes", _clamp(0.5 + 0.15 * (misses - 2)), self.bar,
                                      f"{misses} missed notes in bar {self.bar}", t)
         return eff
@@ -387,20 +461,27 @@ class Brain:
         eff: list = []
         active = self._active_alerts(t)
         thr = self.cut_threshold()
-        bars_in = self.bar - self.play_start_bar
+        if self.run_notes == 0:  # a referee that only sends judgment.bar / alerts
+            bars_in, played = self.bar - self.play_start_bar, True
+        else:  # grace from his first hit, and only for what he actually played
+            first = self.first_play_bar
+            bars_in = -1 if first is None else self.bar - max(first, self.play_start_bar)
+            played = self.run_hits >= self.cfg.cutoff_min_hits
         sustained = any(
             r["sev"] >= self.cfg.sustain_severity and r["high_since_bar"] is not None
             and self.bar - r["high_since_bar"] >= 1
             for r in active.values()
         )
-        if active and bars_in >= self.cfg.grace_bars and (self.anger >= thr or sustained):
+        if active and played and bars_in >= self.cfg.grace_bars and (self.anger >= thr or sustained):
             self.cutoffs += 1
+            final = self._give_up()
             facts = self._facts(t)
+            facts.final = final
             self.problem_bar = facts.since_bar
             self.phase = "cutoff"
             self.anger = max(self.anger, 0.85)
             self.spec_kind = None
-            return [Cutoff(facts, level=min(3, self.cutoffs))]
+            return [Cutoff(facts, level=min(3, self.cutoffs), final=final)]
 
         worst = max(active.values(), key=lambda r: r["sev"]) if active else None
         want = worst is not None and (self.anger >= thr - self.cfg.speculate_margin
@@ -414,6 +495,19 @@ class Brain:
             eff.append(CancelSpeculation())
             self.spec_kind = None
         return eff + self._state_effects()
+
+    def _give_up(self) -> bool:
+        """Restart loop guard: this cutoff ends the song after max_cutoffs, or after give_up_after
+        cutoffs in a row whose run was no better (hit rate) than the best run so far."""
+        judged = self.run_hits + self.run_misses
+        score = self.run_hits / judged if judged else 0.0
+        if self.best_score is not None and score < self.best_score + self.cfg.improve_margin:
+            self.stuck += 1
+        else:
+            self.stuck = 0
+        self.best_score = score if self.best_score is None else max(self.best_score, score)
+        return self.cutoffs >= self.cfg.max_cutoffs or (self.cfg.give_up_after > 0
+                                                        and self.stuck >= self.cfg.give_up_after)
 
     def _facts(self, t: float, cutoff_number: int | None = None) -> Facts:
         active = self._active_alerts(t) or self.alerts
@@ -456,6 +550,8 @@ class Brain:
             state = ("watching", "conduct", "drummer")
         elif self.phase == "stopped":
             state = ("watching", "idle", "drummer")
+        elif self.phase == "ended":
+            state = ("irritated", "idle", "drummer")
         elif self.bar <= self.approve_until_bar and a < 0.3:
             state = ("approving", "nod", "drummer")
         elif a < 0.2:

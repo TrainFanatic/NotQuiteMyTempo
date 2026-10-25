@@ -28,6 +28,11 @@ CATALOG: dict[str, list[tuple[str, str]]] = {
     "praise": [("praise_1", "[quietly] Good."), ("praise_2", "[cold] ...Better.")],
     "count": [("count_1", "[sharp] Five, six, seven, eight.")],
 }
+# Categories the brain asks for that reuse another category's clips. "waiting" (the drummer
+# isn't playing): dedicated clips ("Any time now.", "Play!") would need generate_barks.py AND a
+# headset build with them in quest_app/fletcher_barks/, so for now he says "Watch my hand." /
+# "Eyes on me." (with an impatient-watch move, cues.CATEGORY_MOVES).
+ALIASES = {"waiting": "watch"}
 for _n in range(1, MAX_BAR_CLIP + 1):
     CATALOG.setdefault("bar", []).append((f"bar_{_n:02d}", f"[sharp] From bar {num_words(_n)}."))
 
@@ -48,6 +53,7 @@ class BarkPicker:
                 self.manifest = {}
 
     def pick(self, category: str) -> tuple[str, str] | None:
+        category = ALIASES.get(category, category)
         items = CATALOG.get(category)
         if not items:
             return None

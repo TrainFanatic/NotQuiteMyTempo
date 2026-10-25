@@ -20,6 +20,9 @@ const RE_ARM_S := 0.6                       # after a pick, the dwell waits this
 ## where the pick happened: the next page's item that lands under a resting gaze (CANCEL
 ## where PLAY was) is never picked by the gaze just staying put.
 const RE_ARM_PX := 24.0
+## Drawn after the passthrough kit window (render priority 0, Rehearsal._add_kit_window): the
+## stand and its paper sit inside the kit's dome, where the window would fade them to reality.
+const OVER_KIT_WINDOW := 1
 
 ## Seconds of steady gaze that pick an item.
 @export var dwell_s := 1.5
@@ -76,9 +79,17 @@ func build() -> void:
 	mat.albedo_texture = viewport.get_texture()
 	mat.albedo_color = Color(0.92, 0.88, 0.80)
 	mat.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
+	over_kit_window(mat)
 	quad.material_override = mat
 	quad.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	add_child(quad)
+
+
+## Put a material in the transparent pass after the kit window, so it draws over the real kit
+## (opaque all the same: alpha stays 1).
+static func over_kit_window(mat: BaseMaterial3D) -> void:
+	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	mat.render_priority = OVER_KIT_WINDOW
 
 
 func _theme() -> Theme:

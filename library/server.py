@@ -10,6 +10,7 @@ HTTP:
   POST /api/upload                multipart `file` (.mid/.midi), optional `title`, `artist`, `id`
   POST /api/songsterr             {"song": url or id, "track"?: int, "id"?: str}
   POST /api/command               {"action": "start"|"stop"|"quit", ...} -> session.command (src console)
+  POST /api/recenter              {} -> quest.recenter (src console): the headset turns the room to the drummer
   DELETE /api/songs/<id>          remove a song
   GET  /api/config                {"hub_url", "base_url"}
 
@@ -108,11 +109,14 @@ class Library:
         await self.publish()
 
     async def send_command(self, data: dict) -> bool:
+        return await self.send_console("session.command", data)
+
+    async def send_console(self, type_: str, data: dict) -> bool:
         ws = self.hub.ws if self.hub else None
         if ws is None:
             return False
         self.console_seq += 1
-        msg = envelope("session.command", "console", self.console_seq, data)
+        msg = envelope(type_, "console", self.console_seq, data)
         try:
             await ws.send(json.dumps(msg, separators=(",", ":")))
             return True
@@ -168,6 +172,7 @@ class Library:
         r.add_post("/api/upload", self.h_upload)
         r.add_post("/api/songsterr", self.h_songsterr)
         r.add_post("/api/command", self.h_command)
+        r.add_post("/api/recenter", self.h_recenter)
         r.add_delete("/api/songs/{song_id}", self.h_delete)
         r.add_static("/console/", CONSOLE)
         return app
@@ -266,6 +271,11 @@ class Library:
             data["from_bar"] = 1
         ok = await self.send_command(data)
         return web.json_response({"ok": ok, "sent": data, **({} if ok else {"error": "hub not connected"})},
+                                 status=200 if ok else 503)
+
+    async def h_recenter(self, _req):
+        ok = await self.send_console("quest.recenter", {})
+        return web.json_response({"ok": ok, **({} if ok else {"error": "hub not connected"})},
                                  status=200 if ok else 503)
 
     async def h_delete(self, req):

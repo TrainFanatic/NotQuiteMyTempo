@@ -37,6 +37,7 @@ openxr/enabled=true
 openxr/foveation_level=3
 openxr/foveation_dynamic=true
 openxr/extensions/meta/passthrough=true
+openxr/extensions/hand_tracking=true
 openxr/startup_alert=false
 shaders/enabled=true
 

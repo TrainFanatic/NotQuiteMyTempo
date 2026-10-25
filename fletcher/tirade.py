@@ -98,7 +98,8 @@ Rules:
 "average", or the bar he was cut off in.
 - Speak TO the drummer ("you"). Never narrate.
 - Most sentences carry [shouting], [screaming] or [furious] and CAPITALS; quiet tags only for contrast.
-- End with the order naming the restart bar: "[screaming] Bar nine. NOW!"
+- End with the order naming the restart bar: "[screaming] Bar nine. NOW!" (When the fact sheet \
+says NO restart, there is no bar: he throws the drummer out instead.)
 - Numbers as words ("bar nine", "forty milliseconds"). Never digits, "ms" or "bpm".
 - Audio tags go right before the words they change; stack at most two: {tags}. Ellipsis (...) for a \
 menacing pause. Quotes only around an excuse he mocks.
@@ -237,7 +238,8 @@ class Draft:
 
     def _finish(self) -> None:
         # Guarantee he names the restart bar, whatever the model wrote.
-        if not self.error and self.sentences and not mentions_bar(" ".join(self.sentences[-2:]), self.facts.from_bar):
+        if (not self.error and self.sentences and not self.facts.final
+                and not mentions_bar(" ".join(self.sentences[-2:]), self.facts.from_bar)):
             self.sentences.append(f"[shouting] Bar {num_words(self.facts.from_bar)}. NOW!")
             self.order_added = True
         self.done.set()
@@ -252,7 +254,7 @@ class Draft:
         return " ".join(self.sentences)
 
     def compatible(self, facts: Facts, level: int) -> bool:
-        return (self.error is None and self.facts.kind == facts.kind
+        return (self.error is None and self.facts.kind == facts.kind and self.facts.final == facts.final
                 and self.facts.from_bar == facts.from_bar and self.level == level)
 
     async def wait_first(self, timeout: float) -> bool:
@@ -302,6 +304,11 @@ def canned_line(f: Facts, level: int, rng: random.Random | None = None) -> list[
     verb = {"rushing": "rushed", "dragging": "dragged", "missed_notes": "dropped notes",
             "lost": "lost the time", "stopped_playing": "stopped"}.get(f.kind, "fell apart")
     order = f"From bar {frm}. Now."
+    if f.final:  # the last cutoff of the song: no restart
+        return rng.choice([
+            [f"[cold] You {verb}. Again. And again.", "[shouting] We're DONE. Get out of my room."],
+            [f"[quietly] Bar {bar}... you {verb}.", "[cold] Enough. Go home and practise."],
+        ])
     detail = (f"{ms.capitalize()} milliseconds {side} in bar {num_words(f.current_bar)}." if ms and side and f.kind in ("rushing", "dragging")
               else f"You {verb} in bar {bar}.")
     played = num_words(f.bpm * f.tempo_ratio) if f.bpm and f.tempo_ratio else None

@@ -18,8 +18,10 @@ const GamePanel := preload("res://scripts/game/game_panel.gd")
 const ROWS := 5                          # songs per page of the list
 const STAND_COLOR := Color(0.07, 0.07, 0.08)
 ## Where the stand goes, in the drummer's frame (x right, f forward toward Terence, metres
-## from the floor under the throne): a little right of centre so the kit stays in view.
-const PLACE := {"x": 0.18, "f": 0.85, "y": 0.92}
+## from the floor under the throne): a little right of centre so the kit stays in view, about
+## 0.87 m from the seated eye, the paper's top edge just under the eye line. During a song the
+## same stand holds the drum chart (scripts/game/chart_stand.gd).
+const PLACE := {"x": 0.18, "f": 0.8, "y": 0.86}
 
 var panel: GamePanel
 var page := ""
@@ -73,6 +75,7 @@ func _build_stand() -> void:
 	mat.albedo_color = STAND_COLOR
 	mat.metallic = 0.5
 	mat.roughness = 0.45
+	GamePanel.over_kit_window(mat)
 	var stand := Node3D.new()
 	stand.name = "Stand"
 	add_child(stand)

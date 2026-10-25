@@ -125,6 +125,18 @@ class Fletcher:
                 if self.cut_task and not self.cut_task.done():
                     continue
                 self.cut_task = asyncio.create_task(self.cutoff(e.facts, e.level))
+            elif isinstance(e, B.EndSong):
+                if self.cut_task and not self.cut_task.done():
+                    continue
+                await self.end_song(e.reason, e.bar)
+
+    async def end_song(self, reason: str, bar: int) -> None:
+        """The drummer isn't playing (or the song is over for him): stop the band and send the
+        session back to the menu with a result, instead of raging at silence or restarting."""
+        log.info("ENDING the song at bar %d: %s", bar, reason)
+        self._cancel_draft()
+        await self.apply(self.brain.on_ended())
+        await self.hub.send(SESSION_COMMAND, {"action": "quit", "reason": reason})
 
     # -- the session controller (hub/session.py) ------------------------------
     def _session_change(self, d: dict) -> bool:
@@ -244,8 +256,9 @@ class Fletcher:
             lead = bark_lead([fist_at], self.cfg.cutoff_lead_max_s)
             bark_end += await self._send_clip(*stop, category=None, lead_s=lead) + 0.15
             log.info("cutoff bark %s held %.0f ms so the fist lands on the word", stop[0], lead * 1000)
-        log.info("CUTOFF #%d at bar %d: %s since bar %d (sev %.2f); restart from bar %d",
-                 facts.cutoff_number, facts.current_bar, facts.kind, facts.since_bar, facts.severity, facts.from_bar)
+        log.info("CUTOFF #%d at bar %d: %s since bar %d (sev %.2f); %s",
+                 facts.cutoff_number, facts.current_bar, facts.kind, facts.since_bar, facts.severity,
+                 "LAST ONE, the song ends" if facts.final else f"restart from bar {facts.from_bar}")
         log.info("fact sheet:\n%s", facts.sheet())
 
         draft = self.draft
@@ -266,6 +279,16 @@ class Fletcher:
 
         speak_at = max(t_cut + self.cfg.stare_s, bark_end)
         spoke = await self.speak(draft, t_cut, speak_at, facts, level)
+        if facts.final:  # the restart loop guard: no count-off, the song ends after his line
+            if not spoke:
+                await asyncio.sleep(max(0.0, speak_at - now()))
+                self.speech_end = now() + await self.bark("again", cues=False) + self.cfg.quest_latency_s
+            await draft.done.wait()
+            if draft.text:
+                self.writer.recent.append(strip_tags(draft.text))
+            await asyncio.sleep(max(0.0, self.speech_end + self.cfg.post_stare_s - now()))
+            await self.end_song("cutoffs", facts.current_bar)
+            return
         if not spoke:  # voice down: barks only
             await asyncio.sleep(max(0.0, speak_at - now()))
             if not self.cfg.cutoff_bark:

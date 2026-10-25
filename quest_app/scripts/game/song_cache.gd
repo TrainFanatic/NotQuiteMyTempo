@@ -3,6 +3,8 @@ extends Node
 ##   backing.ogg       the band without the drums (BackingPlayer plays it)
 ##   arrangement.mid   the source MIDI (SceneDirector.load_song: who plays when)
 ##   band_tracks.json  MIDI track name -> band sections, for load_song
+##   drums.drums.txt + drums.tempo.json  the drum part and its bars, for the chart on the
+##                     music stand (scripts/game/drum_chart.gd); when song.json counts `notes`
 ## fetch(song, base_url) downloads what the song has (song.json's `backing`/`arrangement`
 ## flags; a 404 just means "not there") one file at a time over HTTP, each into a .part file
 ## renamed when complete, then writes the song's song.json beside them. A song is cached
@@ -37,6 +39,8 @@ static func files_for(song: Dictionary) -> Array:
 		f.append("backing.ogg")
 	if song.get("arrangement", true) != false:
 		f.append_array(["arrangement.mid", "band_tracks.json"])
+	if typeof(song.get("notes")) in [TYPE_INT, TYPE_FLOAT]:   # the library's songs all have a sheet
+		f.append_array(["drums.drums.txt", "drums.tempo.json"])
 	return f
 
 

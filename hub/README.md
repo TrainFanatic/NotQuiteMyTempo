@@ -12,6 +12,7 @@ contract: `CONTRACT.md` at the repo root (builders in `fletcher/contract.py`).
 | `app_e2e.py` | the whole app: `python -m nqmt --mic file:<sloppy>,<clean>` + the headless headset game (`-- --game`) + a scripted console; start -> count-off -> cutoff -> restart (seek) -> finished -> result; must print PASS |
 | `tests/fixtures/songs/` | a fixture song library (Chris's 4-bar Back in Black x4); `tests/fixtures/make_songs.py` regenerates it |
 | `e2e.py` | FIFO -> bridge -> hub -> Fletcher in one process; must print PASS |
+| `session_replay.py` | offline closed-loop replay of a real headset session (onsets + count-ins) through controller + session bridge + Fletcher's brain: `python -m hub.session_replay recordings/<t>.jsonl recordings/nqmt-<t>/mic_*.drums.txt [--from-run N]`; prints the timeline |
 | `full_e2e.py` | the whole system as separate processes, headset app included (below); must print PASS |
 | `tests/` | `python -m pytest hub/tests -q` (real fixture + Chris's drift simulator; `test_score_gate.py`: onsets-only path, incl. kit audio through Kevin's transcriber) |
 

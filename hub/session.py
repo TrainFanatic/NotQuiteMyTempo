@@ -169,8 +169,8 @@ class Session:
         action = d.get("action")
         if action == "start":
             return self.start(str(d.get("song_id") or ""), int(d.get("from_bar") or 1), t)
-        if action == "quit":
-            return self.quit(t)
+        if action == "quit":  # also Fletcher's (src aaron): reason no_playing / cutoffs
+            return self.quit(t, str(d.get("reason") or ""))
         if action == "stop" and self.state in ("count_in", "playing"):
             self.state = "stopped"
             self.cutoffs += 1
@@ -197,10 +197,12 @@ class Session:
         lead = 5 * 60.0 / song.bpm_at(bar) + 1.5 + self.lead_s
         return [self._count_in(bar, t + lead, "start")]
 
-    def quit(self, t: float) -> list[tuple[str, dict]]:
+    def quit(self, t: float, reason: str = "") -> list[tuple[str, dict]]:
         out = []
         if self.song and not self.result_sent and self.count_ins:
-            out.append(self._result())  # runs[-1] already ends at the last bar heard
+            if reason:
+                log.info("song ended by Fletcher: %s", reason)
+            out.append(self._result(reason))  # runs[-1] already ends at the last bar heard
         self.state, self.song = "idle", None
         out.append(self._publish("idle"))
         return out
@@ -253,7 +255,7 @@ class Session:
         return [(SESSION_STATE, dict(self.last_state))]
 
     # -- the result --------------------------------------------------------
-    def _result(self) -> tuple[str, dict]:
+    def _result(self, reason: str = "") -> tuple[str, dict]:
         self.result_sent = True
         self.result_due = None
         g = self.grades
@@ -275,6 +277,8 @@ class Session:
                 "mean_error_ms": round(sum(errs) / len(errs), 1) if errs else None,
                 "mean_abs_error_ms": round(sum(abs(e) for e in errs) / len(errs), 1) if errs else None,
                 "rushing_bars": sorted(rushing), "dragging_bars": sorted(dragging)}
+        if reason:
+            data["ended_by"] = reason  # Fletcher ended it: no_playing (silence) / cutoffs (gave up)
         log.info("result: %s", data)
         return SESSION_RESULT, data
 

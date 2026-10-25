@@ -47,7 +47,7 @@ as below.
 | `t0` | controller `count_in` | laptop clock, downbeat of `from_bar`. Start: now + 5 beats + 1.5 s + `--lead-s` (1 s) so the headset can fetch and schedule the song. Restart: Fletcher's `t0` (else arrival + 4 beats) |
 | `song_time_at_t0` | controller `count_in` | s, tempo-map start of `from_bar` (song time 0 = bar 1 downbeat). The headset plays backing-track time `song_time_at_t0` at `t0`; the bridge expects bar `from_bar` there. Song time at laptop t = t - t0 + song_time_at_t0 |
 | `error` | opt | controller: a refused `start` (unknown song); `state` stays what it was |
-| `state` | yes | bridge sends `playing` (first hit, then every new bar), `stopped` (on `stop` and at end of input), `count_in` (on `restart`). Fletcher's brain also accepts `idle` (reset) and `calibrating` |
+| `state` | yes | bridge sends `playing` (first hit, or with `--session --clock laptop` the downbeat `t0` once its notes have passed unplayed, then every new bar), `stopped` (on `stop` and at end of input), `count_in` (on `restart`). Fletcher's brain also accepts `idle` (reset) and `calibrating` |
 | `song_id` | bridge always | sheet file stem |
 | `bpm` | bridge always | float. Brain: tempo. Headset: `set_tempo` if >= 40 |
 | `bar`, `beat` | bridge always | current bar (1-based), `beat` is always 1 |
@@ -79,6 +79,7 @@ or on `quit` mid-song (`completed: false`). Aggregated from the bridge's `judgme
 | `accuracy` | `(perfect + good) / notes`, 3 dp, or null |
 | `mean_error_ms`, `mean_abs_error_ms` | over hits (perfect/good/off), + = late, 1 dp, or null |
 | `rushing_bars`, `dragging_bars` | sorted bar numbers (lists, not counts) whose mean hit error was <= -20 / >= +20 ms (>= 2 hits) |
+| `ended_by` | opt: Fletcher ended the song with `quit` + `reason`: `no_playing` (the drummer sat silent) or `cutoffs` (the restart loop guard: too many cutoffs, no improvement) |
 
 Fletcher barks once on a completed result: "Good." (no cutoff, accuracy >= 0.85) or "Again."
 (accuracy < 0.6).
@@ -124,13 +125,16 @@ fields: `type`, `level`, `start_bar`, `message`. A missing `bar` is computed fro
 | `action` | fields | sent | effect |
 |---|---|---|---|
 | `start` | `song_id`, `from_bar` (opt, 1) | src `quest` or `console` (PLAY) | controller loads `songs/<song_id>/`, picks t0, publishes `count_in` (reason `start`); from any state (a running song is dropped) |
-| `quit` | | src `quest` or `console` | controller publishes `session.result` (if the song has none yet), then `idle`. Fletcher drops a cutoff in progress |
+| `quit` | `reason` (opt) | src `quest` or `console`; src `aaron` (Fletcher) with `reason` `no_playing` / `cutoffs` | controller publishes `session.result` (if the song has none yet, with `ended_by: reason`), then `idle`. Fletcher drops a cutoff in progress |
 | `stop` | `from_bar` | at the cutoff, with the fist | bridge mutes judging and answers `session.state stopped`. Headset lowers the band |
 | `restart` | `from_bar`, **`t0` (opt)** | at `t0 - count_in_beats` beats (`main.py`) | bridge re-aligns the sheet: bar `from_bar` starts at **`t0`** (laptop clock = Fletcher's count-off downbeat), whenever the command arrives. Without `t0` it starts `count_in_beats` beats after arrival (old path). It answers `session.state count_in` with the `t0` it used. Hits before `t0 - beat/2` are not judged |
 
 With the controller (bridge `--session`), the bridge ignores `restart` and re-aligns on the
 controller's `count_in` instead (same t0, plus the seek); the controller ignores `stop`/`restart`
 when no song is running.
+
+The headset also reads `session.command` `stop`/`restart`: their `from_bar` is marked on the drum
+chart on its music stand as the bar Fletcher restarts from.
 
 Hub time maps to the transcriber's stream time through the median of (arrival - line time -
 `--latency-ms`). With `t0` the restart bar's hub time is exact. The stream mapping is only as good
@@ -182,6 +186,16 @@ src `quest`, on connect and whenever the drummer changes Settings: `{"mic_source
 `--mic` and then follows `mic_source` live: it stops Kevin's transcriber and starts it on the other
 input (`--input mic` / `--input hub:<url>`). `--mic file:...` and `--mic-fixed` ignore it.
 
+## quest.recenter: console -> headset
+
+src `console` (`POST /api/recenter`, the console's "Recenter headset" button), `{}`. The drummer
+sits at the real kit facing it, then presses it: the headset turns and shifts its XR origin so the
+head, as it is at that moment, sits over `spot_drummer` facing the room's front (yaw and floor
+position; height stays the tracking space's). The passthrough kit window then lands on the real kit
+and the music stand is in front. The headset also does this by itself on XR session start, when
+the headset is put back on (session focus) and after the Meta button's own recenter. Any state;
+no reply.
+
 ## mic.pcm: headset -> laptop transcriber (opt-in mic source)
 
 src `quest` (`quest_app/scripts/game/mic_streamer.gd`), ~50 ms per frame:
@@ -225,7 +239,11 @@ a trained model the transcriber runs `--onsets-only` and every line is `time_s  
 unknown, file_format.md §10). The bridge's score gate then gives each onset the notes the sheet
 expects within +-100 ms of sheet time + tracked drift (one hit per note, so chords pair fully),
 drops re-triggers within 60 ms of the last onset, or within 150 ms of a matched one when no note is
-near, and sends the rest as `grade: "extra"` with `drum: "unknown"`. Lines with a real MIDI drum
+near, and sends the rest as `grade: "extra"` with `drum: "unknown"` (except while one of Fletcher's
+barks plays, from its `fletcher.speech` to its manifest duration + 0.35 s: those are his own voice
+through the headset mic and are dropped). A sheet note no onset can still reach (sheet time +
+drift + 100 ms window + 0.15 s, on the laptop clock minus the line delay) is sent as `miss` right
+then, not with the next onset, so a silent drummer's misses arrive bar by bar. Lines with a real MIDI drum
 skip the gate. With `--clock monotonic` (the live inputs, `transcribe_wav.py --input mic|hub:<url>`)
 the header carries `# clock: monotonic` and `time_s` is the hit on the laptop clock; the session
 bridge (`--session --clock laptop`) takes song time = time_s - t0 + song_time_at_t0 -

@@ -270,6 +270,13 @@ class Referee:
         self.bar = 0
         self.clock_offsets: deque[float] = deque(maxlen=64)  # rx - s - latency, per hit
         self.resume_at_s: float | None = None
+        self.expire_margin_s = 0.15  # expire(): line-delay jitter on top of the gate's reach
+        # tick() before any line arrived (silence from the downbeat on): stream time of a line
+        # arriving now = rx - this. None = unknown (stream mode: no misses until the first line).
+        self.idle_lag_s: float | None = None
+        self.mute_windows: list[tuple[float, float]] = []  # laptop-clock spans Fletcher is audible
+        self.bleed = 0  # extras dropped inside a mute window
+        self.midi_lines = False  # a line with a real drum came (not --onsets-only)
 
     @staticmethod
     def _copy(notes):
@@ -299,6 +306,7 @@ class Referee:
             self.phase = "playing"
             out.append(self._state("playing"))
         if midi != ONSET_MIDI:
+            self.midi_lines = True
             return out + self._judge(s, midi)
         for d in self.gate.push(s):
             out += self._judge_gated(*d)
@@ -306,10 +314,18 @@ class Referee:
 
     def tick(self, rx: float) -> list[tuple[str, dict]]:
         """Settle the gate's held onset once every line up to its deadline must have arrived
-        (stream time of a line arriving now, from the arrival offsets)."""
-        if self.phase == "stopped" or self.gate.held is None or not self.clock_offsets:
+        (stream time of a line arriving now, from the arrival offsets), then report the misses
+        the clock has passed (expire)."""
+        if self.phase == "stopped":
             return []
-        return self.settle(rx - self.latency_s - statistics.median(self.clock_offsets) - 0.02)
+        if self.clock_offsets:
+            s_now = rx - self.latency_s - statistics.median(self.clock_offsets)
+        elif self.idle_lag_s is not None:
+            s_now = rx - self.idle_lag_s
+        else:
+            return []
+        out = self.settle(s_now - 0.02) if self.gate.held is not None else []
+        return out + self.expire(s_now)
 
     def settle(self, s_now: float | None = None) -> list[tuple[str, dict]]:
         """Judge the gate's held onset (by stream time s_now; None = now, the input ended)."""
@@ -347,18 +363,8 @@ class Referee:
         if group == []:
             return []
         m, g = self.matcher, self.gate
-        out: list[tuple[str, dict]] = []
+        out = self._report_passed(done)
         pre = self._gate_pre
-        for j in range(self._gate_ptr, done):
-            for i in g.notes[j]:
-                note = m.sheet[i - pre] if i >= pre else None
-                if note is not None and note.match is None and g.masked(j):
-                    note.match = note  # heard as part of the stroke before it: not judged
-                    self.unheard += 1
-                elif note is not None and note.match is None:
-                    m.missed += 1
-                    out += self._note(note.time, note.name, None, "miss")
-        self._gate_ptr = max(self._gate_ptr, done)
         hit = cp.Hit(s, ONSET_MIDI)
         m.played.append(hit)
         song_t = s - self.offset
@@ -368,6 +374,9 @@ class Referee:
             out.insert(0, self._state("playing"))
         if group is None:
             self._settle()
+            if self.muted(s):  # most likely Fletcher's own bark through the headset mic
+                self.bleed += 1
+                return out
             m.extra += 1
             return out + self._note(song_t, hit.name, None, "extra")
         err_ms = (s - g.times[group]) * 1000.0
@@ -380,6 +389,60 @@ class Referee:
         self._gate_ptr = group + 1
         self._settle()
         return out
+
+    def _report_passed(self, done: int) -> list[tuple[str, dict]]:
+        """The gate groups before `done` that no onset took: misses (or excused, ScoreGate.masked)."""
+        m, g, pre = self.matcher, self.gate, self._gate_pre
+        out: list[tuple[str, dict]] = []
+        for j in range(self._gate_ptr, done):
+            for i in g.notes[j]:
+                note = m.sheet[i - pre] if i >= pre else None
+                if note is not None and note.match is None and g.masked(j):
+                    note.match = note  # heard as part of the stroke before it: not judged
+                    self.unheard += 1
+                elif note is not None and note.match is None:
+                    m.missed += 1
+                    out += self._note(note.time, note.name, None, "miss")
+        self._gate_ptr = max(self._gate_ptr, done)
+        return out
+
+    def expire(self, s_now: float) -> list[tuple[str, dict]]:
+        """Report the misses the clock has made certain: every gate group no onset can reach any
+        more (sheet time + drift + window + expire_margin_s before s_now, the stream time of a line
+        arriving now). Without this the misses only came with the NEXT onset, so a drummer who sat
+        still for 30 s got 30 s of misses in one burst, all at once, whenever a stray onset finally
+        came (headset session 2026-10-25), and Fletcher cut off "in bar 3" at bar 129. Once the
+        downbeat has passed the song is playing even if nobody hits anything: `playing` goes out."""
+        g = self.gate
+        if (self.phase not in ("playing", "count_in") or self.resume_at_s is None or g.held is not None
+                or self.midi_lines):  # a drum model's lines: LiveMatcher reports its own misses
+            return []
+        if self.phase == "count_in" and s_now < self.resume_at_s:
+            return []  # still counting in (feed_line ignores hits until just before the downbeat)
+        reach = g.window + max(0.0, g.drift) + self.expire_margin_s
+        j = self._gate_ptr
+        while j < len(g.times) and g.times[j] + reach < s_now:
+            j += 1
+        if j == self._gate_ptr:
+            return []
+        out: list[tuple[str, dict]] = []
+        if self.phase == "count_in":
+            self.phase = "playing"
+            out.append(self._state("playing"))
+        out += self._report_passed(j)
+        g.next = max(g.next, j)  # a late onset can't take a group already reported as missed
+        self._settle()
+        return out
+
+    def muted(self, s: float) -> bool:
+        """s (stream time) falls while Fletcher's own voice is audible (mute_windows)."""
+        t = s + self.line_shift_s  # back on the laptop clock in clock mode
+        return any(a <= t <= b for a, b in self.mute_windows)
+
+    def mute(self, start: float, end: float) -> None:
+        """Fletcher speaks from `start` to `end` (laptop clock): extras then are self-bleed."""
+        self.mute_windows.append((start, end))
+        del self.mute_windows[:-8]
 
     def _settle(self) -> None:
         """LiveMatcher's miss pointer past every note of the settled groups (a group's notes are
@@ -485,8 +548,27 @@ class SessionBridge:
         self.input_latency_s = self.mic_latency.get(self.mic, self.base_input_latency_s)
         if self.ref is not None and self.clock_mode == "laptop":
             self.ref.line_shift_s = self.input_latency_s
+            self.ref.idle_lag_s = self._idle_lag()
         log.info("input latency %.1f ms (mic %s%s)", self.input_latency_s * 1000, self.mic or "?",
                  ", calibrated" if self.mic in self.mic_latency else "")
+
+    def _idle_lag(self) -> float:
+        """Clock mode, no line yet: a line arriving now is about this old in stream time (the
+        transcriber's hit -> line delay, ~240 ms on the Quest mic, plus the line shift)."""
+        return self.latency_s + 0.1 + self.input_latency_s
+
+    BARK_TAIL_S = 0.35  # headset buffering + the bark's held lead (bark_lead_max_s) + decay
+
+    def on_speech(self, data: dict, src: str, rx: float) -> None:
+        """fletcher.speech bark (clip_id): while it plays, onsets with no sheet note are taken for
+        its bleed through the headset mic and not reported as extras (measured 2026-10-25: 7 of 32
+        barks had an onset 50-200 ms after they went out, ~2 expected by chance)."""
+        if self.ref is None or src == self.session_src or not data.get("clip_id") or self.clock_mode != "laptop":
+            return
+        from fletcher.barks import BarkPicker
+        if not hasattr(self, "_barks"):
+            self._barks = BarkPicker()
+        self.ref.mute(rx, rx + self._barks.duration(str(data["clip_id"])) + self.BARK_TAIL_S)
 
     def on_calibration(self, data: dict) -> None:
         """calibrate.result: a good measurement for a mic source becomes its latency."""
@@ -509,8 +591,11 @@ class SessionBridge:
         sheet = cp.read_notes(song.sheet)
         clock = BarClock(song.bpm_at(1), song.beats_per_bar, song.tempo_map)
         log.info("loaded %s: %d notes, %d bars", song_id, len(sheet), song.bars)
-        return Referee(sheet, clock, self.latency_s, self.count_in_beats, song_id, self.gate,
-                       self.input_latency_s if self.clock_mode == "laptop" else 0.0)
+        ref = Referee(sheet, clock, self.latency_s, self.count_in_beats, song_id, self.gate,
+                      self.input_latency_s if self.clock_mode == "laptop" else 0.0)
+        if self.clock_mode == "laptop":
+            ref.idle_lag_s = self._idle_lag()
+        return ref
 
     def on_state(self, data: dict, src: str, rx: float) -> list[tuple[str, dict]]:
         if src != self.session_src:
@@ -603,6 +688,8 @@ async def run_session(args) -> None:
                     await publish(sb.on_state(d, str(msg.get("src", "")), rx))
                 elif typ == SESSION_COMMAND:
                     await publish(sb.on_command(d, rx))
+                elif typ == "fletcher.speech":
+                    sb.on_speech(d, str(msg.get("src", "")), rx)
                 elif typ == "calibrate.result":
                     sb.on_calibration(d)
                 elif typ == "quest.settings":

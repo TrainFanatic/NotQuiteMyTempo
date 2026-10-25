@@ -22,6 +22,14 @@ var camera: Camera3D
 var origin: XROrigin3D
 var _xr: XRInterface
 var _fb_passthrough: Object
+## Recentering (XR): the drummer's seat the head is put back on (see recenter()).
+var drummer_spot := Transform3D.IDENTITY
+var recenter_count := 0                    # recenters applied (tests, logs)
+var _recenter_frames := -1                 # >= 0: a recenter waits for a tracked head
+const RECENTER_WAIT_FRAMES := 90           # give up waiting for head tracking after this
+
+## A recenter was applied: the head is over the throne, facing the room's front.
+signal recentered
 
 
 static func xr_requested() -> bool:
@@ -71,7 +79,13 @@ func _setup_xr(drummer_spot: Transform3D) -> bool:
 	origin.name = "XROrigin3D"
 	# the floor under the drum throne, facing Terence (marker forward is -Z)
 	origin.transform = drummer_spot
+	self.drummer_spot = drummer_spot
 	add_child(origin)
+	# Recenter whenever the drummer (re)enters the app: session start, the headset put back
+	# on (the session regains focus) and the Meta button's own recenter (pose_recentered).
+	for sig in [&"session_focussed", &"pose_recentered"]:   # OpenXRInterface signals
+		if xr.has_signal(sig):
+			xr.connect(sig, request_recenter)
 	camera = XRCamera3D.new()
 	camera.name = "XRCamera3D"
 	camera.near = 0.05
@@ -84,8 +98,65 @@ func _setup_xr(drummer_spot: Transform3D) -> bool:
 	return true
 
 
+## ---- recentering -----------------------------------------------------------
+## The OpenXR tracking space keeps the headset's real-world yaw: its -Z is wherever the headset
+## faced when the runtime set it up, which need not be the way the drummer faces the real kit
+## (sat the other way round, or the app started with the headset off). A recenter turns and
+## shifts the XR origin so the head, as it is now, sits over the throne (spot_drummer) facing
+## the room's front. The drummer is assumed to sit at the real kit facing it, so the real kit
+## then lies where the room expects it, under the passthrough kit window, with the music stand
+## in front. Height is left to the tracking space (local floor).
+
+## The origin's new transform for a head pose `head` (in the origin's frame), so the head's
+## yaw is the drummer's and its floor position is the drummer's.
+static func recenter_transform(drummer: Transform3D, head: Transform3D) -> Transform3D:
+	var want := _yaw(-drummer.basis.z)
+	var have := _yaw(-head.basis.z)
+	var b := Basis(Vector3.UP, want - have)
+	var p := b * Vector3(head.origin.x, 0.0, head.origin.z)
+	return Transform3D(b, Vector3(drummer.origin.x - p.x, drummer.origin.y, drummer.origin.z - p.z))
+
+
+## Yaw of a direction about +Y, 0 for -Z (Basis(UP, yaw) * (0, 0, -1) is that direction).
+static func _yaw(dir: Vector3) -> float:
+	return atan2(-dir.x, -dir.z)
+
+
+## Recenter on one of the next frames, once the head is tracked (XR only; the desktop camera
+## is already on the seat).
+func request_recenter() -> void:
+	if xr_mode and origin != null:
+		_recenter_frames = 0
+
+
+## Recenter now from a head pose in the origin's frame (default: the headset's current pose).
+func recenter(head: Variant = null) -> bool:
+	if origin == null:
+		return false
+	var h: Transform3D = head if head is Transform3D else XRServer.get_hmd_transform()
+	origin.transform = recenter_transform(drummer_spot, h)
+	recenter_count += 1
+	print("PlayerRig: recentered (head yaw %.0f deg, at %s in tracking space)" % [rad_to_deg(_yaw(-h.basis.z)), h.origin])
+	recentered.emit()
+	return true
+
+
+func _process(_delta: float) -> void:
+	if _recenter_frames < 0:
+		return
+	_recenter_frames += 1
+	var h := XRServer.get_hmd_transform()
+	if h != Transform3D.IDENTITY:   # the runtime reports exactly identity until the head is tracked
+		_recenter_frames = -1
+		recenter(h)
+	elif _recenter_frames > RECENTER_WAIT_FRAMES:
+		_recenter_frames = -1
+		push_warning("PlayerRig: no head tracking to recenter on")
+
+
 func _enable_passthrough(xr: XRInterface) -> void:
 	_xr = xr
+	request_recenter()   # the session has begun: align the room to the drummer
 	var modes: Array = xr.get_supported_environment_blend_modes()
 	if not XRInterface.XR_ENV_BLEND_MODE_ALPHA_BLEND in modes:
 		push_error("PlayerRig: passthrough (alpha blend) unsupported by the runtime (modes %s); check the Meta passthrough export option" % [modes])

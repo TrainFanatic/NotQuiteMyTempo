@@ -58,9 +58,17 @@ class Config:
     bark_cooldown_s: float = 2.5
     speculate_margin: float = 0.2  # start drafting when anger >= threshold - margin
     speculate_severity: float = 0.55
-    grace_bars: int = 2  # no cutoff in the first bars after a (re)start
+    grace_bars: int = 4  # no cutoff in the first bars after a (re)start, counted from his first hit
     phrase_bars: int = 4  # restart on a phrase boundary (1, 5, 9...); 0 = exact bar
     approve_bars: int = 2  # clean bars after a restart before he nods
+    # --- the drummer isn't playing / the restart loop (headset session 2026-10-25) ---
+    silent_bar_hits: int = 2  # a bar with fewer onsets (a hit among them) is one he didn't play
+    wait_bars: int = 2  # silent bars in a row -> an impatient bark ("waiting"), no tirade
+    silent_stop_bars: int = 6  # silent bars in a row -> stop the song, back to the menu
+    cutoff_min_hits: int = 6  # no cutoff before he has played this many hits in the run
+    max_cutoffs: int = 8  # this cutoff of a song is the last: no restart, the session ends
+    give_up_after: int = 3  # ... or this many cutoffs in a row with no better run (0 = never)
+    improve_margin: float = 0.05  # a run's hit rate must beat the best one by this to count
     praise_chance: float = 0.3
     beats_per_bar: int = 4
 

@@ -72,6 +72,14 @@ async function command(body) {
 $("btn-start").onclick = () => command({ action: "start", song_id: S.selected, from_bar: Math.max(1, parseInt($("from-bar").value || "1", 10)) });
 $("btn-stop").onclick = () => command({ action: "stop", ...(S.session.bar ? { from_bar: S.session.bar } : {}) });
 $("btn-quit").onclick = () => command({ action: "quit" });
+// quest.recenter: the drummer sits at the kit facing it, then this turns the headset's room to match.
+$("btn-recenter").onclick = async () => {
+  $("cmd-status").textContent = "sending...";
+  try {
+    const j = await (await fetch("/api/recenter", { method: "POST" })).json();
+    $("cmd-status").textContent = j.ok ? "sent quest.recenter (sit at the kit facing it)" : `not sent: ${j.error}`;
+  } catch (e) { $("cmd-status").textContent = "library server unreachable"; }
+};
 
 // ---- upload / import ----
 const drop = $("drop");

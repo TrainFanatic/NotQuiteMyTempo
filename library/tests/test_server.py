@@ -100,6 +100,11 @@ def test_library_end_to_end(tmp_path, ports):
                     assert r.status == 404
                     r = await http.post(f"{base}/api/command", json={"action": "explode"})
                     assert r.status == 400
+                    # Recenter headset -> quest.recenter (the headset turns its room to the drummer)
+                    r = await http.post(f"{base}/api/recenter")
+                    assert (await r.json())["ok"]
+                    m = await recv_type(obs, "quest.recenter")
+                    assert m["src"] == "console" and m["data"] == {}
 
                     bad = aiohttp.FormData()
                     bad.add_field("file", b"garbage", filename="bad.mid")

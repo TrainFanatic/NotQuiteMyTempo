@@ -25,6 +25,8 @@ const GamePanel := preload("res://scripts/game/game_panel.gd")
 const GameHud := preload("res://scripts/game/game_hud.gd")
 const GameInput := preload("res://scripts/game/game_input.gd")
 const SongCache := preload("res://scripts/game/song_cache.gd")
+const ChartStand := preload("res://scripts/game/chart_stand.gd")
+const DrumChart := preload("res://scripts/game/drum_chart.gd")
 const BACKING_PLAYER := "res://scripts/game/backing_player.gd"
 const MIC_STREAMER := "res://scripts/game/mic_streamer.gd"   # agent C's mic.pcm sender, if present
 const CALIBRATION_PLAYER := "res://scripts/game/calibration_player.gd"   # calibrate.start claps
@@ -35,8 +37,9 @@ const START_TIMEOUT_S := 8.0      # PLAY with no count_in by then: tell the play
 const RAISE_LEAD_120 := 0.6       # s before an entrance the band starts raising, at 120 BPM (= PhraseExtractor)
 const COUNT_IN_BEATS := 5.0       # count_in without t0: the downbeat is this far off
 ## The small card that leads back to the menu during a demo or after a cutoff, in the
-## drummer's frame (as GameMenu.PLACE).
-const CARD_AT := {"x": 0.42, "f": 0.8, "y": 0.8}
+## drummer's frame (as GameMenu.PLACE): right of the music stand, clear of its paper (the
+## drum chart stays on the stand after a cutoff).
+const CARD_AT := {"x": 0.72, "f": 0.66, "y": 0.95}
 ## `-- --game-log`: one line per step of the flow, `[game] <local s> <event> <args>` (e2e tests).
 const LOG_ARG := "--game-log"
 
@@ -46,6 +49,7 @@ var rehearsal: Node
 var hub: FletcherHub
 var director: SceneDirector
 var menu: GameMenu
+var chart: ChartStand             # the drum chart on the menu's stand during a song
 var card: GamePanel
 var hud: GameHud
 var input: GameInput
@@ -78,6 +82,7 @@ var bridge_bar := 0
 var _start_sent_at := -INF
 var _shown := false               # the menu is allowed on screen (after the intro)
 var _have_phrases := false
+var recenters := 0                # quest.recenter requests (tests, logs)
 var sent: Array = []              # [type, data] of everything this node sent (tests, logs)
 var _log := false
 
@@ -128,6 +133,10 @@ func setup(r: Node) -> bool:
 	menu.set_status(hub.is_open(), hub.url)
 	menu.chosen.connect(_on_chosen)
 	menu.visible = false
+	chart = ChartStand.new()
+	r.add_child(chart)
+	chart.build(menu)
+	chart.visible = false
 	card = GamePanel.new()
 	card.name = "BackCard"
 	card.size_m = Vector2(0.26, 0.075)
@@ -205,6 +214,11 @@ func _on_message(type: String, data: Dictionary, _env: Dictionary) -> void:
 			_on_result(data)
 		"judgment.note":
 			hud.note(data)
+		"session.command":   # Fletcher's stop / restart name the bar he restarts from
+			if str(data.get("action", "")) in ["stop", "restart"] and typeof(data.get("from_bar")) in [TYPE_INT, TYPE_FLOAT]:
+				chart.set_restart_bar(int(data["from_bar"]))
+		"quest.recenter":    # the laptop console's Recenter button (CONTRACT.md)
+			recenter()
 
 
 func _on_library(d: Dictionary) -> void:
@@ -303,6 +317,12 @@ func _on_count_in(d: Dictionary) -> void:
 	_start_sent_at = -INF
 	menu.visible = false
 	card.visible = false
+	if str(d.get("reason", "")) != "restart":
+		chart.set_restart_bar(0)
+	if prepared_id != id:
+		chart.set_chart(null, str(song.get("title", id)), "Fetching the chart...")
+	chart.show_bar(from_bar)
+	chart.visible = true
 	hud.start(str(song.get("title", id)), int(song.get("bars", 0)))
 	if prepared_id == id:
 		_schedule()
@@ -328,11 +348,15 @@ func _on_fetch_failed(id: String, why: String) -> void:
 	if id == str(song.get("id", "")) and state in ["count_in", "playing"]:
 		prepared_id = id   # nothing to load: the band follows the clock alone
 		_unload_director()
+		chart.set_chart(null, str(song.get("title", id)), "No chart: the song did not download.")
 		_schedule()
 
 
 func _load_song(id: String, dir: String) -> void:
 	backing.load(dir)
+	var c = DrumChart.load_dir(dir)
+	chart.set_chart(c, str(song.get("title", id)), "" if c != null else "No drum chart for this song.")
+	chart.show_bar(from_bar)
 	_unload_director()
 	var midi := dir.path_join("arrangement.mid")
 	var tracks := _band_tracks(dir.path_join("band_tracks.json"), midi)
@@ -414,6 +438,7 @@ func _process(_delta: float) -> void:
 		var st := song_time()
 		if _have_phrases:
 			director.set_song_position(st + midi_t0_s)
+		chart.set_time(st, true)
 		hud.set_bar(bridge_bar if bridge_bar > 0 else _bar_estimate(st))
 
 
@@ -443,6 +468,7 @@ func _end_song() -> void:
 	backing.stop(0.3)
 	hud.visible = false
 	card.visible = false
+	chart.visible = false
 	if director.follow_song or _have_phrases:
 		_unload_director()
 	director.set_band_state("all", &"lowering")
@@ -450,6 +476,7 @@ func _end_song() -> void:
 
 func _show_menu() -> void:
 	card.visible = false
+	chart.visible = false
 	hud.visible = false
 	if _shown:
 		menu.visible = true
@@ -506,6 +533,7 @@ func quit() -> void:
 func start_demo(kind: String) -> void:
 	demo = kind
 	menu.visible = false
+	chart.visible = false
 	card.visible = true
 	rehearsal.start_demo_scene(kind == "showcase")
 
@@ -523,6 +551,18 @@ func _on_card(_id: String, _arg: Variant) -> void:
 		_show_menu()
 	else:
 		quit()
+
+
+## Turn the room so the drummer, sitting at the real kit facing it, faces the room's front:
+## the kit window lands on the real kit and the stand is in front (PlayerRig.recenter).
+## quest.recenter from the laptop console, at any time.
+func recenter() -> bool:
+	recenters += 1
+	_say("recenter")
+	if not rehearsal.rig.xr_mode:
+		return false   # the desktop camera is always on the seat
+	rehearsal.rig.request_recenter()
+	return true
 
 
 ## ---- settings --------------------------------------------------------------

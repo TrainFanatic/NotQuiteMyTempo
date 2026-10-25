@@ -90,6 +90,9 @@ BARK_DEFAULTS = {  # category -> [(gesture, at_s, priority)]
     "praise": [("ap_nod", 0.0, 1)], "count": [(COUNTOFF, 0.0, 2)], "bar": [("t2_score_point", 0.0, 1)],
 }
 
+# Categories whose move doesn't come from the clip (barks.ALIASES: the clip is another category's).
+CATEGORY_MOVES = {"waiting": [("t2_impatient_watch", 0.0, 1)]}
+
 
 def gesture_move(name: str, closeups: bool = False) -> str:
     """A tirade gesture name (or a move id) -> the Terence move to send."""
@@ -126,6 +129,8 @@ class BarkCues:
     def get(self, clip_id: str, category: str, playing: bool, bpm: float | None = None) -> list[tuple[str, float, int]]:
         """[(gesture, at_s, priority)]. Moves scale with tempo, the clip doesn't: the move
         starts so its key frame lands on the word it emphasises (file at_s is for 120 bpm)."""
+        if category in CATEGORY_MOVES:
+            return _spaced(list(CATEGORY_MOVES[category]), bpm)
         raw = (self.table.get(clip_id) or {}).get("cues") or []
         cues = [(str(c["gesture"]), _at_s(c, bpm), int(c.get("priority", 1)))
                 for c in raw if isinstance(c, dict) and c.get("gesture")]
