@@ -9,6 +9,7 @@ import soundfile as sf
 from common import ROOT, read_notes, write_notes, read_labels, FAMILIES
 from normalize_reference import normalize
 from prepare_recording import prepare
+from import_quest_take import import_take
 from evaluate import evaluate, match
 from train_model import train, dataset
 
@@ -51,6 +52,38 @@ def test_preparation_and_label_validation(tmp_path):
     labels.write_text("time_s,piece_id\n1.5,bd\n")
     with pytest.raises(ValueError):
         read_labels(labels, kit, 1)
+
+
+def test_quest_take_import_checks_capture_and_preserves_source(tmp_path):
+    wav = tmp_path / "take_01.wav"
+    metadata = tmp_path / "take_01.capture.json"
+    x = np.zeros((48000, 2), dtype=np.float32)
+    x[12000:12100] = 0.3
+    sf.write(wav, x, 48000, subtype="FLOAT")
+    info = {
+        "valid_for_training": True,
+        "discarded_frames": 0,
+        "write_failed": False,
+        "mic_only": True,
+        "frames": len(x),
+        "sample_rate": 48000,
+        "channels": 2,
+        "peak": 0.3,
+    }
+    metadata.write_text(json.dumps(info))
+    info["discarded_frames"] = 1
+    metadata.write_text(json.dumps(info))
+    with pytest.raises(ValueError, match="Dropped frames"):
+        import_take(wav, metadata, "session", tmp_path / "recordings")
+    assert not (tmp_path / "recordings" / "session").exists()
+    info["discarded_frames"] = 0
+    metadata.write_text(json.dumps(info))
+    target, report, count = import_take(wav, metadata, "session", tmp_path / "recordings")
+    assert (target / "source.wav").read_bytes() == wav.read_bytes()
+    assert sf.info(target / "audio.wav").channels == 1
+    assert report["source_channels"] == 2
+    assert count >= 1
+    assert "REVIEW_REQUIRED" in (target / "suggestions.csv").read_text()
 
 
 def test_evaluation_missing_extra_and_cymbal_merge():

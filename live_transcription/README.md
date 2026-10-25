@@ -104,25 +104,14 @@ articulations requires new data, mappings, training, and evaluation.
 
 ## Collecting training data on Quest 2
 
-### Quest app prerequisite
+### Quest recorder
 
-The recording and export feature is **not implemented in this repository yet**. The C++ detector
-and desktop data tools exist, but there is no Godot Quest app here to capture microphone audio.
-Before collecting the training set, the game needs a small recording mode that:
-
-1. Requests and checks Android microphone permission (`RECORD_AUDIO`) and shows whether recording
-   is active. Godot audio input must be enabled.
-2. Captures the **Quest microphone only**, through the same Godot microphone path intended for
-   gameplay. Route it to a dedicated capture bus so the backing track is not written into the
-   training recording. Do not monitor the mic through the headset speakers.
-3. Saves the complete take as a WAV file, retaining the original sample rate and channel count,
-   without trimming, denoising, normalization or other audio effects. Also save a small metadata
-   file with session name, date, app/build version, sample rate, channels, kit/player ID, room,
-   and microphone settings. Use an anonymous player ID if multiple people participate.
-4. Provides a visible **Export recordings** action. Godot's `user://` directory is app-private on
-   Android; do not assume the file will appear in the Quest's ordinary shared folders. Export with
-   Android's file picker/share flow, or use an agreed developer transfer workflow. Confirm that
-   both the WAV and metadata reach the computer and open correctly before recording a full dataset.
+The standalone Godot recorder is in [quest_recorder/](quest_recorder/README.md). It requests
+`RECORD_AUDIO`, captures the **Quest microphone only** on a muted bus, writes an unprocessed WAV
+and capture JSON, and offers export through Android's native file picker. Its Android build and
+microphone path still need a **Quest 2 hardware smoke test**. Follow the recorder's README for
+installation, the first 30–60 second take, and transfer to the computer. The eventual game must
+integrate and verify the same capture path before using this data for its live detector.
 
 The Quest's system screen recorder is designed to save video, and may combine microphone and app
 sound into its video. That is not the recommended training source: we need the isolated mic input,
@@ -140,7 +129,7 @@ WAV as the untouched original.
 
 Before the full collection:
 
-1. Install the development build with its recording mode and connect the headset to the computer
+1. Install the [Quest recorder](quest_recorder/README.md) and connect the headset to the computer
    using a data-capable USB cable. Put the headset on and accept the microphone permission prompt.
 2. Start a new session, record 30–60 seconds: room silence, a few soft/normal/loud hits on kick,
    snare, hi-hat, a tom, crash and ride, then a few seconds of speech. Stop and export the take.
@@ -207,20 +196,18 @@ data/recordings/
     ...
 ```
 
-Copy `source.wav` and its metadata into a new session folder. From this module's directory, prepare
-the working WAV and produce onset suggestions (use a new suggestions filename for each take):
+From this module's directory, import the exported take. The importer checks the WAV against its
+metadata, copies both originals into a new session folder, prepares the working WAV and writes
+onset suggestions:
 
 ```sh
-uv run python tools/prepare_recording.py data/recordings/quest_train_01/source.wav \
-  data/recordings/quest_train_01/audio.wav \
-  --capture-notes 'Quest 2; app build; mic settings; kit; room; headset position'
-uv run python tools/propose_onsets.py data/recordings/quest_train_01/audio.wav \
-  data/recordings/quest_train_01/suggestions.csv
+uv run python tools/import_quest_take.py /path/to/<take-id>.wav \
+  /path/to/<take-id>.capture.json --session quest_train_01
 ```
 
 Preparation averages channels and resamples a copy; it does not trim or denoise. Keep `source.wav`
 unchanged. `audio.capture.json` records the source hash and preparation measurements. Repeat for
-every session. The eventual Quest app's `source.capture.json` is session/device provenance; these
+every session. The Quest recorder's `source.capture.json` is session/device provenance; these
 two metadata files serve different purposes.
 
 ### Review and write `labels.csv`
@@ -289,12 +276,13 @@ onset candidates. It stops with an error if a required family is missing.
 
 ## Assumptions recorded for this workflow
 
-- The intended training signal is the Quest 2 mic captured by the Godot game, isolated from the
-  backing-track bus. Capturing and exporting audio from the Quest app is a prerequisite still to be
-  implemented; these instructions do not mean that feature is already in the repo.
-- The Quest app saves an untrimmed WAV and capture metadata, requests microphone permission, and
-  provides an export route from its app-private storage. The exact Godot UI and export code depend
-  on the game project, which is not present in this repository.
+- The intended training signal is the Quest 2 mic captured through Godot, isolated from the
+  backing-track bus. The standalone recorder implements this path, but the headset capture and
+  export must pass the smoke check before full collection.
+- The recorder saves an untrimmed WAV and capture metadata, requests microphone permission, and
+  exports from app-private storage. The game project is not present in this repository; its live
+  capture integration remains a separate task. Check that game's mic processing against the
+  recorder before treating the collected data as representative.
 - Original Quest files are preserved. Desktop preparation creates a 48 kHz mono float WAV for
   training, with no trimming or denoising. Timestamps in labels are relative to that prepared WAV;
   resampling preserves its start time.
