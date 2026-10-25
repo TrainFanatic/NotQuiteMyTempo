@@ -6,10 +6,17 @@ onto the contract shapes here. To update it: open the newest
 recordings/*.jsonl, look at what Chris really sends, and edit the tables.
 
 normalize() returns a contract-shaped message, or None to drop it.
+
+What Chris's referee really does (rushingOrDragging/live_compare.py, 2026-10-24):
+it publishes nothing to a hub. It reads `time_s midi name` lines and prints one
+line per verdict change (--plain). Everything in it is SECONDS, positive = late
+(same sign as the contract), song time from the start of the sheet, no bars.
+parse_live_compare_line() turns that printed line into a judgment.note.
 """
 
 from __future__ import annotations
 
+import re
 from typing import Any
 
 # Other names a teammate might use for a type -> contract type.
@@ -56,9 +63,29 @@ FIELD_ALIASES: dict[str, dict[str, str]] = {
     },
 }
 
+# Chris's own names for a hit's error; his code measures in seconds.
+SECONDS_FIELDS = ("err", "error_s", "median")
+
 # Some referees send early/late as a label instead of a signed number.
 EARLY_WORDS = {"early", "rushing", "rushed", "ahead"}
 LATE_WORDS = {"late", "dragging", "dragged", "behind"}
+ON_TIME_WORDS = {"perfect", "on time", "on_time"}
+
+# live_compare.py PlainDisplay: "     0.673s  DRAGGING!  (median +35.1 ms over 1 hit(s))"
+LIVE_COMPARE_LINE = re.compile(
+    r"^\s*(?P<t>[\d.]+)s\s+(?P<word>PERFECT|RUSHING|DRAGGING)!\s+"
+    r"\(median (?P<ms>[+-][\d.]+) ms over (?P<n>\d+) hit")
+
+
+def parse_live_compare_line(text: str) -> dict[str, Any] | None:
+    """One line of `live_compare.py --plain` output -> a judgment.note envelope
+    (not yet normalized). Returns None for anything else (headers, summary)."""
+    m = LIVE_COMPARE_LINE.match(text)
+    if m is None:
+        return None
+    return {"type": "judgment.note", "src": "chris",
+            "data": {"error_ms": float(m["ms"]), "song_time": float(m["t"]),
+                     "verdict": m["word"].lower(), "n_recent": int(m["n"])}}
 
 
 class Adapter:
@@ -74,6 +101,11 @@ class Adapter:
     def normalize(self, msg: dict[str, Any]) -> dict[str, Any] | None:
         typ = TYPE_ALIASES.get(msg.get("type", ""), msg.get("type", ""))
         data = dict(msg.get("data") or {})
+        if typ == "judgment.note" and "error_ms" not in data:
+            for k in SECONDS_FIELDS:
+                if isinstance(data.get(k), (int, float)):
+                    data["error_ms"] = data.pop(k) * 1000.0
+                    break
         for alt, canon in FIELD_ALIASES.get(typ, {}).items():
             if alt in data and canon not in data:
                 data[canon] = data.pop(alt)
@@ -92,12 +124,14 @@ class Adapter:
                     data["error_ms"] = -25.0
                 elif word in LATE_WORDS:
                     data["error_ms"] = 25.0
+                elif word in ON_TIME_WORDS:
+                    data["error_ms"] = 0.0
                 else:
                     data["error_ms"] = _num(err)
             elif err is not None:
                 data["error_ms"] = _num(err) * self.error_sign
             if data.get("bar") is None:
-                data["bar"] = self._bar_at(msg.get("t"))
+                data["bar"] = self._bar_at(msg.get("t"), data.get("song_time"))
             data.setdefault("grade", _grade(data.get("error_ms")))
 
         elif typ == "judgment.alert":
@@ -115,11 +149,19 @@ class Adapter:
         out["data"] = data
         return out
 
-    def _bar_at(self, t: Any) -> int | None:
-        if self.t0 is None or not self.bpm or t is None:
+    def _bar_at(self, t: Any, song_time: Any = None) -> int | None:
+        """From song time (Chris: seconds since the sheet's first note) if
+        given, else from the hub clock t and session.state's t0."""
+        if not self.bpm:
+            return None
+        if song_time is not None:
+            elapsed = _num(song_time)
+        elif self.t0 is not None and t is not None:
+            elapsed = _num(t) - self.t0
+        else:
             return None
         bar_len = self.beats_per_bar * 60.0 / self.bpm
-        return max(1, int((_num(t) - self.t0) // bar_len) + 1)
+        return max(1, int(elapsed // bar_len) + 1)
 
 
 def _num(x: Any) -> float:

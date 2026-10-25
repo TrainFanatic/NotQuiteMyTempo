@@ -14,6 +14,10 @@ goes in `inputs`, flush after every sentence or the server waits for ~40
 characters, replies are snake_case with is_final_audio_for_turn after each
 flush; there is no stop message, close the socket to interrupt; the server
 drops a socket after 20 s of silence, so send keep_alive every ~15 s.
+Re-checked 2026-10-24 (docs.elevenlabs.io .../text-to-dialogue/ttd-websocket.md): inputs
+with empty text close the socket (1008); a flushed sentence normally gets its own
+is_final_audio_for_turn, but rarely the server drops the last finals, so a line
+that ends short of them reconnects instead of reusing the socket.
 """
 
 from __future__ import annotations
@@ -40,9 +44,15 @@ class TTSError(Exception):
     pass
 
 
+# Yielded (instead of PCM) by engines with marks_turns after each flushed
+# sentence's audio is complete, so the caller can time gestures per sentence.
+TURN = object()
+
+
 class DialogueVoice:
     URL = "wss://api.elevenlabs.io/v1/text-to-dialogue/stream-input"
     name = "v4"
+    marks_turns = True
 
     def __init__(self, cfg: Config, model: str | None = None):
         self.cfg = cfg
@@ -147,13 +157,19 @@ class DialogueVoice:
                             yield base64.b64decode(msg["audio"])
                         if msg.get("is_final_audio_for_turn"):
                             finals += 1
+                            yield TURN
                     elif not done:
                         idle = loop.time() - last_rx
                         if sender_task.done() and got_audio and idle > 1.5:
-                            log.debug("no final marker, assuming the line is finished")
+                            # Late audio would leak into the next line on this socket,
+                            # so start the next line on a fresh one.
+                            log.warning("voice: %d/%d final markers; reconnecting for the next line",
+                                        finals, state["sent"])
+                            await self._drop()
                             break
-                        if loop.time() - begin > 12 or (not got_audio and idle > 6):
-                            raise TTSError("timed out waiting for audio")
+                        # a stall, not a long line: long tirades stream for 20+ s
+                        if idle > 6 and (got_audio or loop.time() - begin > 6):
+                            raise TTSError(f"no audio for {idle:.0f} s (stalled)")
             except (ConnectionClosed, OSError) as e:
                 self.ws = None
                 raise TTSError(f"socket closed: {e!r}") from e

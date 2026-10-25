@@ -26,7 +26,9 @@ class Watcher:
         self.events: list[tuple[float, str, dict]] = []
         self.audio_bytes: dict[str, int] = defaultdict(int)
         self.last_stop: float | None = None
-        self.latencies_ms: list[float] = []
+        self.latencies_ms: list[float] = []  # stop -> first sound (bark clip or streamed line)
+        self.line_latencies_ms: list[float] = []  # stop -> first audio of the generated line
+        self.heard_since_stop = True
         self.player = None
         self.barks = BarkPicker()
         if play:
@@ -48,11 +50,14 @@ class Watcher:
                     log.info("COMMAND %s from bar %s", d.get("action"), d.get("from_bar"))
                     if d.get("action") == "stop":
                         self.last_stop = now()
+                        self.heard_since_stop = False
                 elif typ == "fletcher.state":
                     log.info("state  %-9s anger %.2f  %s", d.get("mood"), d.get("anger", 0), d.get("action"))
                 elif typ == "fletcher.speech":
                     kind = f"clip {d['clip_id']}" if d.get("clip_id") else "stream"
                     log.info("SPEECH %s %s: %s", d.get("utterance_id"), kind, d.get("text"))
+                    if d.get("clip_id"):
+                        self._first_sound("bark")
                     if self.player and d.get("clip_id"):
                         self.player.play_wav(self.barks.path(d["clip_id"]))
                 elif typ == "fletcher.audio":
@@ -60,13 +65,22 @@ class Watcher:
                     pcm = base64.b64decode(d.get("pcm_b64") or "")
                     if self.audio_bytes[uid] == 0 and pcm and self.last_stop is not None:
                         ms = (now() - self.last_stop) * 1000
-                        self.latencies_ms.append(ms)
-                        log.info("first audio %.0f ms after the stop command", ms)
+                        self.line_latencies_ms.append(ms)
+                        log.info("line audio %.0f ms after the stop command", ms)
+                        self._first_sound("line")
                     self.audio_bytes[uid] += len(pcm)
                     if self.player:
                         self.player.play_pcm(pcm)
                     if d.get("final"):
                         log.info("audio %s done: %.1f s", uid, self.audio_bytes[uid] / 2 / 24000)
+
+    def _first_sound(self, what: str) -> None:
+        if self.heard_since_stop or self.last_stop is None:
+            return
+        self.heard_since_stop = True
+        ms = (now() - self.last_stop) * 1000
+        self.latencies_ms.append(ms)
+        log.info("first audio (%s) %.0f ms after the stop command", what, ms)
 
 
 def main() -> None:

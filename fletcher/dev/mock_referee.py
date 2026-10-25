@@ -141,9 +141,9 @@ class MockReferee:
                     break
                 self.got_restart.clear()
                 try:
-                    await asyncio.wait_for(self.got_restart.wait(), timeout=20)
+                    await asyncio.wait_for(self.got_restart.wait(), timeout=60)  # tirades run 20+ s
                 except asyncio.TimeoutError:
-                    log.warning("no restart command within 20 s")
+                    log.warning("no restart command within 60 s")
                     break
                 self.restart_count += 1
                 run, start = run + 1, self.restart_from or 1

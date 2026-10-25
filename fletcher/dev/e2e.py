@@ -59,6 +59,8 @@ async def e2e(notes_only: bool, speed: float, live: bool, port: int) -> int:
     lat = watcher.latencies_ms
     if lat:
         print(f"stop -> first audio: {', '.join(f'{x:.0f} ms' for x in lat)}")
+    if watcher.line_latencies_ms:
+        print(f"stop -> generated line: {', '.join(f'{x:.0f} ms' for x in watcher.line_latencies_ms)}")
     print(f"speculative draft used: {fletcher.stats['speculative_hits']}")
 
     problems = []

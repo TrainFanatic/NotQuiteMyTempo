@@ -4,9 +4,9 @@ import asyncio
 import random
 
 from fletcher import brain as B
-from fletcher.adapt import Adapter
+from fletcher.adapt import Adapter, parse_live_compare_line
 from fletcher.config import Config
-from fletcher.contract import parse
+from fletcher.contract import now, parse
 from fletcher.text import SentenceSplitter, mentions_bar, num_words, strip_tags
 from fletcher.tirade import Draft, TiradeWriter, canned_line
 
@@ -50,6 +50,100 @@ def test_adapter_fills_bar_from_t0():
     a.normalize({"type": "session.state", "data": {"state": "playing", "bpm": 100, "t0": 10.0}})
     m = a.normalize({"type": "judgment.note", "t": 10.0 + 2.4 * 4 + 0.1, "data": {"drum": "kick", "error_ms": 5}})
     assert m["data"]["bar"] == 5
+
+
+# Real output of Chris's referee: `python live_compare.py bib.drums.txt --input
+# bib.drift.drums.txt --plain`, sheet = rushingOrDragging/tests/fixtures/
+# back_in_black_drums_4bars.json (94 bpm), performance = tests/test_drift.py clone
+# (seed 3, drift sd 0.04 s). Header/summary lines are not judgments.
+LIVE_COMPARE_OUTPUT = """\
+     0.673s  DRAGGING!  (median +35.1 ms over 1 hit(s))
+     2.542s  RUSHING!   (median -11.0 ms over 1 hit(s))
+     6.381s  PERFECT!   (median -1.6 ms over 2 hit(s))
+     8.605s  RUSHING!   (median -12.2 ms over 3 hit(s))
+
+Live verdicts per hit: perfect 2  rushing 0  dragging 0
+  mean error:       +0.4 ms  (+ = late)"""
+
+
+def test_adapter_reads_live_compare_output():
+    a = Adapter()
+    a.normalize({"type": "session.state", "data": {"bpm": 94}})
+    msgs = [parse_live_compare_line(line) for line in LIVE_COMPARE_OUTPUT.splitlines()]
+    notes = [a.normalize(m)["data"] for m in msgs if m]
+    assert len(notes) == 4
+    assert [n["error_ms"] for n in notes] == [35.1, -11.0, -1.6, -12.2]  # + = late, as in the contract
+    assert [n["bar"] for n in notes] == [1, 1, 3, 4]                     # 4 * 60 / 94 = 2.55 s per bar
+    assert [n["grade"] for n in notes] == ["off", "perfect", "perfect", "perfect"]
+    # his LiveMatcher.feed() errors are seconds; his verdict words are labels
+    assert a.normalize({"type": "judgment.note", "data": {"err": 0.0351}})["data"]["error_ms"] == 35.1
+    assert a.normalize({"type": "judgment.note", "data": {"error_ms": "perfect"}})["data"]["error_ms"] == 0.0
+
+
+def test_draft_keeps_an_order_split_across_sentences():
+    async def go():
+        class W:
+            async def sentences(self, facts, level):
+                for x in ["[shouting] You dragged!", "[furious] Bar nine.", "NOW!"]:
+                    yield x
+        f = B.Facts(kind="dragging", severity=0.8, since_bar=9, current_bar=11, from_bar=9)
+        d = Draft(W(), f, 2).start()
+        await d.done.wait()
+        assert not d.order_added and d.text.count("Bar nine") == 1
+    asyncio.run(go())
+
+
+def test_gesture_cues_are_stripped_and_timed_to_sentences():
+    from fletcher.main import Fletcher
+    from fletcher.text import split_gestures
+    from fletcher.voice import TURN
+    assert split_gestures("{slam_stand} [screaming] WHAT? {point}") == ("[screaming] WHAT?", ["slam_stand", "point"])
+    assert strip_tags("{in_face} [cold] Bar nine.") == "Bar nine."
+
+    class V4:  # yields audio, then a TURN marker, per sentence (like DialogueVoice)
+        name, marks_turns = "v4", True
+        def __init__(self): self.heard = []
+        async def speak(self, sentences):
+            async for s in sentences:
+                self.heard.append(s)
+                yield b"\x00\x00" * 10
+                yield b"\x00\x00" * 10
+                yield TURN
+
+    class W:
+        async def sentences(self, facts, level):
+            for x in ["{slam_stand} [screaming] WHAT was THAT, you absolute disaster?",
+                      "{turn_away} [cold] Forty milliseconds of pure garbage.",
+                      "{spin_back} {point} [screaming] Bar nine. NOW!"]:
+                yield x
+
+    async def go():
+        f = Fletcher(cfg(lines_dir=""))
+        f.voices = [V4()]
+        sent = []
+        async def send(type_, data, t=None):
+            sent.append((type_, data))
+            return True
+        f.hub.send = send
+        facts = B.Facts(kind="rushing", severity=0.8, since_bar=9, current_bar=11, from_bar=9)
+        d = Draft(W(), facts, 2).start()
+        assert await f.speak(d, now(), now(), facts, 2)
+        assert all("{" not in s for s in f.voices[0].heard)  # the voice never sees cues
+        cues = [(m["gesture"], m["at_index"], m["action"]) for t, m in sent if t == "fletcher.state" and "gesture" in m]
+        assert cues == [("slam_stand", 0, "lean_in"), ("turn_away", 2, "glare"),
+                        ("spin_back", 4, "point"), ("point", 4, "point")]
+        speech = [m for t, m in sent if t == "fletcher.speech"][0]
+        assert "{" not in speech["text"] and "[" not in speech["text"]
+    asyncio.run(go())
+
+
+def test_auto_gesture_follows_the_voice():
+    from fletcher.tirade import AUTO_GESTURES, auto_gesture
+    rng = random.Random(1)
+    assert auto_gesture("[mocking] [whiny] \"I felt it.\"", None, rng) in AUTO_GESTURES["mock"]
+    assert auto_gesture("[cold] Count it off.", None, rng) in AUTO_GESTURES["quiet"]
+    assert auto_gesture("[screaming] NINETY-FIVE?", None, rng) in AUTO_GESTURES["loud"]
+    assert all(auto_gesture("[shouting] NO!", "point", rng) != "point" for _ in range(50))
 
 
 def test_text_helpers():
@@ -164,5 +258,5 @@ def test_draft_appends_order_when_missing():
         assert await d.wait_first(1.0)
         await d.done.wait()
         got = [s async for s in d.iter_sentences()]
-        assert got[-1] == "[sharp] From bar nine. Now." and d.order_added
+        assert got[-1] == "[shouting] Bar nine. NOW!" and d.order_added
     asyncio.run(go())

@@ -1,0 +1,352 @@
+{
+  "rushing_1": {
+    "text": "Rushing.",
+    "tagged_text": "[sharp] Rushing.",
+    "category": "rushing",
+    "duration_s": 1.04,
+    "placeholder": false
+  },
+  "rushing_2": {
+    "text": "You're rushing.",
+    "tagged_text": "[cold] You're rushing.",
+    "category": "rushing",
+    "duration_s": 1.28,
+    "placeholder": false
+  },
+  "rushing_3": {
+    "text": "Ahead of me. Sit back.",
+    "tagged_text": "[sharp] Ahead of me. Sit back.",
+    "category": "rushing",
+    "duration_s": 1.84,
+    "placeholder": false
+  },
+  "dragging_1": {
+    "text": "Dragging.",
+    "tagged_text": "[sharp] Dragging.",
+    "category": "dragging",
+    "duration_s": 0.96,
+    "placeholder": false
+  },
+  "dragging_2": {
+    "text": "You're dragging.",
+    "tagged_text": "[cold] You're dragging.",
+    "category": "dragging",
+    "duration_s": 1.44,
+    "placeholder": false
+  },
+  "dragging_3": {
+    "text": "Behind. Push it.",
+    "tagged_text": "[sharp] Behind. Push it.",
+    "category": "dragging",
+    "duration_s": 1.68,
+    "placeholder": false
+  },
+  "no_1": {
+    "text": "No.",
+    "tagged_text": "[sharp] No.",
+    "category": "no",
+    "duration_s": 0.88,
+    "placeholder": false
+  },
+  "no_2": {
+    "text": "No, no, no.",
+    "tagged_text": "[cold] No, no, no.",
+    "category": "no",
+    "duration_s": 2.08,
+    "placeholder": false
+  },
+  "watch_1": {
+    "text": "Watch my hand.",
+    "tagged_text": "[sharp] Watch my hand.",
+    "category": "watch",
+    "duration_s": 1.12,
+    "placeholder": false
+  },
+  "watch_2": {
+    "text": "Eyes on me.",
+    "tagged_text": "[cold] Eyes on me.",
+    "category": "watch",
+    "duration_s": 1.2,
+    "placeholder": false
+  },
+  "stop_1": {
+    "text": "Stop!",
+    "tagged_text": "[shouting] Stop!",
+    "category": "stop",
+    "duration_s": 1.04,
+    "placeholder": false
+  },
+  "stop_2": {
+    "text": "Stop.",
+    "tagged_text": "[sharp] Stop.",
+    "category": "stop",
+    "duration_s": 0.88,
+    "placeholder": false
+  },
+  "again_1": {
+    "text": "Again.",
+    "tagged_text": "[cold] Again.",
+    "category": "again",
+    "duration_s": 1.04,
+    "placeholder": false
+  },
+  "again_2": {
+    "text": "Again.",
+    "tagged_text": "[quietly] Again.",
+    "category": "again",
+    "duration_s": 1.12,
+    "placeholder": false
+  },
+  "top_1": {
+    "text": "From the top.",
+    "tagged_text": "[sharp] From the top.",
+    "category": "top",
+    "duration_s": 1.04,
+    "placeholder": false
+  },
+  "praise_1": {
+    "text": "Good.",
+    "tagged_text": "[quietly] Good.",
+    "category": "praise",
+    "duration_s": 1.04,
+    "placeholder": false
+  },
+  "praise_2": {
+    "text": "...Better.",
+    "tagged_text": "[cold] ...Better.",
+    "category": "praise",
+    "duration_s": 0.96,
+    "placeholder": false
+  },
+  "count_1": {
+    "text": "Five, six, seven, eight.",
+    "tagged_text": "[sharp] Five, six, seven, eight.",
+    "category": "count",
+    "duration_s": 2.48,
+    "placeholder": false
+  },
+  "bar_01": {
+    "text": "From bar one.",
+    "tagged_text": "[sharp] From bar one.",
+    "category": "bar",
+    "duration_s": 1.36,
+    "placeholder": false
+  },
+  "bar_02": {
+    "text": "From bar two.",
+    "tagged_text": "[sharp] From bar two.",
+    "category": "bar",
+    "duration_s": 1.36,
+    "placeholder": false
+  },
+  "bar_03": {
+    "text": "From bar three.",
+    "tagged_text": "[sharp] From bar three.",
+    "category": "bar",
+    "duration_s": 1.44,
+    "placeholder": false
+  },
+  "bar_04": {
+    "text": "From bar four.",
+    "tagged_text": "[sharp] From bar four.",
+    "category": "bar",
+    "duration_s": 1.28,
+    "placeholder": false
+  },
+  "bar_05": {
+    "text": "From bar five.",
+    "tagged_text": "[sharp] From bar five.",
+    "category": "bar",
+    "duration_s": 1.44,
+    "placeholder": false
+  },
+  "bar_06": {
+    "text": "From bar six.",
+    "tagged_text": "[sharp] From bar six.",
+    "category": "bar",
+    "duration_s": 1.28,
+    "placeholder": false
+  },
+  "bar_07": {
+    "text": "From bar seven.",
+    "tagged_text": "[sharp] From bar seven.",
+    "category": "bar",
+    "duration_s": 1.36,
+    "placeholder": false
+  },
+  "bar_08": {
+    "text": "From bar eight.",
+    "tagged_text": "[sharp] From bar eight.",
+    "category": "bar",
+    "duration_s": 1.28,
+    "placeholder": false
+  },
+  "bar_09": {
+    "text": "From bar nine.",
+    "tagged_text": "[sharp] From bar nine.",
+    "category": "bar",
+    "duration_s": 1.44,
+    "placeholder": false
+  },
+  "bar_10": {
+    "text": "From bar ten.",
+    "tagged_text": "[sharp] From bar ten.",
+    "category": "bar",
+    "duration_s": 1.28,
+    "placeholder": false
+  },
+  "bar_11": {
+    "text": "From bar eleven.",
+    "tagged_text": "[sharp] From bar eleven.",
+    "category": "bar",
+    "duration_s": 1.36,
+    "placeholder": false
+  },
+  "bar_12": {
+    "text": "From bar twelve.",
+    "tagged_text": "[sharp] From bar twelve.",
+    "category": "bar",
+    "duration_s": 1.44,
+    "placeholder": false
+  },
+  "bar_13": {
+    "text": "From bar thirteen.",
+    "tagged_text": "[sharp] From bar thirteen.",
+    "category": "bar",
+    "duration_s": 1.52,
+    "placeholder": false
+  },
+  "bar_14": {
+    "text": "From bar fourteen.",
+    "tagged_text": "[sharp] From bar fourteen.",
+    "category": "bar",
+    "duration_s": 1.52,
+    "placeholder": false
+  },
+  "bar_15": {
+    "text": "From bar fifteen.",
+    "tagged_text": "[sharp] From bar fifteen.",
+    "category": "bar",
+    "duration_s": 1.52,
+    "placeholder": false
+  },
+  "bar_16": {
+    "text": "From bar sixteen.",
+    "tagged_text": "[sharp] From bar sixteen.",
+    "category": "bar",
+    "duration_s": 1.6,
+    "placeholder": false
+  },
+  "bar_17": {
+    "text": "From bar seventeen.",
+    "tagged_text": "[sharp] From bar seventeen.",
+    "category": "bar",
+    "duration_s": 1.6,
+    "placeholder": false
+  },
+  "bar_18": {
+    "text": "From bar eighteen.",
+    "tagged_text": "[sharp] From bar eighteen.",
+    "category": "bar",
+    "duration_s": 1.44,
+    "placeholder": false
+  },
+  "bar_19": {
+    "text": "From bar nineteen.",
+    "tagged_text": "[sharp] From bar nineteen.",
+    "category": "bar",
+    "duration_s": 1.44,
+    "placeholder": false
+  },
+  "bar_20": {
+    "text": "From bar twenty.",
+    "tagged_text": "[sharp] From bar twenty.",
+    "category": "bar",
+    "duration_s": 1.2,
+    "placeholder": false
+  },
+  "bar_21": {
+    "text": "From bar twenty-one.",
+    "tagged_text": "[sharp] From bar twenty-one.",
+    "category": "bar",
+    "duration_s": 1.6,
+    "placeholder": false
+  },
+  "bar_22": {
+    "text": "From bar twenty-two.",
+    "tagged_text": "[sharp] From bar twenty-two.",
+    "category": "bar",
+    "duration_s": 1.52,
+    "placeholder": false
+  },
+  "bar_23": {
+    "text": "From bar twenty-three.",
+    "tagged_text": "[sharp] From bar twenty-three.",
+    "category": "bar",
+    "duration_s": 1.52,
+    "placeholder": false
+  },
+  "bar_24": {
+    "text": "From bar twenty-four.",
+    "tagged_text": "[sharp] From bar twenty-four.",
+    "category": "bar",
+    "duration_s": 1.52,
+    "placeholder": false
+  },
+  "bar_25": {
+    "text": "From bar twenty-five.",
+    "tagged_text": "[sharp] From bar twenty-five.",
+    "category": "bar",
+    "duration_s": 1.6,
+    "placeholder": false
+  },
+  "bar_26": {
+    "text": "From bar twenty-six.",
+    "tagged_text": "[sharp] From bar twenty-six.",
+    "category": "bar",
+    "duration_s": 1.6,
+    "placeholder": false
+  },
+  "bar_27": {
+    "text": "From bar twenty-seven.",
+    "tagged_text": "[sharp] From bar twenty-seven.",
+    "category": "bar",
+    "duration_s": 1.6,
+    "placeholder": false
+  },
+  "bar_28": {
+    "text": "From bar twenty-eight.",
+    "tagged_text": "[sharp] From bar twenty-eight.",
+    "category": "bar",
+    "duration_s": 1.52,
+    "placeholder": false
+  },
+  "bar_29": {
+    "text": "From bar twenty-nine.",
+    "tagged_text": "[sharp] From bar twenty-nine.",
+    "category": "bar",
+    "duration_s": 1.68,
+    "placeholder": false
+  },
+  "bar_30": {
+    "text": "From bar thirty.",
+    "tagged_text": "[sharp] From bar thirty.",
+    "category": "bar",
+    "duration_s": 1.44,
+    "placeholder": false
+  },
+  "bar_31": {
+    "text": "From bar thirty-one.",
+    "tagged_text": "[sharp] From bar thirty-one.",
+    "category": "bar",
+    "duration_s": 1.6,
+    "placeholder": false
+  },
+  "bar_32": {
+    "text": "From bar thirty-two.",
+    "tagged_text": "[sharp] From bar thirty-two.",
+    "category": "bar",
+    "duration_s": 1.6,
+    "placeholder": false
+  }
+}

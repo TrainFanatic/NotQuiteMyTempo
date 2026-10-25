@@ -29,8 +29,8 @@ class Config:
     anthropic_api_key: str = ""
     llm_model: str = "claude-haiku-5-5"
     llm_effort: str = "low"  # low = fastest; thinking is disabled too
-    llm_max_tokens: int = 160
-    llm_first_sentence_timeout_s: float = 2.0  # then fall back to a canned line
+    llm_max_tokens: int = 240  # level 3 is ~55 words plus tags
+    llm_first_sentence_timeout_s: float = 3.0  # then a canned line; the cutoff bark covers the first ~1 s
 
     # --- ElevenLabs (voice) -----------------------------------------------
     elevenlabs_api_key: str = ""
@@ -43,7 +43,7 @@ class Config:
     sample_rate: int = 24000  # pcm_24000 = 16-bit mono little-endian
 
     # --- content ----------------------------------------------------------
-    profanity: bool = False  # off by default for judging
+    profanity: bool = True  # PROFANITY=0 for a clean version
 
     # --- mood machine -----------------------------------------------------
     cutoff_anger: float = 0.8  # first cutoff threshold
@@ -70,6 +70,7 @@ class Config:
 
     # --- timing of the cutoff sequence ---------------------------------------
     stare_s: float = 0.5  # silent glare after the fist, before he speaks
+    cutoff_bark: bool = True  # "Stop!" clip on the fist; the tirade starts once it ends
     restart_gap_s: float = 0.8  # pause after his last word before the restart
     quest_latency_s: float = 0.15  # headset audio buffering we wait out
 
@@ -77,6 +78,7 @@ class Config:
     dry_run: bool = False  # no API calls: canned lines + tone audio
     play_local: bool = False  # also play his voice on the laptop speakers
     log_level: str = "INFO"
+    lines_dir: str = "fletcher/lines"  # every voiced tirade saved as wav + index.jsonl; "" = off
 
     @classmethod
     def from_env(cls, **overrides) -> "Config":

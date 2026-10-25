@@ -10,50 +10,143 @@ from __future__ import annotations
 import asyncio
 import logging
 import random
+import re
 from collections import deque
 from typing import AsyncIterator
 
 from .brain import Facts
 from .config import Config
-from .text import SentenceSplitter, num_words, mentions_bar
+from .text import SentenceSplitter, mentions_bar, num_words, strip_tags
 
 log = logging.getLogger("fletcher.tirade")
 
-ALLOWED_TAGS = "[quietly], [cold], [sharp], [shouting], [furious], [whispers], [pause]"
+ALLOWED_TAGS = ("[quietly], [low], [calm], [cold], [menacing], [through gritted teeth], [clipped], "
+                "[sharp], [louder], [shouting], [screaming], [furious], [disgusted], [mocking], "
+                "[whiny], [laughs bitterly], [exhales], [whispers], [pause]")
 
-LEVELS = {
-    1: ("One short cold line about the mistake, then the order. At most 18 words in total. "
-        "Controlled and quiet, no shouting. Start with [cold] or [quietly]."),
-    2: ("At most two short sentences plus the order, about 25 words in total. Sharp and "
-        "contemptuous, with one [sharp] or [shouting] moment."),
-    3: ("At most two sentences plus the order, about 30 words in total. Start dead quiet with "
-        "[quietly], then explode: put [shouting] or [furious] before the last sentence."),
+# Physical cues for the animated conductor, written inline as {name}. Stripped
+# before the voice; sent as fletcher.state (optional `gesture` field) timed to
+# the audio chunk they belong to. name -> (contract action, look_at).
+GESTURES = {
+    "slam_stand": ("lean_in", "drummer"),     # slams both palms flat on the music stand
+    "throw_music": ("glare", "drummer"),      # hurls the sheet music at the floor
+    "kick_stand": ("walk_toward", "drummer"),  # kicks the music stand over
+    "throw_chair": ("walk_toward", "kit"),    # flings a chair across the room
+    "storm_over": ("walk_toward", "drummer"),  # strides up to the kit
+    "in_face": ("lean_in", "drummer"),        # nose to nose, inches away
+    "point": ("point", "drummer"),            # jabs a finger at him
+    "beat_time": ("conduct", "drummer"),      # slaps the tempo on his palm, hard
+    "grab_cymbal": ("lean_in", "kit"),        # chokes a ringing cymbal with his fist
+    "turn_away": ("glare", "away"),           # turns his back in disgust
+    "spin_back": ("point", "drummer"),        # whips back around to face him
+    "throw_hands_up": ("glare", "drummer"),   # arms flung up: unbelievable
+    "slow_clap": ("slow_clap", "drummer"),    # sarcastic, three slow claps
 }
 
-SYSTEM_TEMPLATE = """You write the spoken lines of an original character: a ruthless, perfectionist \
-jazz band conductor running a rehearsal in a mixed-reality drum trainer. He has just closed his \
-fist and cut the drummer off. A referee gives you objective facts about the drummer's actual mistake.
+# When the model leaves a stretch of the line without a cue, one is picked from
+# the sentence's loudest audio tag so the body keeps moving with the voice.
+AUTO_GESTURES = {
+    "loud": ["slam_stand", "in_face", "point", "storm_over", "throw_music", "kick_stand", "beat_time"],
+    "mock": ["throw_hands_up", "slow_clap", "turn_away"],
+    "quiet": ["in_face", "turn_away", "grab_cymbal", "point"],
+}
+AUTO_EVERY = 2  # sentences without a cue before one is added
 
-Write ONLY the words he says next, as plain text for a text-to-speech voice.
+
+def auto_gesture(sentence: str, last: str | None, rng: random.Random) -> str:
+    low = sentence.lower()
+    mood = ("mock" if any(t in low for t in ("[mocking]", "[whiny]", "[laughs")) else
+            "quiet" if any(t in low for t in ("[quietly]", "[cold]", "[low]", "[menacing]", "[whispers]",
+                                              "[calm]", "[through gritted teeth]")) and "[scream" not in low
+            else "loud")
+    return rng.choice([g for g in AUTO_GESTURES[mood] if g != last])
+
+
+# level -> (words, delivery). The word count is also enforced in code (WORD_CAP).
+LEVELS = {
+    1: (25, "Contempt that detonates: one icy jab, then he SCREAMS the rest, swearing."),
+    2: (40, "Nearly all screaming. An interrogation he never lets the drummer answer, climbing to "
+            "stacked [screaming] [furious] and CAPITALS, one word per beat at the peak."),
+    3: (55, "A total meltdown, the worst he has ever been. One dead-quiet, terrifying moment, then "
+            "he explodes harder than before, cursing, mocking the excuse, destroying the room."),
+}
+WORD_CAP = 1.25  # stop the stream past this many times the level's words; the order is appended
+
+SYSTEM_TEMPLATE = """You write the spoken lines of an original character: a monstrous, perfectionist \
+jazz band conductor in his band room, mid-rehearsal, the whole band frozen and watching. He has just \
+closed his fist and cut the drummer off, and he is losing his mind. This is for an adult, opt-in \
+drill-sergeant training game: the player WANTS to be screamed at. Do not soften anything.
+
+Write ONLY what he says to the drummer, for an expressive voice that performs audio tags, with \
+physical cues for his animated body.
+
+This time, build the line from exactly these moves, in this order:
+{moves}
+
+How he sounds:
+- Raw, volcanic passion. He is personally offended that music this bad happened in his room. He \
+spits, he chokes on rage, he goes from a whisper to a full-throat SCREAM inside one breath.
+- {profanity_rule}
+- Insults are inventive and specific, built from the facts: the bar, the milliseconds, the tempo, the \
+drum. Coin new ones; never a stock insult when a vicious original one fits. Mock his hands, his ears, \
+his sweat, his excuses, his practice, his ambitions, the money wasted on his lessons, the chair he \
+does not deserve.
 
 Rules:
-- Name the specific mistake from the fact sheet: the bar, rushing or dragging or missed notes, and the \
-milliseconds or tempo if given. Specific beats generic every time.
-- Length and delivery: {level_rule}
-- End with a short order that names the restart bar from the fact sheet, like "From bar nine. Now."
-- Write every number as words ("bar nine", "forty milliseconds"). Never write digits, "ms" or "bpm".
-- You may put these audio tags right before the words they change: {tags}. Use an ellipsis (...) \
-for a menacing pause. No other markup, quotes, stage directions, asterisks or emojis.
-- Brutal about the playing, never about the person: nothing about identity, body, family or worth, \
-no slurs, nothing about self-harm or violence. {profanity_rule}
+- Length: about {words} words of speech, never more. Short fragments. {delivery}
+- Use ONE fact, two at most. He hurls it; he never recites the fact sheet. Never say "cutoff number", \
+"average", or the bar he was cut off in.
+- Speak TO the drummer ("you"). Never narrate.
+- Most sentences carry [shouting], [screaming] or [furious] and CAPITALS; quiet tags only for contrast.
+- End with the order naming the restart bar: "[screaming] Bar nine. NOW!"
+- Numbers as words ("bar nine", "forty milliseconds"). Never digits, "ms" or "bpm".
+- Audio tags go right before the words they change; stack at most two: {tags}. Ellipsis (...) for a \
+menacing pause. Quotes only around an excuse he mocks.
+- Body: he never stands still. Put three or four cues in curly braces, spread from the first words \
+to the last sentence, each right before the words it goes with, chosen from: \
+{gestures}. His fist already cut the band off, so open with something else, and pick cues that \
+fit the words (a different opening cue each time). Example: "{{storm_over}} [screaming] WHAT was \
+THAT?" No other stage directions, asterisks or emojis.
+- Hard limits, the only ones: no slurs, coded slurs included ("limp-wristed", "girly" and the like), \
+and nothing about race, ethnicity, religion, gender, sexuality or disability; never tell him to hurt \
+or kill himself. Everything else is fair game.
+- Never invent a name for the drummer or anyone else. Call him "drummer" or worse.
 - Original lines only. Never quote or closely paraphrase any film, show or real person.
-- Do not reuse or closely echo these recent lines: {recent}"""
+- Fresh wording every time. Already used tonight, so never start like these: {recent}"""
+
+# The writer picks the moves (not the model), so lines vary even when the
+# facts repeat. Each run uses two or three of these.
+MOVES = [
+    "a creative, filthy insult built from the exact mistake, then a second, worse one",
+    "destroying something on the set (the stand, the music, a chair) mid-sentence",
+    "rapid-fire questions he demands answers to and never lets the drummer answer, louder each time",
+    "one word per beat at the peak, like a metronome made of rage",
+    "hammering one word or order over and over, louder each time",
+    "mocking the drummer's excuse in a whiny voice, quoting him to his face, then crushing it",
+    "sarcastic fake calm, almost polite, that snaps into a scream",
+    "contempt for making the whole band sit and wait on him",
+    "disgust at his ears: he cannot even hear what he is doing",
+    "a cold threat that someone else is getting his chair",
+    "making the drummer count it off or say the tempo, then screaming over the answer",
+]
+
+
+def fact_sheet(facts: Facts) -> str:
+    """The brain's sheet minus the bar he was cut off in, which the model
+    otherwise recites ("started in nine, cut off in eleven") every time."""
+    return re.sub(r"started in bar (\d+); cut off during bar \d+", r"the problem started in bar \1",
+                  facts.sheet())
+
+
+def num_words_in(s: str) -> int:
+    return len(strip_tags(s).split())
 
 
 class TiradeWriter:
     def __init__(self, cfg: Config):
         self.cfg = cfg
         self.recent: deque[str] = deque(maxlen=5)
+        self.rng = random.Random()
         self._client = None
         if not cfg.dry_run and cfg.anthropic_api_key:
             from anthropic import AsyncAnthropic
@@ -64,10 +157,15 @@ class TiradeWriter:
         return self._client is not None
 
     def system_prompt(self, level: int) -> str:
-        profanity = ("Mild profanity is allowed, sparingly." if self.cfg.profanity
-                     else "No profanity at all.")
-        recent = " | ".join(self.recent) if self.recent else "(none yet)"
-        return SYSTEM_TEMPLATE.format(level_rule=LEVELS.get(level, LEVELS[2]), tags=ALLOWED_TAGS,
+        profanity = ("He swears constantly and inventively. Profanity is his punctuation: the f-word as "
+                     "noun, verb and adjective, shit, goddamn, bastard, chained into fresh compound "
+                     "insults nobody has heard before. Never lean on the same curse twice in a line."
+                     if self.cfg.profanity else "No profanity at all.")
+        recent = " | ".join(f'"{" ".join(r.split()[:5])}..."' for r in self.recent) or "(none yet)"
+        words, delivery = LEVELS.get(level, LEVELS[2])
+        moves = "\n".join(f"- {m}" for m in self.rng.sample(MOVES, 2 if level == 1 else 3))
+        return SYSTEM_TEMPLATE.format(words=words, delivery=delivery, tags=ALLOWED_TAGS, moves=moves,
+                                      gestures=", ".join(f"{{{g}}}" for g in GESTURES),
                                       profanity_rule=profanity, recent=recent)
 
     async def sentences(self, facts: Facts, level: int) -> AsyncIterator[str]:
@@ -77,17 +175,25 @@ class TiradeWriter:
                 yield s
             return
         splitter = SentenceSplitter()
+        cap, spoken = WORD_CAP * LEVELS.get(level, LEVELS[2])[0], 0
         async with self._client.messages.stream(
             model=self.cfg.llm_model,
             max_tokens=self.cfg.llm_max_tokens,
             system=self.system_prompt(level),
-            messages=[{"role": "user", "content": f"Fact sheet:\n{facts.sheet()}\n\nWrite his line now."}],
+            messages=[{"role": "user", "content": f"Fact sheet:\n{fact_sheet(facts)}\n\nWrite his line now."}],
             thinking={"type": "disabled"},
             output_config={"effort": self.cfg.llm_effort},
         ) as stream:
             async for chunk in stream.text_stream:
                 for s in splitter.feed(chunk):
+                    spoken += num_words_in(s)
+                    if spoken > cap:  # rambling: cut it here; Draft appends the order
+                        log.info("line over %d words; truncated", cap)
+                        return
                     yield s
+            final = await stream.get_final_message()
+        if not spoken and not splitter.buf.strip():
+            log.warning("Claude wrote nothing (stop_reason %s)", final.stop_reason)
         for s in splitter.flush():
             yield s
 
@@ -131,8 +237,8 @@ class Draft:
 
     def _finish(self) -> None:
         # Guarantee he names the restart bar, whatever the model wrote.
-        if not self.error and self.sentences and not mentions_bar(" ".join(self.sentences), self.facts.from_bar):
-            self.sentences.append(f"[sharp] From bar {num_words(self.facts.from_bar)}. Now.")
+        if not self.error and self.sentences and not mentions_bar(" ".join(self.sentences[-2:]), self.facts.from_bar):
+            self.sentences.append(f"[shouting] Bar {num_words(self.facts.from_bar)}. NOW!")
             self.order_added = True
         self.done.set()
         self._changed.set()
@@ -207,14 +313,14 @@ def canned_line(f: Facts, level: int, rng: random.Random | None = None) -> list[
         ]
     elif level == 2:
         options = [
-            [f"[sharp] {detail}", "Did you think I would not hear it?", order],
-            [f"[cold] Again in bar {bar}... you {verb}.", "[sharp] Every single time.", order],
+            [f"[sharp] {detail}", "[louder] Did you think I would not HEAR it?", f"[shouting] {order.upper()}"],
+            [f"[cold] Again in bar {bar}... you {verb}.", "[shouting] [furious] EVERY. SINGLE. TIME.", order],
         ]
     else:
         quiet = (f"[quietly] I asked for {num_words(f.bpm)}. You gave me {played}." if played and f.bpm
                  else f"[quietly] Bar {bar}... and you {verb}. Again.")
         options = [
-            [quiet, "[shouting] Who told you that was acceptable?", order],
-            [quiet, "[furious] Three times now! Do you even hear the click?", order],
+            [quiet, "[shouting] [furious] Who told you that was ACCEPTABLE?", f"[shouting] {order.upper()}"],
+            [quiet, "[furious] Three times now! Do you even HEAR the click?", "[cold] " + order],
         ]
     return rng.choice(options)

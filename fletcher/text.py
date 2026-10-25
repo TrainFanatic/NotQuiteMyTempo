@@ -11,6 +11,7 @@ _ONES = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight",
 _TENS = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
 
 TAG_RE = re.compile(r"\[[^\]]{1,40}\]\s*")
+GESTURE_RE = re.compile(r"\{([a-z_]{2,30})\}\s*")
 
 
 def num_words(n: int | float) -> str:
@@ -29,8 +30,13 @@ def num_words(n: int | float) -> str:
 
 
 def strip_tags(s: str) -> str:
-    """Remove [audio tags] for display or for voices that would read them aloud."""
-    return re.sub(r"\s{2,}", " ", TAG_RE.sub("", s)).strip()
+    """Remove [audio tags] and {gesture cues} for display or for voices that would read them aloud."""
+    return re.sub(r"\s{2,}", " ", TAG_RE.sub("", GESTURE_RE.sub("", s))).strip()
+
+
+def split_gestures(s: str) -> tuple[str, list[str]]:
+    """'{slam_stand} [shouting] NO!' -> ('[shouting] NO!', ['slam_stand'])."""
+    return GESTURE_RE.sub("", s).strip(), GESTURE_RE.findall(s)
 
 
 def mentions_bar(text: str, bar: int) -> bool:
