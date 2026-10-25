@@ -6,6 +6,7 @@ func _scene() -> Rehearsal:
 	var r := Rehearsal.new()
 	r.run_demo = false
 	r.sfx_enabled = false
+	r.intro_enabled = false
 	mount(r)
 	return r
 

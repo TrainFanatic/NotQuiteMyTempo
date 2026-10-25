@@ -2,6 +2,7 @@
 # Build the Quest APK and (optionally) install + launch it on a USB-connected headset.
 #   tools/build_quest.sh            build build/not_quite_my_tempo.apk
 #   tools/build_quest.sh install    build, adb install, launch
+#   tools/build_quest.sh install-debug   same, launched with -- --passthrough-debug (see-through room)
 # Needs: JDK 17, Android SDK at ~/Library/Android/sdk, Godot 4.5 export templates.
 set -euo pipefail
 cd "$(dirname "$0")/.."
@@ -10,8 +11,17 @@ export JAVA_HOME="${JAVA_HOME:-/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/
 export ANDROID_HOME="${ANDROID_HOME:-$HOME/Library/Android/sdk}"
 ADB="$ANDROID_HOME/platform-tools/adb"
 PKG="com.notquitemytempo.app"
+MODE="${1:-}"
+case "$MODE" in
+  "" | install) LAUNCH_ARGS=() ;;
+  # Godot's Android activity takes extra command-line arguments from this intent extra
+  install-debug) LAUNCH_ARGS=(--esa command_line_params "--,--passthrough-debug") ;;
+  *) echo "unknown mode '$MODE' (expected install or install-debug)" >&2; exit 1 ;;
+esac
 
 [ -x "$GODOT" ] || { echo "Godot not found at $GODOT (set GODOT=...)" >&2; exit 1; }
+# the template install runs an export too, so the output folder has to exist first
+mkdir -p build
 [ -d android/build ] || "$GODOT" --headless --path . --install-android-build-template --export-debug Quest build/not_quite_my_tempo.apk >/dev/null
 
 # The OpenXR Vendors plugin (4.3.1) adds the Quest metadata but not its uses-feature
@@ -33,13 +43,12 @@ open(p, "w").write(s)
 PY
 fi
 
-mkdir -p build
 "$GODOT" --headless --path . --export-debug Quest build/not_quite_my_tempo.apk > build/export.log 2>&1
 grep -q "com.oculus.feature.PASSTHROUGH" <("$ANDROID_HOME/build-tools/35.0.1/aapt2" dump xmltree --file AndroidManifest.xml build/not_quite_my_tempo.apk) \
   || { echo "APK lacks the passthrough feature; see build/export.log" >&2; exit 1; }
 echo "built build/not_quite_my_tempo.apk"
 
-if [ "${1:-}" = "install" ]; then
+if [ -n "$MODE" ]; then
   # the Godot export restarts adb, so give it a moment to see the headset again
   "$ADB" start-server >/dev/null 2>&1
   for _ in $(seq 1 15); do
@@ -49,6 +58,7 @@ if [ "${1:-}" = "install" ]; then
   done
   [ "$state" = "device" ] || { echo "headset not ready (adb state: ${state:-none}); put it on and accept 'Allow USB debugging'" >&2; exit 1; }
   "$ADB" install -r build/not_quite_my_tempo.apk
-  "$ADB" shell am start -n "$PKG/com.godot.game.GodotApp"
+  "$ADB" shell am force-stop "$PKG"
+  "$ADB" shell am start -n "$PKG/com.godot.game.GodotApp" ${LAUNCH_ARGS[@]+"${LAUNCH_ARGS[@]}"}
   echo "launched $PKG"
 fi

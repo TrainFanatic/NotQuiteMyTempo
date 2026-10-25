@@ -2,19 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d5fq2bilbnb5"
-path="res://.godot/imported/terence_v003_tex_terence3_shoes.png-ef3d5014434ce8e931c63c1f39e5659e.ctex"
+uid="uid://ba3b5h7cejtyk"
+path="res://.godot/imported/chair_tex_chair_vinyl_back.png-4cadb32986d8b285106faeb08f618945.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "f3d355e23f1f4a33fb0fdfba2ad7d6bf"
+"md5": "b83139b3fdb55b7c8ec0b658492d8956"
 }
 
 [deps]
 
-source_file="res://assets/terence/terence_v003_tex_terence3_shoes.png"
-dest_files=["res://.godot/imported/terence_v003_tex_terence3_shoes.png-ef3d5014434ce8e931c63c1f39e5659e.ctex"]
+source_file="res://assets/props/chair_tex_chair_vinyl_back.png"
+dest_files=["res://.godot/imported/chair_tex_chair_vinyl_back.png-4cadb32986d8b285106faeb08f618945.ctex"]
 
 [params]
 

@@ -115,56 +115,148 @@
   "t0_chair_rest": [],
   "t1_flick": [
    {
-    "frame": 9,
+    "frame": 1,
     "sfx": "whoosh_small",
     "anchor": "RightHand",
     "gain_db": -8.0,
     "pitch_jitter": 0.06
-   }
-  ],
-  "t1_wave_off": [
+   },
    {
-    "frame": 15,
-    "sfx": "whoosh_small",
-    "anchor": "RightHand",
-    "gain_db": -8.0,
-    "pitch_jitter": 0.06
-   }
-  ],
-  "t1_fist_cutoff": [],
-  "t1_clap_stop": [
-   {
-    "frame": 9,
-    "sfx": "clap_big",
-    "anchor": "RightHand",
-    "gain_db": 2.0,
-    "pitch_jitter": 0.04
-   }
-  ],
-  "t1_fist_slam": [
-   {
-    "frame": 11,
+    "frame": 10,
     "sfx": "whoosh_big",
     "anchor": "RightHand",
     "gain_db": -4.0,
     "pitch_jitter": 0.06
    },
    {
+    "frame": 11,
+    "sfx": "foot_stomp",
+    "anchor": "RightFoot",
+    "gain_db": 0.0,
+    "pitch_jitter": 0.04
+   }
+  ],
+  "t1_wave_off": [
+   {
+    "frame": 15,
+    "sfx": "whoosh_big",
+    "anchor": "RightHand",
+    "gain_db": -4.0,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 16,
+    "sfx": "foot_stomp",
+    "anchor": "RightFoot",
+    "gain_db": -0.8,
+    "pitch_jitter": 0.04
+   }
+  ],
+  "t1_fist_cutoff": [
+   {
+    "frame": 13,
+    "sfx": "whoosh_small",
+    "anchor": "RightHand",
+    "gain_db": -8.0,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 14,
+    "sfx": "foot_stomp",
+    "anchor": "LeftFoot",
+    "gain_db": 0.0,
+    "pitch_jitter": 0.04
+   }
+  ],
+  "t1_clap_stop": [
+   {
+    "frame": 11,
+    "sfx": "whoosh_small",
+    "anchor": "LeftHand",
+    "gain_db": -8.0,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 11,
+    "sfx": "whoosh_small",
+    "anchor": "RightHand",
+    "gain_db": -8.0,
+    "pitch_jitter": 0.06
+   },
+   {
     "frame": 12,
+    "sfx": "clap_big",
+    "anchor": "RightHand",
+    "gain_db": 2.0,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 12,
+    "sfx": "foot_stomp",
+    "anchor": "LeftFoot",
+    "gain_db": 0.0,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 30,
+    "sfx": "whoosh_small",
+    "anchor": "LeftHand",
+    "gain_db": -8.0,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 30,
+    "sfx": "whoosh_small",
+    "anchor": "RightHand",
+    "gain_db": -8.0,
+    "pitch_jitter": 0.06
+   }
+  ],
+  "t1_fist_slam": [
+   {
+    "frame": 4,
+    "sfx": "whoosh_small",
+    "anchor": "RightHand",
+    "gain_db": -8.0,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 13,
+    "sfx": "whoosh_big",
+    "anchor": "RightHand",
+    "gain_db": -4.0,
+    "pitch_jitter": 0.06
+   },
+   {
+    "frame": 14,
+    "sfx": "body_thud",
+    "anchor": "Hips",
+    "gain_db": -4.0,
+    "pitch_jitter": 0.05
+   },
+   {
+    "frame": 14,
     "sfx": "fist_slam_stand",
     "anchor": "RightHand",
     "gain_db": 1.0,
     "pitch_jitter": 0.03
    },
    {
-    "frame": 12,
+    "frame": 14,
     "sfx": "foot_stomp",
     "anchor": "LeftFoot",
     "gain_db": -4.0,
     "pitch_jitter": 0.04
    },
    {
-    "frame": 13,
+    "frame": 14,
+    "sfx": "foot_stomp",
+    "anchor": "RightFoot",
+    "gain_db": 0.0,
+    "pitch_jitter": 0.04
+   },
+   {
+    "frame": 15,
     "sfx": "stand_rattle",
     "anchor": "RightHand",
     "gain_db": -8.0,
@@ -597,7 +689,7 @@
     "pitch_jitter": 0.04
    },
    {
-    "frame": 56,
+    "frame": 55,
     "sfx": "chair_impact",
     "anchor": "PropR",
     "gain_db": -5.0,

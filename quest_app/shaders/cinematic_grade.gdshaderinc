@@ -1,20 +1,18 @@
-// The cinematic look, shared by the XR cinema panel and the desktop cut: crushed blacks,
-// more contrast, amber highlights over neutral shadows, and a soft vignette. Works on
-// display-referred (sRGB) colour, so both paths grade the same thing.
+// The cinematic look for the desktop cut: more contrast, amber highlights over neutral
+// shadows, and a soft vignette. Works on display-referred (sRGB) colour.
 
 vec3 cine_grade(vec3 c, vec2 frame_uv) {
-	c = max(c - vec3(0.03), vec3(0.0)) / 0.97;
-	float l = dot(c, vec3(0.299, 0.587, 0.114));
-	// the room is already warm: pull saturation back a little, then add contrast, keep the
-	// shadows neutral and give only the highlights the amber push
-	c = mix(vec3(l), c, 0.85);
-	c = (c - 0.40) * 1.28 + 0.40;
-	c *= mix(vec3(0.97, 0.98, 1.02), vec3(1.06, 1.0, 0.88), smoothstep(0.1, 0.8, l));
+	// The room is already warm and dark, so contrast works on luminance (an S-curve pinned
+	// at black and white) and keeps each pixel's hue: a per-channel curve would clip the
+	// green and blue out of the shadows and turn them red.
+	float l = max(dot(c, vec3(0.299, 0.587, 0.114)), 1e-4);
+	float s = l * l * (3.0 - 2.0 * l);
+	float nl = mix(l, s, 0.6) * 1.08;
+	c *= nl / l;
+	// a touch less saturation, then amber in the highlights only
+	c = mix(vec3(nl), c, 0.9);
+	c *= mix(vec3(1.0), vec3(1.06, 1.0, 0.9), smoothstep(0.25, 0.85, nl));
 	vec2 d = (frame_uv - 0.5) * 2.0;
-	c *= 1.0 - 0.55 * smoothstep(0.55, 1.45, length(d));
+	c *= 1.0 - 0.5 * smoothstep(0.6, 1.45, length(d));
 	return clamp(c, 0.0, 1.0);
-}
-
-vec3 cine_srgb_to_linear(vec3 c) {
-	return mix(c / 12.92, pow((c + 0.055) / 1.055, vec3(2.4)), step(vec3(0.04045), c));
 }

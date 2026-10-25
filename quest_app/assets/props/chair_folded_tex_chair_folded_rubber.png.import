@@ -2,19 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yqo4gyvj4cia"
-path="res://.godot/imported/terence_v003_tex_terence3_belt.png-cfe72dcd825db1eba8951631f4aaba4e.ctex"
+uid="uid://dtev64avvlek1"
+path="res://.godot/imported/chair_folded_tex_chair_folded_rubber.png-72667d7db963a8dca8bbdc8446d727ff.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "dbab099ff8f2cbdb5ae9fa1b40981833"
+"md5": "3085864134095e2238ea2aa0b43a7f05"
 }
 
 [deps]
 
-source_file="res://assets/terence/terence_v003_tex_terence3_belt.png"
-dest_files=["res://.godot/imported/terence_v003_tex_terence3_belt.png-cfe72dcd825db1eba8951631f4aaba4e.ctex"]
+source_file="res://assets/props/chair_folded_tex_chair_folded_rubber.png"
+dest_files=["res://.godot/imported/chair_folded_tex_chair_folded_rubber.png-72667d7db963a8dca8bbdc8446d727ff.ctex"]
 
 [params]
 

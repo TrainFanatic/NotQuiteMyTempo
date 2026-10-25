@@ -17,9 +17,10 @@ Mixed-reality drum practice for Meta Quest 2: you play a real kit (seen through 
 
 | Path | What |
 |---|---|
-| `assets/` | copied glbs: `room/room_v005.glb`, `band/` (16), `instruments/` (16), `props/` (7), `terence/terence_v003.glb` + move metadata |
+| `assets/` | copied glbs: `room/room_v005.glb`, `band/` (16), `instruments/` (16), `props/` (7), `terence/terence_v004.glb` + move metadata |
 | `tools/post_import_character.gd` | post-import for band and Terence: restores the `play_loop` name (Godot strips `_loop`) and sets loop modes from the move metadata |
 | `scenes/rehearsal.tscn` + `scripts/rehearsal.gd` | main scene, built at runtime from the room markers |
+| `scripts/intro.gd` | Terence's entrance at game start (`Rehearsal.intro_enabled`, on by default): `door_main` swings open, he walks in to `spot_terence`, the band startles, the door shuts with a quiet `door_slam`, he checks his watch and stares. The showcase or demo starts on `intro_finished`. About 9 s at 120 BPM, scaled by tempo |
 | `scripts/band_member.gd` | one player: character, instrument on the `Instrument` bone (trombone slide on `InstrumentSlide`), crossfaded states and reactions |
 | `scripts/terence.gd` | Terence: one animation per move ID (hub `t0_stare_drummer`), crossfaded; props on `PropR`/`PropL` (the `PROPS` table at the top); walking to close-up moves |
 | `scripts/anim_blender.gd` | crossfades an AnimationPlayer driven by hand (used by both characters); signals `started(anim)` and `advanced(anim, from_pos, to_pos, wrapped)` in authored time |

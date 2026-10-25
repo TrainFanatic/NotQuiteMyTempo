@@ -52,11 +52,13 @@ section for it above. The root `.gitignore` applies to every subfolder: it ignor
 
 The player sits at their real kit, seen through passthrough, with a virtual big band and
 bandleader Terence around them. It covers the band and Terence animation (tempo-scaled, beat
-locked to a song), positional sound effects, cinematic close-ups, and the Quest build. It is
+locked to a song), Terence's entrance through the door, real recorded positional sound effects
+for Terence and his props, the passthrough window over the real kit, and the Quest build. It is
 driven through `scripts/scene_director.gd` messages. See `quest_app/README.md`.
 
 ### `quest_assets/`: Blender build scripts and exported assets for `quest_app/`
 
 Headless Blender scripts that build the room, the band, Terence, instruments and props as
-PS2-style low-poly glTF, plus the synthesized sound effects and their animation cue tables.
+PS2-style low-poly glTF, plus the sound effects (real CC0/CC-BY recordings, credited in
+`sfx/CREDITS.md`) and their animation cue tables.
 See `quest_assets/ANIMATIONS.md` and `quest_assets/DECISIONS.md`.

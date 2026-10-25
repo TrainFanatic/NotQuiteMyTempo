@@ -26,6 +26,7 @@ const SfxLibrary := preload("res://scripts/sfx/sfx_library.gd")
 const SfxVoicePool := preload("res://scripts/sfx/sfx_voice_pool.gd")
 const SfxCuePlayer := preload("res://scripts/sfx/sfx_cue_player.gd")
 const CinematicDirector := preload("res://scripts/cinematic/cinematic_director.gd")   # cinematics
+const Intro := preload("res://scripts/intro.gd")   # intro
 
 ## Plays scenes/demo_timeline.json on start (count-off, band in, a cutoff, a stare...).
 @export var run_demo := true
@@ -35,9 +36,18 @@ const CinematicDirector := preload("res://scripts/cinematic/cinematic_director.g
 ## Animation-cued sound effects (scripts/sfx). On, the assets in res://assets/sfx must exist
 ## (tools/sync_assets.sh); a missing one is an error. Tests that need no sound turn it off.
 @export var sfx_enabled := true
-## Film-style cut-ins on Terence's big moves (scripts/cinematic): a cinema panel in XR, a
-## camera cut on the desktop. Per-move opt-outs are in scripts/cinematic/shot_table.gd.
-@export var cinematics_enabled := true
+## Film-style cut-ins on Terence's big moves (scripts/cinematic): in XR the view itself cuts
+## (the XR origin moves), on the desktop the camera cuts. Per-move opt-outs are in
+## scripts/cinematic/shot_table.gd. Off: the user asked for no camera cuts, so the view never
+## leaves the throne.
+@export var cinematics_enabled := false
+## Terence's entrance before the showcase or demo (scripts/intro.gd): he walks in through
+## door_main to spot_terence, the band reacts, the door shuts behind him. The showcase and
+## demo start on intro_finished. Tests that need Terence on his spot from the start turn it off.
+@export var intro_enabled := true
+
+## The entrance is over and the showcase or demo has been started (only with intro_enabled).
+signal intro_finished
 
 var room: Node3D
 var band: Array = []
@@ -48,6 +58,7 @@ var injector: FakeInjector
 var sfx_library: SfxLibrary
 var sfx_pool: SfxVoicePool
 var cinematic: CinematicDirector   # cinematics
+var intro: Intro   # intro
 
 
 var showcase: Showcase
@@ -55,6 +66,16 @@ var showcase: Showcase
 
 func _ready() -> void:
 	build()
+	# --- Intro: Terence walks in before the game starts; the showcase or demo waits for it ---
+	if intro_enabled:
+		_start_intro()
+		return
+	# --- end Intro
+	_start_game()
+
+
+## The showcase, or else the demo timeline.
+func _start_game() -> void:
 	if run_showcase:
 		showcase = Showcase.new()
 		showcase.name = "Showcase"
@@ -67,6 +88,27 @@ func _ready() -> void:
 		add_child(injector)
 		if not injector.load_json(director, DEMO):
 			push_error("Rehearsal: demo timeline failed to load")
+
+
+# --- Intro: the entrance (scripts/intro.gd), then the game ---
+func _start_intro() -> void:
+	if terence == null or room == null:
+		push_error("Rehearsal: the scene did not build, so there is no entrance")
+		return
+	intro = Intro.new()
+	add_child(intro)
+	if not intro.setup(terence, band, room, sfx_pool, sfx_library):
+		push_error("Rehearsal: the entrance failed to set up; the game does not start")
+		return
+	intro.finished.connect(_on_intro_finished, CONNECT_ONE_SHOT)
+	if not intro.start():
+		push_error("Rehearsal: the entrance failed to start; the game does not start")
+
+
+func _on_intro_finished() -> void:
+	_start_game()
+	intro_finished.emit()
+# --- end Intro
 
 
 func build() -> void:
@@ -109,12 +151,19 @@ func build() -> void:
 		cinematic = CinematicDirector.new()
 		cinematic.name = "CinematicDirector"
 		add_child(cinematic)
-		var world_env := get_node("WorldEnvironment") as WorldEnvironment
-		if not cinematic.setup(terence, rig.camera, rig.xr_mode, world_env.environment):
+		# XR: the cuts move the XR origin and hide the passthrough kit window meanwhile
+		var kit: Node3D = null
+		if rig.xr_mode:
+			kit = get_node_or_null("KitWindow") as Node3D
+			if kit == null:
+				push_error("Rehearsal: no KitWindow to hide during cinematic close-ups")
+				return
+		if not cinematic.setup(terence, rig.camera, rig.xr_mode, rig.origin if rig.xr_mode else null, kit):
 			push_error("Rehearsal: the cinematic director failed to set up")
 			return
 	# --- end Cinematics ---
-	# --- SFX: one shared voice pool, a cue player on every band member and Terence ---
+	# --- SFX: one shared voice pool and a cue player on Terence. The band is silent: only
+	# Terence and the things he throws make sound (the band's cue tables stay unused). ---
 	if sfx_enabled:
 		sfx_library = SfxLibrary.load_dir()
 		if sfx_library == null:
@@ -124,7 +173,7 @@ func build() -> void:
 		add_child(sfx_pool)
 		if not sfx_pool.setup():
 			return
-		if not SfxCuePlayer.attach_all(band, terence, sfx_library, sfx_pool):
+		if not SfxCuePlayer.attach_terence(terence, sfx_library, sfx_pool):
 			push_error("Rehearsal: sound cues failed to attach")
 			return
 	# --- end SFX ---
@@ -143,27 +192,72 @@ static func character_at(marker: Node3D) -> Transform3D:
 	return Transform3D(xf.basis * Basis(Vector3.UP, PI), xf.origin)
 
 
-## XR only: a box around the drummer's spot drawn with alpha 0, so the real kit shows
-## through the virtual room via passthrough. Size and offset are in the drummer's frame
-## (forward = toward Terence).
-const KIT_WINDOW_SIZE := Vector3(1.9, 1.05, 1.6)      # width, height (kept below seated eye height), depth
-const KIT_WINDOW_FORWARD := 0.35                     # centre this far in front of the throne
+## XR only: the window into reality where the real kit stands (shaders/passthrough_window
+## .gdshader). It is a soft dome over the kit. Wherever a view ray passes through it, whatever
+## virtual lies at or beyond the dome's near surface is faded out to passthrough, so the real
+## kit hides the room shell and also any band member or Terence standing behind it. Only
+## virtual things between the eye and the dome, in front of the kit, still draw over it. The
+## dome is an ellipsoid centred on the floor, in the drummer's frame, x to the right, y up,
+## f forward (toward Terence), in metres from the floor under the throne. It peaks at 1.1 m
+## over the kit, drops to about 0.85 m over the throne, and must not contain the seated eye
+## (about 1.15 m up at f = 0), or every ray would start inside it and the whole view would
+## turn to reality.
+const KIT_DOME_CENTRE := {"x": 0.0, "f": 0.55}
+const KIT_DOME_RADII := {"x": 1.1, "y": 1.1, "f": 0.85}
+const KIT_DOME_FEATHER_START := 0.7                  # rho where the fade to the virtual room begins
+## The room's interior is room_shell's bounds pulled in by these margins. The window's depth
+## is clamped to it, so the window never reaches past the floor and ceiling, or behind wall
+## trim, pilasters and sconces (up to 0.3 m deep).
+const KIT_WINDOW_FLOOR_MARGIN := 0.02
+const KIT_WINDOW_WALL_MARGIN := 0.35
+const KIT_WINDOW_CEILING_Y := 2.55                   # under the beams (2.7 m) and the coffers
+## Debug (-- --passthrough-debug): the room shell drawn at this opacity, so passthrough shows
+## through walls, floor and ceiling at a glance.
+const PASSTHROUGH_DEBUG_ROOM_ALPHA := 0.35
 
 
 func _add_kit_window(drummer: Node3D) -> void:
+	var shell := room.find_child("room_shell", true, false) as MeshInstance3D
+	if shell == null:
+		push_error("Rehearsal: room has no room_shell mesh; the kit window needs its bounds")
+		return
+	var bounds := shell.global_transform * shell.get_aabb()
 	var mat := ShaderMaterial.new()
 	mat.shader = load("res://shaders/passthrough_window.gdshader")
-	var box := BoxMesh.new()
-	box.size = KIT_WINDOW_SIZE
+	mat.set_shader_parameter("room_min", Vector3(bounds.position.x + KIT_WINDOW_WALL_MARGIN, bounds.position.y + KIT_WINDOW_FLOOR_MARGIN, bounds.position.z + KIT_WINDOW_WALL_MARGIN))
+	mat.set_shader_parameter("room_max", Vector3(bounds.end.x - KIT_WINDOW_WALL_MARGIN, KIT_WINDOW_CEILING_Y, bounds.end.z - KIT_WINDOW_WALL_MARGIN))
+	var centre := Vector3(KIT_DOME_CENTRE.x, 0.0, -KIT_DOME_CENTRE.f)    # the marker's forward is -Z
+	var radii := Vector3(KIT_DOME_RADII.x, KIT_DOME_RADII.y, KIT_DOME_RADII.f)
+	var eye := Vector3(0.0, 1.15, 0.0)
+	if ((eye - centre) / radii).length() <= 1.0:
+		push_error("Rehearsal: the kit dome contains the seated eye; shrink KIT_DOME_RADII")
+		return
+	mat.set_shader_parameter("feather_start", KIT_DOME_FEATHER_START)
+	var sphere := SphereMesh.new()
+	sphere.radius = 1.02            # a little over the dome so the fade is never clipped
+	sphere.height = 2.04
+	sphere.radial_segments = 24
+	sphere.rings = 12
 	var mi := MeshInstance3D.new()
 	mi.name = "KitWindow"
-	mi.mesh = box
+	mi.mesh = sphere
 	mi.material_override = mat
 	mi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	add_child(mi)
 	var xf := drummer.global_transform
-	var fwd := -xf.basis.z.normalized()
-	mi.global_transform = Transform3D(xf.basis, xf.origin + fwd * KIT_WINDOW_FORWARD + Vector3.UP * (KIT_WINDOW_SIZE.y / 2.0 - 0.01))
+	mi.global_transform = Transform3D(xf.basis, xf * centre)
+	mi.scale = radii                # the shader reads the dome as this mesh's local unit sphere
+	if PlayerRig.passthrough_debug_requested():
+		for s in shell.mesh.get_surface_count():
+			var src := shell.get_active_material(s) as BaseMaterial3D
+			if src == null:
+				push_error("Rehearsal: room_shell surface %d has no BaseMaterial3D to make see-through" % s)
+				return
+			var see := src.duplicate() as BaseMaterial3D
+			see.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+			see.albedo_color.a = PASSTHROUGH_DEBUG_ROOM_ALPHA
+			shell.set_surface_override_material(s, see)
+		print("Rehearsal: passthrough debug, room shell at %d%% opacity" % roundi(PASSTHROUGH_DEBUG_ROOM_ALPHA * 100.0))
 
 
 func _add_lights() -> void:

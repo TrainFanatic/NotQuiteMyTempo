@@ -2,19 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://totenpxdqgcj"
-path="res://.godot/imported/terence_v003_tex_terence3_pants.png-f704cfc851aed2b49f8817f7693f8b53.ctex"
+uid="uid://d1asuhc652kw4"
+path="res://.godot/imported/terence_v004_tex_terence3_skin.png-4f125b7526e5d3874c0839795b5c97d9.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "4acae49d74ca8bd386de011b13209431"
+"md5": "7c88d7a57770a4c27545bae6c493aa80"
 }
 
 [deps]
 
-source_file="res://assets/terence/terence_v003_tex_terence3_pants.png"
-dest_files=["res://.godot/imported/terence_v003_tex_terence3_pants.png-f704cfc851aed2b49f8817f7693f8b53.ctex"]
+source_file="res://assets/terence/terence_v004_tex_terence3_skin.png"
+dest_files=["res://.godot/imported/terence_v004_tex_terence3_skin.png-4f125b7526e5d3874c0839795b5c97d9.ctex"]
 
 [params]
 

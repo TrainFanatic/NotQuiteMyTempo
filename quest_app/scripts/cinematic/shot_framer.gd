@@ -18,7 +18,7 @@ const FRAMINGS := {
 	&"extreme_close_face": {"bone": "Head", "anchor": Vector3(0.0, 0.10, 0.07), "dist": 0.42, "height": -0.05, "azimuth": 14.0, "look_room": 0.015, "follow": 7.0},
 	&"close_face": {"bone": "Head", "anchor": Vector3(0.0, 0.07, 0.05), "dist": 0.80, "height": -0.10, "azimuth": 20.0, "look_room": 0.05, "follow": 8.0},
 	&"fist_insert": {"bone": "RightHand", "anchor": Vector3(0.0, 0.05, 0.0), "dist": 0.55, "height": -0.12, "azimuth": -18.0, "look_room": 0.0, "follow": 24.0},
-	&"low_angle_medium": {"bone": "Neck", "anchor": Vector3(0.0, -0.15, 0.0), "dist": 1.60, "height": -0.45, "azimuth": 22.0, "look_room": 0.06, "follow": 6.0},
+	&"low_angle_medium": {"bone": "Neck", "anchor": Vector3(0.0, -0.08, 0.0), "dist": 1.90, "height": -0.50, "azimuth": 22.0, "look_room": 0.06, "follow": 6.0},
 	&"over_shoulder": {"bone": "Head", "anchor": Vector3(0.0, 0.07, 0.05), "shoulder": Vector3(0.22, 0.04, 0.16), "follow": 8.0},
 }
 ## push_in dollies from DOLLY_FROM to DOLLY_TO times the framing's distance; snap_zoom starts

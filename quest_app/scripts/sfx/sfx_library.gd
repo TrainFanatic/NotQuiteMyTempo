@@ -86,6 +86,10 @@ func _load_manifest(m: Dictionary) -> bool:
 		if not stream is AudioStreamWAV:
 			push_error("SfxLibrary: %s did not import as AudioStreamWAV" % path)
 			return false
+		# QOA and IMA-ADPCM smear these short synthesized transients into audible gurgling
+		if (stream as AudioStreamWAV).format != AudioStreamWAV.FORMAT_16_BITS:
+			push_error("SfxLibrary: %s is compressed; set compress/mode=0 in its .import" % path)
+			return false
 		if (stream as AudioStreamWAV).mix_rate != sample_rate:
 			push_error("SfxLibrary: %s is %d Hz, manifest says %d Hz" % [path, stream.mix_rate, sample_rate])
 			return false

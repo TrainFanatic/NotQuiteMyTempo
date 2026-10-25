@@ -2,14 +2,15 @@
 """Procedural sound effects for Not Quite My Tempo.
 
 Every sound is synthesized from seeded noise, modal resonator banks, pitch-swept
-oscillators, Karplus-Strong strings, stick-slip friction pulses and a tiny
-synthetic room impulse. No recorded audio is used anywhere.
+oscillators, Karplus-Strong strings and stick-slip friction pulses. Sounds are dry:
+no room is baked in (its few close echoes comb-filtered every sound into a gurgle),
+the game places them in the room. No recorded audio is used anywhere.
 
 Run with the system python3 (numpy and scipy required):
 
     python3 gen_sfx.py
 
-Output goes to sfx/<name>.wav (mono, 16-bit PCM, 22050 Hz) plus
+Output goes to sfx/<name>.wav (mono, 16-bit PCM, 48000 Hz) plus
 sfx/sfx_manifest.json and sfx/README.md. Analysis of every sound (peak, RMS,
 duration, spectral centroid, onset level) is printed at the end, and the
 script raises on any sound that is silent, clipped, mistimed or off-spec.
@@ -24,7 +25,8 @@ import zlib
 import numpy as np
 from scipy import signal
 
-SR = 22050
+SR = 48000
+MIN_DRY_SECONDS = 0.03
 NYQ = SR / 2.0
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT_DIR = os.path.join(HERE, "sfx")
@@ -118,7 +120,10 @@ def crunch(x, drive):
     nothing turns into a harsh square wave."""
     if not (1.0 <= drive <= 3.0):
         raise SfxError(f"crunch drive {drive} outside the 1..3 safe range")
-    return np.tanh(drive * nz(x)) / np.tanh(drive)
+    # tanh makes harmonics far above the input; at 4x the rate they fold back below
+    # Nyquist as far quieter, inaudible aliases instead of a metallic gurgle
+    up = signal.resample_poly(nz(x), 4, 1)
+    return signal.resample_poly(np.tanh(drive * up) / np.tanh(drive), 1, 4)[:len(x)]
 
 
 def white(rng, n):
@@ -228,30 +233,6 @@ def log_curve(n, points):
     xs = np.array([p[0] for p in points]) * (n - 1)
     ys = np.log(np.array([p[1] for p in points]))
     return np.exp(np.interp(np.arange(n), xs, ys))
-
-
-def room_ir(rng, rt60, wet_dur=None, damp_hz=3200.0):
-    """Tiny synthetic wood-panelled room: a handful of early reflections plus a
-    low-passed exponentially decaying noise tail. The direct path is excluded
-    (it is the dry signal)."""
-    dur = wet_dur if wet_dur is not None else rt60
-    n = n_of(dur)
-    t = t_axis(n)
-    tail = lp(white(rng, n), damp_hz) * np.exp(-6.91 * t / rt60)
-    tail *= np.clip((t - 0.008) / 0.012, 0.0, 1.0)
-    tail = 0.6 * tail / np.sqrt(np.sum(tail ** 2))
-    ir = tail
-    for d, g in ((0.0037, 0.42), (0.0068, -0.30), (0.0105, 0.26), (0.0152, -0.2), (0.0213, 0.15)):
-        ir[int(round(d * SR))] += g * rng.uniform(0.8, 1.2)
-    return ir
-
-
-def add_room(rng, x, wet, rt60, damp_hz=3200.0):
-    ir = room_ir(rng, rt60, damp_hz=damp_hz)
-    w = signal.fftconvolve(x, ir)
-    y = np.zeros(len(w))
-    y[:len(x)] += x
-    return y + wet * w * (np.max(np.abs(x)) / max(np.max(np.abs(w)), 1e-12))
 
 
 def poisson_clicks(rng, n, rate_env, amp_sigma=0.8):
@@ -380,7 +361,6 @@ def foot_step(rng, v):
     toe = floor_hit(rng, 0.15, p["f_scale"] * 1.15, 0.7, 0.9, noise_lp=2200)
     place(out, toe, p["gap"], p["toe"])
     place(out, nz(burst(rng, 0.015, 0.0007, 2000, 6000)), p["gap"], p["toe"] * p["click"] * 0.6)
-    out = add_room(rng, out, 0.16, 0.38, 2800)
     return crunch(out, 1.6)
 
 
@@ -397,7 +377,6 @@ def foot_stomp(rng):
     for k, tt in enumerate(np.arange(0.012, 0.15, 0.021)):
         place(rat, pulse(0.6), tt, rng.uniform(0.4, 1.0) * np.exp(-k / 3))
     place(out, nz(strike(rat, jitter_modes(rng, FLOOR_MODES[3:], f_scale=1.3), 0.2)), 0.0, 0.12)
-    out = add_room(rng, out, 0.28, 0.5, 2600)
     return crunch(out, 2.4)
 
 
@@ -417,7 +396,6 @@ def foot_scuff(rng):
     fsq = 1650 + 220 * np.sin(2 * np.pi * 23 * st) + rng.uniform(-80, 80)
     sq = np.sin(2 * np.pi * np.cumsum(fsq) / SR) * np.sin(np.pi * st / st[-1]) ** 2
     place(out, crunch(sq, 2.0), 0.11, 0.28)
-    out = add_room(rng, out, 0.12, 0.35, 3000)
     return crunch(out, 1.5)
 
 
@@ -448,7 +426,6 @@ def clap_core(rng, cav, q, tau, flam, flam_amp, low, dur):
 def clap(rng, v):
     p = CLAP_VARIANTS[v]
     out = clap_core(rng, dur=0.12, **p)
-    out = add_room(rng, out, 0.22, 0.42, 3600)
     return crunch(out, 1.7)
 
 
@@ -456,7 +433,6 @@ def clap_big(rng):
     out = clap_core(rng, cav=760, q=3.0, tau=0.014, flam=0.0025, flam_amp=0.6, low=0.4, dur=0.2)
     body = clap_core(rng, cav=1550, q=4.0, tau=0.009, flam=None, flam_amp=0, low=0, dur=0.2)
     out = nz(out) + 0.5 * nz(body)
-    out = add_room(rng, out, 0.5, 0.75, 3400)
     return crunch(out, 2.3)
 
 
@@ -480,7 +456,6 @@ def slap(rng, v):
     # Wet skin micro-clicks right after contact.
     for _ in range(p["wet"]):
         place(out, nz(burst(rng, 0.006, 0.0006, 2500, 8000)), rng.uniform(0.004, 0.02), rng.uniform(0.1, 0.25))
-    out = add_room(rng, out, 0.18, 0.4, 3200)
     return crunch(out, 2.0)
 
 
@@ -503,7 +478,6 @@ def fist_slam_stand(rng):
         tt += rng.uniform(0.018, 0.03)
         k += 1
     place(out, strike(rat, [(1870, 0.02, 1.0), (3150, 0.012, 0.6), (4400, 0.008, 0.4)], 0.3), 0.0, 0.22)
-    out = add_room(rng, out, 0.22, 0.45, 3200)
     return crunch(out, 2.2)
 
 
@@ -573,7 +547,6 @@ def body_thud(rng):
     place(out, floor_hit(rng, 0.35, 0.85, 1.8, 1.6, noise_lp=1400), 0.0, 1.0)
     place(out, nz(bp(burst(rng, 0.08, 0.012), 200, 1800)), 0.0, 0.5)
     place(out, cloth_rustle(rng, 2)[:n_of(0.3)] * np.exp(-t_axis(n_of(0.3)) / 0.08), 0.005, 0.12)
-    out = add_room(rng, out, 0.25, 0.48, 2400)
     return crunch(out, 2.2)
 
 
@@ -594,7 +567,6 @@ def stand_rattle(rng):
         h = metal_hit(rng, [(f, tau * 0.55, a_) for f, tau, a_ in DESK_MODES + STAND_TUBE], 0.6, 0.35)
         place(out, h, tt, a)
         place(out, nz(burst(rng, 0.01, 0.0008, 2500, 8000)), tt, 0.25 * a)
-    out = add_room(rng, out, 0.18, 0.4, 3400)
     return crunch(out, 1.9)
 
 
@@ -617,7 +589,6 @@ def stand_crash(rng):
         tt = rng.uniform(0.05, 1.0)
         place(out, metal_hit(rng, [(2200, 0.02, 1), (3400, 0.015, 0.7), (4700, 0.01, 0.5)], 0.06, 0.2), tt,
               0.12 * np.exp(-tt / 0.4))
-    out = add_room(rng, out, 0.3, 0.55, 3000)
     return crunch(out, 2.3)
 
 
@@ -630,7 +601,6 @@ def paper_grab(rng):
     place(out, nz(ck), 0.0, 1.0)
     sw = whoosh(rng, 0.2, [(0, 1500), (0.4, 3200), (1, 1800)], [(0, 0.6), (0.3, 1.0), (1, 0)], 1.5)
     place(out, sw, 0.0, 0.35)
-    out = add_room(rng, out, 0.12, 0.35, 3800)
     return crunch(out, 1.6)
 
 
@@ -662,7 +632,6 @@ def paper_land(rng):
         place(out, nz(s), tt, a)
         place(out, nz(lp(burst(rng, 0.05, 0.012), 380)), tt, 0.45 * a)
     out += 0.12 * nz(crinkle(rng, n, 180 * np.exp(-t / 0.15), 1500, 7000))
-    out = add_room(rng, out, 0.15, 0.38, 3400)
     return crunch(out, 1.7)
 
 
@@ -677,7 +646,6 @@ def page_flip(rng):
     soft = burst(rng, 0.05, 0.006, 400, 3500)
     place(out, nz(soft), 0.3, 0.35)
     out += 0.15 * nz(crinkle(rng, n, 160 * np.exp(-t / 0.2), 1500, 7000))
-    out = add_room(rng, out, 0.1, 0.32, 3600)
     return crunch(out, 1.4)
 
 
@@ -686,7 +654,7 @@ CHAIR_SEAT = [(540, 0.12, 0.7), (870, 0.1, 0.55), (1310, 0.08, 0.45), (1960, 0.0
 
 
 def chair_grab(rng):
-    n = n_of(0.6)
+    n = n_of(0.8)
     out = np.zeros(n)
     held = [(f, tau * 0.45, a) for f, tau, a in CHAIR_TUBE + CHAIR_SEAT]  # the hand damps the frame
     place(out, metal_hit(rng, held, 0.5, 0.6), 0.0, 1.0)
@@ -695,7 +663,6 @@ def chair_grab(rng):
     for k in range(4):  # hinge chatter
         place(out, metal_hit(rng, [(2600, 0.015, 1), (3900, 0.01, 0.6)], 0.05, 0.2), 0.06 + 0.022 * k + rng.uniform(0, 0.006),
               0.18 * np.exp(-k / 2))
-    out = add_room(rng, out, 0.2, 0.45, 3200)
     return crunch(out, 2.0)
 
 
@@ -715,7 +682,6 @@ def chair_impact(rng):
     sn = n_of(0.18)
     scr = bp(stick_slip(rng, sn, np.full(sn, 520.0), np.linspace(1, 0, sn), 0.5), 1200, 4000, 3)
     place(out, nz(scr), 1.18, 0.035)
-    out = add_room(rng, out, 0.32, 0.55, 3000)
     return crunch(out, 2.4)
 
 
@@ -756,7 +722,6 @@ def drum_grab(rng):
     place(out, nz(bp(burst(rng, 0.03, 0.006), 200, 1500)), 0.0, 0.4)
     wires = snare_wires(rng, head * np.exp(-t_axis(n) / 0.07), dur)
     place(out, wires, 0.0, 0.35)
-    out = add_room(rng, out, 0.15, 0.4, 3200)
     return crunch(out, 1.7)
 
 
@@ -773,7 +738,6 @@ def drum_impact(rng):
         place(out, strike(pulse(0.6), jitter_modes(rng, [(720, 0.04, 1), (1180, 0.03, 0.7), (1830, 0.02, 0.5), (2700, 0.012, 0.35)]), 0.12), tt, 0.45 * a)
         place(out, floor_hit(rng, 0.15, 0.9, 1.4, 2.5), tt, 0.4 * a)
     place(out, nz(burst(rng, 0.02, 0.0015, 1500, 7500)), 0.0, 0.4)
-    out = add_room(rng, out, 0.3, 0.55, 3000)
     return crunch(out, 2.3)
 
 
@@ -801,7 +765,6 @@ def cymbal_grab(rng):
     place(out, nz(lp(burst(rng, 0.03, 0.006), 500)), 0.0, 0.5)
     sh = cymbal_partials(rng, 60, 2500, 10000, 0.6, dur) * np.exp(-t / 0.12) * np.minimum(1, t / 0.004 + 0.2)
     place(out, sh, 0.0, 0.22)
-    out = add_room(rng, out, 0.1, 0.35, 4000)
     return crunch(out, 1.3)
 
 
@@ -819,7 +782,7 @@ def cymbal_impact(rng):
     place(y, nz(attack), 0.0, 0.8)
     place(y, bell, 0.0, 0.12)
     place(y, floor_hit(rng, 0.12, 1.2, 0.8, 1.0), 0.0, 0.2)
-    y = add_room(rng, y, 0.12, 0.6, 5000)[:n]
+    y = y[:n]
     return crunch(y, 1.6)
 
 
@@ -840,7 +803,6 @@ def cowbell(rng, v):
     exc = np.concatenate([pulse(p["width"]), np.zeros(4)])
     place(out, strike(exc, modes, 1.0), 0.0, 1.0)
     place(out, nz(burst(rng, 0.015, 0.0008, 2500, 8000)), 0.0, 0.35)  # stick tip click
-    out = add_room(rng, out, 0.12, 0.38, 3800)
     return crunch(out, p["drive"])
 
 
@@ -854,7 +816,6 @@ def watch_tap(rng):
     place(out, nz(burst(rng, 0.006, 0.0005, 3000, 9000)), 0.0, 1.0)
     place(out, strike(pulse(0.15), [(2870, 0.012, 1.0), (4690, 0.008, 0.7), (6810, 0.005, 0.45), (1820, 0.015, 0.3)], 0.08), 0.0, 0.8)
     place(out, thump(320, 260, 0.005, 0.008, 0.03), 0.0, 0.12)
-    out = add_room(rng, out, 0.06, 0.25, 4500)
     return crunch(out, 1.3)
 
 
@@ -865,7 +826,6 @@ def finger_snap(rng):
     b = b + 1.8 * peak_res(b, 2250, 5.0) + 0.6 * peak_res(b, 3600, 4.0)
     place(out, nz(b), 0.0, 1.0)
     place(out, thump(230, 180, 0.004, 0.008, 0.04), 0.003, 0.15)
-    out = add_room(rng, out, 0.2, 0.4, 3600)
     return crunch(out, 1.8)
 
 
@@ -892,7 +852,6 @@ def chair_creak(rng):
     place(out, cr, 0.0, 0.75)
     sq = lp(white(rng, n), 1400) * curve(n, [(0, 0.3), (0.3, 1.0), (1, 0)])
     place(out, nz(sq), 0.0, 0.25)
-    out = add_room(rng, out, 0.12, 0.38, 3200)
     return crunch(out, 1.6)
 
 
@@ -902,7 +861,6 @@ def instrument_handle(rng):
     exc = lp(burst(rng, 0.012, 0.004), 900) + 0.5 * np.pad(pulse(4.0), (0, n_of(0.012) - len(pulse(4.0))))
     place(out, strike(exc, [(212, 0.04, 0.8), (365, 0.035, 0.9), (640, 0.025, 0.7), (1050, 0.018, 0.45)], 0.25), 0.0, 1.0)
     place(out, metal_hit(rng, [(1830, 0.025, 1.0), (3120, 0.018, 0.6), (4410, 0.012, 0.4)], 0.08, 0.4), 0.006, 0.3)
-    out = add_room(rng, out, 0.14, 0.38, 3000)
     return crunch(out, 1.5)
 
 
@@ -921,7 +879,6 @@ def sax_keys(rng):
     for tt, a in zip((0.0, 0.058, 0.112, 0.188, 0.243), (1.0, 0.7, 0.85, 0.6, 0.75)):
         tt = tt if tt == 0 else tt + rng.uniform(-0.006, 0.006)
         place(out, key_clack(rng, rng.uniform(0.8, 1.25)), tt, a)
-    out = add_room(rng, out, 0.12, 0.36, 3200)
     return crunch(out, 1.5)
 
 
@@ -942,7 +899,6 @@ def trumpet_valves(rng):
     out = np.zeros(n)
     for k, tt in enumerate((0.0, 0.108, 0.221)):
         place(out, valve(rng, (1.0, 0.94, 1.07)[k]), tt, (1.0, 0.85, 0.92)[k])
-    out = add_room(rng, out, 0.12, 0.36, 3200)
     return crunch(out, 1.5)
 
 
@@ -977,7 +933,6 @@ def spit_valve(rng):
         f = np.minimum(f, 2600) * rng.uniform(0.85, 1.15)
         drop = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-dt / 0.008)
         place(out, drop, tt + rng.uniform(-0.02, 0.02), rng.uniform(0.18, 0.3))
-    out = add_room(rng, out, 0.1, 0.32, 3400)
     return crunch(out, 1.4)
 
 
@@ -991,7 +946,7 @@ def guitar_handle(rng):
     for k, f in enumerate((82.41, 110.0, 146.83, 196.0, 246.94, 329.63)):
         s = karplus(rng, f, dur - 0.1, t60=1.1, bright=0.4)
         place(out, s, 0.012 + 0.011 * k + rng.uniform(0, 0.003), 0.16)
-    out = add_room(rng, out, 0.12, 0.4, 3000)[:n]
+    out = out[:n]
     return crunch(out, 1.6)
 
 
@@ -1009,7 +964,7 @@ def bass_handle(rng):
     buzz = lp(buzz, 4000) * np.exp(-t_axis(len(buzz)) / 0.15)
     place(out, st, 0.02, 0.45)
     place(out, nz(buzz), 0.02, 0.25)
-    out = add_room(rng, out, 0.14, 0.42, 2600)[:n]
+    out = out[:n]
     return crunch(out, 1.8)
 
 
@@ -1022,7 +977,6 @@ def piano_bench_creak(rng):
                [(232, 0.035, 1.0), (468, 0.025, 0.8), (821, 0.018, 0.55), (1347, 0.012, 0.35), (2080, 0.007, 0.2)],
                [(0, 0.55), (0.35, 1.0), (0.85, 0.5), (1, 0)], jitter=0.35)
     place(out, cr, 0.0, 0.9)
-    out = add_room(rng, out, 0.14, 0.4, 2800)
     return crunch(out, 1.7)
 
 
@@ -1047,7 +1001,6 @@ def door_slam(rng):
         place(rat, pulse(0.8), tt, np.exp(-tt / 0.09) * rng.uniform(0.5, 1.0))
         tt += rng.uniform(0.03, 0.05)
     place(out, strike(rat, [(332, 0.03, 1), (521, 0.025, 0.8), (806, 0.02, 0.6), (1240, 0.012, 0.4)], 0.35), 0.0, 0.25)
-    out = add_room(rng, out, 0.45, 0.75, 2500)
     return crunch(out, 2.5)
 
 
@@ -1181,8 +1134,11 @@ def validate(name, x, q, a, peak_dbfs, dur_range):
         raise SfxError(f"{name}: DC offset {a['dc']:.2e}")
     if a["onset_rel"] < 0.06:
         raise SfxError(f"{name}: weak onset, first 15 ms peaks at {20 * np.log10(a['onset_rel']):.1f} dB of peak")
-    if not (dur_range[0] <= a["seconds"] <= dur_range[1]):
-        raise SfxError(f"{name}: duration {a['seconds']:.3f} s outside {dur_range}")
+    # dry sounds stop when their source does, so the lower bound only catches a sound
+    # that went missing; the authored minimum assumed a baked room tail
+    lo = min(dur_range[0], MIN_DRY_SECONDS)
+    if not (lo <= a["seconds"] <= dur_range[1]):
+        raise SfxError(f"{name}: duration {a['seconds']:.3f} s outside ({lo}, {dur_range[1]})")
     if q[0] != 0 or abs(int(q[-1])) > 2:
         raise SfxError(f"{name}: endpoints not faded to zero")
 
@@ -1251,7 +1207,7 @@ README_HEAD = """# Not Quite My Tempo sound effects
 Procedurally synthesized by `../gen_sfx.py`. No recorded or downloaded audio is used.
 Every random generator is seeded from the sound name, so output is bit-identical on every run.
 
-Format is mono 16-bit PCM WAV at 22050 Hz. Each file starts on its transient at t=0
+Format is mono 16-bit PCM WAV at 48000 Hz. Each file starts on its transient at t=0
 (4 ms fade-in), ends with a fade-out, has no DC offset and peaks at -3 dBFS unless
 marked quieter by design below. `sfx_manifest.json` lists duration, peak, category and
 description for every file.

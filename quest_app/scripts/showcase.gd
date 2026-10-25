@@ -4,7 +4,7 @@ extends Node
 ## in the headset or the desktop preview:
 ##   1. the band cycle: raise, play_loop, lower
 ##   2. each band reaction (freeze from playing; the rest from resting; spit_valve on trombones)
-##   3. every Terence move in the order of terence_v003_moves.json (45 moves, then the walk cycle)
+##   3. every Terence move in the order of terence_v004_moves.json (45 moves, then the walk cycle)
 ## Then it starts over. Looping moves are shown for LOOP_HOLD seconds.
 
 const LOOP_HOLD := 4.0

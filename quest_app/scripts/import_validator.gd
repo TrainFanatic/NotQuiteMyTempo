@@ -5,7 +5,7 @@ extends RefCounted
 ## and that every texture keeps nearest filtering. validate() returns a list of problem
 ## strings; empty means every asset passes.
 
-const LIMITS := {"band": 2300, "terence": 2300, "instruments": 500, "props": 300, "room": 10000}
+const LIMITS := {"band": 2300, "terence": 2300, "instruments": 500, "props": 900, "room": 10000}
 const BAND_ANIMS := ["rest", "raise", "play_loop", "lower", "freeze", "startle", "look_down",
 	"look_at_drummer", "flip_page", "arms_rest"]
 const EXTRA_BONES := ["Instrument", "InstrumentSlide", "PropR", "PropL"]

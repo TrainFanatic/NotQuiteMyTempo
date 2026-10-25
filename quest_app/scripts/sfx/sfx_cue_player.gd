@@ -184,6 +184,11 @@ static func attach_all(band: Array, terence: Node3D, lib: SfxLibrary, voice_pool
 			if not band.any(func(m): return (m.blender.player as AnimationPlayer).has_animation(a)):
 				push_error("SfxCuePlayer: band default cue action '%s' matches no band member's animation" % a)
 				return false
+	return attach_terence(terence, lib, voice_pool)
+
+
+## Terence alone: his own sounds and those of the props he carries and throws.
+static func attach_terence(terence: Node3D, lib: SfxLibrary, voice_pool: SfxVoicePool) -> bool:
 	var tp = new()
 	terence.add_child(tp)
 	return tp.setup(terence, lib.terence_table(), lib, voice_pool)

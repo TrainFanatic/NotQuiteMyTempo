@@ -10,7 +10,7 @@ extends RefCounted
 ##            from wide to the shot's lens over ShotFramer.SNAP_FRAMES, at the "accent" frame)
 ##   from/to  when the shot is on screen, in authored animation frames (24 fps) from the start
 ##            of the move. Either an int, or a frame spec naming a key timing of the move in
-##            terence_v003_moves.json, so the cuts follow the animation when it is re-authored:
+##            terence_v004_moves.json, so the cuts follow the animation when it is re-authored:
 ##              "start" (0), "end" (the move's frame count), "<key>" (an int key such as
 ##              "cutoff"), "<key>[i]" (element i of a list key such as "impacts"), each with
 ##              an optional "+N" or "-N" frame offset, e.g. "impacts[2]-3", "end+12".
@@ -39,8 +39,9 @@ const SHOTS := {
 		{"framing": &"extreme_close_face", "camera": &"static", "from": "wave+4", "to": "end+10", "fov": 20.0},
 	]},
 	&"t1_fist_cutoff": {"enabled": true, "shots": [
-		{"framing": &"fist_insert", "camera": &"snap_zoom", "accent": "cutoff-2", "from": "start", "to": "cutoff+5", "fov": 26.0},
-		{"framing": &"close_face", "camera": &"push_in", "from": "cutoff+5", "to": "end+14", "fov": 24.0},
+		# the insert rides the wind-up, snaps on the slam and holds the frozen fist
+		{"framing": &"fist_insert", "camera": &"snap_zoom", "accent": "cutoff-2", "from": "start", "to": "hold_start+10", "fov": 26.0},
+		{"framing": &"close_face", "camera": &"push_in", "from": "hold_start+10", "to": "end+6", "fov": 24.0},
 	]},
 	&"t1_clap_stop": {"enabled": true, "shots": [
 		{"framing": &"low_angle_medium", "camera": &"static", "from": "start", "to": "clap+6", "fov": 34.0},
@@ -59,9 +60,10 @@ const SHOTS := {
 		{"framing": &"over_shoulder", "camera": &"snap_zoom", "accent": "point", "from": "start", "to": "point+10", "fov": 9.0},
 		{"framing": &"extreme_close_face", "camera": &"static", "from": "point+10", "to": "end+6", "fov": 20.0},
 	]},
-	# --- tier 3: in your face (he stands 0.7 m away, so these end with the move) ---
+	# --- tier 3: in your face. He stands 0.7 m away, so these end with the move, and no shot
+	# here pulls back far enough to put the camera behind the player's throne. ---
 	&"t3_loom": {"enabled": true, "shots": [
-		{"framing": &"low_angle_medium", "camera": &"push_in", "from": "start", "to": 40, "fov": 38.0},
+		{"framing": &"close_face", "camera": &"push_in", "from": "start", "to": 40, "fov": 30.0},
 		{"framing": &"extreme_close_face", "camera": &"static", "from": 40, "to": "end", "fov": 20.0},
 	]},
 	&"t3_whisper": {"enabled": true, "shots": [

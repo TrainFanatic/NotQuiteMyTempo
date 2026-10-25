@@ -252,6 +252,15 @@ func test_sfx_attach_all() -> void:
 		check(n.has_node("SfxCues"), "%s has a cue player" % n.name)
 
 
+func test_sfx_attach_terence_only() -> void:
+	var lib := _library()
+	var band := [_band("band_trombone_1")]
+	var t := _terence()
+	check(SfxCuePlayer.attach_terence(t, lib, _pool()), "attaches to Terence")
+	check(t.has_node("SfxCues"), "Terence has a cue player")
+	check(not band[0].has_node("SfxCues"), "the band stays silent")
+
+
 func test_sfx_library_errors() -> void:
 	check(SfxLibrary.load_dir("res://tests/fixtures/no_such_sfx") == null, "missing manifest")   # expected ERROR
 	var manifest := _json("sfx_manifest.json")
@@ -398,5 +407,6 @@ func test_sfx_bus_layout() -> void:
 	if i <= 0:
 		return
 	check_eq(AudioServer.get_bus_send(i), &"Master", "SFX sends to Master")
-	check(AudioServer.get_bus_effect_count(i) == 1 and AudioServer.get_bus_effect(i, 0) is AudioEffectReverb, "one room reverb on SFX")
+	# no reverb: its comb filters made every hit gurgle on the Quest
+	check_eq(AudioServer.get_bus_effect_count(i), 0, "SFX is dry")
 	check(AudioServer.get_bus_volume_db(i) < 0.0, "SFX leaves headroom")

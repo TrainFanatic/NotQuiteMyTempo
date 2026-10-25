@@ -35,3 +35,9 @@ openxr/foveation_dynamic=true
 openxr/extensions/meta/passthrough=true
 openxr/startup_alert=false
 shaders/enabled=true
+
+[importer_defaults]
+
+wav={
+"compress/mode": 0
+}

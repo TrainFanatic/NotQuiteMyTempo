@@ -3,10 +3,10 @@ extends EditorScenePostImport
 ## Post-import for band members and Terence (set on their .glb.import files).
 ## Godot strips a "_loop" suffix from animation names; the work order names them exactly
 ## (band "play_loop"), so restore that, and set loop modes from the asset metadata:
-## band loops are fixed, Terence's come from terence_v003_moves.json.
+## band loops are fixed, Terence's come from terence_v004_moves.json.
 
 const BAND_LOOPS := ["rest", "play_loop", "arms_rest"]
-const TERENCE_META := "res://assets/terence/terence_v003_moves.json"
+const TERENCE_META := "res://assets/terence/terence_v004_moves.json"
 
 
 func _post_import(scene: Node) -> Object:

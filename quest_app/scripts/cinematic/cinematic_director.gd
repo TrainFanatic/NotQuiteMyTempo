@@ -1,15 +1,17 @@
 extends Node
 ## Film-style cut-ins on Terence's big moves (the cutoffs, the stares, the shouting, the
-## throws): when a move in the shot table starts, a virtual camera cuts to a close-up of him
-## and plays the move's shots, timed on the move's animation clock.
+## throws): when a move in the shot table starts, the view cuts to a close-up of him and
+## plays the move's shots, timed on the move's animation clock.
 ##
-## XR (panel mode): the player's own camera never moves (moving it makes people sick).
-## Instead a letterboxed 2.39:1 "cinema panel" appears at the cut, PANEL_DIST in front of the
-## player and a little below eye line, clear of Terence, and stays put in the room for the
-## whole sequence. It shows the cinematic camera, rendered into a small SubViewport that
-## only renders while a shot is on, and fades out after the last shot.
-## Desktop: a true cut. The cinematic camera becomes the current camera for the shots, with
-## the grade and the letterbox drawn over the screen, then the previous camera comes back.
+## XR: the headset owns the camera, so the cut moves the player instead. On every cut the
+## XROrigin3D is put where the tracked head lands exactly on the shot's camera position,
+## heading the way the shot looks, with the player's live head tracking (pitch, roll, small
+## head motion) still on top. Shots that move (a push-in, the operator following him) move
+## the origin each step the same way. A head-locked blink to black of BLINK seconds covers
+## each cut. The passthrough kit window is hidden for the sequence, since it shows the real
+## drums at the throne, and the origin and the kit window are put back exactly at the end.
+## Desktop: the cinematic camera becomes the current camera for the shots, with the grade
+## and the letterbox drawn over the screen, then the previous camera comes back.
 ##
 ## Timing follows Terence's AnimBlender (its started/advanced signals report authored
 ## animation time), so at another tempo the cuts land on the same animation frames.
@@ -19,21 +21,12 @@ extends Node
 const ShotTable := preload("res://scripts/cinematic/shot_table.gd")
 const ShotFramer := preload("res://scripts/cinematic/shot_framer.gd")
 
-## The cinematic camera's resolution in panel mode (2.39:1, low to keep the Quest at 72 fps).
-const PANEL_RES := Vector2i(640, 268)
-## Panel size and placement, metres, relative to the player's head when the sequence starts.
-const PANEL_WIDTH := 0.9
-const PANEL_BAR := 0.04               # black bar above and below the picture
-const PANEL_DIST := 1.3
-const PANEL_DROP := 0.10              # centre this far below eye height
-## The panel keeps this clear (degrees, beyond its own half width) of Terence's body,
-## taken as TERENCE_HALF_WIDTH metres either side of his head.
-const PANEL_MARGIN := 3.0
-const TERENCE_HALF_WIDTH := 0.24
-const FADE_OUT := 0.2                 # real seconds
-## The panel is on its own render layer, so the cinematic camera never films it.
-const PANEL_LAYER := 20
 const NEAR := 0.02
+## XR: the blink at each cut, real seconds. Fully black for the first half, then it clears.
+const BLINK := 0.08
+## XR: the blink quad, head-locked this far ahead of the eyes and this wide (covers the view).
+const BLINK_DIST := 0.1
+const BLINK_SIZE := 0.6
 
 ## Emitted on every cut: the shot (index into the move's shots) now on screen.
 signal shot_started(move: StringName, index: int, framing: StringName)
@@ -42,16 +35,28 @@ signal sequence_ended(move: StringName)
 
 var terence: Terence
 var head: Node3D                      # the player's head (XRCamera3D in XR, the desktop camera otherwise)
-var panel_mode := false
+var xr_mode := false
 ## A working copy of ShotTable.SHOTS (tests change it).
 var table: Dictionary
 var framer: ShotFramer
+## The current shot's camera pose and vertical fov (degrees), in both modes.
+var shot_transform := Transform3D.IDENTITY
+var shot_fov := 0.0
+## Desktop only
 var cam: Camera3D
-var viewport: SubViewport             # panel mode only
-var panel: MeshInstance3D             # panel mode only
-var overlay: CanvasLayer              # desktop only
-var _panel_mat: ShaderMaterial
-var _prev_camera: Camera3D            # desktop: the camera to cut back to
+var overlay: CanvasLayer
+var _prev_camera: Camera3D            # the camera to cut back to
+## XR only
+var xr_origin: Node3D                 # the rig's XROrigin3D; the head is under it
+var kit_window: Node3D                # Rehearsal's KitWindow (passthrough onto the real kit)
+var blink: MeshInstance3D             # head-locked black quad, visible only during a blink
+var _blink_mat: StandardMaterial3D
+var _blink_left := 0.0
+var _rest_local := Transform3D.IDENTITY    # the origin's own transform before the sequence
+var _rest_global := Transform3D.IDENTITY
+var _kit_was_visible := true
+var _cut_head_pos := Vector3.ZERO     # the head's position in the origin's frame at the last cut
+var _cut_head_yaw := 0.0              # and its heading there (radians)
 ## Sequence state
 var _move: StringName = &""           # the move whose shots are playing, or empty
 var _shots: Array = []
@@ -60,84 +65,56 @@ var _base := 0.0                      # frames of sequence time before the curre
 var _len := 0.0                       # frames in the current animation
 var _seq_frame := 0.0
 var _in_tail := false
-var _fade := 0.0                      # seconds of fade-out left
 
 
-## `head_node` is the player's eye (rig.camera). `world_env` is the scene's Environment; the
-## panel's camera uses a copy without tonemapping, as the panel is tonemapped again with the
-## rest of the scene.
-func setup(t: Terence, head_node: Node3D, use_panel: bool, world_env: Environment) -> bool:
+## `head_node` is the player's eye (rig.camera). In XR (`use_xr`), `origin` is the rig's
+## XROrigin3D with the head under it, and `kit` is the passthrough kit window; both are
+## required there and must be null on the desktop.
+func setup(t: Terence, head_node: Node3D, use_xr: bool, origin: Node3D, kit: Node3D) -> bool:
 	if t == null or t.blender == null or t.skeleton == null:
 		push_error("CinematicDirector: needs a set-up Terence")
 		return false
 	if head_node == null:
 		push_error("CinematicDirector: needs the player's head node (rig.camera)")
 		return false
-	if world_env == null:
-		push_error("CinematicDirector: needs the scene's Environment")
+	if use_xr:
+		if origin == null:
+			push_error("CinematicDirector: XR needs the rig's XROrigin3D to move the view")
+			return false
+		if not origin.is_ancestor_of(head_node):
+			push_error("CinematicDirector: the head %s is not under the XR origin %s" % [head_node.name, origin.name])
+			return false
+		if kit == null:
+			push_error("CinematicDirector: XR needs the KitWindow to hide during close-ups")
+			return false
+	elif origin != null or kit != null:
+		push_error("CinematicDirector: an XR origin or kit window was given for a desktop cut")
 		return false
 	terence = t
 	head = head_node
-	panel_mode = use_panel
+	xr_mode = use_xr
 	table = ShotTable.SHOTS.duplicate(true)
 	if not ShotTable.check(table, terence.meta, Terence.CLOSE_MOVES):
 		return false
 	framer = ShotFramer.new(terence, terence.skeleton)
 	if not framer.ok():
 		return false
-	cam = Camera3D.new()
-	cam.name = "CinematicCamera"
-	cam.near = NEAR
-	cam.keep_aspect = Camera3D.KEEP_WIDTH
-	cam.cull_mask &= ~(1 << (PANEL_LAYER - 1))
-	if panel_mode:
-		_build_panel(world_env)
+	if xr_mode:
+		xr_origin = origin
+		kit_window = kit
+		_build_blink()
 	else:
-		_build_overlay()
+		_build_desktop()
 	terence.move_started.connect(_on_move_started)
 	terence.blender.advanced.connect(_on_advanced)
 	return true
 
 
-func _build_panel(world_env: Environment) -> void:
-	viewport = SubViewport.new()
-	viewport.name = "CinematicViewport"
-	viewport.size = PANEL_RES
-	viewport.render_target_update_mode = SubViewport.UPDATE_DISABLED
-	viewport.render_target_clear_mode = SubViewport.CLEAR_MODE_ALWAYS
-	viewport.msaa_3d = Viewport.MSAA_DISABLED
-	viewport.positional_shadow_atlas_size = 0
-	viewport.audio_listener_enable_3d = false
-	viewport.transparent_bg = false
-	add_child(viewport)
-	var env := world_env.duplicate() as Environment
-	env.background_mode = Environment.BG_COLOR
-	env.background_color = Color(0.0, 0.0, 0.0, 1.0)
-	env.tonemap_mode = Environment.TONE_MAPPER_LINEAR
-	env.glow_enabled = false
-	cam.environment = env
-	viewport.add_child(cam)
-	cam.current = true
-	_panel_mat = ShaderMaterial.new()
-	_panel_mat.shader = load("res://shaders/cinematic_panel.gdshader")
-	_panel_mat.render_priority = Material.RENDER_PRIORITY_MAX
-	_panel_mat.set_shader_parameter("frame_tex", viewport.get_texture())
-	var pic_h := PANEL_WIDTH / ShotFramer.ASPECT
-	var quad := QuadMesh.new()
-	quad.size = Vector2(PANEL_WIDTH, pic_h + 2.0 * PANEL_BAR)
-	_panel_mat.set_shader_parameter("bar", PANEL_BAR / quad.size.y)
-	panel = MeshInstance3D.new()
-	panel.name = "CinemaPanel"
-	panel.mesh = quad
-	panel.material_override = _panel_mat
-	panel.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-	panel.layers = 1 << (PANEL_LAYER - 1)
-	panel.visible = false
-	panel.top_level = true
-	add_child(panel)
-
-
-func _build_overlay() -> void:
+func _build_desktop() -> void:
+	cam = Camera3D.new()
+	cam.name = "CinematicCamera"
+	cam.near = NEAR
+	cam.keep_aspect = Camera3D.KEEP_WIDTH
 	add_child(cam)
 	overlay = CanvasLayer.new()
 	overlay.name = "CinematicOverlay"
@@ -154,7 +131,29 @@ func _build_overlay() -> void:
 	overlay.add_child(rect)
 
 
-## True while a shot is on screen (not counting the panel's fade-out).
+## The blink: a black quad just ahead of the eyes, on the head, drawn over everything.
+func _build_blink() -> void:
+	_blink_mat = StandardMaterial3D.new()
+	_blink_mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	_blink_mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	_blink_mat.no_depth_test = true
+	_blink_mat.cull_mode = BaseMaterial3D.CULL_DISABLED
+	_blink_mat.disable_fog = true
+	_blink_mat.render_priority = Material.RENDER_PRIORITY_MAX
+	_blink_mat.albedo_color = Color(0.0, 0.0, 0.0, 1.0)
+	var quad := QuadMesh.new()
+	quad.size = Vector2(BLINK_SIZE, BLINK_SIZE)
+	blink = MeshInstance3D.new()
+	blink.name = "CutBlink"
+	blink.mesh = quad
+	blink.material_override = _blink_mat
+	blink.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	blink.position = Vector3(0.0, 0.0, -BLINK_DIST)
+	blink.visible = false
+	head.add_child(blink)
+
+
+## True while a shot is on screen.
 func is_active() -> bool:
 	return _move != &""
 
@@ -215,23 +214,70 @@ func _update(frame_t: float, dt: float) -> void:
 	var i := _shot if _shot >= 0 else 0
 	while i < _shots.size() - 1 and frame_t >= _shots[i]["to"]:
 		i += 1
-	if i != _shot:
+	var cut := i != _shot
+	if cut:
 		_shot = i
 		framer.cut()
+		if xr_mode:
+			_snapshot_head()
+			_start_blink()
 		shot_started.emit(_move, i, _shots[i]["framing"])
-	var f := framer.frame(_shots[i], frame_t, head.global_position, dt)
-	cam.global_transform = f["transform"]
-	cam.fov = ShotFramer.hfov(f["fov"])
+	var f := framer.frame(_shots[i], frame_t, player_eye(), dt)
+	shot_transform = f["transform"]
+	shot_fov = f["fov"]
+	if xr_mode:
+		xr_origin.global_transform = origin_for(shot_transform, _cut_head_pos, _cut_head_yaw)
+	else:
+		cam.global_transform = shot_transform
+		cam.fov = ShotFramer.hfov(shot_fov)
+
+
+## Where the player's eye is in the room, as if the view had not moved: the framer aims
+## shots from the throne, so in XR the head's tracked pose is read against the origin's
+## resting place, not where the cut has put it.
+func player_eye() -> Vector3:
+	if not xr_mode or not is_active():
+		return head.global_position
+	return _rest_global * (xr_origin.global_transform.affine_inverse() * head.global_position)
+
+
+## XR: the tracked head's pose in the origin's frame at this cut. The shot is placed against
+## it, so the head lands on the shot pose at the cut, and moving the head afterwards still
+## moves the view.
+func _snapshot_head() -> void:
+	var local := xr_origin.global_transform.affine_inverse() * head.global_transform
+	_cut_head_pos = local.origin
+	_cut_head_yaw = heading(local.basis)
+
+
+## The origin transform that puts a head at `head_pos` (heading `head_yaw`) in the origin's
+## frame exactly on `shot`'s position, heading the way `shot` looks. Only the heading turns
+## the origin: it stays upright, so the floor stays level and the head's own pitch and roll
+## are kept.
+static func origin_for(shot: Transform3D, head_pos: Vector3, head_yaw: float) -> Transform3D:
+	var b := Basis(Vector3.UP, heading(shot.basis) - head_yaw)
+	return Transform3D(b, shot.origin - b * head_pos)
+
+
+## The heading (rotation about +Y, radians) a basis looks along. Looking far down at the
+## drums, the top of the head points ahead, so it is mixed in (both point the same way
+## there, so the heading does not jump).
+static func heading(b: Basis) -> float:
+	var f := -b.z + b.y * 0.5 if b.z.y > 0.7 else -b.z
+	return atan2(-f.x, -f.z)
 
 
 ## The cut in.
 func _begin() -> bool:
-	if panel_mode:
-		panel.global_transform = place_panel(head.global_transform, framer.face_point())
-		_fade = 0.0
-		_panel_mat.set_shader_parameter("fade", 1.0)
-		panel.visible = true
-		viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
+	if xr_mode:
+		if not is_instance_valid(xr_origin) or not is_instance_valid(kit_window):
+			push_error("CinematicDirector: the XR origin or kit window is gone, so no cut for %s" % _move)
+			_move = &""
+			return false
+		_rest_local = xr_origin.transform
+		_rest_global = xr_origin.global_transform
+		_kit_was_visible = kit_window.visible
+		kit_window.visible = false
 		return true
 	_prev_camera = get_viewport().get_camera_3d()
 	if _prev_camera == null:
@@ -243,15 +289,19 @@ func _begin() -> bool:
 	return true
 
 
-## The cut out: the panel freezes on its last frame and fades; the desktop cuts straight back.
+## The cut out, straight back to where the player was.
 func _end() -> void:
 	var move := _move
 	_move = &""
 	_shot = -1
 	_in_tail = false
-	if panel_mode:
-		viewport.render_target_update_mode = SubViewport.UPDATE_DISABLED
-		_fade = FADE_OUT
+	if xr_mode:
+		if not is_instance_valid(xr_origin) or not is_instance_valid(kit_window):
+			push_error("CinematicDirector: the XR origin or kit window is gone; cannot put the view back")
+		else:
+			xr_origin.transform = _rest_local
+			kit_window.visible = _kit_was_visible
+			_start_blink()
 	else:
 		overlay.visible = false
 		cam.current = false
@@ -263,34 +313,22 @@ func _end() -> void:
 	sequence_ended.emit(move)
 
 
-## The panel's transform for a sequence starting now: PANEL_DIST along the player's view
-## (levelled), PANEL_DROP below the eyes, facing them; swung sideways if it would cover
-## Terence, whose face is at `face`.
-static func place_panel(head_xf: Transform3D, face: Vector3) -> Transform3D:
-	var eye := head_xf.origin
-	# levelled view direction; looking down at the drums, the top of the head points ahead
-	var fwd := ShotFramer._flat(-head_xf.basis.z + head_xf.basis.y)
-	var to_t := ShotFramer._flat(face - eye)
-	var dist_t := Vector2(face.x - eye.x, face.z - eye.z).length()
-	var need := rad_to_deg(atan((PANEL_WIDTH / 2.0) / PANEL_DIST) + atan(TERENCE_HALF_WIDTH / dist_t)) + PANEL_MARGIN
-	var off := rad_to_deg(to_t.signed_angle_to(fwd, Vector3.UP))
-	var dir := fwd
-	if absf(off) < need:
-		# swing it out past him on the side the player already looks toward
-		dir = to_t.rotated(Vector3.UP, deg_to_rad(need if off >= 0.0 else -need))
-	var pos := eye + dir * PANEL_DIST + Vector3.DOWN * PANEL_DROP
-	return Transform3D(Basis.looking_at(pos - eye, Vector3.UP), pos)
+func _start_blink() -> void:
+	_blink_left = BLINK
+	_blink_mat.albedo_color.a = 1.0
+	blink.visible = true
 
 
-## The panel's fade-out runs in real time.
+## The blink runs in real time.
 func update(delta: float) -> void:
-	if _fade <= 0.0:
+	if _blink_left <= 0.0:
 		return
-	_fade -= delta
-	if _fade <= 0.0:
-		_fade = 0.0
-		panel.visible = false
-	_panel_mat.set_shader_parameter("fade", _fade / FADE_OUT)
+	_blink_left -= delta
+	if _blink_left <= 0.0:
+		_blink_left = 0.0
+		blink.visible = false
+		return
+	_blink_mat.albedo_color.a = clampf(_blink_left / (BLINK * 0.5), 0.0, 1.0)
 
 
 func _process(delta: float) -> void:
@@ -298,5 +336,5 @@ func _process(delta: float) -> void:
 
 
 func _exit_tree() -> void:
-	if is_active() and not panel_mode:
+	if is_active():
 		_end()

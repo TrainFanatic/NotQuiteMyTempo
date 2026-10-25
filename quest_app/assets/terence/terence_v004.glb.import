@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c88sgy05i4eu5"
-path="res://.godot/imported/terence_v003.glb-a4c599a84d9922bccc1b8bc689431725.scn"
+uid="uid://bw7slm0e6l3jh"
+path="res://.godot/imported/terence_v004.glb-131921e86cd7bb7167e14fcbbca32a0c.scn"
 
 [deps]
 
-source_file="res://assets/terence/terence_v003.glb"
-dest_files=["res://.godot/imported/terence_v003.glb-a4c599a84d9922bccc1b8bc689431725.scn"]
+source_file="res://assets/terence/terence_v004.glb"
+dest_files=["res://.godot/imported/terence_v004.glb-131921e86cd7bb7167e14fcbbca32a0c.scn"]
 
 [params]
 
@@ -22,18 +22,18 @@ nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
-meshes/generate_lods=true
+meshes/generate_lods=false
 meshes/create_shadow_meshes=true
 meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
-animation/fps=30
+animation/fps=24
 animation/trimming=false
 animation/remove_immutable_tracks=true
-animation/import_rest_as_RESET=false
-import_script/path=""
+animation/import_rest_as_RESET=true
+import_script/path="res://tools/post_import_character.gd"
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""

@@ -34,8 +34,8 @@ const PROPS := {
 	&"t4_sweep_stand": [{"bone": "PropR", "glb": "music_stand_knockable", "thrown": true, "hides": "stand_terence", "split": {}}],
 	&"t4_throw_music": [{"bone": "PropR", "glb": "sheet_music_pages", "thrown": true, "hides": "stand_terence", "split": {}}],
 }
-const MOVES_JSON := "res://assets/terence/terence_v003_moves.json"
-const GLB := "res://assets/terence/terence_v003.glb"
+const MOVES_JSON := "res://assets/terence/terence_v004_moves.json"
+const GLB := "res://assets/terence/terence_v004.glb"
 const HUB := &"t0_stare_drummer"
 ## Looping walk cycle played while travelling. Optional: without it he glides in HUB.
 const WALK := &"walk"
@@ -124,8 +124,11 @@ func setup(home_transform: Transform3D, head: Vector3, room: Node3D) -> void:
 			push_error("Terence: glb lacks move %s" % id)
 			return
 		moves.append(StringName(id))
-		# moves.json is the authority on loops (the post-import does the same for the band)
-		player.get_animation(id).loop_mode = Animation.LOOP_LINEAR if meta["moves"][id]["loop"] else Animation.LOOP_NONE
+		# moves.json is the authority on loops; tools/post_import_character.gd applies it on import
+		var want := Animation.LOOP_LINEAR if meta["moves"][id]["loop"] else Animation.LOOP_NONE
+		if player.get_animation(id).loop_mode != want:
+			push_error("Terence: move %s has the wrong loop mode; is %s.import missing import_script/path?" % [id, GLB])
+			return
 	if not _setup_walk():
 		return
 	for bone in ["PropR", "PropL"]:
@@ -311,10 +314,28 @@ func _walk_anim() -> StringName:
 	return WALK if has_move(WALK) else HUB
 
 
+## Walks home from where he stands now, which may be off the planner's floor (outside a
+## doorway): a straight leg to `via`, which must be on the floor, then the planner's route
+## around the band to home, turning to home's facing. HUB follows on arrival. Used by the
+## entrance (scripts/intro.gd).
+func walk_in(via: Vector3) -> bool:
+	var floor_via := Vector3(via.x, home.origin.y, via.z)
+	var rest := planner.plan(floor_via, home.origin)
+	if rest.is_empty():
+		return false
+	var route := PackedVector3Array([global_position])
+	route.append_array(rest)
+	return _follow(route, home, HUB, WALK_SPEED)
+
+
 func _travel_to(target: Transform3D, then: StringName, speed: float) -> bool:
 	var route := planner.plan(global_position, target.origin)
 	if route.is_empty():
 		return false
+	return _follow(route, target, then, speed)
+
+
+func _follow(route: PackedVector3Array, target: Transform3D, then: StringName, speed: float) -> bool:
 	_route = route
 	_route_i = 1
 	_arrive_at = target

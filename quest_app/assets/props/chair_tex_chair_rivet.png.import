@@ -2,19 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs2ovhll3adtm"
-path="res://.godot/imported/terence_v003_tex_terence3_skin.png-9226e48e750fb7faf30933778c7681f5.ctex"
+uid="uid://6j8nbxlc65un"
+path="res://.godot/imported/chair_tex_chair_rivet.png-d87712f15d4618cdbb25a0566f43e059.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "7c88d7a57770a4c27545bae6c493aa80"
+"md5": "5625ca8799d6622f05ed734f2b4fc2dc"
 }
 
 [deps]
 
-source_file="res://assets/terence/terence_v003_tex_terence3_skin.png"
-dest_files=["res://.godot/imported/terence_v003_tex_terence3_skin.png-9226e48e750fb7faf30933778c7681f5.ctex"]
+source_file="res://assets/props/chair_tex_chair_rivet.png"
+dest_files=["res://.godot/imported/chair_tex_chair_rivet.png-d87712f15d4618cdbb25a0566f43e059.ctex"]
 
 [params]
 

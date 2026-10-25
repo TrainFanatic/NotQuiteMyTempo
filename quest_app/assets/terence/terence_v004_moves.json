@@ -136,34 +136,50 @@
       "note": "hips sit on stool_terence"
     },
     "t1_flick": {
-      "frames": 18,
-      "seconds": 0.75,
+      "frames": 28,
+      "seconds": 1.167,
       "loop": false,
-      "flick": 10
+      "flick": 11,
+      "windup": 7,
+      "hold_start": 16,
+      "release": 20
     },
     "t1_wave_off": {
-      "frames": 30,
-      "seconds": 1.25,
+      "frames": 38,
+      "seconds": 1.583,
       "loop": false,
-      "wave": 16
+      "wave": 16,
+      "windup": 11,
+      "hold_start": 22,
+      "release": 28
     },
     "t1_fist_cutoff": {
-      "frames": 30,
-      "seconds": 1.25,
+      "frames": 72,
+      "seconds": 3.0,
       "loop": false,
-      "cutoff": 10
+      "cutoff": 14,
+      "windup": 9,
+      "hold_start": 19,
+      "release": 50,
+      "note": "windup = top of the wind-up, cutoff = the fist lands, hold_start..release = the frozen hold, glare on DRUMMER_HEAD"
     },
     "t1_clap_stop": {
-      "frames": 24,
-      "seconds": 1.0,
+      "frames": 32,
+      "seconds": 1.333,
       "loop": false,
-      "clap": 9
+      "clap": 12,
+      "windup": 8,
+      "hold_start": 17,
+      "release": 23
     },
     "t1_fist_slam": {
-      "frames": 30,
-      "seconds": 1.25,
+      "frames": 38,
+      "seconds": 1.583,
       "loop": false,
-      "slam": 12
+      "slam": 14,
+      "windup": 9,
+      "hold_start": 19,
+      "release": 26
     },
     "t2_judging_stare": {
       "frames": 72,

@@ -1,282 +1,520 @@
 {
-  "sample_rate": 22050,
+  "sample_rate": 48000,
   "sounds": {
     "foot_step_1": {
       "file": "foot_step_1.wav",
-      "seconds": 0.3098,
+      "seconds": 0.2524,
       "peak_dbfs": -3.0,
       "category": "footsteps",
-      "description": "Dress shoe heel and toe on hardwood, variant 1 (mid board resonance)."
+      "description": "Dress shoe heel and toe on hardwood, variant 1 (mid board resonance).",
+      "source": {
+        "title": "Footsteps Men's Dress Shoes Hardwood Floor Wood",
+        "url": "https://freesound.org/people/cjfilmmaker/sounds/328340/",
+        "author": "CJ Johnson (cjfilmmaker)",
+        "license": "CC BY 3.0",
+        "recorded": true
+      }
     },
     "foot_step_2": {
       "file": "foot_step_2.wav",
-      "seconds": 0.2816,
+      "seconds": 0.1924,
       "peak_dbfs": -3.0,
       "category": "footsteps",
-      "description": "Dress shoe step on hardwood, variant 2 (lower boards, longer roll, clickier heel)."
+      "description": "Dress shoe step on hardwood, variant 2 (lower boards, longer roll, clickier heel).",
+      "source": {
+        "title": "Footsteps Men's Dress Shoes Hardwood Floor Wood",
+        "url": "https://freesound.org/people/cjfilmmaker/sounds/328340/",
+        "author": "CJ Johnson (cjfilmmaker)",
+        "license": "CC BY 3.0",
+        "recorded": true
+      }
     },
     "foot_step_3": {
       "file": "foot_step_3.wav",
-      "seconds": 0.3074,
+      "seconds": 0.2677,
       "peak_dbfs": -3.0,
       "category": "footsteps",
-      "description": "Dress shoe step on hardwood, variant 3 (tighter boards, quick heavy toe)."
+      "description": "Dress shoe step on hardwood, variant 3 (tighter boards, quick heavy toe).",
+      "source": {
+        "title": "Footsteps Men's Dress Shoes Hardwood Floor Wood",
+        "url": "https://freesound.org/people/cjfilmmaker/sounds/328340/",
+        "author": "CJ Johnson (cjfilmmaker)",
+        "license": "CC BY 3.0",
+        "recorded": true
+      }
     },
     "foot_step_4": {
       "file": "foot_step_4.wav",
-      "seconds": 0.2888,
+      "seconds": 0.1858,
       "peak_dbfs": -3.0,
       "category": "footsteps",
-      "description": "Dress shoe step on hardwood, variant 4 (slow heel to toe roll, light toe)."
+      "description": "Dress shoe step on hardwood, variant 4 (slow heel to toe roll, light toe).",
+      "source": {
+        "title": "Footsteps Men's Dress Shoes Hardwood Floor Wood",
+        "url": "https://freesound.org/people/cjfilmmaker/sounds/328340/",
+        "author": "CJ Johnson (cjfilmmaker)",
+        "license": "CC BY 3.0",
+        "recorded": true
+      }
     },
     "foot_stomp": {
       "file": "foot_stomp.wav",
-      "seconds": 0.4531,
+      "seconds": 0.4,
       "peak_dbfs": -3.0,
       "category": "footsteps",
-      "description": "Heavy aggressive stomp on hardwood with board rattle and room."
+      "description": "Heavy aggressive stomp on hardwood with board rattle and room.",
+      "source": {
+        "title": "Foot Stomp",
+        "url": "https://freesound.org/people/JakeEaton/sounds/559069/",
+        "author": "JakeEaton",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "foot_scuff": {
       "file": "foot_scuff.wav",
-      "seconds": 0.4555,
+      "seconds": 0.2386,
       "peak_dbfs": -3.0,
       "category": "footsteps",
-      "description": "Shoe twist and drag on hardwood with a short leather squeak."
+      "description": "Shoe twist and drag on hardwood with a short leather squeak.",
+      "source": {
+        "title": "Footsteps Men's Dress Shoes Hardwood Floor Wood",
+        "url": "https://freesound.org/people/cjfilmmaker/sounds/328340/",
+        "author": "CJ Johnson (cjfilmmaker)",
+        "license": "CC BY 3.0",
+        "recorded": true
+      }
     },
     "clap_1": {
       "file": "clap_1.wav",
-      "seconds": 0.2954,
+      "seconds": 0.1265,
       "peak_dbfs": -3.0,
       "category": "hands",
-      "description": "Single sharp hand clap, mid cavity with a tiny flam."
+      "description": "Single sharp hand clap, mid cavity with a tiny flam.",
+      "source": {
+        "title": "Clap, Single, 4",
+        "url": "https://freesound.org/people/InspectorJ/sounds/404549/",
+        "author": "InspectorJ",
+        "license": "CC BY 4.0",
+        "recorded": true
+      }
     },
     "clap_2": {
       "file": "clap_2.wav",
-      "seconds": 0.3094,
+      "seconds": 0.1306,
       "peak_dbfs": -3.0,
       "category": "hands",
-      "description": "Single sharp hand clap, brighter and tighter, no flam."
+      "description": "Single sharp hand clap, brighter and tighter, no flam.",
+      "source": {
+        "title": "Clap, Single, 17",
+        "url": "https://freesound.org/people/InspectorJ/sounds/404548/",
+        "author": "InspectorJ",
+        "license": "CC BY 4.0",
+        "recorded": true
+      }
     },
     "clap_3": {
       "file": "clap_3.wav",
-      "seconds": 0.309,
+      "seconds": 0.2001,
       "peak_dbfs": -3.0,
       "category": "hands",
-      "description": "Single sharp hand clap, lower and fuller, wider flam."
+      "description": "Single sharp hand clap, lower and fuller, wider flam.",
+      "source": {
+        "title": "HandClap1",
+        "url": "https://freesound.org/people/Landau00/sounds/463687/",
+        "author": "Landau00",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "clap_big": {
       "file": "clap_big.wav",
-      "seconds": 0.6532,
+      "seconds": 0.3107,
       "peak_dbfs": -3.0,
       "category": "hands",
-      "description": "One huge cupped stopping clap with a big room bloom."
+      "description": "One huge cupped stopping clap with a big room bloom.",
+      "source": {
+        "title": "Single clap",
+        "url": "https://freesound.org/people/randbsoundbites/sounds/789991/",
+        "author": "randbsoundbites",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "slap_1": {
       "file": "slap_1.wav",
-      "seconds": 0.3036,
+      "seconds": 0.1846,
       "peak_dbfs": -3.0,
       "category": "hands",
-      "description": "Open-hand face slap, meaty skin smack, variant 1."
+      "description": "Open-hand face slap, meaty skin smack, variant 1.",
+      "source": {
+        "title": "Face slap sound effect",
+        "url": "https://freesound.org/people/magicjoshua/sounds/704179/",
+        "author": "magicjoshua",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "slap_2": {
       "file": "slap_2.wav",
-      "seconds": 0.2732,
+      "seconds": 0.2282,
       "peak_dbfs": -3.0,
       "category": "hands",
-      "description": "Open-hand face slap, heavier and fleshier, variant 2."
+      "description": "Open-hand face slap, heavier and fleshier, variant 2.",
+      "source": {
+        "title": "Slap",
+        "url": "https://freesound.org/people/MrDrPrFr/sounds/337148/",
+        "author": "MrDrPrFr",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "slap_3": {
       "file": "slap_3.wav",
-      "seconds": 0.2965,
+      "seconds": 0.112,
       "peak_dbfs": -3.0,
       "category": "hands",
-      "description": "Open-hand face slap, sharper crack, variant 3."
+      "description": "Open-hand face slap, sharper crack, variant 3.",
+      "source": {
+        "title": "Slap in the Face",
+        "url": "https://freesound.org/people/Ultra-Edward/sounds/815785/",
+        "author": "Ultra-Edward",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "fist_slam_stand": {
       "file": "fist_slam_stand.wav",
-      "seconds": 0.8256,
+      "seconds": 0.2589,
       "peak_dbfs": -3.0,
       "category": "hands",
-      "description": "Fist hammering a steel music stand desk with sheet music, desk ring and clamp chatter."
+      "description": "Fist hammering a steel music stand desk with sheet music, desk ring and clamp chatter.",
+      "source": {
+        "title": "Metal Sheet Hit + Desk slam",
+        "url": "https://freesound.org/people/Stereo%20Surgeon/sounds/262516/",
+        "author": "Stereo Surgeon, HenryHardhat",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "whoosh_small": {
       "file": "whoosh_small.wav",
-      "seconds": 0.2599,
+      "seconds": 0.1368,
       "peak_dbfs": -3.0,
       "category": "movement",
-      "description": "Quick arm flick whoosh."
+      "description": "Quick arm flick whoosh.",
+      "source": {
+        "title": "Swing Woosh",
+        "url": "https://freesound.org/people/Jofae/sounds/389590/",
+        "author": "Jofae",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "whoosh_big": {
       "file": "whoosh_big.wav",
-      "seconds": 0.5197,
+      "seconds": 0.2167,
       "peak_dbfs": -3.0,
       "category": "movement",
-      "description": "Violent full-arm swing whoosh with low air rumble."
+      "description": "Violent full-arm swing whoosh with low air rumble.",
+      "source": {
+        "title": "Punch-miss whoosh",
+        "url": "https://freesound.org/people/DrMinky/sounds/174435/",
+        "author": "DrMinky",
+        "license": "CC BY 4.0",
+        "recorded": true
+      }
     },
     "whoosh_spin": {
       "file": "whoosh_spin.wav",
-      "seconds": 0.62,
+      "seconds": 0.7,
       "peak_dbfs": -3.0,
       "category": "movement",
-      "description": "Spinning flat object flying past, pulsing whirr with a Doppler drop, about 0.6 s."
+      "description": "Spinning flat object flying past, pulsing whirr with a Doppler drop, about 0.6 s.",
+      "source": {
+        "title": "Quick woosh (spin)",
+        "url": "https://freesound.org/people/sophiehall3535/sounds/245936/",
+        "author": "sophiehall3535",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "cloth_rustle_1": {
       "file": "cloth_rustle_1.wav",
-      "seconds": 0.4499,
+      "seconds": 0.4552,
       "peak_dbfs": -12.0,
       "category": "movement",
-      "description": "Shirt movement rustle, quiet by design (peak -12 dBFS)."
+      "description": "Shirt movement rustle, quiet by design (peak -12 dBFS).",
+      "source": {
+        "title": "Foley - Cotton clothes rustling",
+        "url": "https://freesound.org/people/khenshom/sounds/481075/",
+        "author": "khenshom",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "cloth_rustle_2": {
       "file": "cloth_rustle_2.wav",
-      "seconds": 0.62,
+      "seconds": 0.3499,
       "peak_dbfs": -12.0,
       "category": "movement",
-      "description": "Trousers movement rustle, heavier and lower, quiet by design (peak -12 dBFS)."
+      "description": "Trousers movement rustle, heavier and lower, quiet by design (peak -12 dBFS).",
+      "source": {
+        "title": "Clothes Rustling Movement 13_26",
+        "url": "https://freesound.org/people/Joao_Janz/sounds/493501/",
+        "author": "Joao_Janz",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "body_thud": {
       "file": "body_thud.wav",
-      "seconds": 0.444,
+      "seconds": 0.2479,
       "peak_dbfs": -3.0,
       "category": "movement",
-      "description": "Heavy weight shift or lunge landing on the wooden floor."
+      "description": "Heavy weight shift or lunge landing on the wooden floor.",
+      "source": {
+        "title": "Thud / Falling on wooden floor",
+        "url": "https://freesound.org/people/Breviceps/sounds/447922/",
+        "author": "Breviceps",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "stand_rattle": {
       "file": "stand_rattle.wav",
-      "seconds": 0.9834,
+      "seconds": 0.9991,
       "peak_dbfs": -3.0,
       "category": "props",
-      "description": "Metal music stand jostled, a burst of small clanks."
+      "description": "Metal music stand jostled, a burst of small clanks.",
+      "source": {
+        "title": "Music Stand Manipulation",
+        "url": "https://freesound.org/people/ROBAMOS/sounds/339014/",
+        "author": "ROBAMOS",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "stand_crash": {
       "file": "stand_crash.wav",
-      "seconds": 1.4298,
+      "seconds": 1.4,
       "peak_dbfs": -3.0,
       "category": "props",
-      "description": "Metal music stand toppling and clattering on the wood floor."
+      "description": "Metal music stand toppling and clattering on the wood floor.",
+      "source": {
+        "title": "Metallic Clatter (+ Iron Bar Drop onto Wood)",
+        "url": "https://freesound.org/people/pickanothername/sounds/592588/",
+        "author": "pickanothername, dkudos",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "paper_grab": {
       "file": "paper_grab.wav",
-      "seconds": 0.4489,
+      "seconds": 0.3935,
       "peak_dbfs": -3.0,
       "category": "props",
-      "description": "Snatching sheet music, crackle and swish."
+      "description": "Snatching sheet music, crackle and swish.",
+      "source": {
+        "title": "Paper Grab",
+        "url": "https://freesound.org/people/danluxradium/sounds/767489/",
+        "author": "danluxradium",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "paper_flutter": {
       "file": "paper_flutter.wav",
-      "seconds": 0.8,
+      "seconds": 1.0,
       "peak_dbfs": -3.0,
       "category": "props",
-      "description": "Pages flying through the air, irregular flaps, about 0.8 s."
+      "description": "Pages flying through the air, irregular flaps, about 0.8 s.",
+      "source": {
+        "title": "Papers Tossed into Air; falling 1",
+        "url": "https://freesound.org/people/RossBell/sounds/389437/",
+        "author": "RossBell",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "paper_land": {
       "file": "paper_land.wav",
-      "seconds": 0.3902,
+      "seconds": 0.6,
       "peak_dbfs": -3.0,
       "category": "props",
-      "description": "Pages slapping onto the floor one after another."
+      "description": "Pages slapping onto the floor one after another.",
+      "source": {
+        "title": "Papers falling",
+        "url": "https://freesound.org/people/EmiLeigh/sounds/205911/",
+        "author": "EmiLeigh",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "page_flip": {
       "file": "page_flip.wav",
-      "seconds": 0.4717,
+      "seconds": 0.438,
       "peak_dbfs": -6.0,
       "category": "props",
       "description": "Turning one page on a stand, quieter by design (peak -6 dBFS)."
     },
     "chair_grab": {
       "file": "chair_grab.wav",
-      "seconds": 0.7116,
+      "seconds": 0.9,
       "peak_dbfs": -3.0,
       "category": "props",
-      "description": "Grabbing a folded metal chair, tube clank and hinge chatter."
+      "description": "Grabbing a folded metal chair, tube clank and hinge chatter.",
+      "source": {
+        "title": "Unfolding metal chair",
+        "url": "https://freesound.org/people/SpliceSound/sounds/188219/",
+        "author": "SpliceSound",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "chair_impact": {
       "file": "chair_impact.wav",
-      "seconds": 1.6793,
+      "seconds": 1.6,
       "peak_dbfs": -3.0,
       "category": "props",
-      "description": "Folded metal chair slamming into something and clattering on the floor."
+      "description": "Folded metal chair slamming into something and clattering on the floor.",
+      "source": {
+        "title": "Chair Thrown, Crash",
+        "url": "https://freesound.org/people/issalcake/sounds/115918/",
+        "author": "issalcake",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "drum_grab": {
       "file": "drum_grab.wav",
-      "seconds": 0.3517,
+      "seconds": 0.4,
       "peak_dbfs": -3.0,
       "category": "props",
-      "description": "Picking up a snare drum, shell knock and a slight snare buzz."
+      "description": "Picking up a snare drum, shell knock and a slight snare buzz.",
+      "source": {
+        "title": "snare tuning foley, 14x6.5 Brass Ludwig",
+        "url": "https://freesound.org/people/CVLTIV8R/sounds/809830/",
+        "author": "CVLTIV8R",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "drum_impact": {
       "file": "drum_impact.wav",
-      "seconds": 1.051,
+      "seconds": 0.7,
       "peak_dbfs": -3.0,
       "category": "props",
-      "description": "Snare drum crashing to the floor and bouncing, snares rattling."
+      "description": "Snare drum crashing to the floor and bouncing, snares rattling.",
+      "source": {
+        "title": "Sounds For Earthquakes - Snare and Drumsticks (+ Breviceps thud)",
+        "url": "https://freesound.org/people/RutgerMuller/sounds/51116/",
+        "author": "RutgerMuller",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "cymbal_grab": {
       "file": "cymbal_grab.wav",
-      "seconds": 0.3839,
+      "seconds": 0.45,
       "peak_dbfs": -3.0,
       "category": "props",
-      "description": "Gripping a crash cymbal edge, finger tick and a faint choked shimmer."
+      "description": "Gripping a crash cymbal edge, finger tick and a faint choked shimmer.",
+      "source": {
+        "title": "Meinl Byzance 16 Extra Dry Thin Crash, choked",
+        "url": "https://freesound.org/people/ankealtd/sounds/696206/",
+        "author": "ankealtd",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "cymbal_impact": {
       "file": "cymbal_impact.wav",
-      "seconds": 2.8,
+      "seconds": 2.7545,
       "peak_dbfs": -3.0,
       "category": "props",
-      "description": "Crash cymbal hitting and ringing, bright shimmering tail of about 2.8 s."
+      "description": "Crash cymbal hitting and ringing, bright shimmering tail of about 2.8 s.",
+      "source": {
+        "title": "Cymbale 16\" #5",
+        "url": "https://bigsoundbank.com/cymbale-16-5-s2315.html",
+        "author": "Joseph Sardin (BigSoundBank)",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "cowbell_hit_1": {
       "file": "cowbell_hit_1.wav",
-      "seconds": 1.0084,
+      "seconds": 0.4763,
       "peak_dbfs": -3.0,
       "category": "props",
-      "description": "Hard stick hit on a cowbell, partials near 540 and 800 Hz, open ring."
+      "description": "Hard stick hit on a cowbell, partials near 540 and 800 Hz, open ring.",
+      "source": {
+        "title": "cowbell_03",
+        "url": "https://freesound.org/people/Manjushri/sounds/210101/",
+        "author": "Manjushri",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "cowbell_hit_2": {
       "file": "cowbell_hit_2.wav",
-      "seconds": 0.8773,
+      "seconds": 0.5681,
       "peak_dbfs": -3.0,
       "category": "props",
-      "description": "Hard stick hit on a cowbell nearer the mouth, brighter and shorter."
+      "description": "Hard stick hit on a cowbell nearer the mouth, brighter and shorter.",
+      "source": {
+        "title": "cowbell - one hit dof",
+        "url": "https://freesound.org/people/SOOTHSAYER_ORCHESTRA/sounds/556434/",
+        "author": "Pieter Hendriks (Soothsayer Orchestra)",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "watch_tap": {
       "file": "watch_tap.wav",
-      "seconds": 0.1273,
+      "seconds": 0.0588,
       "peak_dbfs": -9.0,
       "category": "small",
-      "description": "Fingernail tapping a watch face, quieter by design (peak -9 dBFS)."
+      "description": "Fingernail tapping a watch face, quieter by design (peak -9 dBFS).",
+      "source": {
+        "title": "Glass Tap",
+        "url": "https://freesound.org/people/Unicornaphobist/sounds/262958/",
+        "author": "Unicornaphobist",
+        "license": "CC0",
+        "recorded": true
+      }
     },
     "finger_snap": {
       "file": "finger_snap.wav",
-      "seconds": 0.273,
+      "seconds": 0.0469,
       "peak_dbfs": -3.0,
       "category": "small",
       "description": "Finger snap, bright crack with a small palm thump."
     },
     "chair_creak": {
       "file": "chair_creak.wav",
-      "seconds": 0.6222,
+      "seconds": 0.5,
       "peak_dbfs": -6.0,
       "category": "band",
       "description": "Player shifting on a padded metal chair, vinyl and joint creak, quieter by design (peak -6 dBFS)."
     },
     "instrument_handle": {
       "file": "instrument_handle.wav",
-      "seconds": 0.2533,
+      "seconds": 0.2276,
       "peak_dbfs": -3.0,
       "category": "band",
       "description": "Soft clunk of picking up or setting down an instrument."
     },
     "sax_keys": {
       "file": "sax_keys.wav",
-      "seconds": 0.4774,
+      "seconds": 0.3151,
       "peak_dbfs": -6.0,
       "category": "band",
       "description": "Saxophone key pads clacking, quieter by design (peak -6 dBFS)."
     },
     "trumpet_valves": {
       "file": "trumpet_valves.wav",
-      "seconds": 0.4626,
+      "seconds": 0.3238,
       "peak_dbfs": -6.0,
       "category": "band",
       "description": "Three trumpet valves pressed and released, quieter by design (peak -6 dBFS)."
@@ -290,38 +528,45 @@
     },
     "spit_valve": {
       "file": "spit_valve.wav",
-      "seconds": 1.0842,
+      "seconds": 0.96,
       "peak_dbfs": -3.0,
       "category": "band",
       "description": "Trombone water key click, a pfft and a few drips."
     },
     "guitar_handle": {
       "file": "guitar_handle.wav",
-      "seconds": 0.8048,
+      "seconds": 0.7704,
       "peak_dbfs": -3.0,
       "category": "band",
       "description": "Guitar body thump with open strings brushed."
     },
     "bass_handle": {
       "file": "bass_handle.wav",
-      "seconds": 0.5301,
+      "seconds": 0.5817,
       "peak_dbfs": -3.0,
       "category": "band",
       "description": "Upright bass body thump with a low string buzz."
     },
     "piano_bench_creak": {
       "file": "piano_bench_creak.wav",
-      "seconds": 0.7095,
+      "seconds": 0.5592,
       "peak_dbfs": -6.0,
       "category": "band",
       "description": "Wooden piano bench creak with a small leg knock, quieter by design (peak -6 dBFS)."
     },
     "door_slam": {
       "file": "door_slam.wav",
-      "seconds": 0.7674,
+      "seconds": 0.3552,
       "peak_dbfs": -3.0,
       "category": "room",
-      "description": "Heavy wooden door slammed shut in a wood-panelled room, latch click and frame rattle."
+      "description": "Heavy wooden door slammed shut in a wood-panelled room, latch click and frame rattle.",
+      "source": {
+        "title": "Door Slamming #4",
+        "url": "https://bigsoundbank.com/door-slamming-4-s1501.html",
+        "author": "Joseph Sardin (BigSoundBank)",
+        "license": "CC0",
+        "recorded": true
+      }
     }
   }
 }
