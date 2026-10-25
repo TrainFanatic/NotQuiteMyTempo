@@ -1,0 +1,162 @@
+17:36:17 | INFO: Data are loaded, start creating Blender stuff
+17:36:17 | INFO: Blender create Mesh node chair_folded
+17:36:17 | INFO: glTF import finished in 0.00s
+17:36:17 | INFO: Data are loaded, start creating Blender stuff
+17:36:17 | INFO: Blender create Mesh node cowbell
+17:36:17 | INFO: Blender create Mesh node cowbell_stick
+17:36:17 | INFO: glTF import finished in 0.00s
+17:36:17 | INFO: Data are loaded, start creating Blender stuff
+17:36:17 | INFO: Blender create Mesh node spare_drum
+17:36:17 | INFO: glTF import finished in 0.00s
+17:36:17 | INFO: Data are loaded, start creating Blender stuff
+17:36:17 | INFO: Blender create Mesh node cymbal
+17:36:17 | INFO: glTF import finished in 0.00s
+17:36:17 | INFO: Data are loaded, start creating Blender stuff
+17:36:17 | INFO: Blender create Mesh node page_1
+17:36:17 | INFO: Blender create Mesh node page_2
+17:36:17 | INFO: Blender create Mesh node page_3
+17:36:17 | INFO: Blender create Mesh node page_4
+17:36:17 | INFO: glTF import finished in 0.00s
+17:36:17 | INFO: Data are loaded, start creating Blender stuff
+17:36:17 | INFO: Blender create Mesh node stand_base
+17:36:17 | INFO: Blender create Mesh node stand_desk
+17:36:17 | INFO: Blender create Mesh node stand_pole
+17:36:17 | INFO: glTF import finished in 0.00s
+[terence_v004] t0_countoff_finger: 60 frames
+[terence_v004] t0_countoff_verbal: 48 frames
+[terence_v004] t0_clap_off: 60 frames
+[terence_v004] t0_conduct: 48 frames
+[terence_v004] t0_pace: 96 frames
+[terence_v004] t0_lean_listen: 72 frames
+[terence_v004] t0_cue_section: 36 frames
+[terence_v004] t0_watch_other: 72 frames
+[terence_v004] t0_stare_drummer: 72 frames
+[terence_v004] t0_check_watch: 48 frames
+[terence_v004] t0_chair_rest: 72 frames
+[terence_v004] t1_flick: 28 frames
+[terence_v004] t1_wave_off: 38 frames
+[terence_v004] t1_fist_cutoff: 72 frames
+[terence_v004] t1_clap_stop: 32 frames
+[terence_v004] t1_fist_slam: 38 frames
+[terence_v004] t2_judging_stare: 72 frames
+[terence_v004] t2_score_point: 36 frames
+[terence_v004] t2_point_player: 36 frames
+[terence_v004] t2_hunt_sections: 96 frames
+[terence_v004] t2_forced_calm: 48 frames
+[terence_v004] t2_switch_drummer: 40 frames
+[terence_v004] t2_impatient_watch: 48 frames
+[terence_v004] t3_loom: 72 frames
+[terence_v004] t3_whisper: 72 frames
+[terence_v004] t3_crouch: 72 frames
+[terence_v004] t3_circle_kit: 144 frames
+[terence_v004] t3_clap_in_face: 60 frames
+[terence_v004] t3_fake_warmth: 72 frames
+[terence_v004] t4_shout: 48 frames
+[terence_v004] t4_charge: 30 frames
+[terence_v004] t4_sweep_stand: 30 frames
+[terence_v004] t4_throw_music: 34 frames
+[terence_v004] t4_door_point: 48 frames
+[terence_v004] t4_storm_out: 72 frames
+[terence_v004] t5_chair_throw: 60 frames
+[terence_v004] t5_rhythm_slaps: 96 frames
+[terence_v004] t5_cowbell: 72 frames
+[terence_v004] t5_drum_throw: 60 frames
+[terence_v004] t5_cymbal_throw: 48 frames
+[terence_v004] ap_nod: 24 frames
+[terence_v004] ap_grin: 36 frames
+[terence_v004] ap_quiet_wave: 36 frames
+[terence_v004] ap_beckon: 36 frames
+[terence_v004] ap_awe: 72 frames
+[terence_v004] walk: 24 frames
+[terence_v004] max automatic hip drop to keep feet planted: 0.058 m
+[terence_v004] clearance (most negative = deepest overlap):
+[terence_v004]   t4_sweep_stand         -0.012 m  (RightFingers vs music_stand_knockable @ f13)
+[terence_v004]   t0_chair_rest          -0.010 m  (RightForearm vs leg:RightUpperLeg @ f54)
+[terence_v004]   t0_lean_listen         -0.009 m  (LeftFingers vs torso:Hips @ f38)
+[terence_v004]   t4_door_point          -0.009 m  (RightFingers vs torso:UpperChest @ f10)
+[terence_v004]   t2_impatient_watch     -0.008 m  (RightFingers vs leg:RightUpperLeg @ f33)
+[terence_v004]   t4_throw_music         -0.007 m  (RightForearm vs torso:Chest @ f23)
+[terence_v004]   t4_shout               -0.005 m  (RightFingers vs leg:RightUpperLeg @ f46)
+[terence_v004]   t2_score_point         -0.004 m  (RightForearm vs torso:Chest @ f30)
+[terence_v004]   t5_drum_throw          -0.004 m  (RightFingers vs leg:RightUpperLeg @ f2)
+[terence_v004]   t5_cymbal_throw        -0.002 m  (RightForearm vs torso:UpperChest @ f20)
+[terence_v004]   t0_check_watch         -0.000 m  (LeftForearm vs torso:Chest @ f40)
+[terence_v004]   t0_cue_section         +0.001 m  (RightForearm vs torso:Chest @ f4)
+[terence_v004]   t5_rhythm_slaps        +0.004 m  (LeftForearm vs torso:Spine @ f86)
+[terence_v004]   t4_charge              +0.005 m  (RightFingers vs leg:RightUpperLeg @ f6)
+[terence_v004]   t3_whisper             +0.006 m  (LeftForearm vs torso:Chest @ f10)
+[terence_v004]   t0_countoff_finger     +0.007 m  (RightForearm vs torso:Chest @ f58)
+[terence_v004]   t3_crouch              +0.007 m  (LeftForearm vs leg:LeftUpperLeg @ f18)
+[terence_v004]   t2_point_player        +0.008 m  (RightForearm vs torso:Chest @ f7)
+[terence_v004]   t2_switch_drummer      +0.009 m  (RightForearm vs torso:Chest @ f7)
+[terence_v004]   t3_clap_in_face        +0.009 m  (LeftForearm vs torso:Chest @ f58)
+[terence_v004]   t1_clap_stop           +0.010 m  (LeftForearm vs torso:Chest @ f3)
+[terence_v004]   t3_fake_warmth         +0.010 m  (LeftForearm vs torso:Chest @ f2)
+[terence_v004]   walk                   +0.010 m  (LeftFingers vs leg:LeftUpperLeg @ f17)
+[terence_v004]   t1_flick               +0.011 m  (RightForearm vs torso:Chest @ f27)
+[terence_v004]   t1_fist_slam           +0.011 m  (RightForearm vs torso:Chest @ f37)
+[terence_v004]   ap_quiet_wave          +0.011 m  (RightForearm vs torso:Chest @ f34)
+[terence_v004]   ap_beckon              +0.011 m  (RightForearm vs torso:Chest @ f34)
+[terence_v004]   t0_countoff_verbal     +0.012 m  (RightForearm vs torso:Spine @ f46)
+[terence_v004]   t1_fist_cutoff         +0.012 m  (LeftFingers vs leg:LeftUpperLeg @ f62)
+[terence_v004]   t4_storm_out           +0.012 m  (RightFingers vs leg:RightUpperLeg @ f5)
+[terence_v004]   t1_wave_off            +0.013 m  (RightForearm vs torso:Chest @ f37)
+[terence_v004]   ap_awe                 +0.014 m  (RightForearm vs torso:Chest @ f18)
+[terence_v004]   t0_clap_off            +0.016 m  (LeftForearm vs torso:Chest @ f59)
+[terence_v004]   t0_conduct             +0.016 m  (LeftFingers vs torso:Hips @ f0)
+[terence_v004]   t2_forced_calm         +0.016 m  (LeftForearm vs torso:Chest @ f0)
+[terence_v004]   t5_chair_throw         +0.016 m  (RightForearm vs torso:Chest @ f50)
+[terence_v004]   t0_watch_other         +0.017 m  (LeftForearm vs torso:Chest @ f51)
+[terence_v004]   t2_judging_stare       +0.019 m  (RightForearm vs torso:Chest @ f53)
+[terence_v004]   ap_nod                 +0.024 m  (RightFingers vs torso:Hips @ f6)
+[terence_v004]   t0_pace                +0.025 m  (RightFingers vs torso:Hips @ f48)
+[terence_v004]   ap_grin                +0.025 m  (LeftFingers vs torso:Hips @ f0)
+[terence_v004]   t0_stare_drummer       +0.028 m  (RightFingers vs torso:Hips @ f51)
+[terence_v004]   t2_hunt_sections       +0.033 m  (RightFingers vs torso:Hips @ f24)
+[terence_v004]   t3_circle_kit          +0.036 m  (LeftFingers vs torso:Hips @ f108)
+[terence_v004]   t5_cowbell             +0.037 m  (RightForearm vs head:Head @ f55)
+[terence_v004]   t3_loom                +0.073 m  (RightFingers vs torso:Hips @ f5)
+INFO Draco is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_draco_bridge.dylib
+INFO MeshOptimizer is available, use library at /Applications/Blender.app/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_meshopt_bridge.dylib
+17:36:34 | INFO: Starting glTF 2.0 export
+17:36:34 | INFO: Extracting primitive: terence_mesh
+17:36:34 | INFO: Primitives created: 6
+17:36:39 | INFO: Finished glTF 2.0 export in 4.969832897186279 s
+
+17:36:39 | INFO: Data are loaded, start creating Blender stuff
+17:36:39 | INFO: Blender create Mesh node chair_folded
+17:36:39 | INFO: glTF import finished in 0.00s
+17:36:39 | INFO: Data are loaded, start creating Blender stuff
+17:36:39 | INFO: Blender create Mesh node cowbell
+17:36:39 | INFO: Blender create Mesh node cowbell_stick
+17:36:39 | INFO: glTF import finished in 0.00s
+17:36:39 | INFO: Data are loaded, start creating Blender stuff
+17:36:39 | INFO: Blender create Mesh node spare_drum
+17:36:39 | INFO: glTF import finished in 0.00s
+17:36:39 | INFO: Data are loaded, start creating Blender stuff
+17:36:39 | INFO: Blender create Mesh node cymbal
+17:36:39 | INFO: glTF import finished in 0.00s
+17:36:39 | INFO: Data are loaded, start creating Blender stuff
+17:36:39 | INFO: Blender create Mesh node page_1
+17:36:39 | INFO: Blender create Mesh node page_2
+17:36:39 | INFO: Blender create Mesh node page_3
+17:36:39 | INFO: Blender create Mesh node page_4
+17:36:39 | INFO: glTF import finished in 0.00s
+17:36:39 | INFO: Data are loaded, start creating Blender stuff
+17:36:39 | INFO: Blender create Mesh node stand_base
+17:36:39 | INFO: Blender create Mesh node stand_desk
+17:36:39 | INFO: Blender create Mesh node stand_pole
+17:36:39 | INFO: glTF import finished in 0.00s
+00:23.304  render           | Saved: '/var/folders/nf/z36b1c753b9b3340pm8g_cdc0000gn/T/ps2_render_itxm75m8/shot_0.png'
+00:23.449  render           | Saved: '/var/folders/nf/z36b1c753b9b3340pm8g_cdc0000gn/T/ps2_render_itxm75m8/shot_1.png'
+00:23.618  render           | Saved: '/var/folders/nf/z36b1c753b9b3340pm8g_cdc0000gn/T/ps2_render_itxm75m8/shot_2.png'
+00:23.789  render           | Saved: '/var/folders/nf/z36b1c753b9b3340pm8g_cdc0000gn/T/ps2_render_itxm75m8/shot_3.png'
+00:23.996  render           | Saved: '/var/folders/nf/z36b1c753b9b3340pm8g_cdc0000gn/T/ps2_render_itxm75m8/shot_4.png'
+00:24.215  render           | Saved: '/var/folders/nf/z36b1c753b9b3340pm8g_cdc0000gn/T/ps2_render_itxm75m8/shot_5.png'
+00:24.447  render           | Saved: '/var/folders/nf/z36b1c753b9b3340pm8g_cdc0000gn/T/ps2_render_itxm75m8/shot_6.png'
+00:24.658  render           | Saved: '/var/folders/nf/z36b1c753b9b3340pm8g_cdc0000gn/T/ps2_render_itxm75m8/shot_7.png'
+Info: Saved as "terence_v004.blend"
+[terence_v004] done: 1980 tris, height 1.930 m, 46 actions, worst clearance -0.012 m (t4_sweep_stand f13 RightFingers vs music_stand_knockable)
+Blender 5.2.3 LTS (hash e13b728c6880 built 2026-10-22 01:31:22)
+
+Blender quit

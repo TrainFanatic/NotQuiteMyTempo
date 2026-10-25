@@ -1,0 +1,96 @@
+{
+  "fps": 24,
+  "version": 1,
+  "terence": {
+    "loop_a": [
+      {
+        "frame": 0,
+        "sfx": "tick",
+        "anchor": "RightHand",
+        "gain_db": 0.0,
+        "pitch_jitter": 0.0
+      },
+      {
+        "frame": 12,
+        "sfx": "clap",
+        "anchor": "RightHand",
+        "gain_db": -3.0,
+        "pitch_jitter": 0.05
+      },
+      {
+        "frame": 36,
+        "sfx": "tick",
+        "anchor": "Hips",
+        "gain_db": 0.0,
+        "pitch_jitter": 0.0
+      }
+    ],
+    "shot_b": [
+      {
+        "frame": 6,
+        "sfx": "clap",
+        "anchor": "PropR",
+        "gain_db": 0.0,
+        "pitch_jitter": 0.0
+      },
+      {
+        "frame": 12,
+        "sfx": "tick",
+        "anchor": "world:0,1,0.5",
+        "gain_db": 0.0,
+        "pitch_jitter": 0.0
+      },
+      {
+        "frame": 24,
+        "sfx": "tick",
+        "anchor": "Hips",
+        "gain_db": 0.0,
+        "pitch_jitter": 0.0
+      }
+    ]
+  },
+  "band": {
+    "default": {
+      "loop_a": [
+        {
+          "frame": 0,
+          "sfx": "tick",
+          "anchor": "Hips",
+          "gain_db": 0.0,
+          "pitch_jitter": 0.0
+        }
+      ],
+      "shot_b": [
+        {
+          "frame": 12,
+          "sfx": "clap",
+          "anchor": "RightHand",
+          "gain_db": 0.0,
+          "pitch_jitter": 0.0
+        }
+      ]
+    },
+    "trombone": {
+      "loop_a": [
+        {
+          "frame": 6,
+          "sfx": "clap",
+          "anchor": "RightHand",
+          "gain_db": 0.0,
+          "pitch_jitter": 0.0
+        }
+      ]
+    },
+    "band_trombone_2": {
+      "loop_a": [
+        {
+          "frame": 18,
+          "sfx": "tick",
+          "anchor": "Hips",
+          "gain_db": 0.0,
+          "pitch_jitter": 0.0
+        }
+      ]
+    }
+  }
+}

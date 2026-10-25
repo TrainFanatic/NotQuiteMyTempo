@@ -1,0 +1,19 @@
+{
+  "sample_rate": 22050,
+  "sounds": {
+    "tick": {
+      "file": "tick.wav",
+      "seconds": 0.05,
+      "peak_dbfs": -2.17,
+      "category": "click",
+      "description": "test click"
+    },
+    "clap": {
+      "file": "clap.wav",
+      "seconds": 0.15,
+      "peak_dbfs": -3.78,
+      "category": "clap",
+      "description": "test clap"
+    }
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "sample_rate": 22050,
+  "sounds": {
+    "foot_step_1": {
+      "file": "foot_step_1.wav",
+      "seconds": 0.3098,
+      "peak_dbfs": -3.0,
+      "category": "footsteps",
+      "description": "Dress shoe heel and toe on hardwood, variant 1 (mid board resonance)."
+    },
+    "foot_step_2": {
+      "file": "foot_step_2.wav",
+      "seconds": 0.2816,
+      "peak_dbfs": -3.0,
+      "category": "footsteps",
+      "description": "Dress shoe step on hardwood, variant 2 (lower boards, longer roll, clickier heel)."
+    },
+    "foot_step_3": {
+      "file": "foot_step_3.wav",
+      "seconds": 0.3074,
+      "peak_dbfs": -3.0,
+      "category": "footsteps",
+      "description": "Dress shoe step on hardwood, variant 3 (tighter boards, quick heavy toe)."
+    },
+    "foot_step_4": {
+      "file": "foot_step_4.wav",
+      "seconds": 0.2888,
+      "peak_dbfs": -3.0,
+      "category": "footsteps",
+      "description": "Dress shoe step on hardwood, variant 4 (slow heel to toe roll, light toe)."
+    },
+    "foot_stomp": {
+      "file": "foot_stomp.wav",
+      "seconds": 0.4531,
+      "peak_dbfs": -3.0,
+      "category": "footsteps",
+      "description": "Heavy aggressive stomp on hardwood with board rattle and room."
+    },
+    "foot_scuff": {
+      "file": "foot_scuff.wav",
+      "seconds": 0.4555,
+      "peak_dbfs": -3.0,
+      "category": "footsteps",
+      "description": "Shoe twist and drag on hardwood with a short leather squeak."
+    },
+    "clap_1": {
+      "file": "clap_1.wav",
+      "seconds": 0.2954,
+      "peak_dbfs": -3.0,
+      "category": "hands",
+      "description": "Single sharp hand clap, mid cavity with a tiny flam."
+    },
+    "clap_2": {
+      "file": "clap_2.wav",
+      "seconds": 0.3094,
+      "peak_dbfs": -3.0,
+      "category": "hands",
+      "description": "Single sharp hand clap, brighter and tighter, no flam."
+    },
+    "clap_3": {
+      "file": "clap_3.wav",
+      "seconds": 0.309,
+      "peak_dbfs": -3.0,
+      "category": "hands",
+      "description": "Single sharp hand clap, lower and fuller, wider flam."
+    },
+    "clap_big": {
+      "file": "clap_big.wav",
+      "seconds": 0.6532,
+      "peak_dbfs": -3.0,
+      "category": "hands",
+      "description": "One huge cupped stopping clap with a big room bloom."
+    },
+    "slap_1": {
+      "file": "slap_1.wav",
+      "seconds": 0.3036,
+      "peak_dbfs": -3.0,
+      "category": "hands",
+      "description": "Open-hand face slap, meaty skin smack, variant 1."
+    },
+    "slap_2": {
+      "file": "slap_2.wav",
+      "seconds": 0.2732,
+      "peak_dbfs": -3.0,
+      "category": "hands",
+      "description": "Open-hand face slap, heavier and fleshier, variant 2."
+    },
+    "slap_3": {
+      "file": "slap_3.wav",
+      "seconds": 0.2965,
+      "peak_dbfs": -3.0,
+      "category": "hands",
+      "description": "Open-hand face slap, sharper crack, variant 3."
+    },
+    "fist_slam_stand": {
+      "file": "fist_slam_stand.wav",
+      "seconds": 0.8256,
+      "peak_dbfs": -3.0,
+      "category": "hands",
+      "description": "Fist hammering a steel music stand desk with sheet music, desk ring and clamp chatter."
+    },
+    "whoosh_small": {
+      "file": "whoosh_small.wav",
+      "seconds": 0.2599,
+      "peak_dbfs": -3.0,
+      "category": "movement",
+      "description": "Quick arm flick whoosh."
+    },
+    "whoosh_big": {
+      "file": "whoosh_big.wav",
+      "seconds": 0.5197,
+      "peak_dbfs": -3.0,
+      "category": "movement",
+      "description": "Violent full-arm swing whoosh with low air rumble."
+    },
+    "whoosh_spin": {
+      "file": "whoosh_spin.wav",
+      "seconds": 0.62,
+      "peak_dbfs": -3.0,
+      "category": "movement",
+      "description": "Spinning flat object flying past, pulsing whirr with a Doppler drop, about 0.6 s."
+    },
+    "cloth_rustle_1": {
+      "file": "cloth_rustle_1.wav",
+      "seconds": 0.4499,
+      "peak_dbfs": -12.0,
+      "category": "movement",
+      "description": "Shirt movement rustle, quiet by design (peak -12 dBFS)."
+    },
+    "cloth_rustle_2": {
+      "file": "cloth_rustle_2.wav",
+      "seconds": 0.62,
+      "peak_dbfs": -12.0,
+      "category": "movement",
+      "description": "Trousers movement rustle, heavier and lower, quiet by design (peak -12 dBFS)."
+    },
+    "body_thud": {
+      "file": "body_thud.wav",
+      "seconds": 0.444,
+      "peak_dbfs": -3.0,
+      "category": "movement",
+      "description": "Heavy weight shift or lunge landing on the wooden floor."
+    },
+    "stand_rattle": {
+      "file": "stand_rattle.wav",
+      "seconds": 0.9834,
+      "peak_dbfs": -3.0,
+      "category": "props",
+      "description": "Metal music stand jostled, a burst of small clanks."
+    },
+    "stand_crash": {
+      "file": "stand_crash.wav",
+      "seconds": 1.4298,
+      "peak_dbfs": -3.0,
+      "category": "props",
+      "description": "Metal music stand toppling and clattering on the wood floor."
+    },
+    "paper_grab": {
+      "file": "paper_grab.wav",
+      "seconds": 0.4489,
+      "peak_dbfs": -3.0,
+      "category": "props",
+      "description": "Snatching sheet music, crackle and swish."
+    },
+    "paper_flutter": {
+      "file": "paper_flutter.wav",
+      "seconds": 0.8,
+      "peak_dbfs": -3.0,
+      "category": "props",
+      "description": "Pages flying through the air, irregular flaps, about 0.8 s."
+    },
+    "paper_land": {
+      "file": "paper_land.wav",
+      "seconds": 0.3902,
+      "peak_dbfs": -3.0,
+      "category": "props",
+      "description": "Pages slapping onto the floor one after another."
+    },
+    "page_flip": {
+      "file": "page_flip.wav",
+      "seconds": 0.4717,
+      "peak_dbfs": -6.0,
+      "category": "props",
+      "description": "Turning one page on a stand, quieter by design (peak -6 dBFS)."
+    },
+    "chair_grab": {
+      "file": "chair_grab.wav",
+      "seconds": 0.7116,
+      "peak_dbfs": -3.0,
+      "category": "props",
+      "description": "Grabbing a folded metal chair, tube clank and hinge chatter."
+    },
+    "chair_impact": {
+      "file": "chair_impact.wav",
+      "seconds": 1.6793,
+      "peak_dbfs": -3.0,
+      "category": "props",
+      "description": "Folded metal chair slamming into something and clattering on the floor."
+    },
+    "drum_grab": {
+      "file": "drum_grab.wav",
+      "seconds": 0.3517,
+      "peak_dbfs": -3.0,
+      "category": "props",
+      "description": "Picking up a snare drum, shell knock and a slight snare buzz."
+    },
+    "drum_impact": {
+      "file": "drum_impact.wav",
+      "seconds": 1.051,
+      "peak_dbfs": -3.0,
+      "category": "props",
+      "description": "Snare drum crashing to the floor and bouncing, snares rattling."
+    },
+    "cymbal_grab": {
+      "file": "cymbal_grab.wav",
+      "seconds": 0.3839,
+      "peak_dbfs": -3.0,
+      "category": "props",
+      "description": "Gripping a crash cymbal edge, finger tick and a faint choked shimmer."
+    },
+    "cymbal_impact": {
+      "file": "cymbal_impact.wav",
+      "seconds": 2.8,
+      "peak_dbfs": -3.0,
+      "category": "props",
+      "description": "Crash cymbal hitting and ringing, bright shimmering tail of about 2.8 s."
+    },
+    "cowbell_hit_1": {
+      "file": "cowbell_hit_1.wav",
+      "seconds": 1.0084,
+      "peak_dbfs": -3.0,
+      "category": "props",
+      "description": "Hard stick hit on a cowbell, partials near 540 and 800 Hz, open ring."
+    },
+    "cowbell_hit_2": {
+      "file": "cowbell_hit_2.wav",
+      "seconds": 0.8773,
+      "peak_dbfs": -3.0,
+      "category": "props",
+      "description": "Hard stick hit on a cowbell nearer the mouth, brighter and shorter."
+    },
+    "watch_tap": {
+      "file": "watch_tap.wav",
+      "seconds": 0.1273,
+      "peak_dbfs": -9.0,
+      "category": "small",
+      "description": "Fingernail tapping a watch face, quieter by design (peak -9 dBFS)."
+    },
+    "finger_snap": {
+      "file": "finger_snap.wav",
+      "seconds": 0.273,
+      "peak_dbfs": -3.0,
+      "category": "small",
+      "description": "Finger snap, bright crack with a small palm thump."
+    },
+    "chair_creak": {
+      "file": "chair_creak.wav",
+      "seconds": 0.6222,
+      "peak_dbfs": -6.0,
+      "category": "band",
+      "description": "Player shifting on a padded metal chair, vinyl and joint creak, quieter by design (peak -6 dBFS)."
+    },
+    "instrument_handle": {
+      "file": "instrument_handle.wav",
+      "seconds": 0.2533,
+      "peak_dbfs": -3.0,
+      "category": "band",
+      "description": "Soft clunk of picking up or setting down an instrument."
+    },
+    "sax_keys": {
+      "file": "sax_keys.wav",
+      "seconds": 0.4774,
+      "peak_dbfs": -6.0,
+      "category": "band",
+      "description": "Saxophone key pads clacking, quieter by design (peak -6 dBFS)."
+    },
+    "trumpet_valves": {
+      "file": "trumpet_valves.wav",
+      "seconds": 0.4626,
+      "peak_dbfs": -6.0,
+      "category": "band",
+      "description": "Three trumpet valves pressed and released, quieter by design (peak -6 dBFS)."
+    },
+    "trombone_slide": {
+      "file": "trombone_slide.wav",
+      "seconds": 0.33,
+      "peak_dbfs": -3.0,
+      "category": "band",
+      "description": "Trombone slide swish ending on the stop, about 0.3 s."
+    },
+    "spit_valve": {
+      "file": "spit_valve.wav",
+      "seconds": 1.0842,
+      "peak_dbfs": -3.0,
+      "category": "band",
+      "description": "Trombone water key click, a pfft and a few drips."
+    },
+    "guitar_handle": {
+      "file": "guitar_handle.wav",
+      "seconds": 0.8048,
+      "peak_dbfs": -3.0,
+      "category": "band",
+      "description": "Guitar body thump with open strings brushed."
+    },
+    "bass_handle": {
+      "file": "bass_handle.wav",
+      "seconds": 0.5301,
+      "peak_dbfs": -3.0,
+      "category": "band",
+      "description": "Upright bass body thump with a low string buzz."
+    },
+    "piano_bench_creak": {
+      "file": "piano_bench_creak.wav",
+      "seconds": 0.7095,
+      "peak_dbfs": -6.0,
+      "category": "band",
+      "description": "Wooden piano bench creak with a small leg knock, quieter by design (peak -6 dBFS)."
+    },
+    "door_slam": {
+      "file": "door_slam.wav",
+      "seconds": 0.7674,
+      "peak_dbfs": -3.0,
+      "category": "room",
+      "description": "Heavy wooden door slammed shut in a wood-panelled room, latch click and frame rattle."
+    }
+  }
+}

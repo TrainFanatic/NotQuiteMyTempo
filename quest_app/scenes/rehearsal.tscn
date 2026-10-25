@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/rehearsal.gd" id="1_rehearsal"]
+
+[node name="Rehearsal" type="Node3D"]
+script = ExtResource("1_rehearsal")
+run_demo = false
+run_showcase = true

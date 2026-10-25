@@ -1,0 +1,228 @@
+17:36:48 | INFO: Data are loaded, start creating Blender stuff
+17:36:48 | INFO: Blender create Mesh node chair_folded
+17:36:48 | INFO: glTF import finished in 0.00s
+17:36:48 | INFO: Data are loaded, start creating Blender stuff
+17:36:48 | INFO: Blender create Mesh node spare_drum
+17:36:48 | INFO: glTF import finished in 0.00s
+17:36:48 | INFO: Data are loaded, start creating Blender stuff
+17:36:48 | INFO: Blender create Mesh node cymbal
+17:36:48 | INFO: glTF import finished in 0.00s
+17:36:48 | INFO: Data are loaded, start creating Blender stuff
+17:36:48 | INFO: Blender create Mesh node cowbell
+17:36:48 | INFO: Blender create Mesh node cowbell_stick
+17:36:48 | INFO: glTF import finished in 0.00s
+17:36:48 | INFO: Data are loaded, start creating Blender stuff
+17:36:48 | INFO: Blender create Mesh node page_1
+17:36:48 | INFO: Blender create Mesh node page_2
+17:36:48 | INFO: Blender create Mesh node page_3
+17:36:48 | INFO: Blender create Mesh node page_4
+17:36:48 | INFO: glTF import finished in 0.00s
+17:36:48 | INFO: Data are loaded, start creating Blender stuff
+17:36:48 | INFO: Blender create Mesh node stand_base
+17:36:48 | INFO: Blender create Mesh node stand_desk
+17:36:48 | INFO: Blender create Mesh node stand_pole
+17:36:48 | INFO: glTF import finished in 0.00s
+17:36:48 | INFO: Data are loaded, start creating Blender stuff
+17:36:48 | INFO: Blender create Mesh node terence_mesh
+17:36:49 | INFO: glTF import finished in 0.43s
+17:36:50 | INFO: Data are loaded, start creating Blender stuff
+17:36:50 | INFO: Blender create Mesh node band_alto_sax_1_mesh
+17:36:50 | INFO: glTF import finished in 0.08s
+17:36:50 | INFO: Data are loaded, start creating Blender stuff
+17:36:50 | INFO: Blender create Mesh node band_alto_sax_2_mesh
+17:36:50 | INFO: glTF import finished in 0.08s
+17:36:50 | INFO: Data are loaded, start creating Blender stuff
+17:36:50 | INFO: Blender create Mesh node band_baritone_sax_1_mesh
+17:36:50 | INFO: glTF import finished in 0.08s
+17:36:51 | INFO: Data are loaded, start creating Blender stuff
+17:36:51 | INFO: Blender create Mesh node band_bass_1_mesh
+17:36:51 | INFO: glTF import finished in 0.08s
+17:36:51 | INFO: Data are loaded, start creating Blender stuff
+17:36:51 | INFO: Blender create Mesh node band_guitar_1_mesh
+17:36:51 | INFO: glTF import finished in 0.08s
+17:36:51 | INFO: Data are loaded, start creating Blender stuff
+17:36:51 | INFO: Blender create Mesh node band_piano_1_mesh
+17:36:51 | INFO: glTF import finished in 0.08s
+17:36:51 | INFO: Data are loaded, start creating Blender stuff
+17:36:51 | INFO: Blender create Mesh node band_tenor_sax_1_mesh
+17:36:51 | INFO: glTF import finished in 0.08s
+17:36:52 | INFO: Data are loaded, start creating Blender stuff
+17:36:52 | INFO: Blender create Mesh node band_tenor_sax_2_mesh
+17:36:52 | INFO: glTF import finished in 0.08s
+17:36:52 | INFO: Data are loaded, start creating Blender stuff
+17:36:52 | INFO: Blender create Mesh node band_trombone_1_mesh
+17:36:52 | INFO: glTF import finished in 0.09s
+17:36:52 | INFO: Data are loaded, start creating Blender stuff
+17:36:52 | INFO: Blender create Mesh node band_trombone_2_mesh
+17:36:52 | INFO: glTF import finished in 0.09s
+17:36:52 | INFO: Data are loaded, start creating Blender stuff
+17:36:52 | INFO: Blender create Mesh node band_trombone_3_mesh
+17:36:52 | INFO: glTF import finished in 0.09s
+17:36:53 | INFO: Data are loaded, start creating Blender stuff
+17:36:53 | INFO: Blender create Mesh node band_trombone_4_mesh
+17:36:53 | INFO: glTF import finished in 0.09s
+17:36:53 | INFO: Data are loaded, start creating Blender stuff
+17:36:53 | INFO: Blender create Mesh node band_trumpet_1_mesh
+17:36:53 | INFO: glTF import finished in 0.08s
+17:36:53 | INFO: Data are loaded, start creating Blender stuff
+17:36:53 | INFO: Blender create Mesh node band_trumpet_2_mesh
+17:36:53 | INFO: glTF import finished in 0.08s
+17:36:53 | INFO: Data are loaded, start creating Blender stuff
+17:36:53 | INFO: Blender create Mesh node band_trumpet_3_mesh
+17:36:53 | INFO: glTF import finished in 0.08s
+17:36:54 | INFO: Data are loaded, start creating Blender stuff
+17:36:54 | INFO: Blender create Mesh node band_trumpet_4_mesh
+17:36:54 | INFO: glTF import finished in 0.08s
+[sfx_cues] Terence, per action:
+[sfx_cues]   t0_countoff_finger   none
+[sfx_cues]   t0_countoff_verbal   none
+[sfx_cues]   t0_clap_off          12 clap_1@RightHand, 24 clap_2@RightHand, 36 clap_3@RightHand, 48 clap_1@RightHand
+[sfx_cues]   t0_conduct           none
+[sfx_cues]   t0_pace              0 foot_step_1@LeftFoot, 1 cloth_rustle_1@UpperChest, 5 foot_scuff@LeftFoot, 16 foot_step_2@RightFoot, 32 foot_step_3@LeftFoot, 48 foot_step_4@RightFoot, 49 cloth_rustle_2@UpperChest, 53 foot_scuff@RightFoot, 64 foot_step_1@LeftFoot, 80 foot_step_2@RightFoot
+[sfx_cues]   t0_lean_listen       none
+[sfx_cues]   t0_cue_section       none
+[sfx_cues]   t0_watch_other       none
+[sfx_cues]   t0_stare_drummer     none
+[sfx_cues]   t0_check_watch       none
+[sfx_cues]   t0_chair_rest        none
+[sfx_cues]   t1_flick             1 whoosh_small@RightHand, 10 whoosh_big@RightHand, 11 foot_stomp@RightFoot
+[sfx_cues]   t1_wave_off          15 whoosh_big@RightHand, 16 foot_stomp@RightFoot
+[sfx_cues]   t1_fist_cutoff       13 whoosh_small@RightHand, 14 foot_stomp@LeftFoot
+[sfx_cues]   t1_clap_stop         11 whoosh_small@LeftHand, 11 whoosh_small@RightHand, 12 clap_big@RightHand, 12 foot_stomp@LeftFoot, 30 whoosh_small@LeftHand, 30 whoosh_small@RightHand
+[sfx_cues]   t1_fist_slam         4 whoosh_small@RightHand, 13 whoosh_big@RightHand, 14 body_thud@Hips, 14 fist_slam_stand@RightHand, 14 foot_stomp@LeftFoot, 14 foot_stomp@RightFoot, 15 stand_rattle@RightHand
+[sfx_cues]   t2_judging_stare     none
+[sfx_cues]   t2_score_point       16 watch_tap@RightHand, 24 watch_tap@RightHand
+[sfx_cues]   t2_point_player      none
+[sfx_cues]   t2_hunt_sections     none
+[sfx_cues]   t2_forced_calm       none
+[sfx_cues]   t2_switch_drummer    25 whoosh_small@LeftHand
+[sfx_cues]   t2_impatient_watch   14 watch_tap@RightHand, 26 watch_tap@RightHand
+[sfx_cues]   t3_loom              none
+[sfx_cues]   t3_whisper           16 foot_step_1@RightFoot, 64 foot_step_2@RightFoot
+[sfx_cues]   t3_crouch            none
+[sfx_cues]   t3_circle_kit        0 foot_step_1@LeftFoot, 9 foot_step_2@RightFoot, 18 foot_step_3@LeftFoot, 27 foot_step_4@RightFoot, 36 foot_step_1@LeftFoot, 45 foot_step_2@RightFoot, 54 foot_step_3@LeftFoot, 63 foot_step_4@RightFoot, 72 foot_step_1@LeftFoot, 81 foot_step_2@RightFoot, 90 foot_step_3@LeftFoot, 99 foot_step_4@RightFoot, 108 foot_step_1@LeftFoot, 117 foot_step_2@RightFoot, 126 foot_step_3@LeftFoot, 135 foot_step_4@RightFoot
+[sfx_cues]   t3_clap_in_face      12 clap_1@RightHand, 24 clap_2@RightHand, 36 clap_3@RightHand, 48 clap_1@RightHand
+[sfx_cues]   t3_fake_warmth       10 foot_step_1@RightFoot, 16 foot_step_2@RightFoot, 64 foot_step_3@RightFoot
+[sfx_cues]   t4_shout             10 foot_stomp@LeftFoot, 12 cloth_rustle_1@UpperChest, 43 foot_step_1@LeftFoot
+[sfx_cues]   t4_charge            13 foot_stomp@RightFoot, 26 foot_stomp@LeftFoot, 28 cloth_rustle_1@UpperChest
+[sfx_cues]   t4_sweep_stand       5 foot_scuff@RightFoot, 11 whoosh_big@RightHand, 12 foot_stomp@LeftFoot, 12 stand_rattle@PropR, 21 stand_crash@PropR, 24 foot_step_1@LeftFoot
+[sfx_cues]   t4_throw_music       8 paper_grab@PropR, 18 foot_stomp@LeftFoot, 18 paper_flutter@PropR, 18 whoosh_small@PropR, 31 paper_land@PropR, 34 foot_step_1@LeftFoot
+[sfx_cues]   t4_door_point        11 whoosh_small@RightHand
+[sfx_cues]   t4_storm_out         36 foot_step_1@RightFoot, 72 door_slam@world:-1.2,1.5,0, 72 foot_step_2@LeftFoot
+[sfx_cues]   t5_chair_throw       10 chair_grab@PropR, 26 foot_stomp@LeftFoot, 28 whoosh_spin@PropR, 44 chair_impact@PropR, 55 chair_impact@PropR, 56 foot_step_1@LeftFoot
+[sfx_cues]   t5_rhythm_slaps      11 foot_step_1@LeftFoot, 17 whoosh_small@RightHand, 18 slap_1@RightHand, 41 whoosh_small@RightHand, 42 slap_2@RightHand, 65 whoosh_small@RightHand, 66 slap_3@RightHand, 83 whoosh_small@RightHand, 84 slap_1@RightHand, 96 foot_step_2@LeftFoot
+[sfx_cues]   t5_cowbell           12 cowbell_hit_1@PropL, 24 cowbell_hit_2@PropL, 36 cowbell_hit_1@PropL, 48 cowbell_hit_2@PropL, 60 cowbell_hit_1@PropL
+[sfx_cues]   t5_drum_throw        8 foot_scuff@LeftFoot, 10 body_thud@Hips, 10 drum_grab@PropR, 20 foot_step_1@RightFoot, 34 foot_stomp@LeftFoot, 34 whoosh_big@PropR, 48 drum_impact@PropR, 56 foot_step_2@LeftFoot
+[sfx_cues]   t5_cymbal_throw      8 cymbal_grab@PropR, 21 foot_stomp@RightFoot, 21 whoosh_spin@PropR, 33 cymbal_impact@PropR, 44 foot_step_1@RightFoot
+[sfx_cues]   ap_nod               none
+[sfx_cues]   ap_grin              none
+[sfx_cues]   ap_quiet_wave        none
+[sfx_cues]   ap_beckon            none
+[sfx_cues]   ap_awe               none
+[sfx_cues]   walk                 0 foot_step_1@LeftFoot, 12 foot_step_2@RightFoot
+[sfx_cues] band, per member (resolved):
+[sfx_cues]   band_alto_sax_1: flip_page 10 page_flip; look_down 8 chair_creak; lower 1 sax_keys,12 instrument_handle,15 chair_creak; raise 0 instrument_handle,13 sax_keys; startle 1 chair_creak
+[sfx_cues]   band_alto_sax_2: flip_page 10 page_flip; look_down 8 chair_creak; lower 1 sax_keys,12 instrument_handle,15 chair_creak; raise 0 instrument_handle,13 sax_keys; startle 1 chair_creak
+[sfx_cues]   band_baritone_sax_1: flip_page 10 page_flip; look_down 8 chair_creak; lower 1 sax_keys,12 instrument_handle,15 chair_creak; raise 0 instrument_handle,13 sax_keys; rest 93 chair_creak; startle 1 chair_creak
+[sfx_cues]   band_bass_1: flip_page 10 page_flip; lower 4 bass_handle; raise 11 bass_handle; startle 1 bass_handle
+[sfx_cues]   band_guitar_1: flip_page 10 page_flip; look_down 8 chair_creak; lower 3 guitar_handle,15 chair_creak; raise 12 guitar_handle; rest 39 chair_creak; startle 1 chair_creak
+[sfx_cues]   band_piano_1: flip_page 10 page_flip; look_down 8 piano_bench_creak; lower 15 piano_bench_creak; raise 2 piano_bench_creak; startle 1 piano_bench_creak
+[sfx_cues]   band_tenor_sax_1: flip_page 10 page_flip; look_down 8 chair_creak; lower 1 sax_keys,12 instrument_handle,15 chair_creak; raise 0 instrument_handle,13 sax_keys; startle 1 chair_creak
+[sfx_cues]   band_tenor_sax_2: flip_page 10 page_flip; look_down 8 chair_creak; lower 1 sax_keys,12 instrument_handle,15 chair_creak; raise 0 instrument_handle,13 sax_keys; startle 1 chair_creak
+[sfx_cues]   band_trombone_1: flip_page 10 page_flip; look_down 8 chair_creak; lower 1 instrument_handle,2 trombone_slide,12 instrument_handle,15 chair_creak; play_loop 10 trombone_slide,22 trombone_slide,34 trombone_slide,46 trombone_slide; raise 2 instrument_handle,3 trombone_slide,13 instrument_handle; rest 39 chair_creak; spit_valve 0 instrument_handle,16 spit_valve,22 spit_valve,28 spit_valve,42 instrument_handle; startle 1 chair_creak
+[sfx_cues]   band_trombone_2: flip_page 10 page_flip; look_down 8 chair_creak; lower 1 instrument_handle,4 trombone_slide,12 instrument_handle,15 chair_creak; play_loop 10 trombone_slide,22 trombone_slide,34 trombone_slide,46 trombone_slide; raise 2 instrument_handle,5 trombone_slide,13 instrument_handle; spit_valve 0 instrument_handle,16 spit_valve,22 spit_valve,28 spit_valve,42 instrument_handle; startle 1 chair_creak
+[sfx_cues]   band_trombone_3: flip_page 10 page_flip; look_down 8 chair_creak; lower 1 instrument_handle,3 trombone_slide,12 instrument_handle,15 chair_creak; play_loop 10 trombone_slide,22 trombone_slide,34 trombone_slide,46 trombone_slide; raise 2 instrument_handle,4 trombone_slide,13 instrument_handle; rest 11 chair_creak; spit_valve 0 instrument_handle,16 spit_valve,22 spit_valve,28 spit_valve,42 instrument_handle; startle 1 chair_creak
+[sfx_cues]   band_trombone_4: flip_page 10 page_flip; look_down 8 chair_creak; lower 1 instrument_handle,12 instrument_handle,15 chair_creak; play_loop 10 trombone_slide,22 trombone_slide,34 trombone_slide,46 trombone_slide; raise 2 instrument_handle,13 instrument_handle; rest 93 chair_creak; spit_valve 0 instrument_handle,16 spit_valve,22 spit_valve,28 spit_valve,42 instrument_handle; startle 1 chair_creak
+[sfx_cues]   band_trumpet_1: flip_page 10 page_flip; look_down 8 chair_creak; lower 2 trumpet_valves,12 instrument_handle,15 chair_creak; raise 2 instrument_handle,12 trumpet_valves; startle 1 chair_creak
+[sfx_cues]   band_trumpet_2: flip_page 10 page_flip; look_down 8 chair_creak; lower 1 trumpet_valves,12 instrument_handle,15 chair_creak; raise 2 instrument_handle,13 trumpet_valves; startle 1 chair_creak
+[sfx_cues]   band_trumpet_3: flip_page 10 page_flip; look_down 8 chair_creak; lower 2 trumpet_valves,12 instrument_handle,15 chair_creak; raise 2 instrument_handle,12 trumpet_valves; startle 1 chair_creak
+[sfx_cues]   band_trumpet_4: flip_page 10 page_flip; look_down 8 chair_creak; lower 1 trumpet_valves,12 instrument_handle,15 chair_creak; raise 2 instrument_handle,13 trumpet_valves; startle 1 chair_creak
+[sfx_cues] rest weight-shift spans (mm): band_alto_sax_1 3.1, band_alto_sax_2 3.0, band_baritone_sax_1 6.0, band_bass_1 4.5, band_guitar_1 6.1, band_piano_1 2.9, band_tenor_sax_1 3.1, band_tenor_sax_2 4.4, band_trombone_1 6.0, band_trombone_2 5.9, band_trombone_3 5.9, band_trombone_4 6.0, band_trumpet_1 2.9, band_trumpet_2 5.9, band_trumpet_3 4.4, band_trumpet_4 3.0
+[sfx_cues] spot checks against terence_v004_moves.json:
+[sfx_cues]   ok  t0_clap_off claps 12: nearest clap* at 12
+[sfx_cues]   ok  t0_clap_off claps 24: nearest clap* at 24
+[sfx_cues]   ok  t0_clap_off claps 36: nearest clap* at 36
+[sfx_cues]   ok  t0_clap_off claps 48: nearest clap* at 48
+[sfx_cues]   ok  t3_clap_in_face claps 12: nearest clap* at 12
+[sfx_cues]   ok  t3_clap_in_face claps 24: nearest clap* at 24
+[sfx_cues]   ok  t3_clap_in_face claps 36: nearest clap* at 36
+[sfx_cues]   ok  t3_clap_in_face claps 48: nearest clap* at 48
+[sfx_cues]   ok  t1_clap_stop clap 12: nearest clap* at 12
+[sfx_cues]   ok  t5_rhythm_slaps impacts 18: nearest slap* at 18
+[sfx_cues]   ok  t5_rhythm_slaps impacts 42: nearest slap* at 42
+[sfx_cues]   ok  t5_rhythm_slaps impacts 66: nearest slap* at 66
+[sfx_cues]   ok  t5_rhythm_slaps impacts 84: nearest slap* at 84
+[sfx_cues]   ok  t1_fist_slam slam 14: nearest fist_slam_stand* at 14
+[sfx_cues]   ok  t2_impatient_watch taps 14: nearest watch_tap* at 14
+[sfx_cues]   ok  t2_impatient_watch taps 26: nearest watch_tap* at 26
+[sfx_cues]   ok  t2_score_point taps 16: nearest watch_tap* at 16
+[sfx_cues]   ok  t2_score_point taps 24: nearest watch_tap* at 24
+[sfx_cues]   ok  t5_cowbell hits 12: nearest cowbell_hit* at 12
+[sfx_cues]   ok  t5_cowbell hits 24: nearest cowbell_hit* at 24
+[sfx_cues]   ok  t5_cowbell hits 36: nearest cowbell_hit* at 36
+[sfx_cues]   ok  t5_cowbell hits 48: nearest cowbell_hit* at 48
+[sfx_cues]   ok  t5_cowbell hits 60: nearest cowbell_hit* at 60
+[sfx_cues]   ok  t4_charge stomps 13: nearest foot_stomp* at 13
+[sfx_cues]   ok  t4_charge stomps 26: nearest foot_stomp* at 26
+[sfx_cues]   ok  t4_storm_out arrives 72: nearest door_slam* at 72
+[sfx_cues]   ok  t5_chair_throw pickup 10: detected 10
+[sfx_cues]   ok  t5_chair_throw release 28: detected 28
+[sfx_cues]   ok  t5_chair_throw arrives 44: detected 44
+[sfx_cues]   ok  t5_drum_throw pickup 10: detected 10
+[sfx_cues]   ok  t5_drum_throw release 34: detected 34
+[sfx_cues]   ok  t5_drum_throw arrives 48: detected 48
+[sfx_cues]   ok  t5_cymbal_throw pickup 8: detected 8
+[sfx_cues]   ok  t5_cymbal_throw release 21: detected 21
+[sfx_cues]   ok  t5_cymbal_throw arrives 33: detected 33
+[sfx_cues]   ok  t5_chair_throw lands 56: detected 55
+[sfx_cues]   ok  t5_chair_throw arrives/lands 44: nearest chair_impact* at 44
+[sfx_cues]   ok  t5_chair_throw arrives/lands 56: nearest chair_impact* at 55
+[sfx_cues]   ok  t5_drum_throw arrives 48: nearest drum_impact* at 48
+[sfx_cues]   ok  t5_cymbal_throw arrives 33: nearest cymbal_impact* at 33
+[sfx_cues]   ok  t4_throw_music grab 8: detected 8
+[sfx_cues]   ok  t4_throw_music release 18: detected 18
+[sfx_cues]   ok  t4_throw_music lands (touchdown, then slide) 34: detected 31
+[sfx_cues]   ok  t4_sweep_stand hit 12: detected 12
+[sfx_cues]   ok  t4_sweep_stand lands 21: detected 21
+[sfx_cues]   ok  walk: 2 footsteps ({'LeftFoot': 1, 'RightFoot': 1}), alternating True
+[sfx_cues]   ok  t0_pace: 6 footsteps ({'LeftFoot': 3, 'RightFoot': 3}), alternating True
+[sfx_cues]   ok  t3_circle_kit: 16 footsteps ({'LeftFoot': 8, 'RightFoot': 8}), alternating True
+[sfx_cues] spot checks against ANIMATIONS.md (band):
+[sfx_cues]   ok  band_alto_sax_1 raise: instrument settles at 13 (meets the mouth at 13)
+[sfx_cues]   ok  band_alto_sax_1: page_flip at [10] (pinch at 10), startle cue at [1] (jolt peaks at 4)
+[sfx_cues]   ok  band_alto_sax_2 raise: instrument settles at 13 (meets the mouth at 13)
+[sfx_cues]   ok  band_alto_sax_2: page_flip at [10] (pinch at 10), startle cue at [1] (jolt peaks at 4)
+[sfx_cues]   ok  band_baritone_sax_1 raise: instrument settles at 13 (meets the mouth at 13)
+[sfx_cues]   ok  band_baritone_sax_1: page_flip at [10] (pinch at 10), startle cue at [1] (jolt peaks at 4)
+[sfx_cues]   ok  band_bass_1: page_flip at [10] (pinch at 10), startle cue at [1] (jolt peaks at 4)
+[sfx_cues]   ok  band_guitar_1: page_flip at [10] (pinch at 10), startle cue at [1] (jolt peaks at 4)
+[sfx_cues]   ok  band_piano_1: page_flip at [10] (pinch at 10), startle cue at [1] (jolt peaks at 4)
+[sfx_cues]   ok  band_tenor_sax_1 raise: instrument settles at 13 (meets the mouth at 13)
+[sfx_cues]   ok  band_tenor_sax_1: page_flip at [10] (pinch at 10), startle cue at [1] (jolt peaks at 4)
+[sfx_cues]   ok  band_tenor_sax_2 raise: instrument settles at 13 (meets the mouth at 13)
+[sfx_cues]   ok  band_tenor_sax_2: page_flip at [10] (pinch at 10), startle cue at [1] (jolt peaks at 4)
+[sfx_cues]   ok  band_trombone_1 raise: instrument settles at 13 (meets the mouth at 13)
+[sfx_cues]   ok  band_trombone_1: page_flip at [10] (pinch at 10), startle cue at [1] (jolt peaks at 4)
+[sfx_cues]   ok  band_trombone_1: spit shakes at [16, 22, 28] (16/22/28), play_loop slide cues at [10, 22, 34, 46] (one per beat change)
+[sfx_cues]   ok  band_trombone_2 raise: instrument settles at 13 (meets the mouth at 13)
+[sfx_cues]   ok  band_trombone_2: page_flip at [10] (pinch at 10), startle cue at [1] (jolt peaks at 4)
+[sfx_cues]   ok  band_trombone_2: spit shakes at [16, 22, 28] (16/22/28), play_loop slide cues at [10, 22, 34, 46] (one per beat change)
+[sfx_cues]   ok  band_trombone_3 raise: instrument settles at 13 (meets the mouth at 13)
+[sfx_cues]   ok  band_trombone_3: page_flip at [10] (pinch at 10), startle cue at [1] (jolt peaks at 4)
+[sfx_cues]   ok  band_trombone_3: spit shakes at [16, 22, 28] (16/22/28), play_loop slide cues at [10, 22, 34, 46] (one per beat change)
+[sfx_cues]   ok  band_trombone_4 raise: instrument settles at 13 (meets the mouth at 13)
+[sfx_cues]   ok  band_trombone_4: page_flip at [10] (pinch at 10), startle cue at [1] (jolt peaks at 4)
+[sfx_cues]   ok  band_trombone_4: spit shakes at [16, 22, 28] (16/22/28), play_loop slide cues at [10, 22, 34, 46] (one per beat change)
+[sfx_cues]   ok  band_trumpet_1 raise: instrument settles at 12 (meets the mouth at 13)
+[sfx_cues]   ok  band_trumpet_1: page_flip at [10] (pinch at 10), startle cue at [1] (jolt peaks at 4)
+[sfx_cues]   ok  band_trumpet_2 raise: instrument settles at 13 (meets the mouth at 13)
+[sfx_cues]   ok  band_trumpet_2: page_flip at [10] (pinch at 10), startle cue at [1] (jolt peaks at 4)
+[sfx_cues]   ok  band_trumpet_3 raise: instrument settles at 12 (meets the mouth at 13)
+[sfx_cues]   ok  band_trumpet_3: page_flip at [10] (pinch at 10), startle cue at [1] (jolt peaks at 4)
+[sfx_cues]   ok  band_trumpet_4 raise: instrument settles at 13 (meets the mouth at 13)
+[sfx_cues]   ok  band_trumpet_4: page_flip at [10] (pinch at 10), startle cue at [1] (jolt peaks at 4)
+[sfx_cues] counts: band (all 16 members, resolved)/creaks 51, band (all 16 members, resolved)/instrument handling 99, band (all 16 members, resolved)/page flips 16, terence/cloth / body 6, terence/footsteps 58, terence/hand contacts 18, terence/props / room 19, terence/whooshes 21
+[sfx_cues] wrote sfx/sfx_cues.json and sfx/CUES.md: 122 Terence cues, 14 band tables
+Blender 5.2.3 LTS (hash e13b728c6880 built 2026-10-22 01:31:22)
+
+Blender quit

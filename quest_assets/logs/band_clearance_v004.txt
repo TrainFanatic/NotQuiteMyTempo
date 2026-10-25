@@ -1,0 +1,121 @@
+# band v004 clearance (metres of penetration, sampled every 2 frames)
+
+[sax]
+  backrest>body    0.00 cm   band_alto_sax_1 rest @0
+  body>backrest    0.00 cm   band_alto_sax_1 rest @0
+  body>seat        0.40 cm   band_alto_sax_1 rest @0
+  fingers>body     0.00 cm   band_alto_sax_1 rest @0
+  fingers>inst     1.30 cm   band_tenor_sax_1 startle @14
+  forearm>body     1.93 cm   band_baritone_sax_1 look_at_drummer @10
+  forearm>inst     0.31 cm   band_baritone_sax_1 flip_page @8
+  head>inst        0.00 cm   band_alto_sax_1 rest @0
+  inst>backrest    0.00 cm   band_alto_sax_1 rest @0
+  inst>forearm     0.46 cm   band_baritone_sax_1 startle @2
+  inst>seat        0.00 cm   band_alto_sax_1 rest @0
+  inst>thigh       0.50 cm   band_tenor_sax_1 look_down @22
+  inst>upperarm    0.40 cm   band_baritone_sax_1 flip_page @22
+  palm>body        0.00 cm   band_alto_sax_1 rest @0
+  palm>inst        0.49 cm   band_tenor_sax_1 startle @12
+  seat>body        0.29 cm   band_alto_sax_1 rest @0
+  shin>inst        0.00 cm   band_alto_sax_1 rest @0
+  thigh>inst       0.00 cm   band_alto_sax_1 rest @0
+  torso>inst       0.00 cm   band_alto_sax_1 rest @0
+  upperarm>inst    0.00 cm   band_alto_sax_1 rest @0
+[trumpet]
+  backrest>body    0.00 cm   band_trumpet_1 rest @0
+  body>backrest    0.00 cm   band_trumpet_1 rest @0
+  body>seat        0.40 cm   band_trumpet_4 rest @0
+  fingers>body     0.34 cm   band_trumpet_4 lower @4
+  fingers>inst     0.90 cm   band_trumpet_4 raise @6
+  forearm>body     0.00 cm   band_trumpet_1 rest @0
+  forearm>inst     0.00 cm   band_trumpet_1 rest @0
+  head>inst        0.00 cm   band_trumpet_1 rest @0
+  inst>backrest    0.00 cm   band_trumpet_1 rest @0
+  inst>seat        0.00 cm   band_trumpet_1 rest @0
+  palm>body        0.00 cm   band_trumpet_1 rest @0
+  palm>inst        0.58 cm   band_trumpet_2 raise @12
+  seat>body        0.29 cm   band_trumpet_4 rest @0
+  shin>inst        0.00 cm   band_trumpet_1 rest @0
+  thigh>inst       0.00 cm   band_trumpet_1 rest @0
+  torso>inst       0.08 cm   band_trumpet_3 flip_page @12
+  upperarm>inst    0.00 cm   band_trumpet_1 rest @0
+[trombone]
+  backrest>body    0.70 cm   band_trombone_4 startle @6
+  body>backrest    0.00 cm   band_trombone_1 rest @0
+  body>seat        0.40 cm   band_trombone_4 rest @0
+  fingers>body     0.00 cm   band_trombone_1 rest @0
+  fingers>inst     0.56 cm   band_trombone_2 look_at_drummer @20
+  forearm>body     1.40 cm   band_trombone_1 spit_valve @38
+  forearm>inst     0.51 cm   band_trombone_4 play_loop @22
+  head>inst        0.00 cm   band_trombone_1 rest @0
+  inst>backrest    0.00 cm   band_trombone_1 rest @0
+  inst>forearm     1.22 cm   band_trombone_4 raise @10
+  inst>seat        0.00 cm   band_trombone_1 rest @0
+  palm>body        0.00 cm   band_trombone_1 rest @0
+  palm>inst        0.56 cm   band_trombone_1 play_loop @12
+  seat>body        0.28 cm   band_trombone_1 rest @0
+  shin>inst        0.00 cm   band_trombone_1 rest @0
+  thigh>inst       0.00 cm   band_trombone_1 rest @0
+  torso>inst       0.00 cm   band_trombone_1 rest @0
+  upperarm>inst    0.00 cm   band_trombone_1 rest @0
+[piano]
+  bench>body       0.36 cm   band_piano_1 rest @0
+  body>bench       0.40 cm   band_piano_1 rest @0
+  body>keys        0.00 cm   band_piano_1 rest @0
+  fingers>body     0.00 cm   band_piano_1 rest @0
+  forearm>body     0.00 cm   band_piano_1 rest @0
+  keys>body        0.00 cm   band_piano_1 rest @0
+  palm>body        0.00 cm   band_piano_1 rest @0
+[guitar]
+  backrest>body    0.00 cm   band_guitar_1 rest @0
+  body>backrest    0.00 cm   band_guitar_1 rest @0
+  body>seat        0.40 cm   band_guitar_1 rest @0
+  fingers>body     0.00 cm   band_guitar_1 rest @0
+  fingers>inst     0.68 cm   band_guitar_1 look_down @36
+  forearm>body     0.00 cm   band_guitar_1 rest @0
+  forearm>inst     1.04 cm   band_guitar_1 arms_rest @56
+  head>inst        0.00 cm   band_guitar_1 rest @0
+  inst>backrest    0.00 cm   band_guitar_1 rest @0
+  inst>forearm     0.74 cm   band_guitar_1 arms_rest @58
+  inst>seat        0.00 cm   band_guitar_1 rest @0
+  inst>upperarm    0.89 cm   band_guitar_1 flip_page @24
+  palm>body        0.00 cm   band_guitar_1 rest @0
+  palm>inst        0.00 cm   band_guitar_1 rest @0
+  seat>body        0.29 cm   band_guitar_1 rest @0
+  shin>inst        0.00 cm   band_guitar_1 rest @0
+  thigh>inst       0.14 cm   band_guitar_1 raise @14
+  torso>inst       0.00 cm   band_guitar_1 rest @0
+  upperarm>inst    0.68 cm   band_guitar_1 flip_page @24
+[bass]
+  body>stool       0.00 cm   band_bass_1 rest @0
+  fingers>body     0.00 cm   band_bass_1 rest @0
+  fingers>inst     1.15 cm   band_bass_1 play_loop @2
+  forearm>body     1.14 cm   band_bass_1 look_down @24
+  forearm>inst     0.00 cm   band_bass_1 rest @0
+  head>inst        0.00 cm   band_bass_1 rest @0
+  inst>stool       0.00 cm   band_bass_1 rest @0
+  inst>torso       0.01 cm   band_bass_1 look_down @16
+  palm>body        0.00 cm   band_bass_1 rest @0
+  palm>inst        0.55 cm   band_bass_1 look_at_drummer @36
+  shin>inst        0.00 cm   band_bass_1 rest @0
+  stool>body       7.96 cm   band_bass_1 rest @0
+  thigh>inst       0.00 cm   band_bass_1 rest @0
+  torso>inst       0.00 cm   band_bass_1 rest @0
+  upperarm>inst    0.00 cm   band_bass_1 rest @0
+
+band_alto_sax_1: clear
+band_alto_sax_2: clear
+band_tenor_sax_1: fingers>inst 1.3 (startle@14)
+band_tenor_sax_2: fingers>inst 1.1 (startle@14)
+band_baritone_sax_1: forearm>body 1.9 (look_at_drummer@10), fingers>inst 1.0 (flip_page@4)
+band_trumpet_1: clear
+band_trumpet_2: clear
+band_trumpet_3: clear
+band_trumpet_4: clear
+band_trombone_1: forearm>body 1.4 (spit_valve@38)
+band_trombone_2: clear
+band_trombone_3: inst>forearm 1.0 (raise@10)
+band_trombone_4: inst>forearm 1.2 (raise@10)
+band_piano_1: clear
+band_guitar_1: forearm>inst 1.0 (arms_rest@56)
+band_bass_1: stool>body 8.0 (rest@0), fingers>inst 1.1 (play_loop@2), forearm>body 1.1 (look_down@24)

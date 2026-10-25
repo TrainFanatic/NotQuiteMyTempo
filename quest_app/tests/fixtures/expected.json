@@ -1,0 +1,92 @@
+{
+  "type0": {
+    "format": 0,
+    "tracks": 1,
+    "notes": 4,
+    "note_times": [
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.5,
+        1.0
+      ],
+      [
+        1.0,
+        2.0
+      ],
+      [
+        3.6,
+        4.4
+      ]
+    ],
+    "tempo_map": [
+      [
+        0,
+        500000
+      ],
+      [
+        1920,
+        400000
+      ]
+    ],
+    "phrases": [
+      {
+        "start": 0.0,
+        "end": 2.0,
+        "raise_at": 0.0,
+        "lower_at": 2.4
+      },
+      {
+        "start": 3.6,
+        "end": 4.4,
+        "raise_at": 3.0,
+        "lower_at": 4.800000000000001
+      }
+    ]
+  },
+  "type1": {
+    "format": 1,
+    "tracks": 3,
+    "names": [
+      "Conductor",
+      "Trumpets",
+      "Trombones"
+    ],
+    "notes": {
+      "Trumpets": 2,
+      "Trombones": 2
+    },
+    "phrases": {
+      "Trumpets": [
+        {
+          "start": 0.0,
+          "end": 2.4,
+          "raise_at": 0.0,
+          "lower_at": 2.8
+        }
+      ],
+      "Trombones": [
+        {
+          "start": 0.6,
+          "end": 1.2,
+          "raise_at": 0.0,
+          "lower_at": 1.6
+        },
+        {
+          "start": 4.8,
+          "end": 6.0,
+          "raise_at": 4.2,
+          "lower_at": 6.4
+        }
+      ]
+    },
+    "bpm": 100.0
+  },
+  "params": {
+    "rest_beats": 2.0,
+    "raise_lead": 0.6,
+    "lower_delay": 0.4
+  }
+}
