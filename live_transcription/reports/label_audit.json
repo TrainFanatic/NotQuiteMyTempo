@@ -1,0 +1,922 @@
+{
+  "assign_s": 0.02,
+  "ring_s": 0.25,
+  "loud_db": -12.0,
+  "splits": {
+    "train": [
+      {
+        "session": "single_kick_01",
+        "labels": 44,
+        "hit_times": 44,
+        "candidates": 77,
+        "labels_without_candidate_20ms": [
+          10.824604,
+          11.325458,
+          11.834625,
+          12.394958,
+          12.947729,
+          13.456417,
+          16.181854
+        ],
+        "label_to_candidate_offset_ms": {
+          "median": 3.3121666666673377,
+          "p95_absolute": 11.191633333334028
+        },
+        "min_gap_between_hits_ms": 444.37500000000085,
+        "loud_unlabelled_candidates": []
+      },
+      {
+        "session": "single_snare_01",
+        "labels": 35,
+        "hit_times": 35,
+        "candidates": 36,
+        "labels_without_candidate_20ms": [
+          12.28775,
+          12.872021,
+          20.530875
+        ],
+        "label_to_candidate_offset_ms": {
+          "median": -0.00016666666624587378,
+          "p95_absolute": 3.977216666666725
+        },
+        "min_gap_between_hits_ms": 358.04200000000105,
+        "loud_unlabelled_candidates": [
+          {
+            "time_s": 12.264521,
+            "peak_vs_median_hit_db": -10.4
+          },
+          {
+            "time_s": 25.360604,
+            "peak_vs_median_hit_db": -3.9
+          }
+        ]
+      },
+      {
+        "session": "single_hihat_01",
+        "labels": 52,
+        "hit_times": 52,
+        "candidates": 51,
+        "labels_without_candidate_20ms": [
+          17.913062,
+          25.418604
+        ],
+        "label_to_candidate_offset_ms": {
+          "median": 0.4062500000010516,
+          "p95_absolute": 9.154874999999048
+        },
+        "min_gap_between_hits_ms": 264.8129999999993,
+        "loud_unlabelled_candidates": []
+      },
+      {
+        "session": "single_high_tom_01",
+        "labels": 30,
+        "hit_times": 30,
+        "candidates": 48,
+        "labels_without_candidate_20ms": [],
+        "label_to_candidate_offset_ms": {
+          "median": 0.042000000000541604,
+          "p95_absolute": 4.825108333333889
+        },
+        "min_gap_between_hits_ms": 498.60400000000027,
+        "loud_unlabelled_candidates": []
+      },
+      {
+        "session": "single_mid_tom_01",
+        "labels": 37,
+        "hit_times": 37,
+        "candidates": 90,
+        "labels_without_candidate_20ms": [
+          2.396042,
+          6.947167,
+          29.169
+        ],
+        "label_to_candidate_offset_ms": {
+          "median": -0.0004166666673910413,
+          "p95_absolute": 2.543591666666909
+        },
+        "min_gap_between_hits_ms": 441.5630000000004,
+        "loud_unlabelled_candidates": [
+          {
+            "time_s": 12.76,
+            "peak_vs_median_hit_db": -3.2
+          },
+          {
+            "time_s": 14.700062,
+            "peak_vs_median_hit_db": -1.5
+          },
+          {
+            "time_s": 16.020021,
+            "peak_vs_median_hit_db": -6.1
+          }
+        ]
+      },
+      {
+        "session": "single_floor_tom_01",
+        "labels": 38,
+        "hit_times": 38,
+        "candidates": 129,
+        "labels_without_candidate_20ms": [
+          6.351396,
+          22.233271
+        ],
+        "label_to_candidate_offset_ms": {
+          "median": 2.0210000000000505,
+          "p95_absolute": 5.557666666667238
+        },
+        "min_gap_between_hits_ms": 503.45899999999943,
+        "loud_unlabelled_candidates": [
+          {
+            "time_s": 3.063854,
+            "peak_vs_median_hit_db": -6.2
+          },
+          {
+            "time_s": 3.095,
+            "peak_vs_median_hit_db": -8.2
+          },
+          {
+            "time_s": 3.130667,
+            "peak_vs_median_hit_db": -7.2
+          },
+          {
+            "time_s": 3.175021,
+            "peak_vs_median_hit_db": -9.2
+          }
+        ]
+      },
+      {
+        "session": "single_crash_01",
+        "labels": 14,
+        "hit_times": 14,
+        "candidates": 26,
+        "labels_without_candidate_20ms": [
+          17.024625,
+          23.061812
+        ],
+        "label_to_candidate_offset_ms": {
+          "median": 0.1456666666648232,
+          "p95_absolute": 0.6059166666665392
+        },
+        "min_gap_between_hits_ms": 2411.479,
+        "loud_unlabelled_candidates": [
+          {
+            "time_s": 5.755375,
+            "peak_vs_median_hit_db": -8.1
+          },
+          {
+            "time_s": 5.8005,
+            "peak_vs_median_hit_db": -9.0
+          },
+          {
+            "time_s": 11.235563,
+            "peak_vs_median_hit_db": -9.6
+          },
+          {
+            "time_s": 14.261458,
+            "peak_vs_median_hit_db": -8.5
+          }
+        ]
+      },
+      {
+        "session": "single_ride_01",
+        "labels": 22,
+        "hit_times": 22,
+        "candidates": 19,
+        "labels_without_candidate_20ms": [
+          23.073667,
+          25.484271,
+          31.498,
+          39.2385,
+          50.254417,
+          55.088687,
+          57.98875
+        ],
+        "label_to_candidate_offset_ms": {
+          "median": 0.24966666666159654,
+          "p95_absolute": 0.9146500000001274
+        },
+        "min_gap_between_hits_ms": 155.56300000000078,
+        "loud_unlabelled_candidates": [
+          {
+            "time_s": 3.232271,
+            "peak_vs_median_hit_db": -2.6
+          }
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "session": "single_kick_02",
+        "labels": 21,
+        "hit_times": 21,
+        "candidates": 52,
+        "labels_without_candidate_20ms": [
+          3.287958
+        ],
+        "label_to_candidate_offset_ms": {
+          "median": 1.7396666666655847,
+          "p95_absolute": 4.3526333333328004
+        },
+        "min_gap_between_hits_ms": 487.35499999999996,
+        "loud_unlabelled_candidates": [
+          {
+            "time_s": 5.299125,
+            "peak_vs_median_hit_db": 6.6
+          },
+          {
+            "time_s": 5.320021,
+            "peak_vs_median_hit_db": 0.7
+          },
+          {
+            "time_s": 9.903354,
+            "peak_vs_median_hit_db": 6.4
+          },
+          {
+            "time_s": 9.935,
+            "peak_vs_median_hit_db": 2.1
+          },
+          {
+            "time_s": 9.965021,
+            "peak_vs_median_hit_db": -1.8
+          },
+          {
+            "time_s": 26.825,
+            "peak_vs_median_hit_db": 0.4
+          },
+          {
+            "time_s": 26.860042,
+            "peak_vs_median_hit_db": -3.3
+          },
+          {
+            "time_s": 26.885792,
+            "peak_vs_median_hit_db": -6.8
+          }
+        ]
+      },
+      {
+        "session": "single_snare_02",
+        "labels": 25,
+        "hit_times": 25,
+        "candidates": 30,
+        "labels_without_candidate_20ms": [
+          2.136042,
+          4.0655,
+          19.300167,
+          28.402396
+        ],
+        "label_to_candidate_offset_ms": {
+          "median": 0.0,
+          "p95_absolute": 1.5411666666667045
+        },
+        "min_gap_between_hits_ms": 383.33299999999946,
+        "loud_unlabelled_candidates": [
+          {
+            "time_s": 8.663708,
+            "peak_vs_median_hit_db": 1.7
+          },
+          {
+            "time_s": 9.993792,
+            "peak_vs_median_hit_db": 2.4
+          }
+        ]
+      },
+      {
+        "session": "single_hihat_02",
+        "labels": 24,
+        "hit_times": 24,
+        "candidates": 32,
+        "labels_without_candidate_20ms": [
+          2.602125,
+          3.995354,
+          6.781708,
+          14.835771,
+          21.661687,
+          29.696917,
+          32.390396
+        ],
+        "label_to_candidate_offset_ms": {
+          "median": 0.04133333333555811,
+          "p95_absolute": 11.01679999999909
+        },
+        "min_gap_between_hits_ms": 270.2089999999977,
+        "loud_unlabelled_candidates": [
+          {
+            "time_s": 2.396125,
+            "peak_vs_median_hit_db": 1.8
+          },
+          {
+            "time_s": 3.7895,
+            "peak_vs_median_hit_db": 0.9
+          },
+          {
+            "time_s": 6.575667,
+            "peak_vs_median_hit_db": -0.3
+          },
+          {
+            "time_s": 16.179479,
+            "peak_vs_median_hit_db": 0.7
+          },
+          {
+            "time_s": 20.114062,
+            "peak_vs_median_hit_db": -1.3
+          },
+          {
+            "time_s": 29.478833,
+            "peak_vs_median_hit_db": 1.5
+          },
+          {
+            "time_s": 29.510042,
+            "peak_vs_median_hit_db": -1.9
+          },
+          {
+            "time_s": 30.855458,
+            "peak_vs_median_hit_db": 2.8
+          },
+          {
+            "time_s": 32.156062,
+            "peak_vs_median_hit_db": -0.2
+          },
+          {
+            "time_s": 34.991125,
+            "peak_vs_median_hit_db": -8.8
+          }
+        ]
+      },
+      {
+        "session": "single_high_tom_02",
+        "labels": 33,
+        "hit_times": 33,
+        "candidates": 68,
+        "labels_without_candidate_20ms": [
+          12.882458,
+          14.15375,
+          16.9245,
+          22.450458
+        ],
+        "label_to_candidate_offset_ms": {
+          "median": -0.04150000000180398,
+          "p95_absolute": 9.137133333333477
+        },
+        "min_gap_between_hits_ms": 204.75000000000065,
+        "loud_unlabelled_candidates": [
+          {
+            "time_s": 2.947521,
+            "peak_vs_median_hit_db": -1.7
+          },
+          {
+            "time_s": 2.993937,
+            "peak_vs_median_hit_db": -3.0
+          },
+          {
+            "time_s": 3.040396,
+            "peak_vs_median_hit_db": -7.6
+          },
+          {
+            "time_s": 5.577187,
+            "peak_vs_median_hit_db": -1.4
+          },
+          {
+            "time_s": 5.615146,
+            "peak_vs_median_hit_db": -3.8
+          },
+          {
+            "time_s": 5.641042,
+            "peak_vs_median_hit_db": -3.6
+          },
+          {
+            "time_s": 5.966104,
+            "peak_vs_median_hit_db": -10.0
+          },
+          {
+            "time_s": 7.359312,
+            "peak_vs_median_hit_db": -4.4
+          },
+          {
+            "time_s": 7.405729,
+            "peak_vs_median_hit_db": -3.4
+          },
+          {
+            "time_s": 10.145708,
+            "peak_vs_median_hit_db": -6.3
+          },
+          {
+            "time_s": 15.625625,
+            "peak_vs_median_hit_db": -5.4
+          },
+          {
+            "time_s": 15.672062,
+            "peak_vs_median_hit_db": -3.6
+          },
+          {
+            "time_s": 18.314083,
+            "peak_vs_median_hit_db": -5.2
+          },
+          {
+            "time_s": 18.412,
+            "peak_vs_median_hit_db": -10.5
+          }
+        ]
+      },
+      {
+        "session": "single_mid_tom_02",
+        "labels": 16,
+        "hit_times": 16,
+        "candidates": 25,
+        "labels_without_candidate_20ms": [
+          14.95325,
+          20.741396
+        ],
+        "label_to_candidate_offset_ms": {
+          "median": -0.0003333333329358368,
+          "p95_absolute": 0.6792249999994835
+        },
+        "min_gap_between_hits_ms": 1357.4589999999987,
+        "loud_unlabelled_candidates": [
+          {
+            "time_s": 14.930063,
+            "peak_vs_median_hit_db": 0.0
+          },
+          {
+            "time_s": 19.34475,
+            "peak_vs_median_hit_db": -0.0
+          },
+          {
+            "time_s": 19.44,
+            "peak_vs_median_hit_db": -5.1
+          },
+          {
+            "time_s": 20.720292,
+            "peak_vs_median_hit_db": 0.0
+          }
+        ]
+      },
+      {
+        "session": "single_floor_tom_02",
+        "labels": 25,
+        "hit_times": 25,
+        "candidates": 111,
+        "labels_without_candidate_20ms": [
+          4.498437
+        ],
+        "label_to_candidate_offset_ms": {
+          "median": -0.021000000000270802,
+          "p95_absolute": 4.359566666667901
+        },
+        "min_gap_between_hits_ms": 191.79199999999952,
+        "loud_unlabelled_candidates": [
+          {
+            "time_s": 17.91,
+            "peak_vs_median_hit_db": -10.5
+          },
+          {
+            "time_s": 23.285,
+            "peak_vs_median_hit_db": -8.6
+          },
+          {
+            "time_s": 32.1805,
+            "peak_vs_median_hit_db": 0.0
+          },
+          {
+            "time_s": 32.215208,
+            "peak_vs_median_hit_db": -3.5
+          },
+          {
+            "time_s": 32.27,
+            "peak_vs_median_hit_db": -3.4
+          },
+          {
+            "time_s": 32.355,
+            "peak_vs_median_hit_db": -5.1
+          }
+        ]
+      },
+      {
+        "session": "single_crash_02",
+        "labels": 12,
+        "hit_times": 12,
+        "candidates": 24,
+        "labels_without_candidate_20ms": [
+          30.074229,
+          38.596125
+        ],
+        "label_to_candidate_offset_ms": {
+          "median": 0.00041666666605877367,
+          "p95_absolute": 0.532308333331776
+        },
+        "min_gap_between_hits_ms": 2716.770999999998,
+        "loud_unlabelled_candidates": [
+          {
+            "time_s": 9.530042,
+            "peak_vs_median_hit_db": 0.3
+          },
+          {
+            "time_s": 15.7,
+            "peak_vs_median_hit_db": -3.6
+          },
+          {
+            "time_s": 15.735,
+            "peak_vs_median_hit_db": -6.9
+          },
+          {
+            "time_s": 15.83,
+            "peak_vs_median_hit_db": -6.9
+          },
+          {
+            "time_s": 18.255312,
+            "peak_vs_median_hit_db": 4.7
+          },
+          {
+            "time_s": 21.370104,
+            "peak_vs_median_hit_db": 0.6
+          },
+          {
+            "time_s": 24.435312,
+            "peak_vs_median_hit_db": -1.0
+          },
+          {
+            "time_s": 27.500583,
+            "peak_vs_median_hit_db": -2.3
+          },
+          {
+            "time_s": 30.051021,
+            "peak_vs_median_hit_db": -0.9
+          },
+          {
+            "time_s": 30.330292,
+            "peak_vs_median_hit_db": 0.2
+          },
+          {
+            "time_s": 33.075562,
+            "peak_vs_median_hit_db": -2.1
+          }
+        ]
+      },
+      {
+        "session": "single_ride_02",
+        "labels": 17,
+        "hit_times": 17,
+        "candidates": 25,
+        "labels_without_candidate_20ms": [],
+        "label_to_candidate_offset_ms": {
+          "median": 0.12466666666632875,
+          "p95_absolute": 0.6414333333296434
+        },
+        "min_gap_between_hits_ms": 2565.604,
+        "loud_unlabelled_candidates": [
+          {
+            "time_s": 5.740333,
+            "peak_vs_median_hit_db": -10.3
+          },
+          {
+            "time_s": 9.09025,
+            "peak_vs_median_hit_db": -9.6
+          },
+          {
+            "time_s": 12.295021,
+            "peak_vs_median_hit_db": -10.5
+          }
+        ]
+      }
+    ],
+    "test": [
+      {
+        "session": "single_kick_03",
+        "labels": 22,
+        "hit_times": 22,
+        "candidates": 43,
+        "labels_without_candidate_20ms": [
+          6.568958,
+          9.962604,
+          13.362104,
+          18.394604,
+          23.218083,
+          24.665625,
+          26.475146,
+          29.270229,
+          29.573708,
+          34.552667
+        ],
+        "label_to_candidate_offset_ms": {
+          "median": -0.010333333333001349,
+          "p95_absolute": 11.174050000001133
+        },
+        "min_gap_between_hits_ms": 303.47899999999936,
+        "loud_unlabelled_candidates": [
+          {
+            "time_s": 23.038563,
+            "peak_vs_median_hit_db": 9.0
+          },
+          {
+            "time_s": 26.335792,
+            "peak_vs_median_hit_db": -8.1
+          },
+          {
+            "time_s": 31.490021,
+            "peak_vs_median_hit_db": -2.6
+          },
+          {
+            "time_s": 33.020271,
+            "peak_vs_median_hit_db": -2.9
+          },
+          {
+            "time_s": 33.066708,
+            "peak_vs_median_hit_db": -3.1
+          },
+          {
+            "time_s": 34.367,
+            "peak_vs_median_hit_db": 9.0
+          }
+        ]
+      },
+      {
+        "session": "single_snare_03",
+        "labels": 30,
+        "hit_times": 30,
+        "candidates": 47,
+        "labels_without_candidate_20ms": [
+          3.925667,
+          16.624083,
+          23.45075,
+          35.641312
+        ],
+        "label_to_candidate_offset_ms": {
+          "median": 0.4789166666669953,
+          "p95_absolute": 14.343666666666532
+        },
+        "min_gap_between_hits_ms": 179.95799999999917,
+        "loud_unlabelled_candidates": [
+          {
+            "time_s": 2.486021,
+            "peak_vs_median_hit_db": -4.0
+          },
+          {
+            "time_s": 2.532437,
+            "peak_vs_median_hit_db": -5.1
+          },
+          {
+            "time_s": 3.712521,
+            "peak_vs_median_hit_db": 0.1
+          },
+          {
+            "time_s": 5.551062,
+            "peak_vs_median_hit_db": -7.8
+          },
+          {
+            "time_s": 15.370188,
+            "peak_vs_median_hit_db": -10.5
+          },
+          {
+            "time_s": 19.410458,
+            "peak_vs_median_hit_db": -8.8
+          }
+        ]
+      },
+      {
+        "session": "single_hihat_03",
+        "labels": 27,
+        "hit_times": 27,
+        "candidates": 29,
+        "labels_without_candidate_20ms": [
+          1.302396,
+          19.096542,
+          35.986333
+        ],
+        "label_to_candidate_offset_ms": {
+          "median": 1.093999999998374,
+          "p95_absolute": 5.717499999999551
+        },
+        "min_gap_between_hits_ms": 899.6040000000037,
+        "loud_unlabelled_candidates": []
+      },
+      {
+        "session": "single_high_tom_03",
+        "labels": 18,
+        "hit_times": 18,
+        "candidates": 27,
+        "labels_without_candidate_20ms": [
+          25.958646
+        ],
+        "label_to_candidate_offset_ms": {
+          "median": 0.29199999999995896,
+          "p95_absolute": 2.9082999999999957
+        },
+        "min_gap_between_hits_ms": 1181.916000000001,
+        "loud_unlabelled_candidates": [
+          {
+            "time_s": 4.883458,
+            "peak_vs_median_hit_db": -0.1
+          },
+          {
+            "time_s": 24.408542,
+            "peak_vs_median_hit_db": -1.7
+          }
+        ]
+      },
+      {
+        "session": "single_mid_tom_03",
+        "labels": 17,
+        "hit_times": 17,
+        "candidates": 35,
+        "labels_without_candidate_20ms": [
+          15.346479,
+          19.300187,
+          21.819542,
+          23.575896,
+          24.688521
+        ],
+        "label_to_candidate_offset_ms": {
+          "median": 0.0,
+          "p95_absolute": 1.866441666666562
+        },
+        "min_gap_between_hits_ms": 1112.6250000000014,
+        "loud_unlabelled_candidates": [
+          {
+            "time_s": 2.76,
+            "peak_vs_median_hit_db": -1.9
+          },
+          {
+            "time_s": 2.81,
+            "peak_vs_median_hit_db": -3.4
+          },
+          {
+            "time_s": 4.210083,
+            "peak_vs_median_hit_db": -2.6
+          },
+          {
+            "time_s": 4.256521,
+            "peak_vs_median_hit_db": -6.0
+          },
+          {
+            "time_s": 7.228729,
+            "peak_vs_median_hit_db": -0.0
+          },
+          {
+            "time_s": 10.154417,
+            "peak_vs_median_hit_db": -2.0
+          },
+          {
+            "time_s": 10.195479,
+            "peak_vs_median_hit_db": -2.2
+          },
+          {
+            "time_s": 11.594,
+            "peak_vs_median_hit_db": -6.4
+          },
+          {
+            "time_s": 12.98725,
+            "peak_vs_median_hit_db": -1.3
+          },
+          {
+            "time_s": 16.981083,
+            "peak_vs_median_hit_db": -2.4
+          },
+          {
+            "time_s": 18.281375,
+            "peak_vs_median_hit_db": -1.9
+          },
+          {
+            "time_s": 22.330354,
+            "peak_vs_median_hit_db": -1.0
+          },
+          {
+            "time_s": 23.386875,
+            "peak_vs_median_hit_db": 1.4
+          }
+        ]
+      },
+      {
+        "session": "single_floor_tom_03",
+        "labels": 18,
+        "hit_times": 18,
+        "candidates": 101,
+        "labels_without_candidate_20ms": [
+          1.836,
+          5.11975
+        ],
+        "label_to_candidate_offset_ms": {
+          "median": -8.333333378907071e-05,
+          "p95_absolute": 3.156541666666346
+        },
+        "min_gap_between_hits_ms": 538.3539999999998,
+        "loud_unlabelled_candidates": [
+          {
+            "time_s": 2.660167,
+            "peak_vs_median_hit_db": -3.9
+          },
+          {
+            "time_s": 2.706604,
+            "peak_vs_median_hit_db": -4.3
+          },
+          {
+            "time_s": 2.845937,
+            "peak_vs_median_hit_db": -5.9
+          },
+          {
+            "time_s": 2.985229,
+            "peak_vs_median_hit_db": -9.3
+          },
+          {
+            "time_s": 4.146229,
+            "peak_vs_median_hit_db": -4.4
+          },
+          {
+            "time_s": 4.285542,
+            "peak_vs_median_hit_db": -2.7
+          },
+          {
+            "time_s": 4.471333,
+            "peak_vs_median_hit_db": -9.7
+          },
+          {
+            "time_s": 5.585896,
+            "peak_vs_median_hit_db": -4.8
+          },
+          {
+            "time_s": 6.932646,
+            "peak_vs_median_hit_db": -4.8
+          },
+          {
+            "time_s": 7.164854,
+            "peak_vs_median_hit_db": -8.1
+          },
+          {
+            "time_s": 7.211292,
+            "peak_vs_median_hit_db": -7.6
+          },
+          {
+            "time_s": 7.257729,
+            "peak_vs_median_hit_db": -11.1
+          },
+          {
+            "time_s": 8.28,
+            "peak_vs_median_hit_db": -5.5
+          },
+          {
+            "time_s": 8.375,
+            "peak_vs_median_hit_db": -8.1
+          },
+          {
+            "time_s": 12.355,
+            "peak_vs_median_hit_db": -11.9
+          },
+          {
+            "time_s": 16.335062,
+            "peak_vs_median_hit_db": -8.5
+          },
+          {
+            "time_s": 19.010208,
+            "peak_vs_median_hit_db": -6.4
+          },
+          {
+            "time_s": 19.035,
+            "peak_vs_median_hit_db": -7.2
+          },
+          {
+            "time_s": 19.13,
+            "peak_vs_median_hit_db": -8.7
+          },
+          {
+            "time_s": 19.155,
+            "peak_vs_median_hit_db": -9.2
+          }
+        ]
+      },
+      {
+        "session": "single_crash_03",
+        "labels": 9,
+        "hit_times": 9,
+        "candidates": 13,
+        "labels_without_candidate_20ms": [
+          2.940354
+        ],
+        "label_to_candidate_offset_ms": {
+          "median": 0.27100000000013225,
+          "p95_absolute": 2.951983333332108
+        },
+        "min_gap_between_hits_ms": 3024.1659999999974,
+        "loud_unlabelled_candidates": []
+      },
+      {
+        "session": "single_ride_03",
+        "labels": 17,
+        "hit_times": 17,
+        "candidates": 21,
+        "labels_without_candidate_20ms": [],
+        "label_to_candidate_offset_ms": {
+          "median": 0.5413333333379455,
+          "p95_absolute": 1.4294666666700095
+        },
+        "min_gap_between_hits_ms": 2843.0629999999937,
+        "loud_unlabelled_candidates": [
+          {
+            "time_s": 15.515063,
+            "peak_vs_median_hit_db": -9.7
+          },
+          {
+            "time_s": 18.556958,
+            "peak_vs_median_hit_db": -9.5
+          }
+        ]
+      }
+    ]
+  }
+}

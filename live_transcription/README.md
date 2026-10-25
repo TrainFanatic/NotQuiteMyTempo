@@ -388,6 +388,31 @@ current accuracy baseline. Detailed class results at 10 and 50 ms are in
 `perturbed_data/comparison.json`; the generated dataset, model, and reports are local and ignored
 by Git. `perturbed_data/ISSUES.md` records the clipping fix and remaining data limitations.
 
+### Hit/no-hit model (`quest2_onset_v1`)
+
+`tools/train_onset_model.py` drops drum identity. It uses the same sessions, candidates, mute
+filter, label assignment and validation search as `train_model.py`, but merges the six family
+targets into one and exports a single class, MIDI 0 `onset` (the line format that
+`--onsets-only` already writes, see `rushingOrDragging/file_format.md` section 10).
+`transcribe_wav.py --model models/quest2_onset_v1.bin` writes those lines. It says when a hit
+happened, never which drum, so it cannot judge whether the expected drum was played.
+
+```sh
+uv run python tools/audit_labels.py --kit config/kit.local.json --output reports/label_audit.json
+uv run python tools/train_onset_model.py --kit config/kit.local.json
+uv run python tools/compare_hit_detection.py --kit config/kit.local.json \
+  --model models/quest2_v1.bin --model models/quest2_onset_v1.bin \
+  --default-mute quest2_v1 --output reports/hit_detection_comparison.json
+```
+
+`compare_hit_detection.py` scores every model as hit/no-hit on the same validation and test
+takes (a six-class prediction of any family counts as a hit), plus the model-free
+`--onsets-only` path. `--default-mute` is required for a model without its sidecar `.json`.
+On test, hit F1 is 0.749 for the onset model versus 0.714 for the six-class model at 10 ms, and
+0.838 versus 0.789 at 50 ms. [ONSET_MODEL.md](ONSET_MODEL.md) has the full results, the label
+audit and the limitations. The six-class model is backed up at
+`models/backup/quest2_v1_six_class.bin` and remains the model for drum identity.
+
 ## Score normalization, live feed and saved output
 
 Normalize a *copy* of the exact score before comparing:

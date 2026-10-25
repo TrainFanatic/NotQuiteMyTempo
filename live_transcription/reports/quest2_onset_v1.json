@@ -1,0 +1,1706 @@
+{
+  "schema_version": 1,
+  "target": "hit/no-hit (any drum); one class, MIDI 0 onset",
+  "sessions": [
+    {
+      "session": "single_kick_01",
+      "split": "train",
+      "audio_sha256": "9133271bf4b5fe7cf5be0f1b5d76e3fbb485753e97d580e992d3ae3f09dc3163",
+      "labels_sha256": "2002785800e162e034bc379274a34e8c365463b5365c39652fc3fecab3320a3b",
+      "duration_s": 31.230854166666667,
+      "onsets": 77,
+      "human_family_hits": 44,
+      "assigned_labels": 37,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_snare_01",
+      "split": "train",
+      "audio_sha256": "ba2f0feac484152921fce44d072370306ea835c0a580add743eed57b27e08a3a",
+      "labels_sha256": "7678bd76bc6f49d04d5e14cb2d0d8c8fd8bdad29a701f79ed9234f751cba8128",
+      "duration_s": 28.769541666666665,
+      "onsets": 36,
+      "human_family_hits": 35,
+      "assigned_labels": 32,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_hihat_01",
+      "split": "train",
+      "audio_sha256": "dded24dcdec3a12dbc9f137380116fd7ba327b1cb03e7a713fafd2f30ce6f2c6",
+      "labels_sha256": "ed6d18ff417b4d600990040dcaa60cdb39256e400a0d19d13434cc6b8d03dbf7",
+      "duration_s": 29.37325,
+      "onsets": 51,
+      "human_family_hits": 52,
+      "assigned_labels": 50,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_high_tom_01",
+      "split": "train",
+      "audio_sha256": "cefe3f0ad53b35fe210cdaca34e853511b8ef250a5731d8f99d0a2efcd19be69",
+      "labels_sha256": "eadde9284e2556d2ac8bb9761465422675f2d3c82542539a3424b0c0d2c8c017",
+      "duration_s": 25.2633125,
+      "onsets": 48,
+      "human_family_hits": 30,
+      "assigned_labels": 30,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_mid_tom_01",
+      "split": "train",
+      "audio_sha256": "f313a59c9d76ce46c10a33690457b14075dea2ef154aea8b8d0c4a67495e23c3",
+      "labels_sha256": "83911affdd05f54a1c996a4a26a5874281610cef4d9802d4f3116607637ec9a3",
+      "duration_s": 32.02033333333333,
+      "onsets": 90,
+      "human_family_hits": 37,
+      "assigned_labels": 34,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_floor_tom_01",
+      "split": "train",
+      "audio_sha256": "6f515e00f141e2f2e9f2e8654d2dff9a53be06c06840373478153cd1611bdf47",
+      "labels_sha256": "740a58e55d58a74582a5956a2da9bbec8759a67937962acd77241c4e7b7582cf",
+      "duration_s": 28.328354166666667,
+      "onsets": 129,
+      "human_family_hits": 38,
+      "assigned_labels": 36,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_crash_01",
+      "split": "train",
+      "audio_sha256": "3abe97bce791f3b449e96cfac27181b40bbe12a6b8f90b8ce79d7f8da12a46a8",
+      "labels_sha256": "55fadc1c1c5b0b9d1d4b7eebcf34c8c0662683b664eff320e9a0121ff138e81d",
+      "duration_s": 50.015791666666665,
+      "onsets": 26,
+      "human_family_hits": 14,
+      "assigned_labels": 12,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_ride_01",
+      "split": "train",
+      "audio_sha256": "1a0aa2c28753d80a1444e6dfc82edd7cb5421487a740cfd6f9fae6d6ddf80d0e",
+      "labels_sha256": "581e233bcf39e215213f6b4201892405614693858e3bf9cd3752afe71d39d14e",
+      "duration_s": 66.10722916666667,
+      "onsets": 19,
+      "human_family_hits": 22,
+      "assigned_labels": 15,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_kick_02",
+      "split": "validation",
+      "audio_sha256": "a0bdd7d2681e616a0c2f91d21d44afe1c61c6493f35a6c49e8da83351356a3df",
+      "labels_sha256": "e7db9fa92d1a613c5a671eda50f244bca4c89af29be8933c5629a053bb66d2e9",
+      "duration_s": 36.525,
+      "onsets": 52,
+      "human_family_hits": 21,
+      "assigned_labels": 20,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_snare_02",
+      "split": "validation",
+      "audio_sha256": "ce28b32bc3a1e50456591cf5958f0d87459ad5b9aac2b2c62e7c7fb820b2433e",
+      "labels_sha256": "bb43a35072185d11ca9ce0af55ae4a4e3a774af70315717d95cfca5ed015b4aa",
+      "duration_s": 36.71075,
+      "onsets": 30,
+      "human_family_hits": 25,
+      "assigned_labels": 21,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_hihat_02",
+      "split": "validation",
+      "audio_sha256": "9fd34a4355967a78b4ac543e12e527843920cd9414d1a073478bb2a2b6ce05de",
+      "labels_sha256": "c37d54c0247156cb9463f067d3d4192178e73137d4ffe2517aa206c033c12c5c",
+      "duration_s": 37.9181875,
+      "onsets": 32,
+      "human_family_hits": 24,
+      "assigned_labels": 17,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_high_tom_02",
+      "split": "validation",
+      "audio_sha256": "78406aafe53534c3723fbf779b1499da409769ecc6a321de4fc6506ed74d2d2a",
+      "labels_sha256": "2c7f2a68ec3d7c5c774c2885c223f5f54b156fa64b03cd09ec844706d8786500",
+      "duration_s": 38.3129375,
+      "onsets": 68,
+      "human_family_hits": 33,
+      "assigned_labels": 29,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_mid_tom_02",
+      "split": "validation",
+      "audio_sha256": "ac5f5b053a88e0555eb375485480290080716711ee726b366a7d0318afd105c5",
+      "labels_sha256": "1242f4ceee50b3c8ad2fc04a68f30487750f30414770f3f84472a8c82fdd7811",
+      "duration_s": 28.932083333333335,
+      "onsets": 25,
+      "human_family_hits": 16,
+      "assigned_labels": 14,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_floor_tom_02",
+      "split": "validation",
+      "audio_sha256": "9a7d711db5ab72ad8311e8c0add684ff872ce1e19d250186012cb80f40e90e7f",
+      "labels_sha256": "90d75073c84ad7740936cb358d87cc80223c04602cceb8260811387437f23ef9",
+      "duration_s": 37.36091666666667,
+      "onsets": 111,
+      "human_family_hits": 25,
+      "assigned_labels": 24,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_crash_02",
+      "split": "validation",
+      "audio_sha256": "20aa576c8141e407294e20ee25c92b77d438df7e9446b88a71f5680c57374211",
+      "labels_sha256": "bf2606a984d244d8162420854cc25a0fa6b0cae401c738c37fb9d0070df36526",
+      "duration_s": 45.7433125,
+      "onsets": 24,
+      "human_family_hits": 12,
+      "assigned_labels": 10,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_ride_02",
+      "split": "validation",
+      "audio_sha256": "4d7ae21f9b41cbee3ca8285f8da09026c91f0e49114b7823eaafc74ee43fd626",
+      "labels_sha256": "af7e975c71d5b04b8733422a0cc5bd610cccf71e370d715ec4deae91d375c348",
+      "duration_s": 59.79139583333333,
+      "onsets": 25,
+      "human_family_hits": 17,
+      "assigned_labels": 17,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_kick_03",
+      "split": "test",
+      "audio_sha256": "d5edfb0d6363ed516cc0313673d1d42a82c0cde83dae2ce69fa3938f8f0c21f6",
+      "labels_sha256": "f090f676b4d71ce48678323d33835b84089f5f23a44032c89e4a49ca66f53dc7",
+      "duration_s": 37.964645833333336,
+      "onsets": 43,
+      "human_family_hits": 22,
+      "assigned_labels": 12,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_snare_03",
+      "split": "test",
+      "audio_sha256": "6664aa399266bf70e059d7e0cce93d3a0ddbe76b231f82a2f6c10d90c61fcf57",
+      "labels_sha256": "58abd2ce3c7d245f6e78679841fc399ddce9df9fcec621d98170a7e300a41dbe",
+      "duration_s": 38.42904166666667,
+      "onsets": 47,
+      "human_family_hits": 30,
+      "assigned_labels": 26,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_hihat_03",
+      "split": "test",
+      "audio_sha256": "3a752b47165f0f76ccdb5ec8bb9a5953d594cc5c28a4c06a97f427680d90fdad",
+      "labels_sha256": "4e462bc3710878d77437a2e054046a4bf8ddf0b0bac9e5685d4ccc05bc838f1f",
+      "duration_s": 37.686,
+      "onsets": 29,
+      "human_family_hits": 27,
+      "assigned_labels": 24,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_high_tom_03",
+      "split": "test",
+      "audio_sha256": "f4e21290771ca02a908ddb7a7eb101d492313444d14af58198abb9cf054ac097",
+      "labels_sha256": "3d68aaf6dd55f653e2a7271307a7b0a2c843dfa712f90465f5956a28c4ca1b96",
+      "duration_s": 28.049708333333335,
+      "onsets": 27,
+      "human_family_hits": 18,
+      "assigned_labels": 17,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_mid_tom_03",
+      "split": "test",
+      "audio_sha256": "14e55eca815dde3bbc0dded1a548d62b0aefef97dd35b81f55c0355874e6bda2",
+      "labels_sha256": "26ae27d32cd929d3894f5f97c657f8eea6af45187a2448dc6f2f8fb9ad9c55c8",
+      "duration_s": 27.213791666666665,
+      "onsets": 35,
+      "human_family_hits": 17,
+      "assigned_labels": 12,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_floor_tom_03",
+      "split": "test",
+      "audio_sha256": "477bedfce90a859e18a9a703ddca73185f5f4623433c4f26b856547ab4850063",
+      "labels_sha256": "1e68190045a1830da9c57c7cda85c1fbe6970642f5d4627fb5d569208a781ca8",
+      "duration_s": 26.749395833333335,
+      "onsets": 101,
+      "human_family_hits": 18,
+      "assigned_labels": 16,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_crash_03",
+      "split": "test",
+      "audio_sha256": "3b938a287acfa0f4540abdad8a04a0ce4674e66f661405275774e7c55df68c07",
+      "labels_sha256": "323cd611812936003f17741470f04aab23fb53340ae24b1ab17c4603c3bc0148",
+      "duration_s": 34.458416666666665,
+      "onsets": 13,
+      "human_family_hits": 9,
+      "assigned_labels": 8,
+      "ring_excluded": 0
+    },
+    {
+      "session": "single_ride_03",
+      "split": "test",
+      "audio_sha256": "758b086bf6af9e95d6daf83e24699d5d4f75517ef8053d6cb0540a99b0817d3a",
+      "labels_sha256": "942cd25a4d5a5b6a326345e2ba39c8225084126fc61d52ef22ca7100d100f5e9",
+      "duration_s": 58.839375,
+      "onsets": 21,
+      "human_family_hits": 17,
+      "assigned_labels": 17,
+      "ring_excluded": 0
+    }
+  ],
+  "selection": {
+    "C": 0.1,
+    "threshold": 0.65,
+    "validation_candidate_f1": 0.88
+  },
+  "training_options": {
+    "quest_mute_filter": {
+      "window_s": 0.24,
+      "mute_db": -75.0,
+      "drop_db": 35.0
+    },
+    "c_grid": [
+      0.001,
+      0.003,
+      0.01,
+      0.03,
+      0.1,
+      0.3,
+      1.0,
+      10.0
+    ],
+    "target": "any_drum"
+  },
+  "splits": {
+    "train": [
+      {
+        "session": "single_kick_01",
+        "model": {
+          "10ms": {
+            "tp": 27,
+            "fp": 0,
+            "fn": 17,
+            "precision": 1.0,
+            "recall": 0.6136363636363636,
+            "f1": 0.7605633802816901,
+            "onset_error_ms": {
+              "median": 2.6876666666666438,
+              "p95_absolute": 6.218966666666859
+            }
+          },
+          "50ms": {
+            "tp": 27,
+            "fp": 0,
+            "fn": 17,
+            "precision": 1.0,
+            "recall": 0.6136363636363636,
+            "f1": 0.7605633802816901,
+            "onset_error_ms": {
+              "median": 2.6876666666666438,
+              "p95_absolute": 6.218966666666859
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 34,
+            "fp": 43,
+            "fn": 10,
+            "precision": 0.44155844155844154,
+            "recall": 0.7727272727272727,
+            "f1": 0.5619834710743802,
+            "onset_error_ms": {
+              "median": 2.8126666666672406,
+              "p95_absolute": 5.963816666666942
+            }
+          },
+          "50ms": {
+            "tp": 37,
+            "fp": 40,
+            "fn": 7,
+            "precision": 0.4805194805194805,
+            "recall": 0.8409090909090909,
+            "f1": 0.6115702479338843,
+            "onset_error_ms": {
+              "median": 3.3121666666673377,
+              "p95_absolute": 11.191633333334028
+            }
+          }
+        },
+        "native_python_max_probability_error": 4.4629289486231016e-08,
+        "desktop_processing_s": 0.06734291696920991,
+        "audio_duration_s": 31.230854166666667
+      },
+      {
+        "session": "single_snare_01",
+        "model": {
+          "10ms": {
+            "tp": 29,
+            "fp": 2,
+            "fn": 6,
+            "precision": 0.9354838709677419,
+            "recall": 0.8285714285714286,
+            "f1": 0.8787878787878788,
+            "onset_error_ms": {
+              "median": -0.00016666666624587378,
+              "p95_absolute": 1.1999333333335467
+            }
+          },
+          "50ms": {
+            "tp": 29,
+            "fp": 2,
+            "fn": 6,
+            "precision": 0.9354838709677419,
+            "recall": 0.8285714285714286,
+            "f1": 0.8787878787878788,
+            "onset_error_ms": {
+              "median": -0.00016666666624587378,
+              "p95_absolute": 1.1999333333335467
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 31,
+            "fp": 5,
+            "fn": 4,
+            "precision": 0.8611111111111112,
+            "recall": 0.8857142857142857,
+            "f1": 0.8732394366197183,
+            "onset_error_ms": {
+              "median": -0.00016666666624587378,
+              "p95_absolute": 1.6664166666666702
+            }
+          },
+          "50ms": {
+            "tp": 33,
+            "fp": 3,
+            "fn": 2,
+            "precision": 0.9166666666666666,
+            "recall": 0.9428571428571428,
+            "f1": 0.9295774647887324,
+            "onset_error_ms": {
+              "median": -0.00016666666624587378,
+              "p95_absolute": 10.242099999999594
+            }
+          }
+        },
+        "native_python_max_probability_error": 3.391744352043702e-08,
+        "desktop_processing_s": 0.06655450002290308,
+        "audio_duration_s": 28.769541666666665
+      },
+      {
+        "session": "single_hihat_01",
+        "model": {
+          "10ms": {
+            "tp": 48,
+            "fp": 2,
+            "fn": 4,
+            "precision": 0.96,
+            "recall": 0.9230769230769231,
+            "f1": 0.9411764705882353,
+            "onset_error_ms": {
+              "median": 0.3021666666676026,
+              "p95_absolute": 5.704274999999411
+            }
+          },
+          "50ms": {
+            "tp": 50,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.9615384615384616,
+            "f1": 0.9803921568627451,
+            "onset_error_ms": {
+              "median": 0.4062500000010516,
+              "p95_absolute": 9.154874999999048
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 48,
+            "fp": 3,
+            "fn": 4,
+            "precision": 0.9411764705882353,
+            "recall": 0.9230769230769231,
+            "f1": 0.9320388349514563,
+            "onset_error_ms": {
+              "median": 0.3021666666676026,
+              "p95_absolute": 5.704274999999411
+            }
+          },
+          "50ms": {
+            "tp": 50,
+            "fp": 1,
+            "fn": 2,
+            "precision": 0.9803921568627451,
+            "recall": 0.9615384615384616,
+            "f1": 0.970873786407767,
+            "onset_error_ms": {
+              "median": 0.4062500000010516,
+              "p95_absolute": 9.154874999999048
+            }
+          }
+        },
+        "native_python_max_probability_error": 3.138032722560524e-08,
+        "desktop_processing_s": 0.06149087497033179,
+        "audio_duration_s": 29.37325
+      },
+      {
+        "session": "single_high_tom_01",
+        "model": {
+          "10ms": {
+            "tp": 26,
+            "fp": 1,
+            "fn": 4,
+            "precision": 0.9629629629629629,
+            "recall": 0.8666666666666667,
+            "f1": 0.9122807017543859,
+            "onset_error_ms": {
+              "median": 0.0004166666665028629,
+              "p95_absolute": 3.187500000001009
+            }
+          },
+          "50ms": {
+            "tp": 26,
+            "fp": 1,
+            "fn": 4,
+            "precision": 0.9629629629629629,
+            "recall": 0.8666666666666667,
+            "f1": 0.9122807017543859,
+            "onset_error_ms": {
+              "median": 0.0004166666665028629,
+              "p95_absolute": 3.187500000001009
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 30,
+            "fp": 18,
+            "fn": 0,
+            "precision": 0.625,
+            "recall": 1.0,
+            "f1": 0.7692307692307693,
+            "onset_error_ms": {
+              "median": 0.042000000000541604,
+              "p95_absolute": 4.825108333333888
+            }
+          },
+          "50ms": {
+            "tp": 30,
+            "fp": 18,
+            "fn": 0,
+            "precision": 0.625,
+            "recall": 1.0,
+            "f1": 0.7692307692307693,
+            "onset_error_ms": {
+              "median": 0.042000000000541604,
+              "p95_absolute": 4.825108333333888
+            }
+          }
+        },
+        "native_python_max_probability_error": 4.454215951632534e-08,
+        "desktop_processing_s": 0.05456245900131762,
+        "audio_duration_s": 25.2633125
+      },
+      {
+        "session": "single_mid_tom_01",
+        "model": {
+          "10ms": {
+            "tp": 28,
+            "fp": 1,
+            "fn": 9,
+            "precision": 0.9655172413793104,
+            "recall": 0.7567567567567568,
+            "f1": 0.8484848484848485,
+            "onset_error_ms": {
+              "median": -0.0002500000013672121,
+              "p95_absolute": 2.8312416666667493
+            }
+          },
+          "50ms": {
+            "tp": 28,
+            "fp": 1,
+            "fn": 9,
+            "precision": 0.9655172413793104,
+            "recall": 0.7567567567567568,
+            "f1": 0.8484848484848485,
+            "onset_error_ms": {
+              "median": -0.0002500000013672121,
+              "p95_absolute": 2.8312416666667493
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 34,
+            "fp": 56,
+            "fn": 3,
+            "precision": 0.37777777777777777,
+            "recall": 0.918918918918919,
+            "f1": 0.5354330708661418,
+            "onset_error_ms": {
+              "median": -0.0004166666673910413,
+              "p95_absolute": 2.5435916666669094
+            }
+          },
+          "50ms": {
+            "tp": 34,
+            "fp": 56,
+            "fn": 3,
+            "precision": 0.37777777777777777,
+            "recall": 0.918918918918919,
+            "f1": 0.5354330708661418,
+            "onset_error_ms": {
+              "median": -0.0004166666673910413,
+              "p95_absolute": 2.5435916666669094
+            }
+          }
+        },
+        "native_python_max_probability_error": 3.58725498195156e-08,
+        "desktop_processing_s": 0.07061866694130003,
+        "audio_duration_s": 32.02033333333333
+      },
+      {
+        "session": "single_floor_tom_01",
+        "model": {
+          "10ms": {
+            "tp": 34,
+            "fp": 0,
+            "fn": 4,
+            "precision": 1.0,
+            "recall": 0.8947368421052632,
+            "f1": 0.9444444444444444,
+            "onset_error_ms": {
+              "median": 1.9063333333333432,
+              "p95_absolute": 4.950999999999705
+            }
+          },
+          "50ms": {
+            "tp": 34,
+            "fp": 0,
+            "fn": 4,
+            "precision": 1.0,
+            "recall": 0.8947368421052632,
+            "f1": 0.9444444444444444,
+            "onset_error_ms": {
+              "median": 1.9063333333333432,
+              "p95_absolute": 4.950999999999705
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 36,
+            "fp": 93,
+            "fn": 2,
+            "precision": 0.27906976744186046,
+            "recall": 0.9473684210526315,
+            "f1": 0.4311377245508982,
+            "onset_error_ms": {
+              "median": 2.0210000000000505,
+              "p95_absolute": 5.557666666667238
+            }
+          },
+          "50ms": {
+            "tp": 36,
+            "fp": 93,
+            "fn": 2,
+            "precision": 0.27906976744186046,
+            "recall": 0.9473684210526315,
+            "f1": 0.4311377245508982,
+            "onset_error_ms": {
+              "median": 1.9063333333333432,
+              "p95_absolute": 6.8125416666662275
+            }
+          }
+        },
+        "native_python_max_probability_error": 2.9332799966752532e-08,
+        "desktop_processing_s": 0.06555700011085719,
+        "audio_duration_s": 28.328354166666667
+      },
+      {
+        "session": "single_crash_01",
+        "model": {
+          "10ms": {
+            "tp": 11,
+            "fp": 0,
+            "fn": 3,
+            "precision": 1.0,
+            "recall": 0.7857142857142857,
+            "f1": 0.88,
+            "onset_error_ms": {
+              "median": 0.14566666666127048,
+              "p95_absolute": 0.6246666666664957
+            }
+          },
+          "50ms": {
+            "tp": 11,
+            "fp": 0,
+            "fn": 3,
+            "precision": 1.0,
+            "recall": 0.7857142857142857,
+            "f1": 0.88,
+            "onset_error_ms": {
+              "median": 0.14566666666127048,
+              "p95_absolute": 0.6246666666664957
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 12,
+            "fp": 14,
+            "fn": 2,
+            "precision": 0.46153846153846156,
+            "recall": 0.8571428571428571,
+            "f1": 0.6,
+            "onset_error_ms": {
+              "median": 0.1456666666648232,
+              "p95_absolute": 0.6059166666665392
+            }
+          },
+          "50ms": {
+            "tp": 12,
+            "fp": 14,
+            "fn": 2,
+            "precision": 0.46153846153846156,
+            "recall": 0.8571428571428571,
+            "f1": 0.6,
+            "onset_error_ms": {
+              "median": 0.1456666666648232,
+              "p95_absolute": 0.6059166666665392
+            }
+          }
+        },
+        "native_python_max_probability_error": 2.229535067677091e-08,
+        "desktop_processing_s": 0.10522099991794676,
+        "audio_duration_s": 50.015791666666665
+      },
+      {
+        "session": "single_ride_01",
+        "model": {
+          "10ms": {
+            "tp": 15,
+            "fp": 0,
+            "fn": 7,
+            "precision": 1.0,
+            "recall": 0.6818181818181818,
+            "f1": 0.8108108108108109,
+            "onset_error_ms": {
+              "median": 0.24966666666159654,
+              "p95_absolute": 0.9146500000001273
+            }
+          },
+          "50ms": {
+            "tp": 15,
+            "fp": 0,
+            "fn": 7,
+            "precision": 1.0,
+            "recall": 0.6818181818181818,
+            "f1": 0.8108108108108109,
+            "onset_error_ms": {
+              "median": 0.24966666666159654,
+              "p95_absolute": 0.9146500000001273
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 15,
+            "fp": 4,
+            "fn": 7,
+            "precision": 0.7894736842105263,
+            "recall": 0.6818181818181818,
+            "f1": 0.7317073170731707,
+            "onset_error_ms": {
+              "median": 0.24966666666159654,
+              "p95_absolute": 0.9146500000001273
+            }
+          },
+          "50ms": {
+            "tp": 16,
+            "fp": 3,
+            "fn": 6,
+            "precision": 0.8421052631578947,
+            "recall": 0.7272727272727273,
+            "f1": 0.7804878048780488,
+            "onset_error_ms": {
+              "median": 0.3646666666643483,
+              "p95_absolute": 10.723833333332934
+            }
+          }
+        },
+        "native_python_max_probability_error": 4.283829202478273e-08,
+        "desktop_processing_s": 0.13545895798597485,
+        "audio_duration_s": 66.10722916666667
+      }
+    ],
+    "validation": [
+      {
+        "session": "single_kick_02",
+        "model": {
+          "10ms": {
+            "tp": 16,
+            "fp": 3,
+            "fn": 5,
+            "precision": 0.8421052631578947,
+            "recall": 0.7619047619047619,
+            "f1": 0.8,
+            "onset_error_ms": {
+              "median": 1.7396666666655847,
+              "p95_absolute": 4.4318333333328574
+            }
+          },
+          "50ms": {
+            "tp": 16,
+            "fp": 3,
+            "fn": 5,
+            "precision": 0.8421052631578947,
+            "recall": 0.7619047619047619,
+            "f1": 0.8,
+            "onset_error_ms": {
+              "median": 1.7396666666655847,
+              "p95_absolute": 4.4318333333328574
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 20,
+            "fp": 32,
+            "fn": 1,
+            "precision": 0.38461538461538464,
+            "recall": 0.9523809523809523,
+            "f1": 0.547945205479452,
+            "onset_error_ms": {
+              "median": 1.7396666666655847,
+              "p95_absolute": 4.3526333333328004
+            }
+          },
+          "50ms": {
+            "tp": 20,
+            "fp": 32,
+            "fn": 1,
+            "precision": 0.38461538461538464,
+            "recall": 0.9523809523809523,
+            "f1": 0.547945205479452,
+            "onset_error_ms": {
+              "median": 1.7396666666655847,
+              "p95_absolute": 4.3526333333328004
+            }
+          }
+        },
+        "native_python_max_probability_error": 3.845002494173855e-08,
+        "desktop_processing_s": 0.07722179207485169,
+        "audio_duration_s": 36.525
+      },
+      {
+        "session": "single_snare_02",
+        "model": {
+          "10ms": {
+            "tp": 18,
+            "fp": 5,
+            "fn": 7,
+            "precision": 0.782608695652174,
+            "recall": 0.72,
+            "f1": 0.75,
+            "onset_error_ms": {
+              "median": 0.0,
+              "p95_absolute": 1.4350583333332612
+            }
+          },
+          "50ms": {
+            "tp": 19,
+            "fp": 4,
+            "fn": 6,
+            "precision": 0.8260869565217391,
+            "recall": 0.76,
+            "f1": 0.7916666666666666,
+            "onset_error_ms": {
+              "median": 0.0,
+              "p95_absolute": 2.689116666666689
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 20,
+            "fp": 10,
+            "fn": 5,
+            "precision": 0.6666666666666666,
+            "recall": 0.8,
+            "f1": 0.7272727272727273,
+            "onset_error_ms": {
+              "median": 0.0,
+              "p95_absolute": 1.4225749999999149
+            }
+          },
+          "50ms": {
+            "tp": 21,
+            "fp": 9,
+            "fn": 4,
+            "precision": 0.7,
+            "recall": 0.84,
+            "f1": 0.7636363636363637,
+            "onset_error_ms": {
+              "median": 0.0,
+              "p95_absolute": 1.5411666666667045
+            }
+          }
+        },
+        "native_python_max_probability_error": 2.319612335544008e-08,
+        "desktop_processing_s": 0.07844941690564156,
+        "audio_duration_s": 36.71075
+      },
+      {
+        "session": "single_hihat_02",
+        "model": {
+          "10ms": {
+            "tp": 15,
+            "fp": 12,
+            "fn": 9,
+            "precision": 0.5555555555555556,
+            "recall": 0.625,
+            "f1": 0.5882352941176471,
+            "onset_error_ms": {
+              "median": 0.08300000000005525,
+              "p95_absolute": 7.485133333333492
+            }
+          },
+          "50ms": {
+            "tp": 19,
+            "fp": 8,
+            "fn": 5,
+            "precision": 0.7037037037037037,
+            "recall": 0.7916666666666666,
+            "f1": 0.7450980392156863,
+            "onset_error_ms": {
+              "median": 0.08300000000005525,
+              "p95_absolute": 31.231149999999946
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 15,
+            "fp": 17,
+            "fn": 9,
+            "precision": 0.46875,
+            "recall": 0.625,
+            "f1": 0.5357142857142857,
+            "onset_error_ms": {
+              "median": 0.08300000000005525,
+              "p95_absolute": 7.485133333333492
+            }
+          },
+          "50ms": {
+            "tp": 19,
+            "fp": 13,
+            "fn": 5,
+            "precision": 0.59375,
+            "recall": 0.7916666666666666,
+            "f1": 0.6785714285714286,
+            "onset_error_ms": {
+              "median": 0.08300000000005525,
+              "p95_absolute": 31.231149999999946
+            }
+          }
+        },
+        "native_python_max_probability_error": 2.870077342453925e-08,
+        "desktop_processing_s": 0.08026137494016439,
+        "audio_duration_s": 37.9181875
+      },
+      {
+        "session": "single_high_tom_02",
+        "model": {
+          "10ms": {
+            "tp": 26,
+            "fp": 7,
+            "fn": 7,
+            "precision": 0.7878787878787878,
+            "recall": 0.7878787878787878,
+            "f1": 0.7878787878787878,
+            "onset_error_ms": {
+              "median": -0.04133333333422584,
+              "p95_absolute": 6.781624999999458
+            }
+          },
+          "50ms": {
+            "tp": 27,
+            "fp": 6,
+            "fn": 6,
+            "precision": 0.8181818181818182,
+            "recall": 0.8181818181818182,
+            "f1": 0.8181818181818182,
+            "onset_error_ms": {
+              "median": -0.04150000000180398,
+              "p95_absolute": 8.993549999999926
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 28,
+            "fp": 40,
+            "fn": 5,
+            "precision": 0.4117647058823529,
+            "recall": 0.8484848484848485,
+            "f1": 0.5544554455445545,
+            "onset_error_ms": {
+              "median": -0.04133333333422584,
+              "p95_absolute": 7.7604833333332115
+            }
+          },
+          "50ms": {
+            "tp": 30,
+            "fp": 38,
+            "fn": 3,
+            "precision": 0.4411764705882353,
+            "recall": 0.9090909090909091,
+            "f1": 0.594059405940594,
+            "onset_error_ms": {
+              "median": -0.04133333333422584,
+              "p95_absolute": 10.259241666665096
+            }
+          }
+        },
+        "native_python_max_probability_error": 4.263684449945515e-08,
+        "desktop_processing_s": 0.08445758291054517,
+        "audio_duration_s": 38.3129375
+      },
+      {
+        "session": "single_mid_tom_02",
+        "model": {
+          "10ms": {
+            "tp": 14,
+            "fp": 3,
+            "fn": 2,
+            "precision": 0.8235294117647058,
+            "recall": 0.875,
+            "f1": 0.8484848484848485,
+            "onset_error_ms": {
+              "median": -0.0003333333329358368,
+              "p95_absolute": 0.6792249999994834
+            }
+          },
+          "50ms": {
+            "tp": 16,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.9411764705882353,
+            "recall": 1.0,
+            "f1": 0.9696969696969697,
+            "onset_error_ms": {
+              "median": -0.01033333333255726,
+              "p95_absolute": 21.625125000000356
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 14,
+            "fp": 11,
+            "fn": 2,
+            "precision": 0.56,
+            "recall": 0.875,
+            "f1": 0.6829268292682927,
+            "onset_error_ms": {
+              "median": -0.0003333333329358368,
+              "p95_absolute": 0.6792249999994834
+            }
+          },
+          "50ms": {
+            "tp": 16,
+            "fp": 9,
+            "fn": 0,
+            "precision": 0.64,
+            "recall": 1.0,
+            "f1": 0.7804878048780488,
+            "onset_error_ms": {
+              "median": -0.01033333333255726,
+              "p95_absolute": 21.625125000000356
+            }
+          }
+        },
+        "native_python_max_probability_error": 3.128438552657542e-08,
+        "desktop_processing_s": 0.05985633307136595,
+        "audio_duration_s": 28.932083333333335
+      },
+      {
+        "session": "single_floor_tom_02",
+        "model": {
+          "10ms": {
+            "tp": 22,
+            "fp": 3,
+            "fn": 3,
+            "precision": 0.88,
+            "recall": 0.88,
+            "f1": 0.88,
+            "onset_error_ms": {
+              "median": 0.02108333333339374,
+              "p95_absolute": 2.758333333332885
+            }
+          },
+          "50ms": {
+            "tp": 24,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.96,
+            "recall": 0.96,
+            "f1": 0.96,
+            "onset_error_ms": {
+              "median": 0.02108333333339374,
+              "p95_absolute": 11.89315833333369
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 23,
+            "fp": 88,
+            "fn": 2,
+            "precision": 0.2072072072072072,
+            "recall": 0.92,
+            "f1": 0.3382352941176471,
+            "onset_error_ms": {
+              "median": 0.0,
+              "p95_absolute": 3.8023833333344452
+            }
+          },
+          "50ms": {
+            "tp": 25,
+            "fp": 86,
+            "fn": 0,
+            "precision": 0.22522522522522523,
+            "recall": 1.0,
+            "f1": 0.36764705882352944,
+            "onset_error_ms": {
+              "median": 0.0,
+              "p95_absolute": 11.4546000000004
+            }
+          }
+        },
+        "native_python_max_probability_error": 3.199864384573203e-08,
+        "desktop_processing_s": 0.08272054104600102,
+        "audio_duration_s": 37.36091666666667
+      },
+      {
+        "session": "single_crash_02",
+        "model": {
+          "10ms": {
+            "tp": 10,
+            "fp": 2,
+            "fn": 2,
+            "precision": 0.8333333333333334,
+            "recall": 0.8333333333333334,
+            "f1": 0.8333333333333334,
+            "onset_error_ms": {
+              "median": 0.00041666666605877367,
+              "p95_absolute": 0.532308333331776
+            }
+          },
+          "50ms": {
+            "tp": 12,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "onset_error_ms": {
+              "median": 0.00041666666605877367,
+              "p95_absolute": 33.595741666667486
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 10,
+            "fp": 14,
+            "fn": 2,
+            "precision": 0.4166666666666667,
+            "recall": 0.8333333333333334,
+            "f1": 0.5555555555555556,
+            "onset_error_ms": {
+              "median": 0.00041666666605877367,
+              "p95_absolute": 0.532308333331776
+            }
+          },
+          "50ms": {
+            "tp": 12,
+            "fp": 12,
+            "fn": 0,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "onset_error_ms": {
+              "median": 0.00041666666605877367,
+              "p95_absolute": 33.595741666667486
+            }
+          }
+        },
+        "native_python_max_probability_error": 5.259954768965791e-08,
+        "desktop_processing_s": 0.09821437497157604,
+        "audio_duration_s": 45.7433125
+      },
+      {
+        "session": "single_ride_02",
+        "model": {
+          "10ms": {
+            "tp": 17,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "onset_error_ms": {
+              "median": 0.12466666666632875,
+              "p95_absolute": 0.6414333333296434
+            }
+          },
+          "50ms": {
+            "tp": 17,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "onset_error_ms": {
+              "median": 0.12466666666632875,
+              "p95_absolute": 0.6414333333296434
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 17,
+            "fp": 8,
+            "fn": 0,
+            "precision": 0.68,
+            "recall": 1.0,
+            "f1": 0.8095238095238095,
+            "onset_error_ms": {
+              "median": 0.12466666666632875,
+              "p95_absolute": 0.6414333333296434
+            }
+          },
+          "50ms": {
+            "tp": 17,
+            "fp": 8,
+            "fn": 0,
+            "precision": 0.68,
+            "recall": 1.0,
+            "f1": 0.8095238095238095,
+            "onset_error_ms": {
+              "median": 0.12466666666632875,
+              "p95_absolute": 0.6414333333296434
+            }
+          }
+        },
+        "native_python_max_probability_error": 2.5816281001844743e-08,
+        "desktop_processing_s": 0.12285262497607619,
+        "audio_duration_s": 59.79139583333333
+      }
+    ],
+    "test": [
+      {
+        "session": "single_kick_03",
+        "model": {
+          "10ms": {
+            "tp": 7,
+            "fp": 8,
+            "fn": 15,
+            "precision": 0.4666666666666667,
+            "recall": 0.3181818181818182,
+            "f1": 0.3783783783783784,
+            "onset_error_ms": {
+              "median": -0.02033333333351095,
+              "p95_absolute": 2.6062499999992768
+            }
+          },
+          "50ms": {
+            "tp": 13,
+            "fp": 2,
+            "fn": 9,
+            "precision": 0.8666666666666667,
+            "recall": 0.5909090909090909,
+            "f1": 0.7027027027027027,
+            "onset_error_ms": {
+              "median": 2.74999999999892,
+              "p95_absolute": 41.270999999999695
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 10,
+            "fp": 33,
+            "fn": 12,
+            "precision": 0.23255813953488372,
+            "recall": 0.45454545454545453,
+            "f1": 0.3076923076923077,
+            "onset_error_ms": {
+              "median": -0.04124999999977064,
+              "p95_absolute": 3.208149999998965
+            }
+          },
+          "50ms": {
+            "tp": 17,
+            "fp": 26,
+            "fn": 5,
+            "precision": 0.3953488372093023,
+            "recall": 0.7727272727272727,
+            "f1": 0.5230769230769231,
+            "onset_error_ms": {
+              "median": 2.270833333333444,
+              "p95_absolute": 43.329299999999904
+            }
+          }
+        },
+        "native_python_max_probability_error": 3.736669007547988e-08,
+        "desktop_processing_s": 0.08210058405529708,
+        "audio_duration_s": 37.964645833333336
+      },
+      {
+        "session": "single_snare_03",
+        "model": {
+          "10ms": {
+            "tp": 23,
+            "fp": 10,
+            "fn": 7,
+            "precision": 0.696969696969697,
+            "recall": 0.7666666666666667,
+            "f1": 0.7301587301587301,
+            "onset_error_ms": {
+              "median": 0.00016666666624587378,
+              "p95_absolute": 3.1981166666678695
+            }
+          },
+          "50ms": {
+            "tp": 27,
+            "fp": 6,
+            "fn": 3,
+            "precision": 0.8181818181818182,
+            "recall": 0.9,
+            "f1": 0.8571428571428571,
+            "onset_error_ms": {
+              "median": 0.7498333333337825,
+              "p95_absolute": 14.94976666666652
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 23,
+            "fp": 24,
+            "fn": 7,
+            "precision": 0.48936170212765956,
+            "recall": 0.7666666666666667,
+            "f1": 0.5974025974025974,
+            "onset_error_ms": {
+              "median": 0.00016666666624587378,
+              "p95_absolute": 3.1981166666678695
+            }
+          },
+          "50ms": {
+            "tp": 27,
+            "fp": 20,
+            "fn": 3,
+            "precision": 0.574468085106383,
+            "recall": 0.9,
+            "f1": 0.7012987012987013,
+            "onset_error_ms": {
+              "median": 0.7498333333337825,
+              "p95_absolute": 14.94976666666652
+            }
+          }
+        },
+        "native_python_max_probability_error": 3.8304793226195955e-08,
+        "desktop_processing_s": 0.08143304206896573,
+        "audio_duration_s": 38.42904166666667
+      },
+      {
+        "session": "single_hihat_03",
+        "model": {
+          "10ms": {
+            "tp": 23,
+            "fp": 2,
+            "fn": 4,
+            "precision": 0.92,
+            "recall": 0.8518518518518519,
+            "f1": 0.8846153846153846,
+            "onset_error_ms": {
+              "median": 1.0003333333301612,
+              "p95_absolute": 4.640000000000376
+            }
+          },
+          "50ms": {
+            "tp": 25,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.9259259259259259,
+            "f1": 0.9615384615384616,
+            "onset_error_ms": {
+              "median": 1.187666666666587,
+              "p95_absolute": 15.929100000000636
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 23,
+            "fp": 6,
+            "fn": 4,
+            "precision": 0.7931034482758621,
+            "recall": 0.8518518518518519,
+            "f1": 0.8214285714285714,
+            "onset_error_ms": {
+              "median": 1.0003333333301612,
+              "p95_absolute": 4.640000000000376
+            }
+          },
+          "50ms": {
+            "tp": 25,
+            "fp": 4,
+            "fn": 2,
+            "precision": 0.8620689655172413,
+            "recall": 0.9259259259259259,
+            "f1": 0.8928571428571429,
+            "onset_error_ms": {
+              "median": 1.187666666666587,
+              "p95_absolute": 15.929100000000636
+            }
+          }
+        },
+        "native_python_max_probability_error": 2.8653680539392212e-08,
+        "desktop_processing_s": 0.07871854095719755,
+        "audio_duration_s": 37.686
+      },
+      {
+        "session": "single_high_tom_03",
+        "model": {
+          "10ms": {
+            "tp": 16,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.8888888888888888,
+            "f1": 0.9411764705882353,
+            "onset_error_ms": {
+              "median": 0.32291666666672825,
+              "p95_absolute": 2.994750000000046
+            }
+          },
+          "50ms": {
+            "tp": 16,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "recall": 0.8888888888888888,
+            "f1": 0.9411764705882353,
+            "onset_error_ms": {
+              "median": 0.32291666666672825,
+              "p95_absolute": 2.994750000000046
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 17,
+            "fp": 10,
+            "fn": 1,
+            "precision": 0.6296296296296297,
+            "recall": 0.9444444444444444,
+            "f1": 0.7555555555555555,
+            "onset_error_ms": {
+              "median": 0.29199999999995896,
+              "p95_absolute": 2.9082999999999957
+            }
+          },
+          "50ms": {
+            "tp": 17,
+            "fp": 10,
+            "fn": 1,
+            "precision": 0.6296296296296297,
+            "recall": 0.9444444444444444,
+            "f1": 0.7555555555555555,
+            "onset_error_ms": {
+              "median": 0.18749999999911893,
+              "p95_absolute": 7.9831333333339884
+            }
+          }
+        },
+        "native_python_max_probability_error": 2.9574787063779695e-08,
+        "desktop_processing_s": 0.05905312497634441,
+        "audio_duration_s": 28.049708333333335
+      },
+      {
+        "session": "single_mid_tom_03",
+        "model": {
+          "10ms": {
+            "tp": 10,
+            "fp": 14,
+            "fn": 7,
+            "precision": 0.4166666666666667,
+            "recall": 0.5882352941176471,
+            "f1": 0.4878048780487805,
+            "onset_error_ms": {
+              "median": 0.0,
+              "p95_absolute": 2.0080583333332167
+            }
+          },
+          "50ms": {
+            "tp": 12,
+            "fp": 12,
+            "fn": 5,
+            "precision": 0.5,
+            "recall": 0.7058823529411765,
+            "f1": 0.5853658536585366,
+            "onset_error_ms": {
+              "median": 0.00016666666624587378,
+              "p95_absolute": 47.01888333333226
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 12,
+            "fp": 23,
+            "fn": 5,
+            "precision": 0.34285714285714286,
+            "recall": 0.7058823529411765,
+            "f1": 0.46153846153846156,
+            "onset_error_ms": {
+              "median": 0.0,
+              "p95_absolute": 1.8664416666665617
+            }
+          },
+          "50ms": {
+            "tp": 14,
+            "fp": 21,
+            "fn": 3,
+            "precision": 0.4,
+            "recall": 0.8235294117647058,
+            "f1": 0.5384615384615384,
+            "onset_error_ms": {
+              "median": 0.0,
+              "p95_absolute": 46.597983333332316
+            }
+          }
+        },
+        "native_python_max_probability_error": 3.246298885262178e-08,
+        "desktop_processing_s": 0.06263179192319512,
+        "audio_duration_s": 27.213791666666665
+      },
+      {
+        "session": "single_floor_tom_03",
+        "model": {
+          "10ms": {
+            "tp": 15,
+            "fp": 4,
+            "fn": 3,
+            "precision": 0.7894736842105263,
+            "recall": 0.8333333333333334,
+            "f1": 0.8108108108108109,
+            "onset_error_ms": {
+              "median": 0.00033333333249174757,
+              "p95_absolute": 1.5418166666677269
+            }
+          },
+          "50ms": {
+            "tp": 15,
+            "fp": 4,
+            "fn": 3,
+            "precision": 0.7894736842105263,
+            "recall": 0.8333333333333334,
+            "f1": 0.8108108108108109,
+            "onset_error_ms": {
+              "median": 0.00033333333249174757,
+              "p95_absolute": 1.5418166666677269
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 16,
+            "fp": 85,
+            "fn": 2,
+            "precision": 0.15841584158415842,
+            "recall": 0.8888888888888888,
+            "f1": 0.2689075630252101,
+            "onset_error_ms": {
+              "median": -8.333333378907071e-05,
+              "p95_absolute": 3.156541666666346
+            }
+          },
+          "50ms": {
+            "tp": 16,
+            "fp": 85,
+            "fn": 2,
+            "precision": 0.15841584158415842,
+            "recall": 0.8888888888888888,
+            "f1": 0.2689075630252101,
+            "onset_error_ms": {
+              "median": -8.333333378907071e-05,
+              "p95_absolute": 3.156541666666346
+            }
+          }
+        },
+        "native_python_max_probability_error": 4.734956904339782e-08,
+        "desktop_processing_s": 0.06229412497486919,
+        "audio_duration_s": 26.749395833333335
+      },
+      {
+        "session": "single_crash_03",
+        "model": {
+          "10ms": {
+            "tp": 8,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.8888888888888888,
+            "recall": 0.8888888888888888,
+            "f1": 0.8888888888888888,
+            "onset_error_ms": {
+              "median": 0.27100000000013225,
+              "p95_absolute": 2.9519833333321075
+            }
+          },
+          "50ms": {
+            "tp": 8,
+            "fp": 1,
+            "fn": 1,
+            "precision": 0.8888888888888888,
+            "recall": 0.8888888888888888,
+            "f1": 0.8888888888888888,
+            "onset_error_ms": {
+              "median": 0.27100000000013225,
+              "p95_absolute": 2.9519833333321075
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 8,
+            "fp": 5,
+            "fn": 1,
+            "precision": 0.6153846153846154,
+            "recall": 0.8888888888888888,
+            "f1": 0.7272727272727273,
+            "onset_error_ms": {
+              "median": 0.27100000000013225,
+              "p95_absolute": 2.9519833333321075
+            }
+          },
+          "50ms": {
+            "tp": 8,
+            "fp": 5,
+            "fn": 1,
+            "precision": 0.6153846153846154,
+            "recall": 0.8888888888888888,
+            "f1": 0.7272727272727273,
+            "onset_error_ms": {
+              "median": 0.27100000000013225,
+              "p95_absolute": 2.9519833333321075
+            }
+          }
+        },
+        "native_python_max_probability_error": 2.5862983643598625e-08,
+        "desktop_processing_s": 0.0704252920113504,
+        "audio_duration_s": 34.458416666666665
+      },
+      {
+        "session": "single_ride_03",
+        "model": {
+          "10ms": {
+            "tp": 16,
+            "fp": 0,
+            "fn": 1,
+            "precision": 1.0,
+            "recall": 0.9411764705882353,
+            "f1": 0.9696969696969697,
+            "onset_error_ms": {
+              "median": 0.5519166666694275,
+              "p95_absolute": 1.4325833333366234
+            }
+          },
+          "50ms": {
+            "tp": 16,
+            "fp": 0,
+            "fn": 1,
+            "precision": 1.0,
+            "recall": 0.9411764705882353,
+            "f1": 0.9696969696969697,
+            "onset_error_ms": {
+              "median": 0.5519166666694275,
+              "p95_absolute": 1.4325833333366234
+            }
+          }
+        },
+        "onsets_only": {
+          "10ms": {
+            "tp": 17,
+            "fp": 4,
+            "fn": 0,
+            "precision": 0.8095238095238095,
+            "recall": 1.0,
+            "f1": 0.8947368421052632,
+            "onset_error_ms": {
+              "median": 0.5413333333379455,
+              "p95_absolute": 1.4294666666700095
+            }
+          },
+          "50ms": {
+            "tp": 17,
+            "fp": 4,
+            "fn": 0,
+            "precision": 0.8095238095238095,
+            "recall": 1.0,
+            "f1": 0.8947368421052632,
+            "onset_error_ms": {
+              "median": 0.5413333333379455,
+              "p95_absolute": 1.4294666666700095
+            }
+          }
+        },
+        "native_python_max_probability_error": 2.8990802203310295e-08,
+        "desktop_processing_s": 0.1222335830098018,
+        "audio_duration_s": 58.839375
+      }
+    ]
+  },
+  "limitations": [
+    "Counts any drum as a hit; cannot judge whether the expected drum was played",
+    "Cannot recover hits the onset detector never proposed (see onsets_only recall)",
+    "Desktop measurements, not Quest profiling",
+    "Human annotation quality limits timing claims"
+  ],
+  "software": {
+    "python": "3.13.13",
+    "numpy": "2.5.4",
+    "sklearn": "1.9.1"
+  },
+  "model_sha256": "86abe9fb1eeb659434a8a5ceeb2465426499cf70818e687aef35e44aae2cafda",
+  "desktop_process_peak_rss_bytes": 434634752
+}

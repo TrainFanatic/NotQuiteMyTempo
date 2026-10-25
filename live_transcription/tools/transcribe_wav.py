@@ -17,6 +17,7 @@ from common import (
     events,
     note_line,
     onset_line,
+    ONSET_MIDI,
     ROOT,
     peak_rss_bytes,
 )
@@ -102,6 +103,7 @@ def main():
     if not 1 <= a.chunk <= 4800:
         p.error("--chunk must be 1..4800")
     trained = QUEST_MUTE if a.onsets_only else trained_mute_filter(a.model)
+    onset_model = bool(a.model) and trained_midis(a.model) == [ONSET_MIDI]
     if a.mute_window_ms is None:
         a.mute_window_ms = trained["window_s"] * 1000 if trained else 0.0
     if a.mute_db is None:
@@ -170,7 +172,7 @@ def main():
             try:
                 header = (
                     "# live transcription: onsets only, drum unknown (midi 0)\n"
-                    if a.onsets_only
+                    if a.onsets_only or onset_model
                     else "# live transcription: six broad families\n"
                 ) + (
                     "# clock: monotonic (laptop time.monotonic() seconds)\n"
@@ -313,6 +315,14 @@ def trained_mute_filter(model):
         return None
     options = json.loads(sidecar.read_text()).get("training_options", {})
     return options.get("quest_mute_filter")
+
+
+def trained_midis(model):
+    """Output MIDI classes from the model's sidecar .json, or None without one."""
+    sidecar = Path(model).with_suffix(".json")
+    if not sidecar.exists():
+        return None
+    return json.loads(sidecar.read_text()).get("midis")
 
 
 def _interrupt(*_):

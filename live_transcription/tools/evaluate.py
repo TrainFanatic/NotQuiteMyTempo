@@ -78,6 +78,14 @@ def evaluate(reference, predicted, candidate_times=None, merge_cymbals=False):
     return report
 
 
+def evaluate_hits(reference, predicted_times):
+    """Hit/no-hit: any drum counts. Reference hits at the same time (two families struck
+    together) are one hit, as are predictions at the same time."""
+    hits = sorted({t for t, _ in reference})
+    predicted = sorted(set(predicted_times))
+    return {f"{ms}ms": match(hits, predicted, ms / 1000) for ms in (10, 50)}
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("reference")

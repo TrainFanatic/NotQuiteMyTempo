@@ -186,13 +186,17 @@ def events(candidates):
     )
 
 
+ONSET_MIDI, ONSET_NAME = 0, "onset"  # drum unknown; see file_format.md section 10
+
+
 def note_line(t, midi):
+    if midi == ONSET_MIDI:  # a hit/no-hit model's class (train_onset_model.py)
+        return onset_line(t)
     if not math.isfinite(t) or t < 0 or midi not in NAMES:
         raise ValueError(f"Invalid representative note: {t}, {midi}")
     return f"{t:.6f}  {midi}  {NAMES[midi]}\n"
 
 
-ONSET_MIDI, ONSET_NAME = 0, "onset"  # drum unknown; see file_format.md section 10
 
 
 def onset_line(t):
